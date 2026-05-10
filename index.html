@@ -39,7 +39,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 3rem 1.5rem 4rem;
+      padding: 2rem 1.5rem;
+      gap: 1rem;
       position: relative;
       overflow: hidden;
       text-align: center;
@@ -57,71 +58,38 @@
       pointer-events: none;
     }
 
+    /* BANNIERE */
+    .banner {
+      width: 100%;
+      max-width: 453px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      animation: fadeUp 0.8s ease both;
+    }
+
+    /* BLOC INFO (tagline + badge) */
     .info-block {
-      margin-top: 1.5rem;
-      padding: 1.5rem 2rem;
+      padding: 1.25rem 1.75rem;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 10px;
       max-width: 580px;
       width: 100%;
-      text-align: center;
       animation: fadeUp 0.8s 0.1s ease both;
     }
 
-    .banner {
-      width: 100%;
-      max-width: 453px;
-      border-radius: 10px;
-      margin-bottom: 2rem;
-      border: 1px solid var(--border);
-      animation: fadeUp 0.8s ease both;
-    }
-    .logo-block {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      animation: fadeUp 0.8s ease both;
-    }
-
-    .logo-block img {
-      width: 64px;
-      height: 64px;
-    }
-
-    .logo-text { text-align: left; }
-
-    .logo-title {
-      font-size: 2rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #f5a623, #e8870a);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1.1;
-    }
-
-    .logo-sub {
-      font-size: 0.85rem;
+    .tagline {
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
       font-weight: 600;
       color: var(--white);
-      opacity: 0.7;
-      letter-spacing: 0.05em;
+      line-height: 1.6;
+      margin-bottom: 0.85rem;
     }
 
     .tagline-en {
       color: var(--muted);
       font-size: 0.88em;
-    }
-
-    .tagline {
-      font-size: clamp(1rem, 3vw, 1.2rem);
       font-weight: 400;
-      color: var(--muted);
-      max-width: 500px;
-      line-height: 1.65;
-      margin-bottom: 1.25rem;
     }
 
     .badge {
@@ -135,32 +103,31 @@
       background: var(--gold-dim);
       padding: 0.3rem 0.9rem;
       border-radius: 20px;
-      margin-bottom: 3rem;
-      animation: fadeUp 0.8s 0.15s ease both;
     }
 
+    /* SEPARATEUR */
     .sep {
       width: 40px;
       height: 3px;
       background: linear-gradient(90deg, #f5a623, #e8870a);
       border-radius: 2px;
-      margin: 0 auto 3rem;
       animation: fadeUp 0.8s 0.2s ease both;
     }
 
+    /* TITRE VIDEOS */
     .videos-heading {
       font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 1.25rem;
       animation: fadeUp 0.8s 0.25s ease both;
     }
 
+    /* GRILLE VIDEOS */
     .videos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.25rem;
       width: 100%;
       max-width: 760px;
@@ -262,35 +229,31 @@
       line-height: 1.4;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem 1.5rem;
-      font-size: 0.75rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-    }
-
-    footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    footer a:hover { color: var(--gold); }
-
+    /* BLOC TESTEUR */
     .tester-block {
-      margin-top: 2.5rem;
-      padding: 1.5rem 2rem;
+      padding: 1.25rem 1.75rem;
       background: var(--surface);
       border: 1px solid rgba(245,166,35,0.25);
       border-radius: 10px;
       max-width: 580px;
       width: 100%;
-      text-align: center;
       animation: fadeUp 0.8s 0.4s ease both;
     }
+
     .tester-text {
       font-size: 0.95rem;
+      font-weight: 600;
       color: var(--white);
       line-height: 1.6;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
-    .tester-en { color: var(--muted); font-size: 0.85em; }
+
+    .tester-en {
+      color: var(--muted);
+      font-size: 0.88em;
+      font-weight: 400;
+    }
+
     .tester-btn {
       display: inline-block;
       background: linear-gradient(135deg, #f5a623, #c47d0a);
@@ -304,7 +267,32 @@
       text-decoration: none;
       transition: opacity 0.2s, transform 0.2s;
     }
+
     .tester-btn:hover { opacity: 0.88; transform: translateY(-2px); }
+
+    .tester-email {
+      display: block;
+      margin-top: 0.65rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .tester-email a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--gold); }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
@@ -312,8 +300,8 @@
     }
 
     @media (max-width: 480px) {
-      .logo-title { font-size: 1.6rem; }
       .videos { grid-template-columns: 1fr; }
+      .hero { padding: 1.5rem 1rem; }
     }
   </style>
 </head>
@@ -376,9 +364,10 @@
         Vous voulez tester l'app avant sa sortie et obtenir un accès <strong>gratuit à vie</strong> ?<br/>
         <span class="tester-en">Want to test the app before launch and get <strong>free lifetime access</strong>?</span>
       </p>
-      <a class="tester-btn" href="mailto:contact@stagia.app?subject=Candidature testeur GigFlow Live&body=Bonjour,%0D%0A%0D%0AJe souhaite devenir testeur de GigFlow Live.%0D%0A%0D%0APr%C3%A9nom / First name :%0D%0AInstrument :">
-        ✉ Devenir testeur / Join the beta
+      <a class="tester-btn" href="mailto:contact@stagia.app?subject=Candidature%20testeur%20GigFlow%20Live&body=Hello%2C%0D%0A%0D%0AI%20would%20like%20to%20become%20a%20beta%20tester%20for%20GigFlow%20Live.%20%2F%20Je%20souhaite%20devenir%20testeur%20de%20GigFlow%20Live.%0D%0A%0D%0AFirst%20name%20%2F%20Pr%C3%A9nom%20%3A">
+        ✉ Devenir testeur &nbsp;/&nbsp; Join the beta
       </a>
+      <span class="tester-email">Ou écrivez-nous directement &nbsp;/&nbsp; Or contact us at <a href="mailto:contact@stagia.app">contact@stagia.app</a></span>
     </div>
 
   </section>
