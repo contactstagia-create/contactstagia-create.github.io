@@ -57,9 +57,21 @@
       pointer-events: none;
     }
 
+    .info-block {
+      margin-top: 1.5rem;
+      padding: 1.5rem 2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      max-width: 580px;
+      width: 100%;
+      text-align: center;
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+
     .banner {
       width: 100%;
-      max-width: 680px;
+      max-width: 453px;
       border-radius: 10px;
       margin-bottom: 2rem;
       animation: fadeUp 0.8s ease both;
@@ -97,14 +109,18 @@
       letter-spacing: 0.05em;
     }
 
+    .tagline-en {
+      color: var(--muted);
+      font-size: 0.88em;
+    }
+
     .tagline {
       font-size: clamp(1rem, 3vw, 1.2rem);
       font-weight: 400;
       color: var(--muted);
       max-width: 500px;
       line-height: 1.65;
-      margin-bottom: 1rem;
-      animation: fadeUp 0.8s 0.1s ease both;
+      margin-bottom: 1.25rem;
     }
 
     .badge {
@@ -306,12 +322,13 @@
 
     <img class="banner" src="Presentation_1024_x_500.png" alt="Gigflow Live by Stagia" />
 
-    <p class="tagline">
-      L'assistant indispensable pour gérer, chanter et jouer vos setlists en live.<br/>
-      <span style="color:#7070a0;font-size:0.9em">The essential assistant to manage, sing and play your setlists live.</span>
-    </p>
-
-    <span class="badge">Android · Bientôt sur Google Play &nbsp;/&nbsp; Coming soon</span>
+    <div class="info-block">
+      <p class="tagline">
+        L'assistant indispensable pour gérer, chanter et jouer vos setlists en live.<br/>
+        <span class="tagline-en">The essential assistant to manage, sing and play your setlists live.</span>
+      </p>
+      <span class="badge">Android · Bientôt sur Google Play &nbsp;/&nbsp; Coming soon</span>
+    </div>
 
     <div class="sep"></div>
 
