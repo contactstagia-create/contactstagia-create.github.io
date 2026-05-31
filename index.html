@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gigflow Live by Stagia — Your Music Manager</title>
+  <meta name="description" content="L'assistant indispensable pour gérer, chanter et jouer vos setlists en live." />
+  <link rel="icon" type="image/png" href="Logo_512.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #12121f;
+      --surface: #1a1a2e;
+      --border: #2a2a42;
+      --gold: #f5a623;
+      --gold-dark: #c47d0a;
+      --gold-dim: rgba(245,166,35,0.15);
+      --white: #f0ede8;
+      --muted: #7070a0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Nunito', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      gap: 1rem;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(245,166,35,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* BANNIERE */
+    .banner {
+      width: 100%;
+      max-width: 453px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      animation: fadeUp 0.8s ease both;
+    }
+
+    /* BLOC INFO (tagline + badge) */
+    .info-block {
+      padding: 1.25rem 1.75rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      max-width: 580px;
+      width: 100%;
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+
+    .tagline {
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.6;
+      margin-bottom: 0.85rem;
+    }
+
+    .tagline-en {
+      color: var(--muted);
+      font-size: 0.88em;
+      font-weight: 400;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(245,166,35,0.35);
+      background: var(--gold-dim);
+      padding: 0.3rem 0.9rem;
+      border-radius: 20px;
+    }
+
+    /* SEPARATEUR */
+    .sep {
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, #f5a623, #e8870a);
+      border-radius: 2px;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+
+    /* TITRE VIDEOS */
+    .videos-heading {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      animation: fadeUp 0.8s 0.25s ease both;
+    }
+
+    /* GRILLE VIDEOS */
+    .videos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      width: 100%;
+      max-width: 760px;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+
+    .video-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+
+    .video-card:hover {
+      border-color: rgba(245,166,35,0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(245,166,35,0.08);
+    }
+
+    .thumb-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #0e0e1a;
+      overflow: hidden;
+    }
+
+    .thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+
+    .video-card:hover .thumb-wrap img { transform: scale(1.03); }
+
+    .play-btn {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(18,18,31,0.35);
+      transition: background 0.2s;
+    }
+
+    .video-card:hover .play-btn { background: rgba(18,18,31,0.15); }
+
+    .play-circle {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, #f5a623, #c47d0a);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(245,166,35,0.4);
+      transition: transform 0.2s;
+    }
+
+    .video-card:hover .play-circle { transform: scale(1.12); }
+
+    .play-circle svg {
+      width: 20px;
+      height: 20px;
+      fill: #12121f;
+      margin-left: 3px;
+    }
+
+    .video-info {
+      padding: 0.85rem 1.1rem 1rem;
+      text-align: left;
+    }
+
+    .video-lang {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .video-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.35;
+    }
+
+    .video-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      line-height: 1.4;
+    }
+
+    /* BLOC TESTEUR */
+    .tester-block {
+      padding: 1.25rem 1.75rem;
+      background: var(--surface);
+      border: 1px solid rgba(245,166,35,0.25);
+      border-radius: 10px;
+      max-width: 580px;
+      width: 100%;
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+
+    .tester-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .tester-en {
+      color: var(--muted);
+      font-size: 0.88em;
+      font-weight: 400;
+    }
+
+    .tester-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #f5a623, #c47d0a);
+      color: #12121f;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      padding: 0.7rem 1.75rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .tester-btn:hover { opacity: 0.88; transform: translateY(-2px); }
+
+    .tester-email {
+      display: block;
+      margin-top: 0.65rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .tester-email a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--gold); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .videos { grid-template-columns: 1fr; }
+      .hero { padding: 1.5rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+
+    <img class="banner" src="Presentation_1024_x_500.png" alt="Gigflow Live by Stagia" />
+
+    <div class="info-block">
+      <p class="tagline">
+        L'assistant indispensable pour gérer, chanter et jouer vos setlists en live.<br/>
+        <span class="tagline-en">The essential assistant to manage, sing and play your setlists live.</span>
+      </p>
+      <span class="badge">Android · Bientôt sur Google Play &nbsp;/&nbsp; Coming soon</span>
+    </div>
+
+    <div class="sep"></div>
+
+    <p class="videos-heading">Regardez nos vidéos &nbsp;/&nbsp; Watch our videos</p>
+
+    <div class="videos">
+
+      <a class="video-card" href="https://youtu.be/6FWz52uqa8k" target="_blank" rel="noopener">
+        <div class="thumb-wrap">
+          <img src="https://img.youtube.com/vi/6FWz52uqa8k/hqdefault.jpg" alt="Présentation GigFlow Live — Français" />
+          <div class="play-btn">
+            <div class="play-circle">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="video-info">
+          <div class="video-lang">🇫🇷 Français</div>
+          <div class="video-title">Recherche de testeurs — GigFlow Live</div>
+          <div class="video-desc">Application en cours de développement · Accès gratuit à vie pour les testeurs</div>
+        </div>
+      </a>
+
+      <a class="video-card" href="https://youtu.be/JUlDx-1w-Ys" target="_blank" rel="noopener">
+        <div class="thumb-wrap">
+          <img src="https://img.youtube.com/vi/JUlDx-1w-Ys/hqdefault.jpg" alt="GigFlow Live Beta Testers — English" />
+          <div class="play-btn">
+            <div class="play-circle">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="video-info">
+          <div class="video-lang">🇬🇧 English</div>
+          <div class="video-title">Looking for Beta Testers — GigFlow Live</div>
+          <div class="video-desc">App in development · Free lifetime access for testers</div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="tester-block">
+      <p class="tester-text">
+        Vous voulez tester l'app avant sa sortie et obtenir un accès <strong>gratuit à vie</strong> ?<br/>
+        <span class="tester-en">Want to test the app before launch and get <strong>free lifetime access</strong>?</span>
+      </p>
+      <a class="tester-btn" href="mailto:contact@stagia.app?subject=Candidature%20testeur%20GigFlow%20Live&body=Hello%2C%0D%0A%0D%0AI%20would%20like%20to%20become%20a%20beta%20tester%20for%20GigFlow%20Live.%20%2F%20Je%20souhaite%20devenir%20testeur%20de%20GigFlow%20Live.%0D%0A%0D%0AFirst%20name%20%2F%20Pr%C3%A9nom%20%3A">
+        ✉ Devenir testeur &nbsp;/&nbsp; Join the beta
+      </a>
+      <span class="tester-email">Ou écrivez-nous directement &nbsp;/&nbsp; Or contact us at <a href="mailto:contact@stagia.app">contact@stagia.app</a></span>
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 Stagia &nbsp;·&nbsp;
+    <a href="mailto:contact@stagia.app">contact@stagia.app</a>
+  </footer>
+
+</body>
+</html>
