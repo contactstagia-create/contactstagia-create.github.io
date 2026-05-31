@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#07070f">
+<link rel="manifest" href="manifest.json">
 <title>InBeat</title>
 <style>
 :root {
@@ -295,6 +298,7 @@ textarea.inp{resize:vertical;min-height:72px}
   box-shadow:0 4px 16px rgba(0,0,0,.4);animation:tin .2s ease;white-space:nowrap}
 .toast.ok{border-color:var(--green);color:var(--green)}
 .toast.err{border-color:var(--red);color:var(--red)}
+.toast.info{border-color:var(--cyan);color:var(--cyan)}
 @keyframes tin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 /* iOS zoom prevention: all inputs must be ≥16px */
 input.inp,select.inp,textarea.inp{font-size:16px!important}
@@ -425,6 +429,8 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
       <button class="btn icon" id="btn-subs" data-tip="Afficher/masquer les subdivisions">½</button>
       <button class="btn icon" id="btn-audio" data-tip="Activer/désactiver le clic">♪</button>
       <button class="btn icon" id="btn-pedal" data-tip="Mode pédale — zones tactiles gauche/droite pour naviguer">⊙</button>
+      <button class="btn icon" id="btn-fullscreen" data-tip="Plein écran">⛶</button>
+      <button class="btn icon hidden" id="btn-ios-fs" data-tip="Plein écran iOS">📲</button>
     </div>
   </div>
   <div class="beat-content" id="beat-content">
@@ -932,11 +938,11 @@ function sanitizeName(n){return(n||'inbeat').replace(/[^a-z0-9À-ɏ_\- ]/gi,'_')
 // ════════════════════════════════════════════
 //  TOAST & CONFIRM
 // ════════════════════════════════════════════
-function toast(msg,type=''){
+function toast(msg,type='',dur=2600){
   const el=document.createElement('div');
   el.className='toast'+(type?' '+type:'');el.textContent=msg;
   document.getElementById('toasts').appendChild(el);
-  setTimeout(()=>el.remove(),2600);
+  setTimeout(()=>el.remove(),dur);
 }
 function confirm(msg){
   return new Promise(res=>{
@@ -2155,6 +2161,38 @@ document.getElementById('btn-pedal').addEventListener('click',()=>{
   localStorage.setItem('inbeat_pedal',pedalMode?'1':'0');
   updatePedalUI();
 });
+const isIOS=/iP(hone|ad|od)/.test(navigator.userAgent)||
+  (navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+const isStandalone=navigator.standalone===true;
+function initFullscreenUI(){
+  const btnFs=document.getElementById('btn-fullscreen');
+  const btnIos=document.getElementById('btn-ios-fs');
+  if(isIOS){
+    btnFs.classList.add('hidden');
+    if(!isStandalone)btnIos.classList.remove('hidden');
+  }
+}
+function updateFullscreenBtn(){
+  const fs=!!(document.fullscreenElement||document.webkitFullscreenElement);
+  const btn=document.getElementById('btn-fullscreen');
+  if(btn){btn.textContent=fs?'✕':'⛶';btn.classList.toggle('active-on',fs);}
+}
+document.getElementById('btn-fullscreen').addEventListener('click',()=>{
+  if(document.fullscreenElement||document.webkitFullscreenElement){
+    (document.exitFullscreen||document.webkitExitFullscreen).call(document);
+  } else {
+    const el=document.documentElement;
+    (el.requestFullscreen||el.webkitRequestFullscreen).call(el).catch(()=>{});
+  }
+});
+document.getElementById('btn-ios-fs').addEventListener('click',()=>{
+  const msg=lang==='fr'
+    ?"📲 Plein écran iOS : Partager  ↑  → « Sur l'écran d'accueil »"
+    :"📲 iOS fullscreen: Share  ↑  → « Add to Home Screen »";
+  toast(msg,'info',4000);
+});
+document.addEventListener('fullscreenchange',updateFullscreenBtn);
+document.addEventListener('webkitfullscreenchange',updateFullscreenBtn);
 document.getElementById('pedal-prev').addEventListener('click',()=>{
   document.getElementById('btn-prev-song').click();
 });
@@ -2172,7 +2210,7 @@ document.getElementById('btn-intro-ok').addEventListener('click',()=>{
   document.getElementById('intro-overlay').classList.add('hidden');
 });
 
-loadPrefs();applyTheme();loadSetlists();loadLibrary();
+loadPrefs();applyTheme();initFullscreenUI();loadSetlists();loadLibrary();
 if(!STATE.setlists.length){try{STATE.setlists=JSON.parse(`[{"id":1777400000001,"name":"Demo Gig - InBeat","venue":"Salle des fetes","date":"2026-06-01","notes":"Sample setlist with 7 songs showing different tempos and time signatures. Delete when ready.","songs":[{"id":1777300000001,"title":"GROOVE LENT","artist":"Demo Band","key":"Am","time":"4/4","tempo":72,"duration":195,"notes":""},{"id":1777300000002,"title":"ROCK STANDARD","artist":"Demo Band","key":"E","time":"4/4","tempo":112,"duration":214,"notes":""},{"id":1777300000003,"title":"TEMPO RAPIDE","artist":"Demo Band","key":"D","time":"4/4","tempo":138,"duration":182,"notes":""},{"id":1777300000004,"title":"VALSE DEMO","artist":"Demo Band","key":"G","time":"3/4","tempo":108,"duration":170,"notes":""},{"id":1777300000005,"title":"BALLADE 6/8","artist":"Demo Band","key":"C","time":"6/8","tempo":63,"duration":220,"notes":""},{"id":1777300000006,"title":"MID TEMPO FUNK","artist":"Demo Band","key":"Gm","time":"4/4","tempo":96,"duration":230,"notes":""},{"id":1777300000007,"title":"FINAL RAPIDE","artist":"Demo Band","key":"A","time":"4/4","tempo":158,"duration":165,"notes":""}]}]`);saveSetlists();}catch(e){}}
 if(!STATE.library.length){try{STATE.library=JSON.parse(`[{"id":1777300000001,"title":"GROOVE LENT","artist":"Demo Band","key":"Am","time":"4/4","tempo":72,"duration":195,"notes":""},{"id":1777300000002,"title":"ROCK STANDARD","artist":"Demo Band","key":"E","time":"4/4","tempo":112,"duration":214,"notes":""},{"id":1777300000003,"title":"TEMPO RAPIDE","artist":"Demo Band","key":"D","time":"4/4","tempo":138,"duration":182,"notes":""},{"id":1777300000004,"title":"VALSE DEMO","artist":"Demo Band","key":"G","time":"3/4","tempo":108,"duration":170,"notes":""},{"id":1777300000005,"title":"BALLADE 6/8","artist":"Demo Band","key":"C","time":"6/8","tempo":63,"duration":220,"notes":""},{"id":1777300000006,"title":"MID TEMPO FUNK","artist":"Demo Band","key":"Gm","time":"4/4","tempo":96,"duration":230,"notes":""},{"id":1777300000007,"title":"FINAL RAPIDE","artist":"Demo Band","key":"A","time":"4/4","tempo":158,"duration":165,"notes":""}]`);saveLibrary();}catch(e){}}
 syncLibraryFromSetlists();
