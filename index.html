@@ -1,381 +1,544 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!-- @startingPoint section="Marketing" subtitle="Home stagia.app — hero, 3 produits, valeurs, footer (visuel aligné logo)" viewport="1280x3680" -->
+<!doctype html>
+<html lang="fr" data-product="live">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gigflow Live by Stagia — Your Music Manager</title>
-  <meta name="description" content="L'assistant indispensable pour gérer, chanter et jouer vos setlists en live." />
-  <link rel="icon" type="image/png" href="Logo_512.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stagia — Libère-toi du papier. Concentre-toi sur la musique.</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg-app);
+    color: var(--fg-1);
+    font-family: var(--font-ui);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
 
-    :root {
-      --bg: #12121f;
-      --surface: #1a1a2e;
-      --border: #2a2a42;
-      --gold: #f5a623;
-      --gold-dark: #c47d0a;
-      --gold-dim: rgba(245,166,35,0.15);
-      --white: #f0ede8;
-      --muted: #7070a0;
-    }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--brand-amber-300);
+    margin: 0;
+  }
+  .section-eyebrow { color: var(--fg-3); }
 
-    html { scroll-behavior: smooth; }
+  /* ---------------- NAV ---------------- */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: color-mix(in srgb, var(--bg-app) 86%, transparent);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .nav-inner {
+    max-width: 1120px; margin: 0 auto; padding: 14px 32px;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  }
+  .brand { display: flex; align-items: center; gap: 13px; }
+  .brand img { width: 44px; height: 44px; }
+  .brand .name {
+    font-family: var(--font-display); font-weight: 900; font-size: 22px;
+    letter-spacing: -0.01em;
+  }
+  .nav-links { display: flex; align-items: center; gap: 30px; }
+  .nav-links a {
+    font-size: 14px; font-weight: 600; color: var(--fg-2);
+    transition: color 120ms ease;
+  }
+  .nav-links a:hover { color: var(--fg-1); }
+  .nav-cta {
+    font-family: var(--font-display); font-weight: 700; font-size: 14px;
+    background: var(--brand-amber-300); color: var(--fg-invert);
+    padding: 9px 18px; border-radius: var(--r-md);
+    transition: background 120ms ease, transform 80ms ease;
+  }
+  .nav-cta:hover { background: var(--brand-amber-200); }
+  .nav-cta:active { transform: scale(0.97); }
 
-    body {
-      background: var(--bg);
-      color: var(--white);
-      font-family: 'Nunito', sans-serif;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
+  /* ---------------- HERO ---------------- */
+  .hero { position: relative; padding: 96px 0 84px; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; z-index: 0;
+    top: -180px; right: -120px; width: 760px; height: 760px;
+    background: radial-gradient(circle, rgba(245,194,95,0.16) 0%, rgba(245,194,95,0.05) 38%, transparent 68%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: relative; z-index: 1;
+    display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center;
+  }
+  .hero h1 {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(40px, 5vw, 60px); line-height: 1.04; letter-spacing: -0.025em;
+    margin: 20px 0 0; text-wrap: balance;
+  }
+  .hero h1 .accent { color: var(--brand-amber-300); }
+  .hero .sub {
+    font-size: 19px; line-height: 1.55; color: var(--fg-2);
+    margin: 22px 0 0; max-width: 30em;
+  }
+  .hero .echo {
+    font-size: 14px; color: var(--fg-3); margin: 12px 0 0; font-style: italic;
+  }
+  .hero-actions { display: flex; align-items: center; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
+  .btn-primary {
+    font-family: var(--font-display); font-weight: 800; font-size: 16px;
+    background: var(--brand-amber-300); color: var(--fg-invert);
+    padding: 14px 26px; border-radius: var(--r-md); border: none; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 9px;
+    transition: background 120ms ease, transform 80ms ease, box-shadow 160ms ease;
+  }
+  .btn-primary:hover { background: var(--brand-amber-200); box-shadow: var(--shadow-amber-glow); }
+  .btn-primary:active { transform: scale(0.97); }
+  .btn-secondary {
+    font-family: var(--font-display); font-weight: 700; font-size: 16px;
+    background: transparent; color: var(--fg-1);
+    padding: 14px 22px; border-radius: var(--r-md);
+    border: 1px solid var(--border-strong); cursor: pointer;
+    display: inline-flex; align-items: center; gap: 9px;
+    transition: background 120ms ease, border-color 120ms ease;
+  }
+  .btn-secondary:hover { background: var(--bg-surface-1); border-color: var(--fg-3); }
+  .status-chips { display: flex; gap: 10px; margin-top: 26px; flex-wrap: wrap; }
+  .chip {
+    font-family: var(--font-mono); font-size: 12px; color: var(--fg-2);
+    background: var(--bg-surface-1); border: 1px solid var(--border-subtle);
+    padding: 7px 13px; border-radius: var(--r-pill); display: inline-flex; align-items: center; gap: 8px;
+  }
+  .chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-green); box-shadow: 0 0 8px var(--accent-green); }
+  .chip .dot.amber { background: var(--brand-amber-300); box-shadow: 0 0 8px var(--brand-amber-300); }
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1.5rem;
-      gap: 1rem;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-    }
+  /* device */
+  .device-wrap { display: flex; justify-content: center; }
+  .phone {
+    width: 290px; border-radius: 34px; padding: 11px;
+    background: linear-gradient(160deg, #211D2F, #100D1B);
+    border: 1px solid var(--border-default);
+    box-shadow: var(--shadow-lg), 0 0 70px rgba(245,194,95,0.10);
+  }
+  .phone .screen { border-radius: 24px; overflow: hidden; border: 1px solid rgba(0,0,0,0.5); }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -60%);
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(245,166,35,0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
+  /* ---------------- VALUES ---------------- */
+  section.block { padding: 78px 0; }
+  .block-head { max-width: 640px; }
+  .block-head h2 {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(28px, 3.4vw, 38px); line-height: 1.1; letter-spacing: -0.02em; margin: 14px 0 0;
+  }
+  .block-head p { font-size: 17px; color: var(--fg-2); margin: 16px 0 0; line-height: 1.55; }
 
-    /* BANNIERE */
-    .banner {
-      width: 100%;
-      max-width: 453px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      animation: fadeUp 0.8s ease both;
-    }
+  .values { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; }
+  .value { padding: 4px; }
+  .value .ic {
+    width: 46px; height: 46px; border-radius: var(--r-md);
+    display: flex; align-items: center; justify-content: center;
+    background: var(--product-tint); color: var(--brand-amber-300); margin-bottom: 18px;
+  }
+  .value h3 { font-family: var(--font-display); font-weight: 800; font-size: 17px; margin: 0 0 8px; }
+  .value p { font-size: 14px; color: var(--fg-3); line-height: 1.55; margin: 0; }
 
-    /* BLOC INFO (tagline + badge) */
-    .info-block {
-      padding: 1.25rem 1.75rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      max-width: 580px;
-      width: 100%;
-      animation: fadeUp 0.8s 0.1s ease both;
-    }
+  /* ---------------- PRODUCTS ---------------- */
+  .products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 48px; }
+  .pcard {
+    position: relative; background: var(--bg-surface-1);
+    border: 1px solid var(--border-subtle); border-radius: var(--r-xl);
+    overflow: hidden; display: flex; flex-direction: column;
+    transition: border-color 160ms ease, transform 160ms ease;
+  }
+  .pcard:hover { transform: translateY(-4px); border-color: var(--border-default); }
+  .pcard .strip { height: 4px; width: 100%; background: var(--p-strip); }
+  .pcard .shot { background: var(--bg-stage); padding: 22px 22px 0; display: flex; justify-content: center; }
+  .pcard .shot img { border-radius: 12px 12px 0 0; border: 1px solid var(--border-subtle); border-bottom: none; box-shadow: var(--shadow-md); max-height: 230px; width: auto; }
+  .pcard .body { padding: 24px 24px 26px; display: flex; flex-direction: column; flex: 1; }
+  .pcard .label {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--p-hue); margin: 0 0 8px;
+  }
+  .pcard h3 { font-family: var(--font-display); font-weight: 900; font-size: 22px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .pcard .tag { font-size: 14.5px; color: var(--fg-1); font-weight: 600; margin: 0 0 12px; }
+  .pcard .desc { font-size: 14px; color: var(--fg-3); line-height: 1.55; margin: 0 0 22px; flex: 1; }
+  .pcard .more {
+    font-family: var(--font-display); font-weight: 800; font-size: 14px; color: var(--p-hue);
+    display: inline-flex; align-items: center; gap: 6px; align-self: flex-start;
+    transition: gap 140ms ease;
+  }
+  .pcard:hover .more { gap: 11px; }
+  .pcard.live   { --p-strip: linear-gradient(90deg,#F9D77A,#F5C25F); --p-hue: var(--brand-amber-300); }
+  .pcard.inbeat { --p-strip: linear-gradient(90deg,#7FD8D3,#2EB5AE); --p-hue: var(--inbeat-teal-300); }
+  .pcard.editor { --p-strip: linear-gradient(90deg,#F26A86,#E94560); --p-hue: var(--brand-pink-300); }
+  .pcard .free { font-family: var(--font-mono); font-size: 11px; color: var(--fg-4); margin-top: 14px; }
 
-    .tagline {
-      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-      font-weight: 600;
-      color: var(--white);
-      line-height: 1.6;
-      margin-bottom: 0.85rem;
-    }
+  /* ---------------- SIGNATURE BAND ---------------- */
+  .signature { background: var(--bg-stage); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+  .sig-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: center; padding: 78px 0; }
+  .sig-text h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(26px,3vw,34px); line-height: 1.12; letter-spacing: -0.02em; margin: 14px 0 0; }
+  .sig-text p { font-size: 16px; color: var(--fg-2); line-height: 1.6; margin: 16px 0 0; }
+  .pills { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 22px; }
+  .pill {
+    font-family: var(--font-display); font-weight: 800; font-size: 13px;
+    padding: 6px 14px; border-radius: var(--r-pill); color: #0C0A18;
+  }
+  .pill.ghost { background: transparent; border: 1px solid currentColor; }
+  .sheet {
+    background: var(--bg-stage); border: 1px solid var(--border-subtle);
+    border-radius: var(--r-lg); padding: 16px; font-family: var(--font-mono); font-size: 14px;
+    box-shadow: var(--shadow-md); overflow-x: auto;
+  }
+  .lsec {
+    background: var(--bg-surface-1); border-radius: 10px;
+    border-left: 4px solid var(--sec); padding: 13px 16px 14px; margin-bottom: 12px;
+  }
+  .lsec:last-child { margin-bottom: 0; }
+  .lsec .barlabel {
+    display: inline-block; font-family: var(--font-display); font-weight: 800; font-size: 11px;
+    padding: 2px 10px; border-radius: var(--r-pill); color: #0C0A18; background: var(--sec); margin-bottom: 9px;
+  }
+  .lsec .crow { font-weight: 700; white-space: pre; line-height: 1.25; }
+  .lsec .lrow { white-space: pre; line-height: 1.45; margin-bottom: 9px; }
+  .lsec .lrow:last-child { margin-bottom: 0; }
+  .lsec .lrow span { transition: color 550ms ease; }
+  /* white-text toggle: users can switch lyrics to plain white */
+  .sheet.plain .lrow span { color: var(--fg-1) !important; }
 
-    .tagline-en {
-      color: var(--muted);
-      font-size: 0.88em;
-      font-weight: 400;
-    }
+  .sig-toggle { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .sig-toggle .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-3); }
+  .sig-toggle .state { font-family: var(--font-mono); font-size: 11px; color: var(--fg-4); margin-left: auto; }
+  .switch {
+    position: relative; width: 46px; height: 26px; border-radius: var(--r-pill); cursor: pointer;
+    border: 1px solid var(--border-default); background: var(--bg-surface-2);
+    transition: background 300ms ease, border-color 300ms ease; padding: 0;
+  }
+  .switch[aria-pressed="true"] { background: var(--brand-amber-300); border-color: var(--brand-amber-300); }
+  .switch .knob {
+    position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%;
+    background: #fff; box-shadow: var(--shadow-sm); transition: transform 300ms cubic-bezier(.4,1.3,.5,1);
+  }
+  .switch[aria-pressed="true"] .knob { transform: translateX(20px); }
 
-    .badge {
-      display: inline-block;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid rgba(245,166,35,0.35);
-      background: var(--gold-dim);
-      padding: 0.3rem 0.9rem;
-      border-radius: 20px;
-    }
+  /* ---------------- FINAL CTA ---------------- */
+  .final { position: relative; text-align: center; padding: 104px 0; overflow: hidden; }
+  .final::before {
+    content: ""; position: absolute; inset: 0; z-index: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 120%, rgba(245,194,95,0.14), transparent 70%);
+  }
+  .final-inner { position: relative; z-index: 1; }
+  .final h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(32px,4.4vw,52px); line-height: 1.05; letter-spacing: -0.025em; margin: 0; text-wrap: balance; }
+  .final p { font-size: 18px; color: var(--fg-2); margin: 20px 0 0; }
+  .final .hero-actions { justify-content: center; }
 
-    /* SEPARATEUR */
-    .sep {
-      width: 40px;
-      height: 3px;
-      background: linear-gradient(90deg, #f5a623, #e8870a);
-      border-radius: 2px;
-      animation: fadeUp 0.8s 0.2s ease both;
-    }
+  /* ---------------- FOOTER ---------------- */
+  footer { border-top: 1px solid var(--border-subtle); padding: 64px 0 40px; }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
+  .foot-brand .brand { margin-bottom: 16px; }
+  .foot-brand p { font-size: 14px; color: var(--fg-3); line-height: 1.6; max-width: 26em; }
+  .foot-col h4 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-4); margin: 0 0 18px; font-weight: 500; }
+  .foot-col a { display: block; font-size: 14px; color: var(--fg-2); margin-bottom: 12px; transition: color 120ms ease; }
+  .foot-col a:hover { color: var(--brand-amber-300); }
+  .foot-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border-subtle); flex-wrap: wrap; gap: 14px; }
+  .foot-bottom span { font-family: var(--font-mono); font-size: 12px; color: var(--fg-4); }
 
-    /* TITRE VIDEOS */
-    .videos-heading {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
-      animation: fadeUp 0.8s 0.25s ease both;
-    }
-
-    /* GRILLE VIDEOS */
-    .videos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.25rem;
-      width: 100%;
-      max-width: 760px;
-      animation: fadeUp 0.8s 0.3s ease both;
-    }
-
-    .video-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-      text-decoration: none;
-      display: block;
-      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
-    }
-
-    .video-card:hover {
-      border-color: rgba(245,166,35,0.5);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(245,166,35,0.08);
-    }
-
-    .thumb-wrap {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: #0e0e1a;
-      overflow: hidden;
-    }
-
-    .thumb-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s;
-    }
-
-    .video-card:hover .thumb-wrap img { transform: scale(1.03); }
-
-    .play-btn {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(18,18,31,0.35);
-      transition: background 0.2s;
-    }
-
-    .video-card:hover .play-btn { background: rgba(18,18,31,0.15); }
-
-    .play-circle {
-      width: 52px;
-      height: 52px;
-      background: linear-gradient(135deg, #f5a623, #c47d0a);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(245,166,35,0.4);
-      transition: transform 0.2s;
-    }
-
-    .video-card:hover .play-circle { transform: scale(1.12); }
-
-    .play-circle svg {
-      width: 20px;
-      height: 20px;
-      fill: #12121f;
-      margin-left: 3px;
-    }
-
-    .video-info {
-      padding: 0.85rem 1.1rem 1rem;
-      text-align: left;
-    }
-
-    .video-lang {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.3rem;
-    }
-
-    .video-title {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.35;
-    }
-
-    .video-desc {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 0.25rem;
-      line-height: 1.4;
-    }
-
-    /* BLOC TESTEUR */
-    .tester-block {
-      padding: 1.25rem 1.75rem;
-      background: var(--surface);
-      border: 1px solid rgba(245,166,35,0.25);
-      border-radius: 10px;
-      max-width: 580px;
-      width: 100%;
-      animation: fadeUp 0.8s 0.4s ease both;
-    }
-
-    .tester-text {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--white);
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-
-    .tester-en {
-      color: var(--muted);
-      font-size: 0.88em;
-      font-weight: 400;
-    }
-
-    .tester-btn {
-      display: inline-block;
-      background: linear-gradient(135deg, #f5a623, #c47d0a);
-      color: #12121f;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 800;
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
-      padding: 0.7rem 1.75rem;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: opacity 0.2s, transform 0.2s;
-    }
-
-    .tester-btn:hover { opacity: 0.88; transform: translateY(-2px); }
-
-    .tester-email {
-      display: block;
-      margin-top: 0.65rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    .tester-email a {
-      color: var(--gold);
-      text-decoration: none;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.75rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-    }
-
-    footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    footer a:hover { color: var(--gold); }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 480px) {
-      .videos { grid-template-columns: 1fr; }
-      .hero { padding: 1.5rem 1rem; }
-    }
-  </style>
+  /* ---------------- RESPONSIVE ---------------- */
+  @media (max-width: 940px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .device-wrap { order: -1; }
+    .values { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
+    .products { grid-template-columns: 1fr; }
+    .sig-grid { grid-template-columns: 1fr; gap: 36px; }
+    .foot-grid { grid-template-columns: 1fr 1fr; gap: 36px 24px; }
+  }
+  @media (max-width: 600px) {
+    .wrap, .nav-inner { padding-left: 22px; padding-right: 22px; }
+    .brand img { width: 32px; height: 32px; }
+    .brand .name { font-size: 19px; }
+    .nav-links { display: none; }
+    .values { grid-template-columns: 1fr; }
+    .foot-grid { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
 
-  <section class="hero">
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#0C0A18"/>
+    <text x="50" y="62" font-family="Mulish, sans-serif" font-size="40" font-weight="800" fill="#F5C25F" text-anchor="middle">S</text>
+  </svg>
+</template>
 
-    <img class="banner" src="Presentation_1024_x_500.png" alt="Gigflow Live by Stagia" />
-
-    <div class="info-block">
-      <p class="tagline">
-        L'assistant indispensable pour gérer, chanter et jouer vos setlists en live.<br/>
-        <span class="tagline-en">The essential assistant to manage, sing and play your setlists live.</span>
-      </p>
-      <span class="badge">Android · Bientôt sur Google Play &nbsp;/&nbsp; Coming soon</span>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <img src="assets/stagia-logo-watermark.png" alt="Stagia">
+      <span class="name">Stagia</span>
+    </a>
+    <div class="nav-links">
+      <a href="GigFlow Live.html">GigFlow Live</a>
+      <a href="InBeat.html">InBeat</a>
+      <a href="GigFlow Editor.html">GigFlow Editor</a>
+      <a href="#pourquoi">Pourquoi Stagia</a>
     </div>
+    <a class="nav-cta" href="#produits">Découvrir les apps</a>
+  </div>
+</nav>
 
-    <div class="sep"></div>
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Les outils de scène des chanteurs &amp; musiciens</p>
+      <h1>Libère-toi du papier.<br><span class="accent">Concentre-toi sur la musique.</span></h1>
+      <p class="sub">Des applications simples, fiables et autonomes — conçues pour la scène, par des musiciens pour les musiciens. Sans connexion. Sans abonnement. Sans friction.</p>
+      <div class="hero-actions">
+        <button class="btn-primary"><i data-lucide="compass"></i> Découvrir les apps</button>
+        <button class="btn-secondary"><i data-lucide="play"></i> Regarder la vidéo</button>
+      </div>
+      <div class="status-chips">
+        <span class="chip"><span class="dot"></span> 100 % offline</span>
+        <span class="chip"><span class="dot amber"></span> Android · bientôt sur Google Play</span>
+        <span class="chip">Sans abonnement</span>
+      </div>
+    </div>
+    <div class="device-wrap">
+      <div class="phone">
+        <div class="screen"><img src="assets/screens/gigflow-live-stage.png" alt="GigFlow Live — Mode scène"></div>
+      </div>
+    </div>
+  </div>
+</header>
 
-    <p class="videos-heading">Regardez nos vidéos &nbsp;/&nbsp; Watch our videos</p>
+<!-- PRODUCTS -->
+<section class="block" id="produits">
+  <div class="wrap">
+    <div class="block-head">
+      <p class="eyebrow section-eyebrow">L'écosystème</p>
+      <h2>Trois outils. Un même groupe.</h2>
+      <p>Le chanteur, le batteur, la préparation à la maison. Chaque musicien a son outil — tous parlent le même format Stagia, tous fonctionnent hors ligne.</p>
+    </div>
+    <div class="products">
 
-    <div class="videos">
-
-      <a class="video-card" href="https://youtu.be/6FWz52uqa8k" target="_blank" rel="noopener">
-        <div class="thumb-wrap">
-          <img src="https://img.youtube.com/vi/6FWz52uqa8k/hqdefault.jpg" alt="Présentation GigFlow Live — Français" />
-          <div class="play-btn">
-            <div class="play-circle">
-              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-            </div>
-          </div>
+      <article class="pcard live" id="gigflow">
+        <div class="strip"></div>
+        <div class="shot"><img src="assets/screens/gigflow-live-stage.png" alt="GigFlow Live"></div>
+        <div class="body">
+          <p class="label">GigFlow Live · Android</p>
+          <h3>GigFlow Live</h3>
+          <p class="tag">Tes textes, tes accords, ta setlist. Sur scène, les mains libres.</p>
+          <p class="desc">Affiche accords et paroles, navigue à la pédale, suis ta setlist en temps réel. Chaque accord a sa couleur, chaque section son repère.</p>
+          <a class="more" href="GigFlow Live.html">Découvrir <i data-lucide="arrow-right"></i></a>
+          <p class="free">Gratuit pour commencer · illimité après achat unique</p>
         </div>
-        <div class="video-info">
-          <div class="video-lang">🇫🇷 Français</div>
-          <div class="video-title">Recherche de testeurs — GigFlow Live</div>
-          <div class="video-desc">Application en cours de développement · Accès gratuit à vie pour les testeurs</div>
-        </div>
-      </a>
+      </article>
 
-      <a class="video-card" href="https://youtu.be/JUlDx-1w-Ys" target="_blank" rel="noopener">
-        <div class="thumb-wrap">
-          <img src="https://img.youtube.com/vi/JUlDx-1w-Ys/hqdefault.jpg" alt="GigFlow Live Beta Testers — English" />
-          <div class="play-btn">
-            <div class="play-circle">
-              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-            </div>
-          </div>
+      <article class="pcard inbeat" id="inbeat">
+        <div class="strip"></div>
+        <div class="shot"><img src="assets/screens/inbeat-live.png" alt="InBeat"></div>
+        <div class="body">
+          <p class="label">InBeat · Android</p>
+          <h3>InBeat</h3>
+          <p class="tag">Le bon tempo, au bon moment. Toujours.</p>
+          <p class="desc">Le tempo et la structure rythmique de ta setlist, plein écran. Un swipe ou via ta pédale et le titre suivant charge son BPM. Plus de réglage sur ton métronome entre deux morceaux.</p>
+          <a class="more" href="InBeat.html">Découvrir <i data-lucide="arrow-right"></i></a>
+          <p class="free">Gratuit, sans limite, sans abonnement</p>
         </div>
-        <div class="video-info">
-          <div class="video-lang">🇬🇧 English</div>
-          <div class="video-title">Looking for Beta Testers — GigFlow Live</div>
-          <div class="video-desc">App in development · Free lifetime access for testers</div>
+      </article>
+
+      <article class="pcard editor" id="editor">
+        <div class="strip"></div>
+        <div class="shot"><img src="assets/screens/editor-edit.png" alt="GigFlow Editor"></div>
+        <div class="body">
+          <p class="label">GigFlow Editor · PC / Mac</p>
+          <h3>GigFlow Editor</h3>
+          <p class="tag">Prépare tout sur grand écran. Monte sur scène sans y penser.</p>
+          <p class="desc">Clavier, souris, grand écran. Saisis tes chansons en syntaxe Stagia, transpose, ajoute tes diagrammes, puis exporte vers GigFlow Live et InBeat.</p>
+          <a class="more" href="GigFlow Editor.html">Découvrir <i data-lucide="arrow-right"></i></a>
+          <p class="free">Application PC ou accès direct navigateur</p>
         </div>
-      </a>
+      </article>
 
     </div>
+  </div>
+</section>
 
-    <div class="tester-block">
-      <p class="tester-text">
-        Vous voulez tester l'app avant sa sortie et obtenir un accès <strong>gratuit à vie</strong> ?<br/>
-        <span class="tester-en">Want to test the app before launch and get <strong>free lifetime access</strong>?</span>
-      </p>
-      <a class="tester-btn" href="mailto:contact@stagia.app?subject=Candidature%20testeur%20GigFlow%20Live&body=Hello%2C%0D%0A%0D%0AI%20would%20like%20to%20become%20a%20beta%20tester%20for%20GigFlow%20Live.%20%2F%20Je%20souhaite%20devenir%20testeur%20de%20GigFlow%20Live.%0D%0A%0D%0AFirst%20name%20%2F%20Pr%C3%A9nom%20%3A">
-        ✉ Devenir testeur &nbsp;/&nbsp; Join the beta
-      </a>
-      <span class="tester-email">Ou écrivez-nous directement &nbsp;/&nbsp; Or contact us at <a href="mailto:contact@stagia.app">contact@stagia.app</a></span>
+<!-- SIGNATURE -->
+<section class="signature">
+  <div class="wrap sig-grid">
+    <div class="sig-text">
+      <p class="eyebrow section-eyebrow">La signature GigFlow</p>
+      <h2>Chaque accord a sa couleur. Chaque section, son repère.</h2>
+      <p>Un bandeau de pills colorées en haut de l'écran représente chaque partie du morceau. Un tap pour sauter à l'intro, au refrain, au pont — sans perdre le fil. Les sections ne sont jamais coupées entre deux pages.</p>
+      <p>Lisible à 50 cm comme à un mètre, en répétition comme sous le soleil. Sombre par défaut, clair et plein soleil quand la scène l'exige. La coloration des paroles par accord — comme beaucoup d'autres réglages — s'active ou se désactive librement selon tes préférences.</p>
     </div>
+    <div class="sig-card">
+      <div class="sig-toggle">
+        <span class="lbl">Couleur des paroles</span>
+        <button class="switch" id="lyricSwitch" aria-pressed="true" aria-label="Activer la couleur des paroles"><span class="knob"></span></button>
+        <span class="state" id="lyricState">Colorées</span>
+      </div>
+      <div class="pills">
+        <span class="pill" style="background:var(--hue-rose)">intro</span>
+        <span class="pill" style="background:var(--hue-blue)">verse</span>
+        <span class="pill" style="background:var(--hue-orange)">verse 2</span>
+        <span class="pill" style="background:var(--hue-green)">chorus</span>
+        <span class="pill ghost" style="color:var(--hue-teal)">bridge</span>
+        <span class="pill ghost" style="color:var(--hue-amber)">solo</span>
+        <span class="pill ghost" style="color:var(--hue-rose)">outro</span>
+      </div>
+      <div class="sheet">
+        <div class="lsec" style="--sec:var(--hue-rose)">
+          <span class="barlabel">intro</span>
+          <div class="crow"><span style="color:var(--hue-rose)">A</span>   <span style="color:var(--hue-blue)">E</span>   <span style="color:var(--hue-rose)">A</span>   <span style="color:var(--hue-amber)">Em</span></div>
+        </div>
+        <div class="lsec" style="--sec:var(--hue-blue)">
+          <span class="barlabel">verse</span>
+          <div class="crow"><span style="color:var(--hue-rose)">A</span>                   <span style="color:var(--hue-green)">F</span></div>
+          <div class="lrow"><span style="color:var(--hue-rose)">Ceci est le couplet </span><span style="color:var(--hue-green)">N°1 ligne 1</span></div>
+          <div class="crow"><span style="color:var(--hue-rose)">A</span>                   <span style="color:var(--hue-green)">F</span></div>
+          <div class="lrow"><span style="color:var(--hue-rose)">Ceci est le couplet </span><span style="color:var(--hue-green)">N°1 ligne 2</span></div>
+        </div>
+        <div class="lsec" style="--sec:var(--hue-green)">
+          <span class="barlabel">chorus</span>
+          <div class="crow"><span style="color:var(--hue-green)">F</span>               <span style="color:var(--hue-rose)">A</span></div>
+          <div class="lrow"><span style="color:var(--hue-green)">Le beau chorus, </span><span style="color:var(--hue-rose)">le plus beau des chorus</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  </section>
+<!-- VALUES -->
+<section class="block" id="pourquoi">
+  <div class="wrap">
+    <div class="block-head">
+      <p class="eyebrow section-eyebrow">Pourquoi Stagia</p>
+      <h2>Pensé pour la scène. Rien de superflu.</h2>
+    </div>
+    <div class="values">
+      <div class="value">
+        <div class="ic"><i data-lucide="wifi-off"></i></div>
+        <h3>100 % offline</h3>
+        <p>Aucune connexion requise. Sur scène, en répétition, partout. Tes données restent chez toi — aucun cloud, aucun compte.</p>
+      </div>
+      <div class="value">
+        <div class="ic"><i data-lucide="badge-check"></i></div>
+        <h3>Sans abonnement</h3>
+        <p>GigFlow Live en achat unique, à prix bas. InBeat et Editor gratuits. Pas de surprise, pas de prélèvement mensuel.</p>
+      </div>
+      <div class="value">
+        <div class="ic"><i data-lucide="music-4"></i></div>
+        <h3>Par des musiciens</h3>
+        <p>Des applications conçues par des musiciens, pour les musiciens. Quel que soit ton style, elles fluidifient et subliment ton jeu sur scène.</p>
+      </div>
+      <div class="value">
+        <div class="ic"><i data-lucide="shield-check"></i></div>
+        <h3>Simple et fiable</h3>
+        <p>Pas de friction, pas de compte, pas de surprise. Des boutons larges, une lecture nette, des outils qui ne te lâchent pas.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    © 2026 Stagia &nbsp;·&nbsp;
-    <a href="mailto:contact@stagia.app">contact@stagia.app</a>
-  </footer>
+<!-- FINAL CTA -->
+<section class="final" id="produits-cta">
+  <div class="wrap final-inner">
+    <p class="eyebrow">Android · bientôt sur Google Play</p>
+    <h2>Prêt à monter sur scène ?</h2>
+    <p>Prépare ta setlist, oublie le papier, et garde les yeux sur ton public.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="GigFlow Live.html"><i data-lucide="compass"></i> Découvrir GigFlow Live</a>
+      <button class="btn-secondary"><i data-lucide="play-circle"></i> Regarder la vidéo</button>
+    </div>
+  </div>
+</section>
 
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top">
+          <img src="assets/stagia-logo-watermark.png" alt="Stagia" style="width:30px;height:30px">
+          <span class="name" style="font-family:var(--font-display);font-weight:900;font-size:19px">Stagia</span>
+        </a>
+        <p>Des outils numériques pour musiciens — pose le papier, garde la musique. Conçus pour la scène, la répétition et l'organisation.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Produits</h4>
+        <a href="GigFlow Live.html">GigFlow Live →</a>
+        <a href="InBeat.html">InBeat →</a>
+        <a href="GigFlow Editor.html">GigFlow Editor →</a>
+      </div>
+      <div class="foot-col">
+        <h4>Ressources</h4>
+        <a href="#">Aide & tutoriels →</a>
+        <a href="mailto:contact@stagia.app">Contact →</a>
+        <a href="#">Mentions légales →</a>
+        <a href="#">Confidentialité →</a>
+      </div>
+      <div class="foot-col">
+        <h4>Suivre</h4>
+        <a href="#">YouTube →</a>
+        <a href="mailto:contact@stagia.app">contact@stagia.app</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Stagia · Par des musiciens, pour les musiciens.</span>
+      <span>contact@stagia.app</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>lucide.createIcons();</script>
+<script>
+(function () {
+  var sheet = document.querySelector('.signature .sheet');
+  var sw = document.getElementById('lyricSwitch');
+  var state = document.getElementById('lyricState');
+  if (!sheet || !sw) return;
+
+  function apply(colored) {
+    sheet.classList.toggle('plain', !colored);
+    sw.setAttribute('aria-pressed', colored ? 'true' : 'false');
+    state.textContent = colored ? 'Colorées' : 'Blanches';
+  }
+
+  var colored = true;
+  var auto = true;
+  var timer = null;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function cycle() { colored = !colored; apply(colored); }
+
+  function start() {
+    if (reduce || !auto || timer) return;
+    timer = setInterval(cycle, 2600);
+  }
+  function stop() { clearInterval(timer); timer = null; }
+
+  // Manual click: flip now, then let the auto-loop resume from there.
+  sw.addEventListener('click', function () {
+    colored = !colored; apply(colored);
+    stop(); start();
+  });
+
+  // Only auto-animate while the band is on screen.
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.isIntersecting ? start() : stop(); });
+    }, { threshold: 0.35 }).observe(document.querySelector('.signature'));
+  } else {
+    start();
+  }
+})();
+</script>
 </body>
 </html>

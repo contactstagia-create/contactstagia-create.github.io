@@ -1,0 +1,269 @@
+<!-- @startingPoint section="Marketing" subtitle="Page produit GigFlow Editor — hero PC, 5 features, Stagia Format, workflow d'export" viewport="1280x3900" -->
+<!doctype html>
+<html lang="fr" data-product="editor">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GigFlow Editor — Prépare tout sur grand écran.</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="product.css">
+<style>
+  /* Editor hero canvas: portrait app shot centred in a desktop window */
+  .browser .canvas { background: var(--bg-stage); padding: 20px; display: flex; justify-content: center; }
+  .browser .canvas img { max-height: 420px; width: auto; border-radius: 8px; border: 1px solid var(--border-subtle); }
+
+  /* tool chips mock */
+  .tools { width: 100%; max-width: 380px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .tool {
+    font-family: var(--font-mono); font-size: 13px; color: var(--fg-2);
+    background: var(--bg-surface-1); border: 1px solid var(--border-default);
+    border-radius: var(--r-md); padding: 9px 13px; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .tool i { width: 15px; height: 15px; color: var(--product-primary); }
+  .tool b { color: var(--product-primary); font-weight: 700; }
+
+  /* export workflow mock */
+  .flow { width: 100%; max-width: 380px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .node {
+    width: 100%; display: flex; align-items: center; gap: 12px; justify-content: center;
+    background: var(--bg-surface-1); border: 1px solid var(--border-subtle);
+    border-radius: var(--r-lg); padding: 16px 18px;
+    font-family: var(--font-display); font-weight: 800; font-size: 16px;
+  }
+  .node .badge { width: 30px; height: 30px; border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; }
+  .node .badge i { width: 17px; height: 17px; color: #0C0A18; }
+  .node.editor .badge { background: var(--brand-pink-500); } .node.editor .badge i { color: #fff; }
+  .node .json { margin-left: auto; font-family: var(--font-mono); font-size: 11px; color: var(--fg-4); }
+  .flow .down { color: var(--fg-4); display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; }
+  .flow .targets { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; }
+  .flow .targets .node { font-size: 14px; padding: 13px 14px; }
+  .node.live .badge { background: linear-gradient(90deg,#F9D77A,#F5C25F); }
+  .node.inbeat .badge { background: linear-gradient(90deg,#7FD8D3,#2EB5AE); }
+
+  .ecosystem { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 40px; }
+  .eco { background: var(--bg-surface-1); border: 1px solid var(--border-subtle); border-radius: var(--r-lg); padding: 18px 20px; display: flex; align-items: center; gap: 13px; }
+  .eco .d { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .eco b { font-family: var(--font-display); font-weight: 800; font-size: 15px; display: block; }
+  .eco small { font-size: 12.5px; color: var(--fg-3); }
+</style>
+</head>
+<body>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#0C0A18"/>
+    <text x="50" y="62" font-family="Mulish, sans-serif" font-size="34" font-weight="800" fill="#E63429" text-anchor="middle">Ed</text>
+  </svg>
+</template>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/stagia-logo-watermark.png" alt="Stagia">
+      <span class="name">Stagia</span>
+    </a>
+    <div class="nav-links">
+      <a href="GigFlow Live.html">GigFlow Live</a>
+      <a href="InBeat.html">InBeat</a>
+      <a href="GigFlow Editor.html" class="active">GigFlow Editor</a>
+      <a href="index.html#pourquoi">Pourquoi Stagia</a>
+    </div>
+    <a class="nav-cta" href="#lancer">Lancer l'éditeur</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">GigFlow Editor · PC / Mac</p>
+      <h1>Prépare tout sur grand écran. <span class="accent">Monte sur scène sans y penser.</span></h1>
+      <p class="sub">Clavier, souris, grand écran — tu saisis tes chansons et tes setlists dans les meilleures conditions, puis tu exportes vers GigFlow Live et InBeat.</p>
+      <div class="hero-actions">
+        <button class="btn-primary"><i data-lucide="external-link"></i> Lancer GigFlow Editor</button>
+        <button class="btn-secondary"><i data-lucide="download"></i> Télécharger l'application PC</button>
+      </div>
+      <p class="adaptive">Application PC ou accès direct depuis le navigateur — au choix.</p>
+      <div class="status-chips">
+        <span class="chip"><span class="dot"></span> PC & navigateur</span>
+        <span class="chip"><span class="dot brand"></span> Export Live & InBeat</span>
+        <span class="chip">100 % offline</span>
+      </div>
+    </div>
+    <div class="device-wrap">
+      <div class="browser">
+        <div class="bar"><i></i><i></i><i></i><span class="addr">editor.stagia.app</span></div>
+        <div class="canvas"><img src="assets/screens/editor-edit.png" alt="GigFlow Editor — saisie"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 5 KEY FEATURES -->
+<section class="block">
+  <div class="wrap">
+    <div class="block-head">
+      <p class="eyebrow muted">L'essentiel</p>
+      <h2>Le confort du bureau, prêt pour la scène.</h2>
+    </div>
+    <div class="keys">
+      <div class="key">
+        <div class="ic"><i data-lucide="keyboard"></i></div>
+        <h4>Saisie rapide</h4>
+        <p>Syntaxe Stagia Format — légère, intuitive, colorée.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="eye"></i></div>
+        <h4>Aperçu temps réel</h4>
+        <p>Coloration syntaxique et rendu instantané pendant la frappe.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="sliders-horizontal"></i></div>
+        <h4>Outils d'édition</h4>
+        <p>Transposition, capo, diagrammes d'accords intégrés.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="upload"></i></div>
+        <h4>Export Live & InBeat</h4>
+        <p>JSON prêt à importer sur tablette en un clic.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="monitor"></i></div>
+        <h4>PC & navigateur</h4>
+        <p>Application native ou accès direct, sans installation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAIL FEATURES -->
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+
+    <div class="feature">
+      <div class="feat-copy">
+        <p class="eyebrow">La saisie comme elle devrait être</p>
+        <h3>Écris une chanson aussi vite que tu la chantes.</h3>
+        <p>Clavier, souris, grand écran — GigFlow Editor est pensé pour préparer chansons et setlists au calme. Syntaxe légère, coloration en temps réel, aperçu instantané.</p>
+      </div>
+      <div class="feat-media">
+        <div class="framed"><img src="assets/screens/editor-edit.png" alt="Zone de saisie GigFlow Editor"></div>
+      </div>
+    </div>
+
+    <div class="feature reverse">
+      <div class="feat-copy">
+        <p class="eyebrow">Stagia Format</p>
+        <h3>Une syntaxe pensée pour les musiciens.</h3>
+        <p>Du texte brut simple — accords, sections, annotations, chœurs. Chaque accord a sa couleur, la structure de la chanson est lisible d'un coup d'œil. Le même format alimente Live et InBeat.</p>
+      </div>
+      <div class="feat-media">
+        <div class="framed"><img src="assets/screens/preview-song.png" alt="Aperçu rendu coloré — Stagia Format"></div>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feat-copy">
+        <p class="eyebrow">Tous les outils dont tu as besoin</p>
+        <h3>Transpose, cale, illustre — en quelques clics.</h3>
+        <p>Tout ce qu'il faut pour mettre un morceau au point, sans quitter l'écran de saisie.</p>
+      </div>
+      <div class="feat-media">
+        <div class="framed">
+          <div class="tools">
+            <span class="tool"><i data-lucide="arrow-up-down"></i> Transpo <b>±12</b></span>
+            <span class="tool"><i data-lucide="git-commit-horizontal"></i> Capo</span>
+            <span class="tool"><i data-lucide="key"></i> Tonalité</span>
+            <span class="tool"><i data-lucide="music"></i> Signature</span>
+            <span class="tool"><i data-lucide="gauge"></i> BPM</span>
+            <span class="tool"><i data-lucide="guitar"></i> Diagrammes</span>
+            <span class="tool"><i data-lucide="undo-2"></i> Undo / Redo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature reverse">
+      <div class="feat-copy">
+        <p class="eyebrow">Prêt pour la scène en quelques clics</p>
+        <h3>De l'écran à la tablette, sans friction.</h3>
+        <p>Une fois tes chansons prêtes, exporte en JSON depuis Editor et importe dans GigFlow Live ou InBeat. Ta tablette est prête pour le concert.</p>
+      </div>
+      <div class="feat-media">
+        <div class="framed">
+          <div class="flow">
+            <div class="node editor"><span class="badge"><i data-lucide="monitor"></i></span> GigFlow Editor <span class="json">.json</span></div>
+            <div class="down"><i data-lucide="arrow-down" style="width:14px;height:14px"></i> export · import</div>
+            <div class="targets">
+              <div class="node live"><span class="badge"></span> Live</div>
+              <div class="node inbeat"><span class="badge"></span> InBeat</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ecosystem">
+      <div class="eco"><span class="d" style="background:var(--brand-amber-300)"></span><div><b>GigFlow Live</b><small>Scène · Android</small></div></div>
+      <div class="eco"><span class="d" style="background:var(--inbeat-teal-300)"></span><div><b>InBeat</b><small>Tempo · Android</small></div></div>
+      <div class="eco"><span class="d" style="background:var(--brand-pink-300)"></span><div><b>Tes données</b><small>Locales · aucun cloud</small></div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" id="lancer">
+  <div class="wrap final-inner">
+    <p class="eyebrow">PC · Mac · Navigateur</p>
+    <h2>Prêt à préparer ton prochain concert ?</h2>
+    <p>Lance l'éditeur dans le navigateur, ou installe l'application sur ton ordinateur.</p>
+    <div class="hero-actions">
+      <button class="btn-primary"><i data-lucide="external-link"></i> Lancer GigFlow Editor</button>
+      <button class="btn-secondary"><i data-lucide="download"></i> Télécharger l'application PC</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html">
+          <img src="assets/stagia-logo-watermark.png" alt="Stagia" style="width:40px;height:40px">
+          <span class="name">Stagia</span>
+        </a>
+        <p>Des outils numériques pour musiciens — pose le papier, garde la musique. Conçus pour la scène, la répétition et l'organisation.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Produits</h4>
+        <a href="GigFlow Live.html">GigFlow Live →</a>
+        <a href="InBeat.html">InBeat →</a>
+        <a href="GigFlow Editor.html">GigFlow Editor →</a>
+      </div>
+      <div class="foot-col">
+        <h4>Ressources</h4>
+        <a href="#">Aide & tutoriels →</a>
+        <a href="mailto:contact@stagia.app">Contact →</a>
+        <a href="#">Mentions légales →</a>
+        <a href="#">Confidentialité →</a>
+      </div>
+      <div class="foot-col">
+        <h4>Suivre</h4>
+        <a href="#">YouTube →</a>
+        <a href="mailto:contact@stagia.app">contact@stagia.app</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Stagia · Par des musiciens, pour les musiciens.</span>
+      <span>contact@stagia.app</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

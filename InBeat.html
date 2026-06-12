@@ -1,0 +1,309 @@
+<!-- @startingPoint section="Marketing" subtitle="Page produit InBeat — hero, 5 features, beat visuel LED, cross-promo GigFlow Live" viewport="1280x3800" -->
+<!doctype html>
+<html lang="fr" data-product="inbeat">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InBeat — Le bon tempo, au bon moment. Toujours.</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="product.css">
+<style>
+  /* InBeat-only mocks */
+  .lib { width: 100%; max-width: 340px; display: flex; flex-direction: column; gap: 10px; }
+  .lib .row2 {
+    display: flex; align-items: center; gap: 12px; background: var(--bg-surface-1);
+    border: 1px solid var(--border-subtle); border-radius: var(--r-md); padding: 12px 14px;
+  }
+  .lib .row2 .t { flex: 1; min-width: 0; }
+  .lib .row2 .t b { font-family: var(--font-display); font-weight: 800; font-size: 14px; display: block; }
+  .lib .row2 .t small { font-size: 12px; color: var(--fg-3); }
+  .lib .bpm { font-family: var(--font-mono); font-weight: 700; font-size: 15px; color: var(--product-primary); }
+  .lib .sig { font-family: var(--font-mono); font-size: 12px; color: var(--fg-3); border: 1px solid var(--border-default); border-radius: var(--r-pill); padding: 2px 9px; }
+
+  .beat { width: 100%; max-width: 360px; text-align: center; }
+  .beat .read { font-family: var(--font-mono); margin-bottom: 22px; }
+  .beat .read b { font-family: var(--font-display); font-weight: 900; font-size: 44px; color: var(--product-primary); line-height: 1; }
+  .beat .read span { font-size: 14px; color: var(--fg-3); margin-left: 8px; }
+  .leds { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .led {
+    aspect-ratio: 1; border-radius: var(--r-md); display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono); font-size: 20px; color: var(--fg-3);
+    background: var(--bg-surface-1); border: 1px solid var(--border-subtle);
+  }
+  .led .bulb { width: 14px; height: 14px; border-radius: 50%; }
+  .led.down { border-color: rgba(255,59,47,0.5); color: #FF6A5F; }
+  .led.down .bulb { background: #FF3B2F; box-shadow: var(--shadow-led-red); }
+  .led.sub .bulb { background: #FF9500; box-shadow: var(--shadow-led-amber); }
+  .beat .tap { margin-top: 20px; display: inline-flex; gap: 10px; align-items: center; font-family: var(--font-mono); font-size: 12px; color: var(--fg-4); }
+
+  /* InBeat hero — embedded real app (iframe) */
+  .ib-frame { width: 100%; height: 496px; border: 0; display: block; background: #07070f; }
+  .hero .phone { width: 336px; }
+  /* InBeat hero — animated live screen recreation */
+  .ib-live { background: #0A0913; color: #C9CCD6; font-family: var(--font-display); padding: 14px 16px 16px; display: flex; flex-direction: column; min-height: 446px; cursor: pointer; user-select: none; }
+  .ib-top { display: flex; justify-content: space-between; align-items: center; }
+  .ib-top .arrow { color: #9aa0ad; font-size: 16px; }
+  .ib-tr { display: flex; gap: 8px; }
+  .ib-tr .b { width: 28px; height: 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #9aa0ad; font-family: var(--font-mono); cursor: pointer; background: transparent; transition: border-color 120ms ease, color 120ms ease, background 120ms ease; }
+  .ib-tr .b.active { border-color: var(--inbeat-teal-300); color: var(--inbeat-teal-300); background: rgba(127,216,211,0.12); }
+  .ib-idx { text-align: center; font-family: var(--font-mono); font-size: 11px; color: #6b7180; margin-top: 16px; }
+  .ib-tot { text-align: center; font-family: var(--font-mono); font-size: 10px; color: #5a6070; margin-top: 9px; }
+  .ib-title { text-align: center; font-weight: 800; font-size: 17px; color: #EAECF1; letter-spacing: 0.02em; margin-top: 22px; }
+  .ib-meta { text-align: center; font-family: var(--font-mono); font-size: 10px; color: var(--inbeat-teal-300); margin-top: 7px; }
+  .ib-bpm { margin-top: 20px; background: #100E1A; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 13px; display: flex; align-items: baseline; justify-content: center; gap: 8px; }
+  .ib-bpm b { font-weight: 900; font-size: 34px; color: #F5C25F; line-height: 1; transition: transform 90ms ease; }
+  .ib-bpm small { font-size: 9px; color: #6b7180; font-family: var(--font-mono); align-self: flex-end; margin-left: -4px; }
+  .ib-bpm .div { color: #3a3f4d; font-size: 22px; }
+  .ib-bpm .sig { font-size: 18px; color: #C9CCD6; font-weight: 700; }
+  .ib-pads { margin-top: 22px; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 10px; }
+  .ib-pad { width: 100%; min-width: 0; aspect-ratio: 1; border-radius: 10px; background: #13111E; border: 2px solid rgba(255,255,255,0.09); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 700; font-size: 18px; color: #5a6070; transition: background 60ms linear, border-color 60ms linear, color 60ms linear, box-shadow 60ms linear; }
+  .ib-pad.ib-on.ib-down { background: #FF3B2F; border-color: #FF3B2F; color: #fff; box-shadow: 0 0 18px rgba(255,59,47,0.55); }
+  .ib-pad.ib-on.ib-sub { background: #F5C25F; border-color: #F5C25F; color: #1A1200; box-shadow: 0 0 18px rgba(245,194,95,0.45); }
+  .ib-ctrl { margin-top: auto; padding-top: 22px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+  .ib-ctrl .tag2 { font-family: var(--font-mono); font-size: 12px; color: #9aa0ad; background: #13111E; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 8px 12px; }
+  .ib-ctrl .play { font-family: var(--font-display); font-weight: 800; font-size: 12px; color: #04201E; background: var(--inbeat-teal-500); border: none; border-radius: 8px; padding: 9px 15px; cursor: pointer; display: inline-flex; gap: 6px; align-items: center; }
+  .ib-foot { margin-top: 16px; display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 10px; color: #5a6070; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 12px; }
+  .ib-ctrl .tag2 { cursor: pointer; -webkit-appearance: none; appearance: none; transition: color 120ms ease, border-color 120ms ease; }
+  .ib-ctrl .tag2.on { color: var(--inbeat-teal-300); border-color: var(--inbeat-teal-300); }
+  .ib-ctrl .play { cursor: pointer; }
+  .ib-foot .ib-navbtn { background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; transition: color 120ms ease; }
+  .ib-foot .ib-navbtn:hover { color: var(--inbeat-teal-300); }
+  .ib-hint { margin: 14px 0 0; text-align: center; font-family: var(--font-mono); font-size: 11px; color: var(--inbeat-teal-300); display: flex; align-items: center; justify-content: center; gap: 6px; }
+  /* InBeat hero: stack phone + hint vertically (overrides shared row layout) */
+  .device-wrap { flex-direction: column; align-items: center; }
+</style>
+</head>
+<body>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#0C0A18"/>
+    <text x="50" y="62" font-family="Mulish, sans-serif" font-size="34" font-weight="800" fill="#2BC4B8" text-anchor="middle">iB</text>
+  </svg>
+</template>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/stagia-logo-watermark.png" alt="Stagia">
+      <span class="name">Stagia</span>
+    </a>
+    <div class="nav-links">
+      <a href="GigFlow Live.html">GigFlow Live</a>
+      <a href="InBeat.html" class="active">InBeat</a>
+      <a href="GigFlow Editor.html">GigFlow Editor</a>
+      <a href="index.html#pourquoi">Pourquoi Stagia</a>
+    </div>
+    <a class="nav-cta" href="#telecharger">Télécharger · Gratuit</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">InBeat · Android</p>
+      <h1>Le bon tempo, au bon moment. <span class="accent">Toujours.</span></h1>
+      <p class="sub">InBeat affiche le tempo et la structure rythmique de ta setlist. Un swipe, le titre suivant charge son BPM. Plus de réglage manuel entre deux morceaux.</p>
+      <div class="hero-actions">
+        <button class="btn-primary"><i data-lucide="play"></i> Télécharger — Gratuit</button>
+        <button class="btn-secondary"><i data-lucide="play-circle"></i> Regarder la vidéo</button>
+      </div>
+      <p class="adaptive">Conçu pour le batteur — utile à tout le groupe.</p>
+      <div class="status-chips">
+        <span class="chip"><span class="dot"></span> 100 % offline</span>
+        <span class="chip"><span class="dot brand"></span> Gratuit · sans abonnement</span>
+        <span class="chip">2/4 · 3/4 · 4/4 · 6/8 · 7/8…</span>
+      </div>
+    </div>
+    <div class="device-wrap">
+      <div class="phone">
+        <div class="screen">
+          <iframe class="ib-frame" id="ibFrame" title="InBeat — écran Live (démo réelle de l'app)"></iframe>
+        </div>
+      </div>
+      <p class="ib-hint"><i data-lucide="smartphone" style="width:13px;height:13px"></i> Écran réel de l'app — ▶ lance le tempo, ◀ ▶ changent de titre, bip ♪, ½ subdivisions</p>
+    </div>
+  </div>
+</header>
+
+<!-- 5 KEY FEATURES -->
+<section class="block">
+  <div class="wrap">
+    <div class="block-head">
+      <p class="eyebrow muted">L'essentiel</p>
+      <h2>Le clic qui ne te lâche jamais.</h2>
+    </div>
+    <div class="keys">
+      <div class="key">
+        <div class="ic"><i data-lucide="gauge"></i></div>
+        <h4>Tempos préréglés</h4>
+        <p>Chaque titre charge son BPM automatiquement. Rien à régler sur scène.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="contrast"></i></div>
+        <h4>Sombre ou clair</h4>
+        <p>Thème au choix — lisible en salle comme en plein soleil.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="music"></i></div>
+        <h4>Toutes les signatures</h4>
+        <p>2/4, 3/4, 4/4, 6/8, 7/8 et plus. Subdivisions activables.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="wifi-off"></i></div>
+        <h4>100 % offline</h4>
+        <p>Gratuit et permanent, aucun compte requis. Tes données restent chez toi.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="users"></i></div>
+        <h4>Utile à tout le groupe</h4>
+        <p>Compatible GigFlow Live et Editor — un même format partagé.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAIL FEATURES -->
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+
+    <div class="feature">
+      <div class="feat-copy">
+        <p class="eyebrow">Bibliothèque & setlists</p>
+        <h3>Tout est prêt avant le concert.</h3>
+        <p>Chaque titre contient son tempo, sa signature et sa durée. Organise tes morceaux dans l'ordre du show — InBeat charge automatiquement le tempo du titre suivant. Un swipe, un tap, et c'est parti.</p>
+      </div>
+      <div class="feat-media">
+        <div class="framed">
+          <div class="lib">
+            <div class="row2"><div class="t"><b>Everybody's Changing</b><small>Keane · 3:37</small></div><span class="sig">4/4</span><span class="bpm">94</span></div>
+            <div class="row2"><div class="t"><b>Don't Look Back in Anger</b><small>Oasis · 4:48</small></div><span class="sig">4/4</span><span class="bpm">82</span></div>
+            <div class="row2"><div class="t"><b>Take Five</b><small>D. Brubeck · 5:24</small></div><span class="sig">5/4</span><span class="bpm">174</span></div>
+            <div class="row2"><div class="t"><b>Times Like These</b><small>Foo Fighters · 4:26</small></div><span class="sig">7/8</span><span class="bpm">144</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature reverse">
+      <div class="feat-copy">
+        <p class="eyebrow">Mode Live</p>
+        <h3>Grand, lisible, sans distraction.</h3>
+        <p>Affichage plein écran. Le BPM et la signature en gros, le titre suivant toujours visible — tu anticipes sans perdre le fil. Thème sombre ou clair selon la luminosité de la scène, et un Tap tempo pour ajuster à la volée.</p>
+      </div>
+      <div class="feat-media">
+        <div class="framed"><img src="assets/screens/inbeat-live.png" alt="InBeat — Mode Live"></div>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feat-copy">
+        <p class="eyebrow">Beat visuel</p>
+        <h3>Le temps fort saute aux yeux.</h3>
+        <p>Temps forts et faibles différenciés à l'œil — LED rouge sur le temps fort, ambre sur les suivants. Un <strong>bip sonore activable</strong> double le repère, au choix de l'utilisateur. Subdivisions activables, toutes les signatures supportées.</p>
+        <ul class="feat-list">
+          <li><i data-lucide="circle-dot"></i> LED matériel : rouge sur le 1, ambre sur 2·3·4</li>
+          <li><i data-lucide="volume-2"></i> Bip sonore activable — visuel seul ou visuel + son</li>
+          <li><i data-lucide="hand"></i> Tap tempo pour caler à l'oreille</li>
+        </ul>
+      </div>
+      <div class="feat-media">
+        <div class="framed">
+          <div class="beat">
+            <div class="read"><b>94</b><span>BPM · 4/4</span></div>
+            <div class="leds">
+              <div class="led down"><span class="bulb"></span></div>
+              <div class="led sub"><span class="bulb"></span></div>
+              <div class="led sub"><span class="bulb"></span></div>
+              <div class="led sub"><span class="bulb"></span></div>
+            </div>
+            <div class="tap"><i data-lucide="hand" style="width:14px;height:14px"></i> TAP · − · +</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" id="telecharger">
+  <div class="wrap final-inner">
+    <p class="eyebrow">Android · bientôt sur Google Play</p>
+    <h2>Prêt à garder le tempo ?</h2>
+    <p>Gratuit, sans limite, sans abonnement.</p>
+    <div class="hero-actions">
+      <button class="btn-primary"><i data-lucide="play"></i> Télécharger sur Google Play — Gratuit</button>
+    </div>
+  </div>
+</section>
+
+<!-- CROSS-PROMO GIGFLOW LIVE -->
+<section class="crosspromo">
+  <div class="wrap cp-inner">
+    <div class="cp-shot">
+      <div class="phone"><div class="screen"><img src="assets/screens/gigflow-live-stage.png" alt="GigFlow Live"></div></div>
+    </div>
+    <div class="cp-text">
+      <p class="lbl">Pour ton groupe</p>
+      <h3>Ton chanteur mérite son propre outil.</h3>
+      <p>GigFlow Live affiche textes et accords sur scène, navigation à la pédale, setlist en temps réel.</p>
+    </div>
+    <a class="btn-secondary" href="GigFlow Live.html"><i data-lucide="arrow-right"></i> Découvrir GigFlow Live</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html">
+          <img src="assets/stagia-logo-watermark.png" alt="Stagia" style="width:40px;height:40px">
+          <span class="name">Stagia</span>
+        </a>
+        <p>Des outils numériques pour musiciens — pose le papier, garde la musique. Conçus pour la scène, la répétition et l'organisation.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Produits</h4>
+        <a href="GigFlow Live.html">GigFlow Live →</a>
+        <a href="InBeat.html">InBeat →</a>
+        <a href="GigFlow Editor.html">GigFlow Editor →</a>
+      </div>
+      <div class="foot-col">
+        <h4>Ressources</h4>
+        <a href="#">Aide & tutoriels →</a>
+        <a href="mailto:contact@stagia.app">Contact →</a>
+        <a href="#">Mentions légales →</a>
+        <a href="#">Confidentialité →</a>
+      </div>
+      <div class="foot-col">
+        <h4>Suivre</h4>
+        <a href="#">YouTube →</a>
+        <a href="mailto:contact@stagia.app">contact@stagia.app</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Stagia · Par des musiciens, pour les musiciens.</span>
+      <span>contact@stagia.app</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>lucide.createIcons();</script>
+<script src="inbeat-app.embed.js"></script>
+<script>
+/* Charge le vrai écran de l'app InBeat dans le hero, sans fetch :
+   le HTML de l'app est inliné en base64 dans inbeat-app.embed.js, on le
+   décode et on l'injecte via srcdoc — fonctionne dans le fichier servi. */
+(function () {
+  var f = document.getElementById('ibFrame');
+  if (!f || !window.__INBEAT_APP_B64) return;
+  try { f.srcdoc = decodeURIComponent(escape(atob(window.__INBEAT_APP_B64))); } catch (e) {}
+})();
+</script>
+</body>
+</html>
