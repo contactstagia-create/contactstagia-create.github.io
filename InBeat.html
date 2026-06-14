@@ -20,6 +20,15 @@
   .lib .bpm { font-family: var(--font-mono); font-weight: 700; font-size: 15px; color: var(--product-primary); }
   .lib .sig { font-family: var(--font-mono); font-size: 12px; color: var(--fg-3); border: 1px solid var(--border-default); border-radius: var(--r-pill); padding: 2px 9px; }
 
+  /* InBeat feature screens — format « u screen » (téléphone vertical, écran plein) */
+  .feat-media .phone { width: 300px; }
+  .feat-media .phone .screen img { display: block; width: 100%; border: 0; border-radius: 0; box-shadow: none; max-width: none; }
+  .ib-shot { background: var(--bg-stage); padding: 16px 13px; min-height: 388px; display: flex; flex-direction: column; }
+  .ib-shot-bar { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 13px; margin-bottom: 14px; border-bottom: 1px solid var(--border-subtle); }
+  .ib-shot-bar .ttl { font-family: var(--font-display); font-weight: 800; font-size: 16px; color: var(--fg-2); }
+  .ib-shot-bar .ct { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); }
+  .ib-shot .lib { max-width: 100%; }
+
   .beat { width: 100%; max-width: 360px; text-align: center; }
   .beat .read { font-family: var(--font-mono); margin-bottom: 22px; }
   .beat .read b { font-family: var(--font-display); font-weight: 900; font-size: 44px; color: var(--product-primary); line-height: 1; }
@@ -105,7 +114,10 @@
     <div class="hero-copy">
       <p class="eyebrow">InBeat · Android</p>
       <h1>Le bon tempo, au bon moment. <span class="accent">Toujours.</span></h1>
-      <p class="sub">InBeat affiche le tempo et la structure rythmique de ta setlist. Un swipe, le titre suivant charge son BPM. Plus de réglage manuel entre deux morceaux.</p>
+      <p class="sub">Avec InBeat, chaque morceau de ta setlist est associé à son BPM et à sa structure rythmique.</p>
+      <p class="sub">Passe au titre suivant d'un geste, d'un clic ou avec ta pédale Bluetooth (page turner) : InBeat charge automatiquement le BPM correspondant.</p>
+      <p class="sub">Fini les réglages manuels entre deux morceaux. Tout est prêt quand tu en as besoin. C'est tellement plus simple avec InBeat comme métronome dynamique.</p>
+      <p class="sub">Teste InBeat avec l'écran interactif :</p>
       <div class="hero-actions">
         <button class="btn-primary"><i data-lucide="play"></i> Télécharger — Gratuit</button>
         <button class="btn-secondary"><i data-lucide="play-circle"></i> Regarder la vidéo</button>
@@ -176,12 +188,16 @@
         <p>Chaque titre contient son tempo, sa signature et sa durée. Organise tes morceaux dans l'ordre du show — InBeat charge automatiquement le tempo du titre suivant. Un swipe, un tap, et c'est parti.</p>
       </div>
       <div class="feat-media">
-        <div class="framed">
-          <div class="lib">
+        <div class="phone">
+          <div class="screen ib-shot">
+            <div class="ib-shot-bar"><span class="ttl">Répertoire</span><span class="ct">30 titres</span></div>
+            <div class="lib">
             <div class="row2"><div class="t"><b>Everybody's Changing</b><small>Keane · 3:37</small></div><span class="sig">4/4</span><span class="bpm">94</span></div>
             <div class="row2"><div class="t"><b>Don't Look Back in Anger</b><small>Oasis · 4:48</small></div><span class="sig">4/4</span><span class="bpm">82</span></div>
             <div class="row2"><div class="t"><b>Take Five</b><small>D. Brubeck · 5:24</small></div><span class="sig">5/4</span><span class="bpm">174</span></div>
             <div class="row2"><div class="t"><b>Times Like These</b><small>Foo Fighters · 4:26</small></div><span class="sig">7/8</span><span class="bpm">144</span></div>
+            <div class="row2"><div class="t"><b>Mon Fils Ma Bataille</b><small>Daniel Balavoine · 4:10</small></div><span class="sig">4/4</span><span class="bpm">114</span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -194,7 +210,7 @@
         <p>Affichage plein écran. Le BPM et la signature en gros, le titre suivant toujours visible — tu anticipes sans perdre le fil. Thème sombre ou clair selon la luminosité de la scène, et un Tap tempo pour ajuster à la volée.</p>
       </div>
       <div class="feat-media">
-        <div class="framed"><img src="assets/screens/inbeat-live.png" alt="InBeat — Mode Live"></div>
+        <div class="phone"><div class="screen"><img src="assets/screens/inbeat-live.png" alt="InBeat — Mode Live"></div></div>
       </div>
     </div>
 
