@@ -74,6 +74,7 @@ nav {
 }
 .btn-secondary:hover { background: var(--bg-surface-1); border-color: var(--fg-3); }
 .btn-primary i, .btn-secondary i, .nav-cta i { width: 18px; height: 18px; }
+.gp-glyph { display: inline-flex; align-items: center; }
 
 /* ---------------- HERO ---------------- */
 .hero { position: relative; padding: 92px 0 80px; overflow: hidden; }
@@ -159,7 +160,7 @@ section.block { padding: 72px 0; }
 /* ---------------- DETAIL FEATURES (alternating) ---------------- */
 .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; padding: 56px 0; }
 .feature + .feature { border-top: 1px solid var(--border-subtle); }
-.feature.reverse .feat-media { order: 2; }
+.feature.reverse .feat-media { order: -1; }
 .feat-copy .eyebrow { margin-bottom: 12px; }
 .feat-copy h3 { font-family: var(--font-display); font-weight: 900; font-size: clamp(24px, 2.6vw, 30px); line-height: 1.12; letter-spacing: -0.015em; margin: 0; }
 .feat-copy p { font-size: 16px; color: var(--fg-2); line-height: 1.6; margin: 16px 0 0; }

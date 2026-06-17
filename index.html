@@ -116,15 +116,16 @@
   .chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-green); box-shadow: 0 0 8px var(--accent-green); }
   .chip .dot.amber { background: var(--brand-amber-300); box-shadow: 0 0 8px var(--brand-amber-300); }
 
-  /* device */
+  /* device — InBeat « u screen » format : téléphone haut, écran plein et lisible */
   .device-wrap { display: flex; justify-content: center; }
   .phone {
-    width: 290px; border-radius: 34px; padding: 11px;
+    width: 336px; border-radius: 40px; padding: 12px;
     background: linear-gradient(160deg, #211D2F, #100D1B);
     border: 1px solid var(--border-default);
     box-shadow: var(--shadow-lg), 0 0 70px rgba(245,194,95,0.10);
   }
-  .phone .screen { border-radius: 24px; overflow: hidden; border: 1px solid rgba(0,0,0,0.5); }
+  .phone .screen { border-radius: 28px; overflow: hidden; border: 1px solid rgba(0,0,0,0.5); }
+  .phone .screen img { display: block; width: 100%; }
 
   /* ---------------- VALUES ---------------- */
   section.block { padding: 78px 0; }
@@ -155,8 +156,20 @@
   }
   .pcard:hover { transform: translateY(-4px); border-color: var(--border-default); }
   .pcard .strip { height: 4px; width: 100%; background: var(--p-strip); }
-  .pcard .shot { background: var(--bg-stage); padding: 22px 22px 0; display: flex; justify-content: center; }
-  .pcard .shot img { border-radius: 12px 12px 0 0; border: 1px solid var(--border-subtle); border-bottom: none; box-shadow: var(--shadow-md); max-height: 230px; width: auto; }
+  .pcard .shot { background: var(--bg-stage); padding: 30px 22px; display: flex; justify-content: center; }
+  .pcard .phone-mini {
+    width: 204px; border-radius: 30px; padding: 8px;
+    background: linear-gradient(160deg, #211D2F, #100D1B);
+    border: 1px solid var(--border-default); box-shadow: var(--shadow-lg);
+  }
+  .pcard .phone-mini .screen {
+    border-radius: 22px; overflow: hidden; border: 1px solid rgba(0,0,0,0.5);
+    aspect-ratio: 660 / 912;
+  }
+  .pcard .phone-mini .screen img {
+    display: block; width: 100%; height: 100%;
+    object-fit: cover; object-position: top center; border: 0; box-shadow: none;
+  }
   .pcard .body { padding: 24px 24px 26px; display: flex; flex-direction: column; flex: 1; }
   .pcard .label {
     font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
@@ -261,18 +274,11 @@
     .nav-links { display: none; }
     .values { grid-template-columns: 1fr; }
     .foot-grid { grid-template-columns: 1fr; }
+    .phone { width: min(336px, 84vw); }
   }
 </style>
 </head>
 <body>
-
-<template id="__bundler_thumbnail">
-  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <rect width="100" height="100" fill="#0C0A18"/>
-    <text x="50" y="62" font-family="Mulish, sans-serif" font-size="40" font-weight="800" fill="#F5C25F" text-anchor="middle">S</text>
-  </svg>
-</template>
-
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
@@ -299,7 +305,7 @@
       <p class="sub">Des applications simples, fiables et autonomes — conçues pour la scène, par des musiciens pour les musiciens. Sans connexion. Sans abonnement. Sans friction.</p>
       <div class="hero-actions">
         <button class="btn-primary"><i data-lucide="compass"></i> Découvrir les apps</button>
-        <button class="btn-secondary"><i data-lucide="play"></i> Regarder la vidéo</button>
+        <button class="btn-secondary"><i data-lucide="video"></i> Voir sur scène</button>
       </div>
       <div class="status-chips">
         <span class="chip"><span class="dot"></span> 100 % offline</span>
@@ -327,7 +333,7 @@
 
       <article class="pcard live" id="gigflow">
         <div class="strip"></div>
-        <div class="shot"><img src="assets/screens/gigflow-live-stage.png" alt="GigFlow Live"></div>
+        <div class="shot"><div class="phone-mini"><div class="screen"><img src="assets/screens/gigflow-live-stage.png" alt="GigFlow Live"></div></div></div>
         <div class="body">
           <p class="label">GigFlow Live · Android</p>
           <h3>GigFlow Live</h3>
@@ -340,7 +346,7 @@
 
       <article class="pcard inbeat" id="inbeat">
         <div class="strip"></div>
-        <div class="shot"><img src="assets/screens/inbeat-live.png" alt="InBeat"></div>
+        <div class="shot"><div class="phone-mini"><div class="screen"><img src="assets/screens/inbeat-live.png" alt="InBeat"></div></div></div>
         <div class="body">
           <p class="label">InBeat · Android</p>
           <h3>InBeat</h3>
@@ -353,7 +359,7 @@
 
       <article class="pcard editor" id="editor">
         <div class="strip"></div>
-        <div class="shot"><img src="assets/screens/editor-edit.png" alt="GigFlow Editor"></div>
+        <div class="shot"><div class="phone-mini"><div class="screen"><img src="assets/screens/editor-edit.png" alt="GigFlow Editor"></div></div></div>
         <div class="body">
           <p class="label">GigFlow Editor · PC / Mac</p>
           <h3>GigFlow Editor</h3>
@@ -454,7 +460,7 @@
     <p>Prépare ta setlist, oublie le papier, et garde les yeux sur ton public.</p>
     <div class="hero-actions">
       <a class="btn-primary" href="GigFlow Live.html"><i data-lucide="compass"></i> Découvrir GigFlow Live</a>
-      <button class="btn-secondary"><i data-lucide="play-circle"></i> Regarder la vidéo</button>
+      <button class="btn-secondary"><i data-lucide="video"></i> Voir sur scène</button>
     </div>
   </div>
 </section>

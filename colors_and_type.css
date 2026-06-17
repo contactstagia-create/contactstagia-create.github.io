@@ -202,6 +202,11 @@
   --hue-teal:    #2A9F99;
   --hue-blue:    #2D74C9;
   --hue-violet:  #8A52CE;
+  /* InBeat brand teal — fresher on light surfaces (parity with the app's
+     light theme; validated for AA contrast on light chrome). Dark/stage
+     default keeps --inbeat-teal-500 #2EB5AE. */
+  --inbeat-teal-500: #0C9488;
+  --inbeat-teal-700: #0A7C72;
   --shadow-sm: 0 1px 2px rgba(14,27,48,0.06);
   --shadow-md: 0 4px 12px rgba(14,27,48,0.10);
   --shadow-lg: 0 16px 40px rgba(14,27,48,0.14);
