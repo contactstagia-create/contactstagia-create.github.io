@@ -276,6 +276,27 @@
     .foot-grid { grid-template-columns: 1fr; }
     .phone { width: min(336px, 84vw); }
   }
+  /* NAV — menu hamburger mobile */
+  .nav-burger { display: none; align-items: center; justify-content: center; width: 42px; height: 42px; flex: none; background: var(--bg-surface-1); border: 1px solid var(--border-subtle); border-radius: var(--r-md); color: var(--fg-1); cursor: pointer; }
+  .nav-burger:hover { border-color: var(--product-primary); }
+  .nav-burger .burger-icon { position: relative; width: 20px; height: 20px; }
+  .nav-burger .burger-icon > span { position: absolute; inset: 0; display: inline-flex; align-items: center; justify-content: center; transition: opacity 160ms ease, transform 160ms ease; }
+  .nav-burger .burger-icon i { width: 20px; height: 20px; }
+  .nav-burger .ic-x { opacity: 0; transform: rotate(-90deg); }
+  .nav-burger[aria-expanded="true"] .ic-menu { opacity: 0; transform: rotate(90deg); }
+  .nav-burger[aria-expanded="true"] .ic-x { opacity: 1; transform: rotate(0); }
+  .nav-mobile { display: none; }
+  @media (max-width: 600px) {
+    .nav-burger { display: inline-flex; }
+    .nav-cta { display: none; }
+    .nav-mobile { display: block; position: absolute; top: 100%; left: 0; right: 0; background: color-mix(in srgb, var(--bg-app) 96%, transparent); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-subtle); overflow: hidden; max-height: 0; transition: max-height 280ms ease; }
+    .nav-mobile.open { max-height: 380px; }
+    .nav-mobile-inner { padding: 6px 22px 20px; display: flex; flex-direction: column; }
+    .nav-mobile a { font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--fg-2); padding: 13px 0; border-bottom: 1px solid var(--border-subtle); transition: color 120ms ease; }
+    .nav-mobile a.active, .nav-mobile a:hover { color: var(--product-primary); }
+    .nav-mobile .nav-mobile-cta { margin-top: 16px; border: 0; border-radius: var(--r-md); padding: 14px 18px; text-align: center; background: var(--product-primary); color: var(--product-primary-fg); font-weight: 700; }
+    .nav-mobile .nav-mobile-cta:hover { color: var(--product-primary-fg); }
+  }
 </style>
 </head>
 <body>
@@ -287,12 +308,22 @@
       <span class="name">Stagia</span>
     </a>
     <div class="nav-links">
-      <a href="GigFlow Live.html">GigFlow Live</a>
+      <a href="gigflow-live.html">GigFlow Live</a>
       <a href="InBeat.html">InBeat</a>
-      <a href="GigFlow Editor.html">GigFlow Editor</a>
+      <a href="gigflow-editor.html">GigFlow Editor</a>
       <a href="#pourquoi">Pourquoi Stagia</a>
     </div>
     <a class="nav-cta" href="#produits">Découvrir les apps</a>
+    <button class="nav-burger" id="navBurger" aria-expanded="false" aria-controls="navMobile" aria-label="Menu"><span class="burger-icon"><span class="ic-menu"><i data-lucide="menu"></i></span><span class="ic-x"><i data-lucide="x"></i></span></span></button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <div class="nav-mobile-inner">
+      <a href="gigflow-live.html">GigFlow Live</a>
+      <a href="InBeat.html">InBeat</a>
+      <a href="gigflow-editor.html">GigFlow Editor</a>
+      <a href="#pourquoi">Pourquoi Stagia</a>
+      <a class="nav-mobile-cta" href="#produits">Découvrir les apps</a>
+    </div>
   </div>
 </nav>
 
@@ -339,7 +370,7 @@
           <h3>GigFlow Live</h3>
           <p class="tag">Tes textes, tes accords, ta setlist. Sur scène, les mains libres.</p>
           <p class="desc">Affiche accords et paroles, navigue à la pédale, suis ta setlist en temps réel. Chaque accord a sa couleur, chaque section son repère.</p>
-          <a class="more" href="GigFlow Live.html">Découvrir <i data-lucide="arrow-right"></i></a>
+          <a class="more" href="gigflow-live.html">Découvrir <i data-lucide="arrow-right"></i></a>
           <p class="free">Gratuit pour commencer · illimité après achat unique</p>
         </div>
       </article>
@@ -365,7 +396,7 @@
           <h3>GigFlow Editor</h3>
           <p class="tag">Prépare tout sur grand écran. Monte sur scène sans y penser.</p>
           <p class="desc">Clavier, souris, grand écran. Saisis tes chansons en syntaxe Stagia, transpose, ajoute tes diagrammes, puis exporte vers GigFlow Live et InBeat.</p>
-          <a class="more" href="GigFlow Editor.html">Découvrir <i data-lucide="arrow-right"></i></a>
+          <a class="more" href="gigflow-editor.html">Découvrir <i data-lucide="arrow-right"></i></a>
           <p class="free">Application PC ou accès direct navigateur</p>
         </div>
       </article>
@@ -459,7 +490,7 @@
     <h2>Prêt à monter sur scène ?</h2>
     <p>Prépare ta setlist, oublie le papier, et garde les yeux sur ton public.</p>
     <div class="hero-actions">
-      <a class="btn-primary" href="GigFlow Live.html"><i data-lucide="compass"></i> Découvrir GigFlow Live</a>
+      <a class="btn-primary" href="gigflow-live.html"><i data-lucide="compass"></i> Découvrir GigFlow Live</a>
       <button class="btn-secondary"><i data-lucide="video"></i> Voir sur scène</button>
     </div>
   </div>
@@ -478,9 +509,9 @@
       </div>
       <div class="foot-col">
         <h4>Produits</h4>
-        <a href="GigFlow Live.html">GigFlow Live →</a>
+        <a href="gigflow-live.html">GigFlow Live →</a>
         <a href="InBeat.html">InBeat →</a>
-        <a href="GigFlow Editor.html">GigFlow Editor →</a>
+        <a href="gigflow-editor.html">GigFlow Editor →</a>
       </div>
       <div class="foot-col">
         <h4>Ressources</h4>
@@ -544,6 +575,20 @@
   } else {
     start();
   }
+})();
+</script>
+<script>
+(function () {
+  var b = document.getElementById('navBurger');
+  var m = document.getElementById('navMobile');
+  if (!b || !m) return;
+  function close() { b.setAttribute('aria-expanded', 'false'); m.classList.remove('open'); }
+  b.addEventListener('click', function () {
+    var open = b.getAttribute('aria-expanded') === 'true';
+    b.setAttribute('aria-expanded', String(!open));
+    m.classList.toggle('open', !open);
+  });
+  m.addEventListener('click', function (e) { if (e.target.closest('a')) close(); });
 })();
 </script>
 </body>

@@ -234,3 +234,26 @@ footer { border-top: 1px solid var(--border-subtle); padding: 60px 0 38px; }
   .keys { grid-template-columns: 1fr; }
   .foot-grid { grid-template-columns: 1fr; }
 }
+
+
+/* ---------------- NAV — menu hamburger mobile (toutes pages) ---------------- */
+.nav-burger { display: none; align-items: center; justify-content: center; width: 42px; height: 42px; flex: none; background: var(--bg-surface-1); border: 1px solid var(--border-subtle); border-radius: var(--r-md); color: var(--fg-1); cursor: pointer; }
+.nav-burger:hover { border-color: var(--product-primary); }
+.nav-burger .burger-icon { position: relative; width: 20px; height: 20px; }
+.nav-burger .burger-icon > span { position: absolute; inset: 0; display: inline-flex; align-items: center; justify-content: center; transition: opacity 160ms ease, transform 160ms ease; }
+.nav-burger .burger-icon i { width: 20px; height: 20px; }
+.nav-burger .ic-x { opacity: 0; transform: rotate(-90deg); }
+.nav-burger[aria-expanded="true"] .ic-menu { opacity: 0; transform: rotate(90deg); }
+.nav-burger[aria-expanded="true"] .ic-x { opacity: 1; transform: rotate(0); }
+.nav-mobile { display: none; }
+@media (max-width: 600px) {
+  .nav-burger { display: inline-flex; }
+  .nav-cta { display: none; }
+  .nav-mobile { display: block; position: absolute; top: 100%; left: 0; right: 0; background: color-mix(in srgb, var(--bg-app) 96%, transparent); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-subtle); overflow: hidden; max-height: 0; transition: max-height 280ms ease; }
+  .nav-mobile.open { max-height: 380px; }
+  .nav-mobile-inner { padding: 6px 22px 20px; display: flex; flex-direction: column; }
+  .nav-mobile a { font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--fg-2); padding: 13px 0; border-bottom: 1px solid var(--border-subtle); transition: color 120ms ease; }
+  .nav-mobile a.active, .nav-mobile a:hover { color: var(--product-primary); }
+  .nav-mobile .nav-mobile-cta { margin-top: 16px; border: 0; border-radius: var(--r-md); padding: 14px 18px; text-align: center; background: var(--product-primary); color: var(--product-primary-fg); font-weight: 700; }
+  .nav-mobile .nav-mobile-cta:hover { color: var(--product-primary-fg); }
+}

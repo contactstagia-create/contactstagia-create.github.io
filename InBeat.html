@@ -126,6 +126,27 @@
   .cta-eco-tile:hover { border-color: var(--product-primary); transform: translateY(-2px); }
   .cta-eco-tile img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
   @media (max-width: 600px) { .cta-eco-tile { width: 100%; max-width: 280px; } }
+  /* Header — menu hamburger mobile (reprend les liens de la barre de nav) */
+  .nav-burger { display: none; align-items: center; justify-content: center; width: 42px; height: 42px; flex: none; background: var(--bg-surface-1); border: 1px solid var(--border-subtle); border-radius: var(--r-md); color: var(--fg-1); cursor: pointer; }
+  .nav-burger:hover { border-color: var(--product-primary); }
+  .nav-burger .burger-icon { position: relative; width: 20px; height: 20px; }
+  .nav-burger .burger-icon > span { position: absolute; inset: 0; display: inline-flex; align-items: center; justify-content: center; transition: opacity 160ms ease, transform 160ms ease; }
+  .nav-burger .burger-icon i { width: 20px; height: 20px; }
+  .nav-burger .ic-x { opacity: 0; transform: rotate(-90deg); }
+  .nav-burger[aria-expanded="true"] .ic-menu { opacity: 0; transform: rotate(90deg); }
+  .nav-burger[aria-expanded="true"] .ic-x { opacity: 1; transform: rotate(0); }
+  .nav-mobile { display: none; }
+  @media (max-width: 600px) {
+    .nav-burger { display: inline-flex; }
+    .nav-cta { display: none; }
+    .nav-mobile { display: block; position: absolute; top: 100%; left: 0; right: 0; background: color-mix(in srgb, var(--bg-app) 96%, transparent); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-subtle); overflow: hidden; max-height: 0; transition: max-height 280ms ease; }
+    .nav-mobile.open { max-height: 380px; }
+    .nav-mobile-inner { padding: 6px 22px 20px; display: flex; flex-direction: column; }
+    .nav-mobile a { font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--fg-2); padding: 13px 0; border-bottom: 1px solid var(--border-subtle); transition: color 120ms ease; }
+    .nav-mobile a.active, .nav-mobile a:hover { color: var(--product-primary); }
+    .nav-mobile .nav-mobile-cta { margin-top: 16px; border: 0; border-radius: var(--r-md); padding: 14px 18px; text-align: center; background: var(--product-primary); color: var(--product-primary-fg); font-weight: 700; }
+    .nav-mobile .nav-mobile-cta:hover { color: var(--product-primary-fg); }
+  }
   /* Mobile-only hero intro shown ABOVE the demo screen */
   .ib-hero-m { display: none; }
   @media (max-width: 980px) {
@@ -146,12 +167,24 @@
       <span class="name">Stagia</span>
     </a>
     <div class="nav-links">
-      <a href="GigFlow Live.html">GigFlow Live</a>
+      <a href="gigflow-live.html">GigFlow Live</a>
       <a href="InBeat.html" class="active">InBeat</a>
-      <a href="GigFlow Editor.html">GigFlow Editor</a>
+      <a href="gigflow-editor.html">GigFlow Editor</a>
       <a href="index.html#pourquoi">Pourquoi Stagia</a>
     </div>
     <a class="nav-cta" href="index.html#produits">Découvrir les apps</a>
+    <button class="nav-burger" id="navBurger" aria-expanded="false" aria-controls="navMobile" aria-label="Menu">
+      <span class="burger-icon"><span class="ic-menu"><i data-lucide="menu"></i></span><span class="ic-x"><i data-lucide="x"></i></span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <div class="nav-mobile-inner">
+      <a href="gigflow-live.html">GigFlow Live</a>
+      <a href="InBeat.html" class="active">InBeat</a>
+      <a href="gigflow-editor.html">GigFlow Editor</a>
+      <a href="index.html#pourquoi">Pourquoi Stagia</a>
+      <a class="nav-mobile-cta" href="index.html#produits">Découvrir les apps</a>
+    </div>
   </div>
 </nav>
 
@@ -341,8 +374,8 @@
     <div class="cta-eco">
       <p class="cta-eco-lbl">Fait partie de l'écosystème Stagia</p>
       <div class="cta-eco-logos">
-        <a class="cta-eco-tile" href="GigFlow Live.html"><img src="assets/gigflow-live-logo.png" alt="GigFlow Live"></a>
-        <a class="cta-eco-tile" href="GigFlow Editor.html"><img src="assets/gigflow-editor-logo.png" alt="GigFlow Editor"></a>
+        <a class="cta-eco-tile" href="gigflow-live.html"><img src="assets/gigflow-live-logo.png" alt="GigFlow Live"></a>
+        <a class="cta-eco-tile" href="gigflow-editor.html"><img src="assets/gigflow-editor-logo.png" alt="GigFlow Editor"></a>
       </div>
     </div>
   </div>
@@ -359,7 +392,7 @@
       <h3>Ton chanteur mérite son propre outil.</h3>
       <p>GigFlow Live affiche textes et accords sur scène, navigation à la pédale, setlist en temps réel.</p>
     </div>
-    <a class="btn-secondary" href="GigFlow Live.html"><i data-lucide="arrow-right"></i> Découvrir GigFlow Live</a>
+    <a class="btn-secondary" href="gigflow-live.html"><i data-lucide="arrow-right"></i> Découvrir GigFlow Live</a>
   </div>
 </section>
 
@@ -376,9 +409,9 @@
       </div>
       <div class="foot-col">
         <h4>Produits</h4>
-        <a href="GigFlow Live.html">GigFlow Live →</a>
+        <a href="gigflow-live.html">GigFlow Live →</a>
         <a href="InBeat.html">InBeat →</a>
-        <a href="GigFlow Editor.html">GigFlow Editor →</a>
+        <a href="gigflow-editor.html">GigFlow Editor →</a>
       </div>
       <div class="foot-col">
         <h4>Ressources</h4>
@@ -424,6 +457,19 @@
     var ph = d.querySelector('.phone');
     if (ph) { ph.classList.remove('ib-pulse'); void ph.offsetWidth; ph.classList.add('ib-pulse'); setTimeout(function () { ph.classList.remove('ib-pulse'); }, 1400); }
   });
+})();
+/* Header : menu hamburger mobile reprenant les liens de la barre de nav */
+(function () {
+  var b = document.getElementById('navBurger');
+  var m = document.getElementById('navMobile');
+  if (!b || !m) return;
+  function close() { b.setAttribute('aria-expanded', 'false'); m.classList.remove('open'); }
+  b.addEventListener('click', function () {
+    var open = b.getAttribute('aria-expanded') === 'true';
+    b.setAttribute('aria-expanded', String(!open));
+    m.classList.toggle('open', !open);
+  });
+  m.addEventListener('click', function (e) { if (e.target.closest('a')) close(); });
 })();
 </script>
 </body>
