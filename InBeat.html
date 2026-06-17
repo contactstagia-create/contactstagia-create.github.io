@@ -114,6 +114,18 @@
   /* Import/export grid */
   .io-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; margin-top: 28px; }
   @media (max-width: 600px) { .io-grid { grid-template-columns: 1fr; } }
+  /* Beat visuel — logo Stagia (note + ondes) sur fond assorti */
+  .beat-emblem { width: 100%; max-width: 330px; aspect-ratio: 1; background: #0C0A18; border: 1px solid var(--border-subtle); border-radius: var(--r-lg, 20px); display: grid; place-items: center; overflow: hidden; }
+  .beat-logo { width: 72%; max-width: 240px; height: auto; display: block; }
+
+  /* CTA final — lockup écosystème (logos GigFlow) */
+  .cta-eco { margin-top: 44px; }
+  .cta-eco-lbl { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-4); margin: 0 0 18px; }
+  .cta-eco-logos { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .cta-eco-tile { display: flex; align-items: center; justify-content: center; width: 232px; height: 88px; padding: 16px 24px; background: #0C0A18; border: 1px solid var(--border-subtle); border-radius: var(--r-md); transition: border-color 140ms ease, transform 140ms ease; }
+  .cta-eco-tile:hover { border-color: var(--product-primary); transform: translateY(-2px); }
+  .cta-eco-tile img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+  @media (max-width: 600px) { .cta-eco-tile { width: 100%; max-width: 280px; } }
   /* Mobile-only hero intro shown ABOVE the demo screen */
   .ib-hero-m { display: none; }
   @media (max-width: 980px) {
@@ -263,7 +275,7 @@
       </div>
     </div>
 
-    <div class="feature ib-feat-solo">
+    <div class="feature reverse ib-feat-lib">
       <div class="feat-copy">
         <p class="eyebrow">Beat visuel & bip</p>
         <h3>Le temps fort saute aux yeux.</h3>
@@ -274,6 +286,11 @@
           <li><i data-lucide="hand"></i> Tap tempo pour caler à l'oreille</li>
         </ul>
       </div>
+      <div class="feat-media">
+        <div class="beat-emblem">
+          <img class="beat-logo" src="assets/stagia-logo-512.png" alt="Stagia">
+        </div>
+      </div>
     </div>
 
   </div>
@@ -283,8 +300,8 @@
 <section class="block">
   <div class="wrap">
     <div class="block-head">
-      <p class="eyebrow muted">Import & export</p>
-      <h2>Tes données voyagent avec toi.</h2>
+      <p class="eyebrow">Import & export</p>
+      <h2 style="font-size: clamp(24px, 2.6vw, 30px); line-height: 1.12; letter-spacing: -0.015em">Tes données toujours avec toi.</h2>
       <p>Sauvegarde, partage avec le groupe ou prépare sur grand écran : <span class="ib-name">InBeat</span> parle le même langage que tout l'écosystème <span class="st-name">Stagia</span>.</p>
     </div>
     <div class="io-grid">
@@ -320,6 +337,13 @@
     <p>Gratuit, sans limite, sans abonnement.</p>
     <div class="hero-actions">
       <button class="btn-primary"><span class="gp-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M4 3.4v17.2a1 1 0 0 0 1.52.85l14.3-8.6a1 1 0 0 0 0-1.7L5.52 2.55A1 1 0 0 0 4 3.4z"/></svg></span> Téléchargement sur Google Play Store à venir</button>
+    </div>
+    <div class="cta-eco">
+      <p class="cta-eco-lbl">Fait partie de l'écosystème Stagia</p>
+      <div class="cta-eco-logos">
+        <a class="cta-eco-tile" href="GigFlow Live.html"><img src="assets/gigflow-live-logo.png" alt="GigFlow Live"></a>
+        <a class="cta-eco-tile" href="GigFlow Editor.html"><img src="assets/gigflow-editor-logo.png" alt="GigFlow Editor"></a>
+      </div>
     </div>
   </div>
 </section>
