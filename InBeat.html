@@ -123,9 +123,25 @@
   .cta-eco-lbl { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-4); margin: 0 0 18px; }
   .cta-eco-logos { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
   .cta-eco-tile { display: flex; align-items: center; justify-content: center; width: 232px; height: 88px; padding: 16px 24px; background: #0C0A18; border: 1px solid var(--border-subtle); border-radius: var(--r-md); transition: border-color 140ms ease, transform 140ms ease; }
-  .cta-eco-tile:hover { border-color: var(--product-primary); transform: translateY(-2px); }
+  .cta-eco-logos > a:nth-child(1) { border-color: var(--brand-amber-300); }
+  .cta-eco-logos > a:nth-child(2) { border-color: var(--brand-pink-500); }
+  .cta-eco-tile:hover { transform: translateY(-2px); }
+  .cta-eco-logos > a:nth-child(1):hover { border-color: var(--brand-amber-200); box-shadow: var(--shadow-amber-glow); }
+  .cta-eco-logos > a:nth-child(2):hover { border-color: var(--brand-pink-300); box-shadow: var(--shadow-pink-glow); }
   .cta-eco-tile img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
   @media (max-width: 600px) { .cta-eco-tile { width: 100%; max-width: 280px; } }
+  /* Cross-promo écosystème — 2 produits */
+  .cp-wrap > .block-head { margin: 0 0 6px; }
+  .cp-wrap > .cp-inner { padding: 28px 0; }
+  .cp-wrap > .cp-inner + .cp-inner { border-top: 1px solid var(--border-subtle); }
+  .cp-shot-wide { width: 188px; }
+  .cp-shot-live { width: 196px; }
+  .cp-shot-live .phone { width: 196px; box-shadow: var(--shadow-lg), 0 0 46px 2px rgba(245, 194, 95, 0.55); }
+  .cp-shot-editor .browser { box-shadow: var(--shadow-lg), 0 0 46px 2px rgba(233, 69, 96, 0.55); border-color: rgba(0,0,0,0.8); }
+  .cp-btn-live { border-color: var(--brand-amber-300); color: var(--brand-amber-200); }
+  .cp-btn-live:hover { background: var(--brand-amber-300); color: var(--fg-invert); border-color: var(--brand-amber-300); }
+  .cp-btn-editor { border-color: var(--brand-pink-500); color: var(--brand-pink-300); }
+  .cp-btn-editor:hover { background: var(--brand-pink-500); color: #FFF; border-color: var(--brand-pink-500); }
   /* Header — menu hamburger mobile (reprend les liens de la barre de nav) */
   .nav-burger { display: none; align-items: center; justify-content: center; width: 42px; height: 42px; flex: none; background: var(--bg-surface-1); border: 1px solid var(--border-subtle); border-radius: var(--r-md); color: var(--fg-1); cursor: pointer; }
   .nav-burger:hover { border-color: var(--product-primary); }
@@ -159,10 +175,18 @@
 </style>
 </head>
 <body>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#0C0A18"/>
+    <text x="50" y="62" font-family="Mulish, sans-serif" font-size="34" font-weight="800" fill="#2BC4B8" text-anchor="middle">iB</text>
+  </svg>
+</template>
+
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a class="brand" href="index.html">
+    <a class="brand" href="stagia-home.html">
       <img src="assets/stagia-logo-watermark.png" alt="Stagia">
       <span class="name">Stagia</span>
     </a>
@@ -170,9 +194,9 @@
       <a href="gigflow-live.html">GigFlow Live</a>
       <a href="InBeat.html" class="active">InBeat</a>
       <a href="gigflow-editor.html">GigFlow Editor</a>
-      <a href="index.html#pourquoi">Pourquoi Stagia</a>
+      <a href="stagia-home.html#pourquoi">Pourquoi Stagia</a>
     </div>
-    <a class="nav-cta" href="index.html#produits">Découvrir les apps</a>
+    <a class="nav-cta" href="stagia-home.html#produits">Découvrir les apps</a>
     <button class="nav-burger" id="navBurger" aria-expanded="false" aria-controls="navMobile" aria-label="Menu">
       <span class="burger-icon"><span class="ic-menu"><i data-lucide="menu"></i></span><span class="ic-x"><i data-lucide="x"></i></span></span>
     </button>
@@ -182,8 +206,8 @@
       <a href="gigflow-live.html">GigFlow Live</a>
       <a href="InBeat.html" class="active">InBeat</a>
       <a href="gigflow-editor.html">GigFlow Editor</a>
-      <a href="index.html#pourquoi">Pourquoi Stagia</a>
-      <a class="nav-mobile-cta" href="index.html#produits">Découvrir les apps</a>
+      <a href="stagia-home.html#pourquoi">Pourquoi Stagia</a>
+      <a class="nav-mobile-cta" href="stagia-home.html#produits">Découvrir les apps</a>
     </div>
   </div>
 </nav>
@@ -196,7 +220,7 @@
       <h1>Le bon tempo, au bon moment. <span class="accent">Toujours.</span></h1>
       <p class="sub">Chaque morceau de ta setlist a son BPM et sa structure rythmique. Passe au suivant d'un geste — <span class="ib-name">InBeat</span> charge le tempo tout seul.</p>
       <p class="sub">Fini les réglages entre deux morceaux : le métronome dynamique qui suit ton show, du premier au dernier titre.</p>
-      <p class="sub ib-cta-line">Pas besoin d'installer quoi que ce soit — l'écran ci-contre est la vraie app, jouable :</p>
+      <p class="sub ib-cta-line">Pas besoin d'installer quoi que ce soit — l'écran ci-après est la vraie app, jouable :</p>
       <div class="hero-actions">
         <button class="btn-primary" id="ibTryBtn"><i data-lucide="hand"></i> Essaie l'écran interactif</button>
         <span class="ib-soon"><span class="gp-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M4 3.4v17.2a1 1 0 0 0 1.52.85l14.3-8.6a1 1 0 0 0 0-1.7L5.52 2.55A1 1 0 0 0 4 3.4z"/></svg></span> Google Play — bientôt</span>
@@ -371,28 +395,39 @@
     <div class="hero-actions">
       <button class="btn-primary"><span class="gp-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M4 3.4v17.2a1 1 0 0 0 1.52.85l14.3-8.6a1 1 0 0 0 0-1.7L5.52 2.55A1 1 0 0 0 4 3.4z"/></svg></span> Téléchargement sur Google Play Store à venir</button>
     </div>
-    <div class="cta-eco">
-      <p class="cta-eco-lbl">Fait partie de l'écosystème Stagia</p>
-      <div class="cta-eco-logos">
-        <a class="cta-eco-tile" href="gigflow-live.html"><img src="assets/gigflow-live-logo.png" alt="GigFlow Live"></a>
-        <a class="cta-eco-tile" href="gigflow-editor.html"><img src="assets/gigflow-editor-logo.png" alt="GigFlow Editor"></a>
-      </div>
-    </div>
   </div>
 </section>
 
-<!-- CROSS-PROMO GIGFLOW LIVE -->
+<!-- CROSS-PROMO ÉCOSYSTÈME STAGIA -->
 <section class="crosspromo">
-  <div class="wrap cp-inner">
-    <div class="cp-shot">
-      <div class="phone"><div class="screen"><img src="assets/screens/gigflow-live-stage.png" alt="GigFlow Live"></div></div>
+  <div class="wrap cp-wrap">
+    <div class="block-head">
+      <p class="eyebrow">Écosystème Stagia</p>
+      <h2 style="font-size: clamp(24px, 2.6vw, 30px); line-height: 1.12; letter-spacing: -0.015em">Fait partie d'un tout cohérent.</h2>
+      <p><span class="ib-name">InBeat</span> parle le même langage que <span class="st-name">GigFlow Live</span> et <span class="st-name">GigFlow Editor</span> — prépare, joue, garde le tempo sans jamais ressaisir un titre.</p>
     </div>
-    <div class="cp-text">
-      <p class="lbl">Pour ton groupe</p>
-      <h3>Ton chanteur mérite son propre outil.</h3>
-      <p>GigFlow Live affiche textes et accords sur scène, navigation à la pédale, setlist en temps réel.</p>
+    <div class="cp-inner">
+      <div class="cp-shot cp-shot-live">
+        <div class="phone"><div class="screen"><img src="assets/screens/gigflow-live-stage.png" alt="GigFlow Live"></div></div>
+      </div>
+      <div class="cp-text">
+        <p class="lbl">GigFlow Live · Scène</p>
+        <h3>Ton chanteur mérite son propre outil.</h3>
+        <p>GigFlow Live affiche textes et accords sur scène, navigation à la pédale, setlist en temps réel.</p>
+      </div>
+      <a class="btn-secondary cp-btn-live" href="gigflow-live.html"><i data-lucide="arrow-right"></i> Découvrir GigFlow Live</a>
     </div>
-    <a class="btn-secondary" href="gigflow-live.html"><i data-lucide="arrow-right"></i> Découvrir GigFlow Live</a>
+    <div class="cp-inner">
+      <div class="cp-shot cp-shot-wide cp-shot-editor">
+        <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="addr">editor.stagia.app</span></div><div class="screen"><img src="assets/screens/editor-edit.png" alt="GigFlow Editor"></div></div>
+      </div>
+      <div class="cp-text">
+        <p class="lbl">GigFlow Editor · Préparation</p>
+        <h3>Prépare tes morceaux au calme, sur PC.</h3>
+        <p>GigFlow Editor met en forme textes et accords, colorise les sections et synchronise tout vers la scène.</p>
+      </div>
+      <a class="btn-secondary cp-btn-editor" href="gigflow-editor.html"><i data-lucide="arrow-right"></i> Découvrir GigFlow Editor</a>
+    </div>
   </div>
 </section>
 
@@ -401,24 +436,17 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a class="brand" href="index.html">
+        <a class="brand" href="stagia-home.html">
           <img src="assets/stagia-logo-watermark.png" alt="Stagia" style="width:40px;height:40px">
           <span class="name">Stagia</span>
         </a>
-        <p>Des outils numériques pour musiciens — pose le papier, garde la musique. Conçus pour la scène, la répétition et l'organisation.</p>
+        <p>Des outils numériques créés pour musiciens, pas des musiciens — pose le papier, garde la musique. Conçus pour la scène, la répétition et l'organisation.</p>
       </div>
       <div class="foot-col">
         <h4>Produits</h4>
         <a href="gigflow-live.html">GigFlow Live →</a>
         <a href="InBeat.html">InBeat →</a>
         <a href="gigflow-editor.html">GigFlow Editor →</a>
-      </div>
-      <div class="foot-col">
-        <h4>Ressources</h4>
-        <a href="#">Aide & tutoriels →</a>
-        <a href="mailto:contact@stagia.app">Contact →</a>
-        <a href="#">Mentions légales →</a>
-        <a href="#">Confidentialité →</a>
       </div>
       <div class="foot-col">
         <h4>Suivre</h4>
