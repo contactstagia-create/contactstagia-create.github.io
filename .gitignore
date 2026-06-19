@@ -1,0 +1,7 @@
+# Dossiers de travail locaux (non déployés sur le site)
+/Site/
+/Youtube/
+
+# Sauvegardes locales (archives, journal de dev)
+/backups/
+DEVLOG.md
