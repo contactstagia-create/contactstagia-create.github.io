@@ -28,14 +28,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .browser .canvas { background: var(--bg-stage); padding: 20px; display: flex; justify-content: center; }
   .browser .canvas img { max-height: 840px; width: auto; border-radius: 8px; border: 1px solid var(--border-subtle); }
 
-  /* tool chips mock */
-  .tools { width: 100%; max-width: 380px; display: flex; flex-wrap: wrap; gap: 10px; }
+  /* Supprimer le strip produit sur .framed (spécifique Editor) */
+  .framed::before { display: none; }
+
+  /* Chips outils — look toolbar Editor (bottom bar) */
   .tool {
-    font-family: var(--font-mono); font-size: 13px; color: var(--fg-2);
-    background: var(--bg-surface-1); border: 1px solid var(--border-default);
-    border-radius: var(--r-md); padding: 9px 13px; display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); font-size: 12px; color: var(--fg-2);
+    background: var(--bg-app); border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 20px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 7px;
+    transition: border-color 120ms ease;
   }
-  .tool i { width: 15px; height: 15px; color: var(--product-primary); }
+  .tool:hover { border-color: rgba(233,69,96,0.4); }
+  .tool i { width: 13px; height: 13px; color: var(--product-primary); }
   .tool b { color: var(--product-primary); font-weight: 700; }
 
   /* export workflow mock */
@@ -62,13 +66,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* Image hero pleine largeur sur mobile */
   @media (max-width: 980px) {
-    .device-wrap img { width: 100% !important; }
+    .device-wrap img, .editor-wide-img { width: 100% !important; }
   }
   .hero { padding: 24px 0 40px; }
   section.block { padding: 36px 0; }
   .keys { margin-top: 22px; }
   .feature { padding: 28px 0; }
-  .final { padding: 50px 0; }
+  .final { padding: 40px 0; }
   footer { padding: 30px 0 19px; }
 
   .ecosystem { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 40px; }
@@ -128,7 +132,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="device-wrap" style="overflow:visible;">
-      <img src="assets/screens/editor-edit-song.png" alt="GigFlow Editor — saisie" style="width:400%;border-radius:10px;">
+      <img src="assets/screens/editor-live-preview.png" alt="GigFlow Editor — saisie" style="width:500%;border-radius:10px;">
     </div>
   </div>
 </header>
@@ -176,46 +180,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- DETAIL FEATURES -->
-<section class="block" style="padding-top:0">
+<section class="block" style="padding:0">
   <div class="wrap">
 
     <div class="feature">
       <div class="feat-copy">
-        <p class="eyebrow">La saisie comme elle devrait être</p>
         <h3>Écris une chanson aussi vite que tu la chantes.</h3>
         <p>Clavier, souris, grand écran — GigFlow Editor est pensé pour préparer chansons et setlists au calme. Syntaxe légère, coloration en temps réel, aperçu instantané.</p>
       </div>
-      <div class="feat-media">
-        <div class="framed"><img src="assets/screens/editor-edit-song.png" alt="Zone de saisie GigFlow Editor"></div>
+      <div class="feat-media" style="overflow:visible;">
+        <img class="editor-wide-img" src="assets/screens/editor-edit-song-closed2.png" alt="Zone de saisie GigFlow Editor" style="width:500%;border-radius:10px;">
       </div>
     </div>
 
     <div class="feature reverse">
       <div class="feat-copy">
-        <p class="eyebrow">Stagia Format</p>
         <h3>Une syntaxe pensée pour les musiciens.</h3>
-        <p>Du texte brut simple — accords, sections, annotations, chœurs. Chaque accord a sa couleur, la structure de la chanson est lisible d'un coup d'œil. Le même format alimente Live et InBeat.</p>
+        <p>Du texte brut simple — accords, sections, annotations, chœurs. Chaque accord a sa couleur, la structure de la chanson est lisible d'un coup d'œil. </p>
       </div>
-      <div class="feat-media">
-        <div class="framed"><img src="assets/screens/preview-song.png" alt="Aperçu rendu coloré — Stagia Format"></div>
+      <div class="feat-media" style="overflow:visible;">
+        <img class="editor-wide-img" src="assets/screens/editor-edit-song-chords-diagrams.png" alt="Aperçu rendu coloré — Stagia Format" style="width:400%;border-radius:10px;">
       </div>
     </div>
 
     <div class="feature">
       <div class="feat-copy">
-        <p class="eyebrow">Tous les outils dont tu as besoin</p>
-        <h3>Transpose, cale, illustre — en quelques clics.</h3>
-        <p>Tout ce qu'il faut pour mettre un morceau au point, sans quitter l'écran de saisie.</p>
+        <h3>Chaque détail d'un morceau, maîtrisé en quelques clics.</h3>
+        <p>Tous les outils pour une édition sur mesure.</p>
       </div>
       <div class="feat-media">
         <div class="framed">
           <div class="tools">
-            <span class="tool"><i data-lucide="arrow-up-down"></i> Transpo <b>±12</b></span>
-            <span class="tool"><i data-lucide="git-commit-horizontal"></i> Capo</span>
             <span class="tool"><i data-lucide="key"></i> Tonalité</span>
             <span class="tool"><i data-lucide="music"></i> Signature</span>
             <span class="tool"><i data-lucide="gauge"></i> BPM</span>
-            <span class="tool"><i data-lucide="guitar"></i> Diagrammes</span>
+            <span class="tool"><i data-lucide="git-commit-horizontal"></i> Capo</span>
+            <span class="tool"><i data-lucide="arrow-up-down"></i> Transpo <b>±12</b></span>
+            <span class="tool"><i data-lucide="layout-grid"></i> Diagrammes</span>
             <span class="tool"><i data-lucide="undo-2"></i> Undo / Redo</span>
           </div>
         </div>
@@ -224,7 +225,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="feature reverse">
       <div class="feat-copy">
-        <p class="eyebrow">Prêt pour la scène en quelques clics</p>
         <h3>De l'écran à la tablette, sans friction.</h3>
         <p>Une fois tes chansons prêtes, exporte en JSON depuis Editor et importe dans GigFlow Live ou InBeat. Ta tablette est prête pour le concert.</p>
       </div>
