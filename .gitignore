@@ -1,5 +1,2 @@
 # Config locale Claude Code (déjà ignorée globalement, mais explicite ici)
 .claude/
-
-# Journal de bord local, non publié
-DEVLOG.md
