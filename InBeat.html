@@ -2,6 +2,15 @@
 <!doctype html>
 <html lang="fr" data-product="inbeat">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3VQBS6X59"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J3VQBS6X59');
+</script>
 <meta charset="utf-8">
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -118,6 +127,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* Brand name highlight in body copy — un peu de "vie" */
   .ib-name { color: var(--product-primary); font-weight: 700; }
   .st-name { color: var(--brand-amber-300); font-weight: 700; }
+  .st-name-ed { color: var(--brand-pink-500); font-weight: 700; }
   /* Import/export grid */
   .io-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; margin-top: 28px; }
   @media (max-width: 600px) { .io-grid { grid-template-columns: 1fr; } }
@@ -416,14 +426,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="block-head">
       <p class="eyebrow">Écosystème Stagia</p>
       <h2 style="font-size: clamp(24px, 2.6vw, 30px); line-height: 1.12; letter-spacing: -0.015em">Fait partie d'un tout cohérent.</h2>
-      <p><span class="ib-name">InBeat</span> parle le même langage que <span class="st-name">GigFlow Live</span> et <span class="st-name">GigFlow Editor</span> — prépare, joue, garde le tempo sans jamais ressaisir un titre.</p>
+      <p><span class="ib-name">InBeat</span> parle le même langage que <span class="st-name">GigFlow Live</span> et <span class="st-name-ed">GigFlow Editor</span> — prépare, joue, garde le tempo sans jamais ressaisir un titre.</p>
     </div>
     <div class="cp-inner">
       <div class="cp-shot cp-shot-live">
         <div class="phone"><div class="screen"><img src="assets/screens/gigflow-live-stage.png" alt="GigFlow Live"></div></div>
       </div>
       <div class="cp-text">
-        <p class="lbl">GigFlow Live · Scène</p>
+        <p class="lbl" style="color:var(--brand-amber-300)">GigFlow Live · Scène</p>
         <h3>Ton chanteur mérite son propre outil.</h3>
         <p>GigFlow Live affiche textes et accords sur scène, navigation à la pédale, setlist en temps réel.</p>
       </div>
@@ -434,7 +444,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="addr">editor.stagia.app</span></div><div class="screen"><img src="assets/screens/editor-edit.png" alt="GigFlow Editor"></div></div>
       </div>
       <div class="cp-text">
-        <p class="lbl">GigFlow Editor · Préparation</p>
+        <p class="lbl" style="color:var(--brand-pink-500)">GigFlow Editor · Préparation</p>
         <h3>Prépare tes morceaux au calme, sur PC.</h3>
         <p>GigFlow Editor met en forme textes et accords, colorise les sections et synchronise tout vers la scène.</p>
       </div>

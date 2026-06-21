@@ -2,6 +2,15 @@
 <!doctype html>
 <html lang="fr" data-product="live">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3VQBS6X59"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J3VQBS6X59');
+</script>
 <meta charset="utf-8">
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -11,7 +20,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-WF8H5RWM');</script>
 <!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stagia — Libère-toi du papier. Concentre-toi sur la musique.</title>
+<title>Stagia — Tools for musicians, by musicians.</title>
 <link rel="stylesheet" href="colors_and_type.css">
 <style>
   * { box-sizing: border-box; }
@@ -342,9 +351,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="hero" id="top">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow">Les outils de scène des chanteurs &amp; musiciens</p>
-      <h1>Libère-toi du papier.<br><span class="accent">Concentre-toi sur la musique.</span></h1>
-      <p class="sub">Des applications simples, fiables et autonomes — conçues pour la scène, par des musiciens pour les musiciens. Sans connexion. Sans abonnement. Sans friction.</p>
+      <p class="eyebrow" data-tk="eyebrow">Stagia</p>
+      <h1><span data-tk="h1">Tools for musicians,</span><br><span class="accent" data-tk="accent">by musicians.</span></h1>
+      <p class="sub" data-tk="sub">GigFlow Live, InBeat, GigFlow Editor — des apps simples, fiables, offline. Faites pour jouer, pas pour naviguer dans des menus.</p>
       <div class="hero-actions">
         <button class="btn-primary"><i data-lucide="compass"></i> Découvrir les apps</button>
         <button class="btn-secondary"><i data-lucide="video"></i> Voir sur scène</button>
@@ -379,7 +388,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="body">
           <p class="label">GigFlow Live · Android</p>
           <h3>GigFlow Live</h3>
-          <p class="tag">Tes textes, tes accords, ta setlist. Sur scène, les mains libres.</p>
+          <p class="tag">Tu joues. On gère le reste.</p>
           <p class="desc">Affiche accords et paroles, navigue à la pédale, suis ta setlist en temps réel. Chaque accord a sa couleur, chaque section son repère.</p>
           <a class="more" href="gigflow-live.html">Découvrir <i data-lucide="arrow-right"></i></a>
           <p class="free">Gratuit pour commencer · illimité après achat unique</p>
@@ -405,7 +414,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="body">
           <p class="label">GigFlow Editor · PC / Mac</p>
           <h3>GigFlow Editor</h3>
-          <p class="tag">Prépare tout sur grand écran. Monte sur scène sans y penser.</p>
+          <p class="tag">Ton répertoire complet. À moindre effort.</p>
           <p class="desc">Clavier, souris, grand écran. Saisis tes chansons en syntaxe Stagia, transpose, ajoute tes diagrammes, puis exporte vers GigFlow Live et InBeat.</p>
           <a class="more" href="gigflow-editor.html">Découvrir <i data-lucide="arrow-right"></i></a>
           <p class="free">Application PC ou accès direct navigateur</p>
@@ -600,6 +609,68 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     m.classList.toggle('open', !open);
   });
   m.addEventListener('click', function (e) { if (e.target.closest('a')) close(); });
+})();
+</script>
+
+<!-- TWEAKS — MESSAGING VARIANTS -->
+<div id="_tk" style="position:fixed;bottom:20px;right:20px;z-index:9999;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;display:flex;flex-direction:column;align-items:flex-end;gap:8px;">
+  <div id="_tkp" style="display:none;width:272px;background:#12101C;border:1px solid rgba(255,255,255,0.14);border-radius:14px;overflow:hidden;box-shadow:0 16px 56px rgba(0,0,0,0.65);">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px 12px;border-bottom:1px solid rgba(255,255,255,0.08);">
+      <span style="font-size:12px;font-weight:700;color:#fff;letter-spacing:0.06em;text-transform:uppercase;">✦ Messaging</span>
+      <button id="_tkx" style="background:none;border:none;color:rgba(255,255,255,0.3);cursor:pointer;font-size:18px;padding:0;line-height:1;">×</button>
+    </div>
+    <div style="padding:12px 14px 14px;">
+      <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;">Variation</div>
+      <div id="_tko" style="display:flex;flex-direction:column;gap:6px;"></div>
+    </div>
+  </div>
+  <button id="_tkb" style="background:#12101C;border:1px solid rgba(255,255,255,0.16);color:#F5C25F;border-radius:8px;padding:8px 14px;cursor:pointer;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">✦ Messaging</button>
+</div>
+<script>
+(function(){
+  var KEY='_tk_home';
+  var V=[
+    {label:'A — Brand EN',eyebrow:'Stagia',h1:'Tools for musicians,',accent:'by musicians.',sub:'GigFlow Live, InBeat, GigFlow Editor — des apps simples, fiables, offline. Faites pour jouer, pas pour naviguer dans des menus.'},
+    {label:'B — Complice',eyebrow:'Pour les musiciens de scène',h1:'Tout pour jouer.',accent:'Rien de superflu.',sub:'Paroles, accords, tempo, setlists — on a fait les apps qu’on aurait voulu avoir. Offline, achat unique, sans friction.'},
+    {label:'C — Résultat',eyebrow:'Tes outils de scène',h1:'La scène sans les galères.',accent:'Enfin.',sub:'Trois apps pensées par des musiciens. Pour le chanteur, le batteur, la préparation sur PC. Offline. Sans abonnement.'}
+  ];
+  function apply(i){
+    var v=V[i];
+    Object.keys(v).forEach(function(k){
+      if(k==='label')return;
+      var el=document.querySelector('[data-tk="'+k+'"]');
+      if(el)el.textContent=v[k];
+    });
+    localStorage.setItem(KEY,i);
+    document.querySelectorAll('._tkd').forEach(function(d,j){d.style.background=j===i?'#F5C25F':'transparent';});
+  }
+  var opts=document.getElementById('_tko');
+  V.forEach(function(v,i){
+    var row=document.createElement('button');
+    row.style.cssText='display:flex;align-items:flex-start;gap:10px;background:none;border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:10px 12px;cursor:pointer;text-align:left;width:100%;transition:border-color 120ms,background 120ms;color:#fff;';
+    row.onmouseover=function(){this.style.borderColor='rgba(255,255,255,0.2)';this.style.background='rgba(255,255,255,0.04)';};
+    row.onmouseout=function(){this.style.borderColor='rgba(255,255,255,0.08)';this.style.background='none';};
+    var dot=document.createElement('span');dot.className='_tkd';
+    dot.style.cssText='width:10px;height:10px;border-radius:50%;border:1.5px solid #F5C25F;flex:none;margin-top:3px;transition:background 160ms;';
+    var txt=document.createElement('span');txt.style.cssText='font-size:12px;line-height:1.45;';
+    txt.innerHTML='<span style="font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.4);display:block;margin-bottom:4px;">'+v.label+'<\/span><span style="color:rgba(255,255,255,0.9);">'+v.h1+'<\/span> <span style="color:#F5C25F;">'+v.accent+'<\/span>';
+    row.appendChild(dot);row.appendChild(txt);
+    row.addEventListener('click',function(){apply(i);});
+    opts.appendChild(row);
+  });
+  var saved=Math.min(parseInt(localStorage.getItem(KEY)||'0',10),V.length-1);
+  apply(saved);
+  var panel=document.getElementById('_tkp'),btn=document.getElementById('_tkb'),xb=document.getElementById('_tkx');
+  function setOpen(open){panel.style.display=open?'block':'none';try{window.parent.postMessage({type:'tweaks:state',open:open},'*');}catch(e){}}
+  btn.addEventListener('click',function(){setOpen(panel.style.display==='none');});
+  xb.addEventListener('click',function(){setOpen(false);});
+  window.addEventListener('message',function(e){
+    if(!e.data||!e.data.type)return;
+    if(e.data.type==='tweaks:toggle')setOpen(panel.style.display==='none');
+    if(e.data.type==='tweaks:open')setOpen(true);
+    if(e.data.type==='tweaks:close')setOpen(false);
+  });
+  try{window.parent.postMessage({type:'tweaks:ready'},'*');}catch(e){}
 })();
 </script>
 </body>
