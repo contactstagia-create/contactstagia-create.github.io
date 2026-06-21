@@ -1,7 +1,5 @@
-# Dossiers de travail locaux (non déployés sur le site)
-/Site/
-/Youtube/
+# Config locale Claude Code (déjà ignorée globalement, mais explicite ici)
+.claude/
 
-# Sauvegardes locales (archives, journal de dev)
-/backups/
+# Journal de bord local, non publié
 DEVLOG.md
