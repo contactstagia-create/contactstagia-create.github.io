@@ -124,8 +124,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="eyebrow">GigFlow Editor · Navigateur</p>
-      <h1><span data-tk="h1">Ton répertoire complet.</span><br><span class="accent" data-tk="accent">À moindre effort.</span></h1>
-      <p class="sub" data-tk="sub">Syntaxe légère, aperçu temps réel, export vers Live et InBeat. Tu construis ta base une bonne fois — et tu n’y reviens que pour l’enrichir.</p>
+      <h1><span data-tk="h1">Le confort du clavier, la précision de la souris.</span><br><span class="accent" data-tk="accent">La liberté pour la scène.</span></h1>
+      <p class="sub" data-tk="sub">Grand écran, clavier, souris — prépare tes chansons et setlists dans les meilleures conditions. Un export, et tu montes sur scène avec Live ou InBeat.</p>
       <div class="hero-actions">
         <a class="btn-primary" href="https://stagia.app/gigflow-editor/editor.html" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Lancer GigFlow Editor</a>
       </div>
@@ -328,74 +328,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   m.addEventListener('click', function (e) { if (e.target.closest('a')) close(); });
 })();
 </script>
-
-<!-- TWEAKS — MESSAGING VARIANTS -->
-<div id="_tk" style="position:fixed;bottom:20px;right:20px;z-index:9999;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;display:flex;flex-direction:column;align-items:flex-end;gap:8px;">
-  <div id="_tkp" style="display:none;width:272px;background:#12101C;border:1px solid rgba(255,255,255,0.14);border-radius:14px;overflow:hidden;box-shadow:0 16px 56px rgba(0,0,0,0.65);">
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px 12px;border-bottom:1px solid rgba(255,255,255,0.08);">
-      <span style="font-size:12px;font-weight:700;color:#fff;letter-spacing:0.06em;text-transform:uppercase;">✦ Messaging</span>
-      <button id="_tkx" style="background:none;border:none;color:rgba(255,255,255,0.3);cursor:pointer;font-size:18px;padding:0;line-height:1;">×</button>
-    </div>
-    <div style="padding:12px 14px 14px;">
-      <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px;">Variation</div>
-      <div id="_tko" style="display:flex;flex-direction:column;gap:6px;"></div>
-    </div>
-  </div>
-  <button id="_tkb" style="background:#12101C;border:1px solid rgba(255,255,255,0.16);color:#F5C25F;border-radius:8px;padding:8px 14px;cursor:pointer;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">✦ Messaging</button>
-</div>
-<script>
-(function(){
-  var KEY='_tk_editor';
-  var V=[
-    {label:'A — Efficacité',h1:'Ton répertoire complet.',accent:'À moindre effort.',sub:'Syntaxe légère, aperçu temps réel, export vers Live et InBeat. Tu construis ta base une bonne fois — et tu n’y reviens que pour l’enrichir.'},
-    {label:'B — Workflow',h1:'Saisis une fois.',accent:'Joue partout.',sub:'GigFlow Editor alimente Live et InBeat. Une chanson saisie sur PC, aussitôt disponible sur tablette. Sans effort, sans doublon.'},
-    {label:'C — Confort',h1:'Le confort du clavier, la précision de la souris.',accent:'La liberté pour la scène.',sub:'Grand écran, clavier, souris — prépare tes chansons et setlists dans les meilleures conditions. Un export, et tu montes sur scène avec Live ou InBeat.'}
-  ];
-  function apply(i){
-    var v=V[i];
-    Object.keys(v).forEach(function(k){
-      if(k==='label')return;
-      var el=document.querySelector('[data-tk="'+k+'"]');
-      if(el)el.textContent=v[k];
-    });
-    localStorage.setItem(KEY,i);
-    document.querySelectorAll('._tkd').forEach(function(d,j){d.style.background=j===i?'#F5C25F':'transparent';});
-  }
-  var opts=document.getElementById('_tko');
-  V.forEach(function(v,i){
-    var row=document.createElement('button');
-    row.style.cssText='display:flex;align-items:flex-start;gap:10px;background:none;border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:10px 12px;cursor:pointer;text-align:left;width:100%;transition:border-color 120ms,background 120ms;color:#fff;';
-    row.onmouseover=function(){this.style.borderColor='rgba(255,255,255,0.2)';this.style.background='rgba(255,255,255,0.04)';};
-    row.onmouseout=function(){this.style.borderColor='rgba(255,255,255,0.08)';this.style.background='none';};
-    var dot=document.createElement('span');dot.className='_tkd';
-    dot.style.cssText='width:10px;height:10px;border-radius:50%;border:1.5px solid #F5C25F;flex:none;margin-top:3px;transition:background 160ms;';
-    var txt=document.createElement('span');txt.style.cssText='font-size:12px;line-height:1.45;';
-    txt.innerHTML='<span style="font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.4);display:block;margin-bottom:4px;">'+v.label+'<\/span><span style="color:rgba(255,255,255,0.9);">'+v.h1+'<\/span> <span style="color:#F5C25F;">'+v.accent+'<\/span>';
-    row.appendChild(dot);row.appendChild(txt);
-    row.addEventListener('click',function(){apply(i);});
-    opts.appendChild(row);
-  });
-  var saved=Math.min(parseInt(localStorage.getItem(KEY)||'0',10),V.length-1);
-  apply(saved);
-  var panel=document.getElementById('_tkp'),btn=document.getElementById('_tkb'),xb=document.getElementById('_tkx');
-  function setOpen(open){panel.style.display=open?'block':'none';try{window.parent.postMessage({type:'tweaks:state',open:open},'*');}catch(e){}}
-  btn.addEventListener('click',function(){setOpen(panel.style.display==='none');});
-  xb.addEventListener('click',function(){setOpen(false);});
-  window.addEventListener('message',function(e){
-    if(!e.data||!e.data.type)return;
-    if(e.data.type==='tweaks:toggle')setOpen(panel.style.display==='none');
-    if(e.data.type==='tweaks:open')setOpen(true);
-    if(e.data.type==='tweaks:close')setOpen(false);
-  });
-  try{window.parent.postMessage({type:'tweaks:ready'},'*');}catch(e){}
-})();
-</script>
-<template id="__bundler_thumbnail" data-bg-color="#0C0A18">
-  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-    <rect width="1200" height="800" fill="#0C0A18"/>
-    <text x="600" y="420" text-anchor="middle" font-family="monospace" font-weight="700" font-size="180" fill="#E63429">GE</text>
-  </svg>
-</template>
 </body>
 <template id="__bundler_thumbnail" data-bg-color="#0C0A18">
   <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
