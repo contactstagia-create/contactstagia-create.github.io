@@ -198,17 +198,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<template id="__bundler_thumbnail">
-  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <rect width="100" height="100" fill="#0C0A18"/>
-    <text x="50" y="62" font-family="Mulish, sans-serif" font-size="34" font-weight="800" fill="#2BC4B8" text-anchor="middle">iB</text>
-  </svg>
-</template>
+
 
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a class="brand" href="stagia-home.html">
+    <a class="brand" href="index.html">
       <img src="assets/stagia-logo-watermark.png" alt="Stagia">
       <span class="name">Stagia</span>
     </a>
@@ -216,9 +211,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="gigflow-live.html">GigFlow Live</a>
       <a href="InBeat.html" class="active">InBeat</a>
       <a href="gigflow-editor.html">GigFlow Editor</a>
-      <a href="stagia-home.html#pourquoi">Pourquoi Stagia</a>
     </div>
-    <a class="nav-cta" href="stagia-home.html#produits">Découvrir les apps</a>
+    
+    <div class="lang-switcher">
+      <button class="lang-btn">FR <i data-lucide="chevron-down" style="width:11px;height:11px;"></i></button>
+      <div class="lang-dropdown">
+        <a href="#" class="lang-active">FR</a>
+        <span class="lang-soon">EN</span>
+        <span class="lang-soon">US</span>
+        <span class="lang-soon">DE</span>
+        <span class="lang-soon">IT</span>
+        <span class="lang-soon">ES</span>
+        <span class="lang-soon">NL</span>
+        <span class="lang-soon">PT</span>
+      </div>
+    </div>
+    <a class="nav-cta" href="#telecharger">Télécharger</a>
     <button class="nav-burger" id="navBurger" aria-expanded="false" aria-controls="navMobile" aria-label="Menu">
       <span class="burger-icon"><span class="ic-menu"><i data-lucide="menu"></i></span><span class="ic-x"><i data-lucide="x"></i></span></span>
     </button>
@@ -228,8 +236,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="gigflow-live.html">GigFlow Live</a>
       <a href="InBeat.html" class="active">InBeat</a>
       <a href="gigflow-editor.html">GigFlow Editor</a>
-      <a href="stagia-home.html#pourquoi">Pourquoi Stagia</a>
-      <a class="nav-mobile-cta" href="stagia-home.html#produits">Découvrir les apps</a>
+      
+      <div class="lang-mobile">
+        <span class="lang-label-m">Langue</span>
+        <div class="lang-mobile-options"><a href="#" class="lang-active-m">FR</a><span class="lang-soon-m">EN</span><span class="lang-soon-m">US</span><span class="lang-soon-m">DE</span><span class="lang-soon-m">IT</span><span class="lang-soon-m">ES</span><span class="lang-soon-m">NL</span><span class="lang-soon-m">PT</span></div>
+      </div>
+      <a class="nav-mobile-cta" href="#telecharger">Télécharger</a>
     </div>
   </div>
 </nav>
@@ -242,7 +254,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h1>Le bon tempo, au bon moment. <span class="accent">Toujours.</span></h1>
       <p class="sub">Chaque morceau de ta setlist a son BPM et sa structure rythmique. Passe au suivant d'un geste — <span class="ib-name">InBeat</span> charge le tempo tout seul.</p>
       <p class="sub">Fini les réglages entre deux morceaux : le métronome dynamique qui suit ton show, du premier au dernier titre.</p>
-      <p class="sub ib-cta-line">Pas besoin d'installer quoi que ce soit — l'écran ci-après est la vraie app, jouable :</p>
+      <p class="sub ib-cta-line">Teste la vraie app directement ici, sans installation :</p>
       <div class="hero-actions">
         <button class="btn-primary" id="ibTryBtn"><i data-lucide="hand"></i> Essaie l'écran interactif</button>
         <span class="ib-soon"><span class="gp-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M4 3.4v17.2a1 1 0 0 0 1.52.85l14.3-8.6a1 1 0 0 0 0-1.7L5.52 2.55A1 1 0 0 0 4 3.4z"/></svg></span> Google Play — bientôt</span>
@@ -335,7 +347,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="feat-copy">
         <p class="eyebrow">Préparation</p>
         <h3>Tout se règle avant le concert.</h3>
-        <p>Édite chaque titre — signature, BPM, durée, tonalité, notes — puis glisse-dépose tes morceaux dans l'ordre du show, avec lieu, date et durée totale. <span class="ib-name">InBeat</span> charge ensuite chaque tempo tout seul. À préparer sur PC, ou juste avant le show sur smartphone.</p>
+        <p>Édite chaque titre — signature, BPM, durée, tonalité, notes — puis glisse-dépose tes morceaux dans l'ordre du show, avec lieu, date et durée totale. <span class="ib-name">InBeat</span> charge ensuite chaque tempo tout seul. À préparer en amont sur smartphone, ou juste avant le show.</p>
       </div>
       <div class="feat-media ib-duo">
         <div class="phone"><div class="screen"><img src="assets/screens/inbeat-edit.png" alt="InBeat — Édition d'un titre"></div></div>
@@ -458,11 +470,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a class="brand" href="stagia-home.html">
+        <a class="brand" href="index.html">
           <img src="assets/stagia-logo-watermark.png" alt="Stagia" style="width:40px;height:40px">
           <span class="name">Stagia</span>
         </a>
-        <p>Des outils numériques créés pour musiciens, pas des musiciens — pose le papier, garde la musique. Conçus pour la scène, la répétition et l'organisation.</p>
+        <p>Des outils numériques créés pour les musiciens, par des musiciens — oublie le papier, garde la musique. Conçus pour la scène, la répétition et l'organisation.</p>
       </div>
       <div class="foot-col">
         <h4>Produits</h4>

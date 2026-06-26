@@ -25,12 +25,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="stylesheet" href="product.css">
 <style>
   /* Espacements verticaux alignés sur InBeat */
-  .hero { padding: 24px 0 40px; }
+  .hero { padding: 48px 0 56px; }
   section.block { padding: 36px 0; }
-  .keys { margin-top: 22px; }
+  .keys { margin-top: 22px; grid-template-columns: repeat(3, 1fr); }
   .feature { padding: 28px 0; }
   .final { padding: 40px 0; }
   footer { padding: 30px 0 19px; }
+
+  /* Supprimer le strip produit sur .framed */
+  .framed::before { display: none; }
+  /* Halo subtil */
+  .framed { box-shadow: var(--shadow-md), 0 0 40px color-mix(in srgb, var(--product-primary) 10%, transparent); }
+
+  /* Hero visuel agrandi */
+  .hero-grid { grid-template-columns: 0.82fr 1.18fr; gap: 48px; }
+  .device-wrap .phone {
+    width: 420px;
+    border-radius: 52px;
+    padding: 16px;
+    box-shadow: var(--shadow-lg), 0 0 100px color-mix(in srgb, var(--product-primary) 18%, transparent);
+  }
+  .device-wrap .phone .screen { border-radius: 38px; }
 </style>
 </head>
 <body>
@@ -38,6 +53,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WF8H5RWM"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
+
+
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
@@ -49,9 +67,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="gigflow-live.html" class="active">GigFlow Live</a>
       <a href="InBeat.html">InBeat</a>
       <a href="gigflow-editor.html">GigFlow Editor</a>
-      <a href="index.html#pourquoi">Pourquoi Stagia</a>
     </div>
-    <a class="nav-cta" href="index.html#produits">Découvrir les apps</a>
+    
+    <div class="lang-switcher">
+      <button class="lang-btn">FR <i data-lucide="chevron-down" style="width:11px;height:11px;"></i></button>
+      <div class="lang-dropdown">
+        <a href="#" class="lang-active">FR</a>
+        <span class="lang-soon">EN</span>
+        <span class="lang-soon">US</span>
+        <span class="lang-soon">DE</span>
+        <span class="lang-soon">IT</span>
+        <span class="lang-soon">ES</span>
+        <span class="lang-soon">NL</span>
+        <span class="lang-soon">PT</span>
+      </div>
+    </div>
+    <a class="nav-cta" href="#telecharger">Télécharger</a>
     <button class="nav-burger" id="navBurger" aria-expanded="false" aria-controls="navMobile" aria-label="Menu"><span class="burger-icon"><span class="ic-menu"><i data-lucide="menu"></i></span><span class="ic-x"><i data-lucide="x"></i></span></span></button>
   </div>
   <div class="nav-mobile" id="navMobile">
@@ -59,8 +90,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="gigflow-live.html" class="active">GigFlow Live</a>
       <a href="InBeat.html">InBeat</a>
       <a href="gigflow-editor.html">GigFlow Editor</a>
-      <a href="index.html#pourquoi">Pourquoi Stagia</a>
-      <a class="nav-mobile-cta" href="index.html#produits">Découvrir les apps</a>
+      
+      <div class="lang-mobile">
+        <span class="lang-label-m">Langue</span>
+        <div class="lang-mobile-options"><a href="#" class="lang-active-m">FR</a><span class="lang-soon-m">EN</span><span class="lang-soon-m">US</span><span class="lang-soon-m">DE</span><span class="lang-soon-m">IT</span><span class="lang-soon-m">ES</span><span class="lang-soon-m">NL</span><span class="lang-soon-m">PT</span></div>
+      </div>
+      <a class="nav-mobile-cta" href="#telecharger">Télécharger</a>
     </div>
   </div>
 </nav>
@@ -70,13 +105,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="eyebrow">GigFlow Live · Android</p>
-      <h1><span data-tk="h1">Tu joues.</span><br><span class="accent" data-tk="accent">GigFlow Live gère le reste.</span></h1>
+      <h1><span data-tk="h1">Joue sans</span><br><span class="accent" data-tk="accent">perdre le fil.</span></h1>
       <p class="sub" data-tk="sub">Paroles, accords, setlist — tout sous les yeux sans toucher l'écran. Simple, fiable, pensé pour la scène.</p>
       <div class="hero-actions">
         <button class="btn-primary"><span class="gp-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M4 3.4v17.2a1 1 0 0 0 1.52.85l14.3-8.6a1 1 0 0 0 0-1.7L5.52 2.55A1 1 0 0 0 4 3.4z"/></svg></span> Téléchargement sur Google Play Store à venir</button>
-        <button class="btn-secondary"><i data-lucide="play-circle"></i> Regarder la vidéo</button>
+
       </div>
-      <p class="adaptive">GigFlow Live s'adapte à ta façon de jouer — active uniquement ce dont tu as besoin.</p>
+      <p class="adaptive">GigFlow Live s'adapte à tes envies — active uniquement ce dont tu as besoin.</p>
       <div class="status-chips">
         <span class="chip"><span class="dot"></span> 100 % offline</span>
         <span class="chip"><span class="dot brand"></span> Achat unique · sans abonnement</span>
@@ -117,18 +152,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="key">
         <div class="ic"><i data-lucide="wifi-off"></i></div>
         <h4>100 % offline</h4>
-        <p>Aucune connexion, aucun compte requis. Tes données restent chez toi.</p>
+        <p>Aucune connexion, aucun compte requis. Tes données restent avec toi.</p>
       </div>
       <div class="key">
         <div class="ic"><i data-lucide="badge-check"></i></div>
         <h4>Essai gratuit, achat unique</h4>
         <p>Commence gratuitement, déverrouille tout en une fois. Jamais d'abonnement.</p>
       </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="monitor"></i></div>
+        <h4>Import GigFlow Editor</h4>
+        <p>Prépare chansons et setlists sur PC, importe-les en un clic sur ta tablette.</p>
+      </div>
     </div>
-    <div class="freemium">
-      <i data-lucide="gift"></i>
-      <span>Gratuit pour commencer — illimité après achat unique.</span>
-    </div>
+
   </div>
 </section>
 
@@ -164,7 +201,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3>Pensé pour la scène, pas pour le bureau.</h3>
         <p>Affichage plein écran optimisé pour jouer. Chaque accord a sa propre couleur — tu anticipes les changements d'un coup d'œil. Luminosité et contraste réglables à la volée, temps restant toujours affiché.</p>
         <ul class="feat-list">
-          <li><i data-lucide="palette"></i> Accords colorés, sections repérées</li>
+          <li><i data-lucide="palette"></i> Accords colorés, sections repérées au choix</li>
           <li><i data-lucide="maximize"></i> Plein écran, gros caractères lisibles à 1 m</li>
         </ul>
       </div>
@@ -187,9 +224,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="feature">
       <div class="feat-copy">
         <p class="eyebrow">Éditeur intégré</p>
-        <h3>Modifie une chanson sans quitter l'app.</h3>
-        <p>Syntaxe légère, aperçu en temps réel, accords colorés automatiquement. Ou prépare tout au calme sur PC avec GigFlow Editor et importe en un clic.</p>
-        <a class="more" href="gigflow-editor.html">Découvrir GigFlow Editor <i data-lucide="arrow-right"></i></a>
+        <h3>Modification d'une chanson à la dernière minute sans quitter l'app.</h3>
+        <p>Un accord à changer à la dernière minute ? Ça prend dix secondes. Sinon, prépare tout sur PC avec GigFlow Editor.</p>
+        <a class="more" href="gigflow-editor.html" style="color:#E63429;">Découvrir GigFlow Editor <i data-lucide="arrow-right"></i></a>
       </div>
       <div class="feat-media">
         <div class="framed"><img src="assets/screens/editor-edit.png" alt="Éditeur intégré GigFlow Live"></div>
@@ -204,26 +241,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap final-inner">
     <p class="eyebrow">Android · bientôt sur Google Play</p>
     <h2>Prêt à monter sur scène ?</h2>
-    <p>Gratuit pour commencer — illimité après achat unique.</p>
+    <p>Essai gratuit · Achat unique · Aucun abonnement.</p>
     <div class="hero-actions">
       <button class="btn-primary"><span class="gp-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M4 3.4v17.2a1 1 0 0 0 1.52.85l14.3-8.6a1 1 0 0 0 0-1.7L5.52 2.55A1 1 0 0 0 4 3.4z"/></svg></span> Téléchargement sur Google Play Store à venir</button>
-      <a class="btn-secondary" href="gigflow-editor.html"><i data-lucide="monitor"></i> Découvrir GigFlow Editor</a>
+      <a class="btn-secondary" href="gigflow-editor.html" style="color:#E63429;border-color:#E63429;"><i data-lucide="monitor"></i> Découvrir GigFlow Editor</a>
     </div>
   </div>
 </section>
 
-<!-- CROSS-PROMO INBEAT -->
+<!-- CROSS-PROMO INBEAT + EDITOR -->
 <section class="crosspromo">
   <div class="wrap cp-inner">
     <div class="cp-shot">
       <div class="phone"><div class="screen"><img src="assets/screens/inbeat-live.png" alt="InBeat"></div></div>
     </div>
     <div class="cp-text">
-      <p class="lbl">Pour ton groupe</p>
+      <p class="lbl" style="color:#2EB5AE;">Pour garder le rythme</p>
       <h3>Ton batteur mérite son propre outil.</h3>
-      <p>InBeat affiche le tempo et la structure rythmique de ta setlist — gratuit, sans limite, sans abonnement.</p>
+      <p><span style="color:#2EB5AE;font-weight:700;">InBeat</span> affiche le tempo et la structure rythmique de ta setlist — gratuit, sans limite, sans abonnement.</p>
     </div>
-    <a class="btn-secondary" href="InBeat.html"><i data-lucide="arrow-right"></i> Découvrir InBeat</a>
+    <a class="btn-secondary" href="InBeat.html" style="color:#2EB5AE;border-color:#2EB5AE;"><i data-lucide="arrow-right"></i> Découvrir InBeat</a>
+  </div>
+  <div class="wrap cp-inner" style="border-top:1px solid var(--border-subtle);">
+    <div class="cp-shot">
+      <div style="width:120px;height:88px;background:linear-gradient(160deg,#211D2F,#100D1B);border:1px solid var(--border-default);border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-md),0 0 40px color-mix(in srgb,#E63429 12%,transparent);">
+        <i data-lucide="monitor" style="width:40px;height:40px;color:#E63429;"></i>
+      </div>
+    </div>
+    <div class="cp-text">
+      <p class="lbl" style="color:#E63429;">Pour préparer ton concert</p>
+      <h3>Prépare tout sur PC. Importe en un clic.</h3>
+      <p><span style="color:#E63429;font-weight:700;">GigFlow Editor</span> tourne dans ton navigateur — saisis tes chansons, configure tes setlists au calme, exporte vers Live ou InBeat.</p>
+    </div>
+    <a class="btn-secondary" href="gigflow-editor.html" style="color:#E63429;border-color:#E63429;"><i data-lucide="arrow-right"></i> Découvrir Editor</a>
   </div>
 </section>
 
@@ -236,7 +286,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <img src="assets/stagia-logo-watermark.png" alt="Stagia" style="width:40px;height:40px">
           <span class="name">Stagia</span>
         </a>
-        <p>Des outils numériques pour musiciens — pose le papier, garde la musique. Conçus pour la scène, la répétition et l'organisation.</p>
+        <p>Des outils numériques créés pour les musiciens, par des musiciens — oublie le papier, garde la musique. Conçus pour la scène, la répétition et l'organisation.</p>
       </div>
       <div class="foot-col">
         <h4>Produits</h4>
@@ -266,6 +316,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>lucide.createIcons();</script>
+
+
 <script>
 (function () {
   var b = document.getElementById('navBurger');
@@ -280,10 +332,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   m.addEventListener('click', function (e) { if (e.target.closest('a')) close(); });
 })();
 </script>
-<template id="__bundler_thumbnail" data-bg-color="#0C0A18">
-  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-    <rect width="1200" height="800" fill="#0C0A18"/>
-    <text x="600" y="420" text-anchor="middle" font-family="monospace" font-weight="700" font-size="180" fill="#F5C25F">GL</text>
-  </svg>
-</template>
 </body>
+</html>
