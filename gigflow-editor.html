@@ -1,5 +1,6 @@
+<!-- @startingPoint section="Marketing" subtitle="Page produit GigFlow Editor — hero PC, 5 features, Stagia Format, workflow d'export" viewport="1280x3900" -->
 <!doctype html>
-<html lang="fr" data-product="live">
+<html lang="fr" data-product="editor">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3VQBS6X59"></script>
@@ -7,6 +8,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+
     gtag('consent', 'default', {analytics_storage: 'denied'});
   gtag('config', 'G-J3VQBS6X59');
 </script>
@@ -19,57 +21,71 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-WF8H5RWM');</script>
 <!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Stagia</title>
-<meta name="description" content="Contacter Stagia — une question, un bug ou une idée ? Écris-nous à contact@stagia.app.">
-<link rel="stylesheet" href="colors_and_type.css">
-<link rel="stylesheet" href="product.css">
+<title>GigFlow Editor — Ton répertoire complet. À moindre effort.</title>
+<link rel="stylesheet" href="colors_and_type.css?v=3">
+<link rel="stylesheet" href="product.css?v=3">
 <style>
-  footer { padding: 30px 0 19px; }
-  .page-hero { padding: 72px 0 48px; border-bottom: 1px solid var(--border-subtle); }
-  .page-hero .eyebrow { margin-bottom: 12px; }
-  .page-hero h1 {
-    font-family: var(--font-display); font-weight: 900;
-    font-size: clamp(32px, 4vw, 48px); line-height: 1.06; letter-spacing: -0.025em;
-    margin: 0 0 16px;
-  }
-  .page-hero p { font-size: 17px; color: var(--fg-2); line-height: 1.55; margin: 0; max-width: 52ch; }
-  .page-body { padding: 64px 0 100px; }
-  .page-content { max-width: 640px; }
+  /* Editor hero canvas: portrait app shot centred in a desktop window */
+  .browser .canvas { background: var(--bg-stage); padding: 20px; display: flex; justify-content: center; }
+  .browser .canvas img { max-height: 840px; width: auto; border-radius: 8px; border: 1px solid var(--border-subtle); }
 
-  .contact-card {
+  /* Supprimer le strip produit sur .framed (spécifique Editor) */
+  .framed::before { display: none; }
+
+  /* Chips outils — look toolbar Editor (bottom bar) */
+  .tool {
+    font-family: var(--font-mono); font-size: 12px; color: var(--fg-2);
+    background: var(--bg-app); border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 20px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 7px;
+    transition: border-color 120ms ease;
+  }
+  .tool:hover { border-color: rgba(233,69,96,0.4); }
+  .tool i, .tool svg { width: 26px; height: 26px; color: var(--product-primary); flex: none; }
+  .tool b { color: var(--product-primary); font-weight: 700; }
+
+  /* export workflow mock */
+  .flow { width: 100%; max-width: 380px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .node {
+    width: 100%; display: flex; align-items: center; gap: 12px; justify-content: center;
     background: var(--bg-surface-1); border: 1px solid var(--border-subtle);
-    border-radius: var(--r-xl); padding: 40px 40px 36px;
-    display: flex; flex-direction: column; gap: 28px;
-  }
-  .contact-mail {
-    display: inline-flex; align-items: center; gap: 12px;
-    font-family: var(--font-display); font-weight: 800; font-size: clamp(20px, 2.4vw, 28px);
-    color: var(--brand-amber-300); letter-spacing: -0.01em;
-    transition: opacity 140ms ease;
-  }
-  .contact-mail:hover { opacity: 0.8; }
-  .contact-mail i { flex: none; }
-  .contact-meta { font-size: 14px; color: var(--fg-3); line-height: 1.6; }
-  .contact-meta strong { color: var(--fg-1); }
-
-  .contact-topics {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-    margin-top: 8px;
-  }
-  .topic {
-    background: var(--bg-stage); border: 1px solid var(--border-subtle);
     border-radius: var(--r-lg); padding: 16px 18px;
-    display: flex; align-items: center; gap: 12px;
-    font-size: 14px; color: var(--fg-2);
+    font-family: var(--font-display); font-weight: 800; font-size: 16px;
   }
-  .topic i { color: var(--brand-amber-300); flex: none; }
+  .node .badge { width: 30px; height: 30px; border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; }
+  .node .badge i { width: 17px; height: 17px; color: #0C0A18; }
+  .node.editor .badge { background: var(--brand-pink-500); } .node.editor .badge i { color: #fff; }
+  .node .json { margin-left: auto; font-family: var(--font-mono); font-size: 11px; color: var(--fg-4); }
+  .flow .down { color: var(--fg-4); display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; }
+  .flow .targets { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; }
+  .flow .targets .node { font-size: 14px; padding: 13px 14px; }
+  .node.live .badge { background: linear-gradient(90deg,#F9D77A,#F5C25F); }
+  .node.inbeat .badge { background: linear-gradient(90deg,#7FD8D3,#2EB5AE); }
 
-  .divider { height: 1px; background: var(--border-subtle); }
+  /* Grille clés : 3 colonnes × 2 lignes (comme InBeat) */
+  .keys { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  @media (max-width: 980px) { .keys { grid-template-columns: repeat(2, minmax(0,1fr)); } }
 
-  @media (max-width: 600px) {
-    .contact-card { padding: 28px 22px; }
-    .contact-topics { grid-template-columns: 1fr; }
+  /* Image hero pleine largeur sur mobile */
+  @media (max-width: 980px) {
+    .device-wrap img, .editor-wide-img { width: 100% !important; }
   }
+  .hero { padding: 24px 0 40px; }
+  section.block { padding: 36px 0; }
+  .keys { margin-top: 22px; }
+  .feature { padding: 28px 0; }
+  .final { padding: 40px 0; }
+  footer { padding: 30px 0 19px; }
+
+  .ecosystem { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-top: 40px; }
+
+  @keyframes flowRight     { 0%,100%{transform:translateX(0);opacity:0.5}  50%{transform:translateX(6px);opacity:1} }
+  @keyframes flowLeft      { 0%,100%{transform:translateX(0);opacity:0.5}  50%{transform:translateX(-6px);opacity:1} }
+  @keyframes flowDownRight { 0%,100%{transform:translate(0,0);opacity:0.5} 50%{transform:translate(5px,5px);opacity:1} }
+  @keyframes flowDownLeft  { 0%,100%{transform:translate(0,0);opacity:0.5} 50%{transform:translate(-5px,5px);opacity:1} }
+  .eco { background: var(--bg-surface-1); border: 1px solid var(--border-subtle); border-radius: var(--r-lg); padding: 18px 20px; display: flex; align-items: flex-start; gap: 13px; }
+  .eco .d { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .eco b { font-family: var(--font-display); font-weight: 800; font-size: 15px; display: block; }
+  .eco small { font-size: 12.5px; color: var(--fg-3); }
 </style>
 </head>
 <body>
@@ -77,14 +93,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WF8H5RWM"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
-<template id="__bundler_thumbnail">
-<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100" height="100" fill="#0C0A18"/>
-  <text x="50" y="62" font-family="Mulish, sans-serif" font-size="34" font-weight="800" fill="#F5C25F" text-anchor="middle">@</text>
-</svg>
-</template>
-
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
@@ -95,8 +103,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="nav-links">
       <a href="gigflow-live.html">GigFlow Live</a>
       <a href="InBeat.html">InBeat</a>
-      <a href="gigflow-editor.html">GigFlow Editor</a>
+      <a href="gigflow-editor.html" class="active">GigFlow Editor</a>
     </div>
+    
     <div class="lang-switcher">
       <button class="lang-btn">FR <i data-lucide="chevron-down" style="width:11px;height:11px;"></i></button>
       <div class="lang-dropdown">
@@ -110,57 +119,176 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="lang-soon">PT</span>
       </div>
     </div>
-    <a class="nav-cta" href="index.html#produits">Découvrir les apps</a>
+    <a class="nav-cta" href="https://stagia.app/gigflow-editor/editor.html" target="_blank" rel="noopener">Lancer Editor</a>
     <button class="nav-burger" id="navBurger" aria-expanded="false" aria-controls="navMobile" aria-label="Menu"><span class="burger-icon"><span class="ic-menu"><i data-lucide="menu"></i></span><span class="ic-x"><i data-lucide="x"></i></span></span></button>
   </div>
   <div class="nav-mobile" id="navMobile">
     <div class="nav-mobile-inner">
       <a href="gigflow-live.html">GigFlow Live</a>
       <a href="InBeat.html">InBeat</a>
-      <a href="gigflow-editor.html">GigFlow Editor</a>
+      <a href="gigflow-editor.html" class="active">GigFlow Editor</a>
+      
       <div class="lang-mobile">
         <span class="lang-label-m">Langue</span>
         <div class="lang-mobile-options"><a href="#" class="lang-active-m">FR</a><span class="lang-soon-m">EN</span><span class="lang-soon-m">US</span><span class="lang-soon-m">DE</span><span class="lang-soon-m">IT</span><span class="lang-soon-m">ES</span><span class="lang-soon-m">NL</span><span class="lang-soon-m">PT</span></div>
       </div>
-      <a class="nav-mobile-cta" href="index.html#produits">Découvrir les apps</a>
+      <a class="nav-mobile-cta" href="https://stagia.app/gigflow-editor/editor.html" target="_blank" rel="noopener">Lancer Editor</a>
     </div>
   </div>
 </nav>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">GigFlow Editor · Navigateur</p>
+      <h1><span data-tk="h1">Le confort du clavier, la précision de la souris.</span><br><span class="accent" data-tk="accent">La liberté pour la scène.</span></h1>
+      <p class="sub" data-tk="sub">Grand écran, clavier, souris — prépare tes chansons et setlists dans les meilleures conditions. Un export, et tu montes sur scène avec Live ou InBeat.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="https://stagia.app/gigflow-editor/editor.html" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Lancer GigFlow Editor</a>
+      </div>
+      <p class="adaptive">Mets l'app en favori dans ton navigateur — elle fonctionne même sans connexion, aucune installation nécessaire.</p>
+      <div class="status-chips">
+        <span class="chip"><span class="dot"></span> Aucune installation</span>
+        <span class="chip"><span class="dot brand"></span> Export Live & InBeat</span>
+        <span class="chip"><span class="dot" style="background:var(--brand-amber-300);box-shadow:0 0 8px var(--brand-amber-300)"></span> 100 % offline à l'utilisation</span>
+        <span class="chip"><span class="dot" style="background:var(--brand-amber-300);box-shadow:0 0 8px var(--brand-amber-300)"></span> Aucun abonnement · aucune pub</span>
+      </div>
+    </div>
+    <div class="device-wrap" style="overflow:visible;">
+      <img src="assets/screens/editor-live-preview.png" alt="GigFlow Editor — saisie" style="width:500%;border-radius:10px;">
+    </div>
+  </div>
+</header>
+
+<!-- 5 KEY FEATURES -->
+<section class="block">
   <div class="wrap">
-    <p class="eyebrow">Ressources</p>
-    <h1>Contact</h1>
-    <p>Une question, un bug, une idée ? On est à l'écoute.</p>
+    <div class="block-head">
+      <p class="eyebrow muted">L'essentiel</p>
+      <h2>Tout ce qu’il faut. Rien de trop.</h2>
+    </div>
+    <div class="keys">
+      <div class="key">
+        <div class="ic"><i data-lucide="keyboard"></i></div>
+        <h4>Saisie rapide</h4>
+        <p>Syntaxe Stagia Format — légère, intuitive, colorée.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="eye"></i></div>
+        <h4>Aperçu temps réel</h4>
+        <p>Coloration syntaxique et rendu instantané pendant la frappe.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="sliders-horizontal"></i></div>
+        <h4>Outils d'édition</h4>
+        <p>Transposition, capo, diagrammes d'accords intégrés.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="upload"></i></div>
+        <h4>Export Live & InBeat</h4>
+        <p>JSON prêt à importer sur tablette en un clic.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="monitor"></i></div>
+        <h4>Sans installation</h4>
+        <p>Lance-le depuis ton navigateur sur PC ou Mac, et travaille hors ligne — aucune installation, aucune connexion requise.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><svg viewBox="0 0 22 22" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform:rotate(-90deg)"><rect x="3" y="3" width="16" height="1.8" fill="#E63429" rx="0.3"/><line x1="3" y1="4.8" x2="3" y2="20" stroke="#E63429" stroke-width="0.7" opacity="0.4"/><line x1="6.2" y1="4.8" x2="6.2" y2="20" stroke="#E63429" stroke-width="0.7" opacity="0.4"/><line x1="9.4" y1="4.8" x2="9.4" y2="20" stroke="#E63429" stroke-width="0.7" opacity="0.4"/><line x1="12.6" y1="4.8" x2="12.6" y2="20" stroke="#E63429" stroke-width="0.7" opacity="0.4"/><line x1="15.8" y1="4.8" x2="15.8" y2="20" stroke="#E63429" stroke-width="0.7" opacity="0.4"/><line x1="19" y1="4.8" x2="19" y2="20" stroke="#E63429" stroke-width="0.7" opacity="0.4"/><line x1="3" y1="10" x2="19" y2="10" stroke="#E63429" stroke-width="0.5" opacity="0.35"/><line x1="3" y1="15" x2="19" y2="15" stroke="#E63429" stroke-width="0.5" opacity="0.35"/><line x1="3" y1="20" x2="19" y2="20" stroke="#E63429" stroke-width="0.5" opacity="0.35"/><rect x="11.2" y="11.4" width="2.8" height="2.2" rx="0.6" fill="#E63429"/><rect x="14.4" y="16.4" width="2.8" height="2.2" rx="0.6" fill="#E63429"/><rect x="17.6" y="11.4" width="2.8" height="2.2" rx="0.6" fill="#E63429"/></svg></div>
+        <h4>Diagrammes d'accords</h4>
+        <p>Les principaux accords avec leurs diagrammes visuels — 146 accords - 177 positions.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- CONTENT -->
-<section class="page-body">
-  <div class="wrap page-content">
-    <div class="contact-card">
-      <div>
-        <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-4);margin:0 0 14px;">Adresse e-mail</p>
-        <a class="contact-mail" href="mailto:contact@stagia.app">
-          <i data-lucide="mail"></i>
-          contact@stagia.app
-        </a>
+<!-- DETAIL FEATURES -->
+<section class="block" style="padding:0">
+  <div class="wrap">
+
+    <div class="feature">
+      <div class="feat-copy">
+        <h3>Écris une chanson aussi vite que tu la chantes.</h3>
+        <p>Clavier, souris, grand écran — GigFlow Editor est pensé pour préparer chansons et setlists au calme. Syntaxe légère, coloration en temps réel, aperçu instantané.</p>
       </div>
+      <div class="feat-media" style="overflow:visible;">
+        <img class="editor-wide-img" src="assets/screens/editor-edit-song-closed2.png" alt="Zone de saisie GigFlow Editor" style="width:500%;border-radius:10px;">
+      </div>
+    </div>
 
-      <div class="divider"></div>
+    <div class="feature reverse">
+      <div class="feat-copy">
+        <h3>Une syntaxe pensée pour les musiciens.</h3>
+        <p>Du texte brut simple — accords, sections, annotations, chœurs. Chaque accord a sa couleur, la structure de la chanson est lisible d'un coup d'œil. </p>
+      </div>
+      <div class="feat-media" style="overflow:visible;">
+        <img class="editor-wide-img" src="assets/screens/editor-edit-song-chords-diagrams.png" alt="Aperçu rendu coloré — Stagia Format" style="width:400%;border-radius:10px;">
+      </div>
+    </div>
 
-      <p class="contact-meta">On répond en général sous <strong>48 h</strong>, souvent moins. Pense à préciser l'app concernée et ton appareil pour qu'on puisse t'aider plus vite.</p>
-
-      <div>
-        <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-4);margin:0 0 14px;">On peut t'aider pour</p>
-        <div class="contact-topics">
-          <div class="topic"><i data-lucide="bug"></i> Signaler un bug</div>
-          <div class="topic"><i data-lucide="lightbulb"></i> Suggérer une idée</div>
-          <div class="topic"><i data-lucide="circle-help"></i> Question d'utilisation</div>
-          <div class="topic"><i data-lucide="receipt"></i> Achat & facturation Google Play</div>
+    <div class="feature">
+      <div class="feat-copy">
+        <h3>Chaque détail d'un morceau, maîtrisé en quelques clics.</h3>
+        <p>Tous les outils pour une édition sur mesure.</p>
+      </div>
+      <div class="feat-media">
+        <div class="framed">
+          <div class="tools">
+            <span class="tool"><i data-lucide="hash"></i> Tonalité</span>
+            <span class="tool"><svg viewBox="0 0 22 22" width="26" height="26" xmlns="http://www.w3.org/2000/svg"><text x="11" y="9" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-weight="700" font-size="11" fill="currentColor">4</text><text x="11" y="18" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-weight="700" font-size="11" fill="currentColor">4</text></svg> Signature</span>
+            <span class="tool"><i data-lucide="gauge"></i> BPM</span>
+            <span class="tool"><svg viewBox="0 0 22 22" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform:rotate(-90deg)"><rect x="3" y="3" width="16" height="1.8" fill="currentColor" rx="0.3"/><line x1="3" y1="4.8" x2="3" y2="20" stroke="currentColor" stroke-width="0.7" opacity="0.4"/><line x1="6.2" y1="4.8" x2="6.2" y2="20" stroke="currentColor" stroke-width="0.7" opacity="0.4"/><line x1="9.4" y1="4.8" x2="9.4" y2="20" stroke="currentColor" stroke-width="0.7" opacity="0.4"/><line x1="12.6" y1="4.8" x2="12.6" y2="20" stroke="currentColor" stroke-width="0.7" opacity="0.4"/><line x1="15.8" y1="4.8" x2="15.8" y2="20" stroke="currentColor" stroke-width="0.7" opacity="0.4"/><line x1="19" y1="4.8" x2="19" y2="20" stroke="currentColor" stroke-width="0.7" opacity="0.4"/><line x1="3" y1="10" x2="19" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.35"/><line x1="3" y1="15" x2="19" y2="15" stroke="currentColor" stroke-width="0.5" opacity="0.35"/><line x1="3" y1="20" x2="19" y2="20" stroke="currentColor" stroke-width="0.5" opacity="0.35"/><rect x="3" y="13.2" width="16" height="3.6" rx="1" fill="currentColor"/></svg> Capo</span>
+            <span class="tool"><i data-lucide="arrow-up-down"></i> Transpo <b>±12</b></span>
+            <span class="tool"><svg viewBox="0 0 22 22" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform:rotate(-90deg)"><rect x="3" y="3" width="16" height="1.8" fill="currentColor" rx="0.3"/><line x1="3" y1="4.8" x2="3" y2="20" stroke="currentColor" stroke-width="0.7" opacity="0.4"/><line x1="6.2" y1="4.8" x2="6.2" y2="20" stroke="currentColor" stroke-width="0.7" opacity="0.4"/><line x1="9.4" y1="4.8" x2="9.4" y2="20" stroke="currentColor" stroke-width="0.7" opacity="0.4"/><line x1="12.6" y1="4.8" x2="12.6" y2="20" stroke="currentColor" stroke-width="0.7" opacity="0.4"/><line x1="15.8" y1="4.8" x2="15.8" y2="20" stroke="currentColor" stroke-width="0.7" opacity="0.4"/><line x1="19" y1="4.8" x2="19" y2="20" stroke="currentColor" stroke-width="0.7" opacity="0.4"/><line x1="3" y1="10" x2="19" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.35"/><line x1="3" y1="15" x2="19" y2="15" stroke="currentColor" stroke-width="0.5" opacity="0.35"/><line x1="3" y1="20" x2="19" y2="20" stroke="currentColor" stroke-width="0.5" opacity="0.35"/><rect x="11.2" y="11.4" width="2.8" height="2.2" rx="0.6" fill="currentColor"/><rect x="14.4" y="16.4" width="2.8" height="2.2" rx="0.6" fill="currentColor"/><rect x="17.6" y="11.4" width="2.8" height="2.2" rx="0.6" fill="currentColor"/></svg> Diagrammes</span>
+            <span class="tool"><i data-lucide="arrow-left-right"></i> Undo / Redo</span>
+          </div>
         </div>
       </div>
+    </div>
+
+    <div class="feature reverse">
+      <div class="feat-copy">
+        <h3>Prépare sur PC. Monte sur scène avec ta tablette.</h3>
+        <p>Exporte tes titres ou setlists depuis Editor — importe-les dans GigFlow Live ou InBeat sur ta tablette ou ton smartphone. C'est tout.</p>
+      </div>
+      <div class="feat-media">
+        <div class="framed">
+          <div class="flow">
+            <div style="display:flex;align-items:center;width:100%;gap:8px;">
+              <div class="node editor" style="flex:1;min-width:0;"><span class="badge"><i data-lucide="monitor"></i></span> Editor</div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:1px;color:var(--fg-3);">
+                <i data-lucide="chevrons-right" style="width:26px;height:26px;animation:flowRight 1.4s ease-in-out infinite;"></i>
+                <i data-lucide="chevrons-left" style="width:26px;height:26px;animation:flowLeft 1.4s ease-in-out infinite 0.7s;"></i>
+              </div>
+              <div class="node live" style="flex:1;min-width:0;"><span class="badge"></span> Live</div>
+            </div>
+            <div style="display:flex;width:100%;padding:0 16%;justify-content:space-between;">
+              <i data-lucide="arrow-down-right" style="width:26px;height:26px;color:var(--fg-3);animation:flowDownRight 1.6s ease-in-out infinite;"></i>
+              <i data-lucide="arrow-down-left" style="width:26px;height:26px;color:var(--fg-3);animation:flowDownLeft 1.6s ease-in-out infinite 0.8s;"></i>
+            </div>
+            <div class="node inbeat" style="width:55%;margin:0 auto;"><span class="badge"></span> InBeat</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ecosystem">
+      <div class="eco"><span class="d" style="background:var(--brand-amber-300);margin-top:5px"></span><div><b>GigFlow Live</b><small>Scène · Android</small><small style="display:block;margin-top:6px;line-height:1.5">Affiche tes titres et setlists sur tablette. Navigue de chanson en chanson sur scène, en un glissement.</small></div></div>
+      <div class="eco"><span class="d" style="background:var(--inbeat-teal-300);margin-top:5px"></span><div><b>InBeat</b><small>Tempo · Android</small><small style="display:block;margin-top:6px;line-height:1.5">Importe tes setlists et morceaux depuis Editor. InBeat gère le tempo et le click en concert.</small></div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" id="lancer">
+  <div class="wrap final-inner">
+    <p class="eyebrow">PC · Mac · Navigateur</p>
+    <h2>Prêt à préparer ton prochain concert ?</h2>
+    <p>Mets cette page en favori — elle fonctionne même sans connexion, aucune installation nécessaire.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://stagia.app/gigflow-editor/editor.html" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Lancer GigFlow Editor</a>
     </div>
   </div>
 </section>
@@ -206,18 +334,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>lucide.createIcons();</script>
 <script>
 (function () {
-  var burger = document.getElementById('navBurger');
-  var menu = document.getElementById('navMobile');
-  if (burger && menu) {
-    burger.addEventListener('click', function () {
-      var open = burger.getAttribute('aria-expanded') === 'true';
-      burger.setAttribute('aria-expanded', String(!open));
-      menu.classList.toggle('open', !open);
-    });
-  }
+  var b = document.getElementById('navBurger');
+  var m = document.getElementById('navMobile');
+  if (!b || !m) return;
+  function close() { b.setAttribute('aria-expanded', 'false'); m.classList.remove('open'); }
+  b.addEventListener('click', function () {
+    var open = b.getAttribute('aria-expanded') === 'true';
+    b.setAttribute('aria-expanded', String(!open));
+    m.classList.toggle('open', !open);
+  });
+  m.addEventListener('click', function (e) { if (e.target.closest('a')) close(); });
 })();
 </script>
 
 <script src="cookie-banner.js"></script>
 </body>
-</html>
+
+
+<script src="cookie-banner.js"></script>
+</body>

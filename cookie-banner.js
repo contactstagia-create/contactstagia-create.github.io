@@ -1,248 +1,70 @@
-<!doctype html>
-<html lang="fr" data-product="live">
-<head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3VQBS6X59"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-    gtag('consent', 'default', {analytics_storage: 'denied'});
-  gtag('config', 'G-J3VQBS6X59');
-</script>
-<meta charset="utf-8">
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WF8H5RWM');</script>
-<!-- End Google Tag Manager -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Confidentialité — Stagia</title>
-<meta name="description" content="Politique de confidentialité de Stagia — données collectées, cookies, RGPD et tes droits.">
-<link rel="stylesheet" href="colors_and_type.css">
-<link rel="stylesheet" href="product.css">
-<style>
-  footer { padding: 30px 0 19px; }
-  .page-hero { padding: 72px 0 48px; border-bottom: 1px solid var(--border-subtle); }
-  .page-hero .eyebrow { margin-bottom: 12px; }
-  .page-hero h1 {
-    font-family: var(--font-display); font-weight: 900;
-    font-size: clamp(32px, 4vw, 48px); line-height: 1.06; letter-spacing: -0.025em;
-    margin: 0 0 16px;
-  }
-  .page-hero p { font-size: 14px; color: var(--fg-4); line-height: 1.55; margin: 0; font-family: var(--font-mono); }
-  .page-body { padding: 56px 0 100px; }
-  .legal-content { max-width: 680px; }
-  .legal-content h2 {
-    font-family: var(--font-display); font-weight: 800; font-size: 18px;
-    margin: 40px 0 12px; color: var(--fg-1);
-  }
-  .legal-content h2:first-child { margin-top: 0; }
-  .legal-content p { font-size: 15px; color: var(--fg-2); line-height: 1.7; margin: 0 0 12px; }
-  .legal-content ul { font-size: 15px; color: var(--fg-2); line-height: 1.7; margin: 0 0 12px; padding-left: 22px; }
-  .legal-content li { margin-bottom: 6px; }
-  .legal-content p:last-child { margin-bottom: 0; }
-  .legal-content a { color: var(--brand-amber-300); text-decoration: underline; text-underline-offset: 3px; }
-  .placeholder {
-    background: color-mix(in srgb, var(--brand-amber-300) 12%, transparent);
-    color: var(--brand-amber-300); border-radius: 4px;
-    padding: 1px 6px; font-family: var(--font-mono); font-size: 13px; font-weight: 600;
-  }
-  .legal-section { padding-bottom: 28px; border-bottom: 1px solid var(--border-subtle); margin-bottom: 0; }
-  .legal-section:last-child { border-bottom: none; }
-  .tool-card {
-    background: var(--bg-surface-1); border: 1px solid var(--border-subtle);
-    border-radius: var(--r-lg); padding: 16px 18px; margin: 12px 0;
-  }
-  .tool-card strong { display: block; font-family: var(--font-display); font-weight: 700; margin-bottom: 4px; }
-  .tool-card p { margin: 0; font-size: 14px; color: var(--fg-3); }
-</style>
-</head>
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WF8H5RWM"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<template id="__bundler_thumbnail">
-<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100" height="100" fill="#0C0A18"/>
-  <text x="50" y="62" font-family="Mulish, sans-serif" font-size="28" font-weight="800" fill="#F5C25F" text-anchor="middle">🔒</text>
-</svg>
-</template>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a class="brand" href="index.html">
-      <img src="assets/stagia-logo-watermark.png" alt="Stagia">
-      <span class="name">Stagia</span>
-    </a>
-    <div class="nav-links">
-      <a href="gigflow-live.html">GigFlow Live</a>
-      <a href="InBeat.html">InBeat</a>
-      <a href="gigflow-editor.html">GigFlow Editor</a>
-    </div>
-    <div class="lang-switcher">
-      <button class="lang-btn">FR <i data-lucide="chevron-down" style="width:11px;height:11px;"></i></button>
-      <div class="lang-dropdown">
-        <a href="#" class="lang-active">FR</a>
-        <span class="lang-soon">EN</span>
-        <span class="lang-soon">US</span>
-        <span class="lang-soon">DE</span>
-        <span class="lang-soon">IT</span>
-        <span class="lang-soon">ES</span>
-        <span class="lang-soon">NL</span>
-        <span class="lang-soon">PT</span>
-      </div>
-    </div>
-    <a class="nav-cta" href="index.html#produits">Découvrir les apps</a>
-    <button class="nav-burger" id="navBurger" aria-expanded="false" aria-controls="navMobile" aria-label="Menu"><span class="burger-icon"><span class="ic-menu"><i data-lucide="menu"></i></span><span class="ic-x"><i data-lucide="x"></i></span></span></button>
-  </div>
-  <div class="nav-mobile" id="navMobile">
-    <div class="nav-mobile-inner">
-      <a href="gigflow-live.html">GigFlow Live</a>
-      <a href="InBeat.html">InBeat</a>
-      <a href="gigflow-editor.html">GigFlow Editor</a>
-      <div class="lang-mobile">
-        <span class="lang-label-m">Langue</span>
-        <div class="lang-mobile-options"><a href="#" class="lang-active-m">FR</a><span class="lang-soon-m">EN</span><span class="lang-soon-m">US</span><span class="lang-soon-m">DE</span><span class="lang-soon-m">IT</span><span class="lang-soon-m">ES</span><span class="lang-soon-m">NL</span><span class="lang-soon-m">PT</span></div>
-      </div>
-      <a class="nav-mobile-cta" href="index.html#produits">Découvrir les apps</a>
-    </div>
-  </div>
-</nav>
-
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="wrap">
-    <p class="eyebrow">Légal</p>
-    <h1>Politique de confidentialité</h1>
-    <p>Dernière mise à jour : juin 2026</p>
-  </div>
-</section>
-
-<!-- CONTENT -->
-<section class="page-body">
-  <div class="wrap legal-content">
-
-    <div class="legal-section">
-      <h2>Principes généraux</h2>
-      <p>Stagia accorde une importance particulière à la protection de ta vie privée. Les applications GigFlow Live, InBeat et GigFlow Editor fonctionnent <strong>entièrement hors ligne</strong> — tes chansons, setlists et données musicales ne quittent jamais ton appareil et ne sont transmises à aucun serveur.</p>
-      <p>Ce site web (stagia.app) utilise des outils d'analyse d'audience anonymes décrits ci-dessous.</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>Données collectées sur ce site</h2>
-      <p>Le site stagia.app utilise les outils suivants à des fins de mesure d'audience anonyme :</p>
-
-      <div class="tool-card">
-        <strong>Google Analytics 4 (GA4)</strong>
-        <p>Mesure de l'audience : pages visitées, durée des sessions, provenance géographique approximative. Les données sont anonymisées — aucune donnée personnelle identifiable n'est collectée. Politique de confidentialité : <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
-      </div>
-
-      <div class="tool-card">
-        <strong>Google Tag Manager (GTM)</strong>
-        <p>Outil de gestion des balises de mesure. GTM lui-même ne collecte pas de données — il orchestre le déclenchement de GA4. Politique de confidentialité : <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
-      </div>
-
-      <p>Aucune autre donnée n'est collectée. Il n'y a pas de cookies publicitaires, pas de tracking inter-sites, pas de formulaire de création de compte.</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>Cookies</h2>
-      <p>Ce site utilise uniquement les cookies nécessaires au fonctionnement de Google Analytics (cookies de session et d'identification anonyme). Tu peux désactiver ces cookies via les paramètres de ton navigateur ou via une extension de blocage (uBlock Origin, etc.).</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>Durée de conservation</h2>
-      <p>Les données de navigation anonymes collectées par Google Analytics sont conservées pendant <strong>14 mois</strong> (paramètre par défaut de GA4), puis supprimées automatiquement.</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>Tes droits (RGPD)</h2>
-      <p>Conformément au Règlement Général sur la Protection des Données (RGPD), tu disposes des droits suivants :</p>
-      <ul>
-        <li><strong>Droit d'accès</strong> — connaître les données collectées te concernant</li>
-        <li><strong>Droit de rectification</strong> — corriger des données inexactes</li>
-        <li><strong>Droit à l'effacement</strong> — demander la suppression de tes données</li>
-        <li><strong>Droit d'opposition</strong> — t'opposer au traitement de tes données</li>
-      </ul>
-      <p>Pour exercer ces droits, contacte-nous à <a href="mailto:contact@stagia.app">contact@stagia.app</a>. Tu peux également adresser une réclamation à la <a href="https://www.cnil.fr" target="_blank" rel="noopener">CNIL</a>.</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>Responsable du traitement</h2>
-      <p>
-        <span class="placeholder">[NOM DE L'ENTITÉ]</span><br>
-        <span class="placeholder">[ADRESSE]</span><br>
-        <a href="mailto:contact@stagia.app">contact@stagia.app</a>
-      </p>
-    </div>
-
-    <div class="legal-section">
-      <h2>Modifications</h2>
-      <p>Cette politique peut être mise à jour à tout moment. La date de dernière modification est indiquée en haut de cette page. En continuant à utiliser ce site après une modification, tu acceptes la nouvelle version.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <a class="brand" href="index.html">
-          <img src="assets/stagia-logo-watermark.png" alt="Stagia" style="width:40px;height:40px">
-          <span class="name">Stagia</span>
-        </a>
-        <p>Des outils numériques créés pour les musiciens, par des musiciens — oublie le papier, garde la musique. Conçus pour la scène, la répétition et l'organisation.</p>
-      </div>
-      <div class="foot-col">
-        <h4>Produits</h4>
-        <a href="gigflow-live.html">GigFlow Live →</a>
-        <a href="InBeat.html">InBeat →</a>
-        <a href="gigflow-editor.html">GigFlow Editor →</a>
-      </div>
-      <div class="foot-col">
-        <h4>Ressources</h4>
-        <a href="aide.html">Aide & tutoriels →</a>
-        <a href="contact.html">Contact →</a>
-        <a href="mentions-legales.html">Mentions légales →</a>
-        <a href="confidentialite.html">Confidentialité →</a>
-      </div>
-      <div class="foot-col">
-        <h4>Suivre</h4>
-        <a href="https://www.youtube.com/channel/UCV0tsMnSp8-WRGDS5DfXsGA" target="_blank" rel="noopener">YouTube →</a>
-        <a href="mailto:contact@stagia.app">contact@stagia.app</a>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 Stagia · Par des musiciens, pour les musiciens.</span>
-      <span>contact@stagia.app</span>
-    </div>
-  </div>
-</footer>
-
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>lucide.createIcons();</script>
-<script>
+/* cookie-banner.js — Stagia cookie consent (RGPD)
+   Stocke le choix dans localStorage('stagia_consent').
+   Met à jour Google Consent Mode v2 selon le choix. */
 (function () {
-  var burger = document.getElementById('navBurger');
-  var menu = document.getElementById('navMobile');
-  if (burger && menu) {
-    burger.addEventListener('click', function () {
-      var open = burger.getAttribute('aria-expanded') === 'true';
-      burger.setAttribute('aria-expanded', String(!open));
-      menu.classList.toggle('open', !open);
-    });
-  }
-})();
-</script>
+  var KEY = 'stagia_consent';
+  var existing = localStorage.getItem(KEY);
 
-<script src="cookie-banner.js"></script>
-</body>
-</html>
+  function applyConsent(choice) {
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', { analytics_storage: choice === 'granted' ? 'granted' : 'denied' });
+    }
+  }
+
+  // Choix déjà fait lors d'une visite précédente
+  if (existing === 'granted' || existing === 'denied') {
+    applyConsent(existing);
+    return;
+  }
+
+  // Crée le bandeau
+  var banner = document.createElement('div');
+  banner.id = 'stagia-cookie-banner';
+  banner.setAttribute('role', 'dialog');
+  banner.setAttribute('aria-label', 'Consentement cookies');
+  banner.style.cssText = [
+    'position:fixed', 'bottom:0', 'left:0', 'right:0', 'z-index:9999',
+    'background:#16132A', 'border-top:1px solid rgba(255,255,255,0.1)',
+    'padding:14px 32px', 'display:flex', 'align-items:center',
+    'justify-content:space-between', 'gap:20px', 'flex-wrap:wrap',
+    'font-family:system-ui,-apple-system,sans-serif',
+    'box-shadow:0 -4px 24px rgba(0,0,0,0.4)',
+    'transform:translateY(100%)', 'transition:transform 280ms ease'
+  ].join(';');
+
+  banner.innerHTML =
+    '<p style="margin:0;font-size:13px;color:#9B97B4;line-height:1.55;max-width:640px;">' +
+      'Ce site utilise Google Analytics pour mesurer son audience de façon anonyme. ' +
+      '<a href="confidentialite.html" style="color:#F5C25F;text-underline-offset:3px;text-decoration:underline;">En savoir plus</a>' +
+    '</p>' +
+    '<div style="display:flex;gap:10px;flex:none;">' +
+      '<button id="stagia-refuse" style="all:unset;cursor:pointer;font-size:13px;color:#9B97B4;' +
+        'padding:8px 16px;border:1px solid rgba(255,255,255,0.15);border-radius:8px;' +
+        'white-space:nowrap;transition:border-color 120ms ease;">' +
+        'Continuer sans accepter' +
+      '</button>' +
+      '<button id="stagia-accept" style="all:unset;cursor:pointer;font-size:13px;font-weight:700;' +
+        'color:#0C0A18;background:#F5C25F;padding:8px 18px;border-radius:8px;white-space:nowrap;">' +
+        'Accepter' +
+      '</button>' +
+    '</div>';
+
+  document.body.appendChild(banner);
+
+  // Slide-in après insertion dans le DOM
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () {
+      banner.style.transform = 'translateY(0)';
+    });
+  });
+
+  function dismiss(choice) {
+    localStorage.setItem(KEY, choice);
+    applyConsent(choice);
+    banner.style.transform = 'translateY(100%)';
+    setTimeout(function () { if (banner.parentNode) banner.parentNode.removeChild(banner); }, 300);
+  }
+
+  document.getElementById('stagia-accept').addEventListener('click', function () { dismiss('granted'); });
+  document.getElementById('stagia-refuse').addEventListener('click', function () { dismiss('denied'); });
+})();

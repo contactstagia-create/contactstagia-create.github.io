@@ -1,318 +1,223 @@
-/* =============================================================
-   Stagia — Colors & Type  (v2 · aligned to real Gigflow Live)
-   -------------------------------------------------------------
-   Two color systems run in parallel:
+<!doctype html>
+<html lang="fr" data-product="live">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3VQBS6X59"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+    gtag('consent', 'default', {analytics_storage: 'denied'});
+  gtag('config', 'G-J3VQBS6X59');
+</script>
+<meta charset="utf-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WF8H5RWM');</script>
+<!-- End Google Tag Manager -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Stagia</title>
+<meta name="description" content="Contacter Stagia — une question, un bug ou une idée ? Écris-nous à contact@stagia.app.">
+<link rel="stylesheet" href="colors_and_type.css?v=3">
+<link rel="stylesheet" href="product.css?v=3">
+<style>
+  footer { padding: 30px 0 19px; }
+  .page-hero { padding: 72px 0 48px; border-bottom: 1px solid var(--border-subtle); }
+  .page-hero .eyebrow { margin-bottom: 12px; }
+  .page-hero h1 {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(32px, 4vw, 48px); line-height: 1.06; letter-spacing: -0.025em;
+    margin: 0 0 16px;
+  }
+  .page-hero p { font-size: 17px; color: var(--fg-2); line-height: 1.55; margin: 0; max-width: 52ch; }
+  .page-body { padding: 64px 0 100px; }
+  .page-content { max-width: 640px; }
 
-   1. BRAND  — amber/gold + pink-red. Used for chrome, brand,
-      CTAs, destructive + LIVE signals.
-   2. CHORD/SECTION RAINBOW — a 7-hue spectrum the app rotates
-      across chords and sections. The hues share lightness and
-      chroma (OKLCH) so red, blue and green feel like one
-      family even though they're far apart on the wheel.
+  .contact-card {
+    background: var(--bg-surface-1); border: 1px solid var(--border-subtle);
+    border-radius: var(--r-xl); padding: 40px 40px 36px;
+    display: flex; flex-direction: column; gap: 28px;
+  }
+  .contact-mail {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: var(--font-display); font-weight: 800; font-size: clamp(20px, 2.4vw, 28px);
+    color: var(--brand-amber-300); letter-spacing: -0.01em;
+    transition: opacity 140ms ease;
+  }
+  .contact-mail:hover { opacity: 0.8; }
+  .contact-mail i { flex: none; }
+  .contact-meta { font-size: 14px; color: var(--fg-3); line-height: 1.6; }
+  .contact-meta strong { color: var(--fg-1); }
 
-   Three stage modes work for any combination (dark default,
-   light indoor, sun outdoor).
+  .contact-topics {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    margin-top: 8px;
+  }
+  .topic {
+    background: var(--bg-stage); border: 1px solid var(--border-subtle);
+    border-radius: var(--r-lg); padding: 16px 18px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 14px; color: var(--fg-2);
+  }
+  .topic i { color: var(--brand-amber-300); flex: none; }
 
-   The wordmark on the supplied logos appears to be a rounded
-   humanist sans, very close to Mulish ExtraBold — we use that
-   as a free substitute. Stage lyrics are MONOSPACE
-   (JetBrains Mono) so chord brackets line up over characters.
-   ============================================================= */
+  .divider { height: 1px; background: var(--border-subtle); }
 
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+  @media (max-width: 600px) {
+    .contact-card { padding: 28px 22px; }
+    .contact-topics { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WF8H5RWM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-:root {
-  /* ---------- BRAND ---------- */
-  --brand-amber-100:  #FBE5A7;   /* highlight / hover bg */
-  --brand-amber-200:  #F9D77A;   /* logo light tip */
-  --brand-amber-300:  #F5C25F;   /* PRIMARY brand · "+ New Song" CTA */
-  --brand-amber-400:  #E0A444;   /* pressed */
-  --brand-amber-500:  #C7882E;   /* logo mid */
-  --brand-amber-600:  #8A5A2A;   /* logo dark wave tail */
-  --brand-amber-700:  #4D3416;   /* deep shadow */
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" fill="#0C0A18"/>
+  <text x="50" y="62" font-family="Mulish, sans-serif" font-size="34" font-weight="800" fill="#F5C25F" text-anchor="middle">@</text>
+</svg>
+</template>
 
-  /* The destructive / "LIVE" / signal pink-red. Pairs with amber. */
-  --brand-pink-300:   #F26A86;
-  --brand-pink-500:   #E94560;   /* PRIMARY · LIVE, Del, active tab */
-  --brand-pink-700:   #B22A45;
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/stagia-logo-watermark.png" alt="Stagia">
+      <span class="name">Stagia</span>
+    </a>
+    <div class="nav-links">
+      <a href="gigflow-live.html">GigFlow Live</a>
+      <a href="InBeat.html">InBeat</a>
+      <a href="gigflow-editor.html">GigFlow Editor</a>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn">FR <i data-lucide="chevron-down" style="width:11px;height:11px;"></i></button>
+      <div class="lang-dropdown">
+        <a href="#" class="lang-active">FR</a>
+        <span class="lang-soon">EN</span>
+        <span class="lang-soon">US</span>
+        <span class="lang-soon">DE</span>
+        <span class="lang-soon">IT</span>
+        <span class="lang-soon">ES</span>
+        <span class="lang-soon">NL</span>
+        <span class="lang-soon">PT</span>
+      </div>
+    </div>
+    <a class="nav-cta" href="index.html#produits">Découvrir les apps</a>
+    <button class="nav-burger" id="navBurger" aria-expanded="false" aria-controls="navMobile" aria-label="Menu"><span class="burger-icon"><span class="ic-menu"><i data-lucide="menu"></i></span><span class="ic-x"><i data-lucide="x"></i></span></span></button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <div class="nav-mobile-inner">
+      <a href="gigflow-live.html">GigFlow Live</a>
+      <a href="InBeat.html">InBeat</a>
+      <a href="gigflow-editor.html">GigFlow Editor</a>
+      <div class="lang-mobile">
+        <span class="lang-label-m">Langue</span>
+        <div class="lang-mobile-options"><a href="#" class="lang-active-m">FR</a><span class="lang-soon-m">EN</span><span class="lang-soon-m">US</span><span class="lang-soon-m">DE</span><span class="lang-soon-m">IT</span><span class="lang-soon-m">ES</span><span class="lang-soon-m">NL</span><span class="lang-soon-m">PT</span></div>
+      </div>
+      <a class="nav-mobile-cta" href="index.html#produits">Découvrir les apps</a>
+    </div>
+  </div>
+</nav>
 
-  /* ---------- InBeat brand — teal/cyan family ----------------
-     InBeat is the precision sibling. Where Live/Stagia is warm
-     amber stage light and Editor wears the same pink-red as
-     LIVE signals, InBeat steps out of the warm family entirely:
-     teal evokes the metronome panel, the sonar ping, the
-     oscilloscope. Cool, precise, instrument-grade. ---------- */
-  --inbeat-teal-300:  #7FD8D3;   /* highlight / hover bg */
-  --inbeat-teal-500:  #2EB5AE;   /* PRIMARY · Play, Sauver, wordmark */
-  --inbeat-teal-700:  #1A7F7A;   /* pressed */
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Ressources</p>
+    <h1>Contact</h1>
+    <p>Une question, un bug, une idée ? On est à l'écoute.</p>
+  </div>
+</section>
 
-  /* InBeat hardware-LED signal — references physical metronome
-     boxes (Korg / Boss / Tama). Used ONLY on the beat grid.
-     Beat 1 (downbeat) = red LED; beats 2/3/4 = amber LED;
-     off-state = dim socket on dark backgrounds. */
-  --inbeat-led-red:     #FF3B2F;
-  --inbeat-led-red-bg:  rgba(255, 59, 47, 0.16);
-  --inbeat-led-amber:   #FF9500;
-  --inbeat-led-amber-bg: rgba(255, 149,  0, 0.16);
-  --inbeat-led-off:     rgba(255, 255, 255, 0.06);
+<!-- CONTENT -->
+<section class="page-body">
+  <div class="wrap page-content">
+    <div class="contact-card">
+      <div>
+        <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-4);margin:0 0 14px;">Adresse e-mail</p>
+        <a class="contact-mail" href="mailto:contact@stagia.app">
+          <i data-lucide="mail"></i>
+          contact@stagia.app
+        </a>
+      </div>
 
-  /* Logo gradient — top→bottom of the music note */
-  --brand-gradient: linear-gradient(180deg, #F9D77A 0%, #F5C25F 32%, #C7882E 68%, #8A5A2A 100%); /* @kind color */
+      <div class="divider"></div>
 
-  /* ---------- CHORD / SECTION RAINBOW ---------------------
-     7 hues at oklch(0.76 ~0.16 …) for parity across hue.
-     Use --hue-N tokens whenever you need a colored chord,
-     section pill, or chord-diagram. App assigns them in a
-     rotation; designers should not pick by feel.
-  -------------------------------------------------------- */
-  --hue-rose:    #F26A78;   /* H1 · intro / outro / "A" */
-  --hue-orange:  #F49A55;   /* H2 · verse 2 / solo */
-  --hue-amber:   #F5C25F;   /* H3 · accent — same as brand */
-  --hue-green:   #6BD18A;   /* H4 · chorus (all) */
-  --hue-teal:    #4FCFC9;   /* H5 · bridge / "B" */
-  --hue-blue:    #5FA3F0;   /* H6 · verse / "E" */
-  --hue-violet:  #B284F0;   /* H7 · verse 3 / "Fm" */
+      <p class="contact-meta">On répond en général sous <strong>48 h</strong>, souvent moins. Pense à préciser l'app concernée et ton appareil pour qu'on puisse t'aider plus vite.</p>
 
-  /* Each hue also has a -bg variant for tinted pill fills
-     (15% alpha of the hue). Used by section chips on dark. */
-  --hue-rose-bg:    rgba(242, 106, 120, 0.18);
-  --hue-orange-bg:  rgba(244, 154, 85,  0.18);
-  --hue-amber-bg:   rgba(245, 194, 95,  0.18);
-  --hue-green-bg:   rgba(107, 209, 138, 0.18);
-  --hue-teal-bg:    rgba(79,  207, 201, 0.18);
-  --hue-blue-bg:    rgba(95,  163, 240, 0.18);
-  --hue-violet-bg:  rgba(178, 132, 240, 0.18);
+      <div>
+        <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-4);margin:0 0 14px;">On peut t'aider pour</p>
+        <div class="contact-topics">
+          <div class="topic"><i data-lucide="bug"></i> Signaler un bug</div>
+          <div class="topic"><i data-lucide="lightbulb"></i> Suggérer une idée</div>
+          <div class="topic"><i data-lucide="circle-help"></i> Question d'utilisation</div>
+          <div class="topic"><i data-lucide="receipt"></i> Achat & facturation Google Play</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  /* ---------- Semantic accents (singular signals) ---------- */
-  --accent-green:      #2EC27E;  /* saved / ok */
-  --accent-red:        var(--brand-pink-500);
-  --accent-blue:       var(--hue-blue);
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html">
+          <img src="assets/stagia-logo-watermark.png" alt="Stagia" style="width:40px;height:40px">
+          <span class="name">Stagia</span>
+        </a>
+        <p>Des outils numériques créés pour les musiciens, par des musiciens — oublie le papier, garde la musique. Conçus pour la scène, la répétition et l'organisation.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Produits</h4>
+        <a href="gigflow-live.html">GigFlow Live →</a>
+        <a href="InBeat.html">InBeat →</a>
+        <a href="gigflow-editor.html">GigFlow Editor →</a>
+      </div>
+      <div class="foot-col">
+        <h4>Ressources</h4>
+        <a href="aide.html">Aide & tutoriels →</a>
+        <a href="contact.html">Contact →</a>
+        <a href="mentions-legales.html">Mentions légales →</a>
+        <a href="confidentialite.html">Confidentialité →</a>
+      </div>
+      <div class="foot-col">
+        <h4>Suivre</h4>
+        <a href="https://www.youtube.com/channel/UCV0tsMnSp8-WRGDS5DfXsGA" target="_blank" rel="noopener">YouTube →</a>
+        <a href="mailto:contact@stagia.app">contact@stagia.app</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Stagia · Par des musiciens, pour les musiciens.</span>
+      <span>contact@stagia.app</span>
+    </div>
+  </div>
+</footer>
 
-  /* ---------- DARK MODE — stage default ----------
-     Recalibrated to the LOGO's own background: a deep midnight
-     that is almost black with a hair of violet — not navy.
-     This is what keeps the amber gradient glowing instead of
-     vibrating, exactly as it does on the app-icon artwork. */
-  --bg-stage:          #07060E;  /* deepest — full-bleed stage */
-  --bg-app:            #0C0A18;  /* app shell — THE logo midnight */
-  --bg-surface-1:      #16131F;  /* card, sheet panel */
-  --bg-surface-2:      #211D2F;  /* elevated card */
-  --bg-surface-3:      #2C2740;  /* hover */
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>lucide.createIcons();</script>
+<script>
+(function () {
+  var burger = document.getElementById('navBurger');
+  var menu = document.getElementById('navMobile');
+  if (burger && menu) {
+    burger.addEventListener('click', function () {
+      var open = burger.getAttribute('aria-expanded') === 'true';
+      burger.setAttribute('aria-expanded', String(!open));
+      menu.classList.toggle('open', !open);
+    });
+  }
+})();
+</script>
 
-  --border-subtle:     rgba(255, 255, 255, 0.06);
-  --border-default:    rgba(255, 255, 255, 0.12);
-  --border-strong:     rgba(255, 255, 255, 0.22);
-  --border-amber:      rgba(245, 194, 95, 0.45);
-  --border-pink:       rgba(233, 69, 96, 0.55);
-
-  /* Foreground — warm whites */
-  --fg-1:              #FAFAFA;  /* primary */
-  --fg-2:              #BCC4D1;  /* secondary */
-  --fg-3:              #7E8896;  /* tertiary / labels */
-  --fg-4:              #4D5666;  /* placeholder, dividers */
-  --fg-invert:         #0C0A18;  /* on amber buttons */
-
-  /* Semantic per-content */
-  --section-label:     var(--fg-3);
-
-  /* ---------- Radii ---------- */
-  --r-xs:  4px;
-  --r-sm:  6px;
-  --r-md:  10px;
-  --r-lg:  14px;
-  --r-xl:  20px;
-  --r-pill: 999px;
-
-  /* ---------- Spacing (4pt base) ---------- */
-  --s-0:   0;      /* @kind spacing */
-  --s-1:   4px;
-  --s-2:   8px;
-  --s-3:   12px;
-  --s-4:   16px;
-  --s-5:   24px;
-  --s-6:   32px;
-  --s-7:   48px;
-  --s-8:   64px;
-  --s-9:   96px;
-
-  /* ---------- Shadows ---------- */
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.45);
-  --shadow-lg: 0 16px 40px rgba(0,0,0,0.55);
-  --shadow-pink-glow: 0 0 24px rgba(233, 69, 96, 0.55);
-  --shadow-amber-glow: 0 0 24px rgba(245, 194, 95, 0.30);
-  --shadow-teal-glow: 0 0 24px rgba(46, 181, 174, 0.45);
-  --shadow-led-red: 0 0 12px rgba(255, 59, 47, 0.65);
-  --shadow-led-amber: 0 0 12px rgba(255, 149, 0, 0.55);
-
-  /* ---------- Type stack ---------- */
-  --font-display: 'Mulish', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-ui:      'Mulish', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  /* Lyrics + chord brackets share monospace so [A]This aligns
-     vertically with the character A regardless of font width. */
-  --font-lyric:   'JetBrains Mono', 'SF Mono', Menlo, monospace;
-  --font-mono:    'JetBrains Mono', 'SF Mono', Menlo, monospace;
-
-  /* ---------- Type scale ---------- */
-  /* Stage sizes are tuned for a phone/tablet read 50 cm – 1 m
-     away. Floors, not starting points. */
-  --t-stage-lyric:    20px;     /* mono floor on phone */
-  --t-stage-chord:    20px;
-  --t-stage-section:  12px;     /* pill label */
-
-  --t-display-xl:     48px;
-  --t-display-lg:     34px;
-  --t-display-md:     26px;
-  --t-h1:             22px;
-  --t-h2:             18px;
-  --t-h3:             16px;
-  --t-body:           15px;
-  --t-body-sm:        13px;
-  --t-caption:        11px;
-
-  --lh-tight: 1.1;  /* @kind font */
-  --lh-snug:  1.25; /* @kind font */
-  --lh-body:  1.5;  /* @kind font */
-  --lh-loose: 1.7;  /* @kind font */
-}
-
-/* =============================================================
-   STAGE MODES — toggle via [data-stage]
-   ============================================================= */
-
-[data-stage="light"] {
-  --bg-stage:        #F6F4EE;
-  --bg-app:          #ECE9DF;
-  --bg-surface-1:    #FFFFFF;
-  --bg-surface-2:    #FFFFFF;
-  --bg-surface-3:    #E2DECF;
-  --border-subtle:   rgba(14, 27, 48, 0.08);
-  --border-default:  rgba(14, 27, 48, 0.18);
-  --border-strong:   rgba(14, 27, 48, 0.32);
-  --fg-1:            #0E1B30;
-  --fg-2:            #3A4458;
-  --fg-3:            #6A7384;
-  --fg-4:            #AEB5C0;
-  --fg-invert:       #FAFAFA;
-  /* Tint the hues slightly darker for light bg */
-  --hue-rose:    #D43A52;
-  --hue-orange:  #D77536;
-  --hue-amber:   #C7882E;
-  --hue-green:   #3BAA5F;
-  --hue-teal:    #2A9F99;
-  --hue-blue:    #2D74C9;
-  --hue-violet:  #8A52CE;
-  /* InBeat brand teal — fresher on light surfaces (parity with the app's
-     light theme; validated for AA contrast on light chrome). Dark/stage
-     default keeps --inbeat-teal-500 #2EB5AE. */
-  --inbeat-teal-500: #0C9488;
-  --inbeat-teal-700: #0A7C72;
-  --shadow-sm: 0 1px 2px rgba(14,27,48,0.06);
-  --shadow-md: 0 4px 12px rgba(14,27,48,0.10);
-  --shadow-lg: 0 16px 40px rgba(14,27,48,0.14);
-}
-
-[data-stage="sun"] {
-  --bg-stage:        #FFFFFF;
-  --bg-app:          #FFFFFF;
-  --bg-surface-1:    #FFFFFF;
-  --bg-surface-2:    #FFFFFF;
-  --bg-surface-3:    #F0F0F0;
-  --border-subtle:   #000000;
-  --border-default:  #000000;
-  --border-strong:   #000000;
-  --fg-1:            #000000;
-  --fg-2:            #000000;
-  --fg-3:            #000000;
-  --fg-4:            #333333;
-  --fg-invert:       #FFFFFF;
-  /* In sun mode every chord/section is pure black — colors
-     don't survive direct sunlight on an LCD. The structure
-     still uses pills + bold weight to remain distinguishable. */
-  --hue-rose:    #000000;
-  --hue-orange:  #000000;
-  --hue-amber:   #000000;
-  --hue-green:   #000000;
-  --hue-teal:    #000000;
-  --hue-blue:    #000000;
-  --hue-violet:  #000000;
-  --shadow-sm: none;
-  --shadow-md: none;
-  --shadow-lg: none;
-  --shadow-pink-glow: none;
-  --shadow-amber-glow: none;
-}
-
-/* =============================================================
-   ELEMENT DEFAULTS
-   ============================================================= */
-
-html, body {
-  background: var(--bg-app);
-  color: var(--fg-1);
-  font-family: var(--font-ui);
-  font-size: var(--t-body);
-  line-height: var(--lh-body);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-h1 { font-family: var(--font-display); font-weight: 800; font-size: var(--t-display-lg); line-height: var(--lh-tight); letter-spacing: -0.01em; margin: 0; }
-h2 { font-family: var(--font-display); font-weight: 800; font-size: var(--t-h1);         line-height: var(--lh-tight); letter-spacing: -0.005em; margin: 0; }
-h3 { font-family: var(--font-display); font-weight: 700; font-size: var(--t-h2);         line-height: var(--lh-snug);  margin: 0; }
-h4 { font-family: var(--font-display); font-weight: 700; font-size: var(--t-h3);         line-height: var(--lh-snug);  margin: 0; }
-
-p  { margin: 0; font-size: var(--t-body); line-height: var(--lh-body); color: var(--fg-1); }
-
-code, kbd, .mono { font-family: var(--font-mono); font-size: 0.92em; }
-
-/* Lyric primitives — share mono font + grid alignment */
-.lyric  { font-family: var(--font-lyric); font-weight: 400; color: var(--fg-1); }
-.chord  { font-family: var(--font-lyric); font-weight: 700; }
-
-::selection { background: var(--brand-amber-300); color: var(--fg-invert); }
-
-/* =============================================================
-   PRODUCT SKINS — Live / Editor / InBeat
-   -------------------------------------------------------------
-   Each product is the same chrome with one variable changed:
-   --product-primary. Live = amber, Editor = pink-red (signals
-   authoring), InBeat = violet (drummer / tempo). The whole CTA
-   system + active-tab underline + focus ring picks this up.
-
-   Apply via:  <html data-product="live | editor | inbeat">
-   ============================================================= */
-
-:root {
-  --product-primary: var(--brand-amber-300);
-  --product-primary-pressed: var(--brand-amber-400);
-  --product-primary-glow: var(--shadow-amber-glow);
-  --product-primary-fg: var(--fg-invert);     /* text on primary */
-  --product-tint: rgba(245, 194, 95, 0.14);
-  --product-strip: linear-gradient(90deg, #F9D77A, #F5C25F); /* @kind color */
-  --product-name: 'Live'; /* @kind other */
-}
-
-[data-product="editor"] {
-  --product-primary: var(--brand-pink-500);
-  --product-primary-pressed: var(--brand-pink-700);
-  --product-primary-glow: var(--shadow-pink-glow);
-  --product-primary-fg: #FFFFFF;
-  --product-tint: rgba(233, 69, 96, 0.14);
-  --product-strip: linear-gradient(90deg, #F26A86, #E94560); /* @kind color */
-  --product-name: 'Editor'; /* @kind other */
-}
-
-[data-product="inbeat"] {
-  /* InBeat steps out of the warm amber/pink family. Teal/cyan
-     evokes precision: metronome panel, sonar ping, oscilloscope.
-     LED hardware (red downbeat, amber subdivision) is the
-     InBeat-only signature — used on the beat grid in Live mode. */
-  --product-primary: var(--inbeat-teal-500);
-  --product-primary-pressed: var(--inbeat-teal-700);
-  --product-primary-glow: var(--shadow-teal-glow);
-  --product-primary-fg: #FFFFFF;
-  --product-tint: rgba(46, 181, 174, 0.14);
-  --product-strip: linear-gradient(90deg, #7FD8D3, #2EB5AE); /* @kind color */
-  --product-name: 'InBeat'; /* @kind other */
-}
+<script src="cookie-banner.js"></script>
+</body>
+</html>
