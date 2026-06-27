@@ -19,8 +19,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-WF8H5RWM');</script>
 <!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Stagia</title>
-<meta name="description" content="Contacter Stagia — une question, un bug ou une idée ? Écris-nous à contact@stagia.app.">
+<title>Confidentialité — Stagia</title>
+<meta name="description" content="Politique de confidentialité de Stagia — données collectées, cookies, RGPD et tes droits.">
 <link rel="stylesheet" href="colors_and_type.css">
 <link rel="stylesheet" href="product.css">
 <style>
@@ -32,44 +32,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-size: clamp(32px, 4vw, 48px); line-height: 1.06; letter-spacing: -0.025em;
     margin: 0 0 16px;
   }
-  .page-hero p { font-size: 17px; color: var(--fg-2); line-height: 1.55; margin: 0; max-width: 52ch; }
-  .page-body { padding: 64px 0 100px; }
-  .page-content { max-width: 640px; }
-
-  .contact-card {
+  .page-hero p { font-size: 14px; color: var(--fg-4); line-height: 1.55; margin: 0; font-family: var(--font-mono); }
+  .page-body { padding: 56px 0 100px; }
+  .legal-content { max-width: 680px; }
+  .legal-content h2 {
+    font-family: var(--font-display); font-weight: 800; font-size: 18px;
+    margin: 40px 0 12px; color: var(--fg-1);
+  }
+  .legal-content h2:first-child { margin-top: 0; }
+  .legal-content p { font-size: 15px; color: var(--fg-2); line-height: 1.7; margin: 0 0 12px; }
+  .legal-content ul { font-size: 15px; color: var(--fg-2); line-height: 1.7; margin: 0 0 12px; padding-left: 22px; }
+  .legal-content li { margin-bottom: 6px; }
+  .legal-content p:last-child { margin-bottom: 0; }
+  .legal-content a { color: var(--brand-amber-300); text-decoration: underline; text-underline-offset: 3px; }
+  .placeholder {
+    background: color-mix(in srgb, var(--brand-amber-300) 12%, transparent);
+    color: var(--brand-amber-300); border-radius: 4px;
+    padding: 1px 6px; font-family: var(--font-mono); font-size: 13px; font-weight: 600;
+  }
+  .legal-section { padding-bottom: 28px; border-bottom: 1px solid var(--border-subtle); margin-bottom: 0; }
+  .legal-section:last-child { border-bottom: none; }
+  .tool-card {
     background: var(--bg-surface-1); border: 1px solid var(--border-subtle);
-    border-radius: var(--r-xl); padding: 40px 40px 36px;
-    display: flex; flex-direction: column; gap: 28px;
+    border-radius: var(--r-lg); padding: 16px 18px; margin: 12px 0;
   }
-  .contact-mail {
-    display: inline-flex; align-items: center; gap: 12px;
-    font-family: var(--font-display); font-weight: 800; font-size: clamp(20px, 2.4vw, 28px);
-    color: var(--brand-amber-300); letter-spacing: -0.01em;
-    transition: opacity 140ms ease;
-  }
-  .contact-mail:hover { opacity: 0.8; }
-  .contact-mail i { flex: none; }
-  .contact-meta { font-size: 14px; color: var(--fg-3); line-height: 1.6; }
-  .contact-meta strong { color: var(--fg-1); }
-
-  .contact-topics {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-    margin-top: 8px;
-  }
-  .topic {
-    background: var(--bg-stage); border: 1px solid var(--border-subtle);
-    border-radius: var(--r-lg); padding: 16px 18px;
-    display: flex; align-items: center; gap: 12px;
-    font-size: 14px; color: var(--fg-2);
-  }
-  .topic i { color: var(--brand-amber-300); flex: none; }
-
-  .divider { height: 1px; background: var(--border-subtle); }
-
-  @media (max-width: 600px) {
-    .contact-card { padding: 28px 22px; }
-    .contact-topics { grid-template-columns: 1fr; }
-  }
+  .tool-card strong { display: block; font-family: var(--font-display); font-weight: 700; margin-bottom: 4px; }
+  .tool-card p { margin: 0; font-size: 14px; color: var(--fg-3); }
 </style>
 </head>
 <body>
@@ -81,7 +69,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <template id="__bundler_thumbnail">
 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <rect width="100" height="100" fill="#0C0A18"/>
-  <text x="50" y="62" font-family="Mulish, sans-serif" font-size="34" font-weight="800" fill="#F5C25F" text-anchor="middle">@</text>
+  <text x="50" y="62" font-family="Mulish, sans-serif" font-size="28" font-weight="800" fill="#F5C25F" text-anchor="middle">🔒</text>
 </svg>
 </template>
 
@@ -130,38 +118,75 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- PAGE HERO -->
 <section class="page-hero">
   <div class="wrap">
-    <p class="eyebrow">Ressources</p>
-    <h1>Contact</h1>
-    <p>Une question, un bug, une idée ? On est à l'écoute.</p>
+    <p class="eyebrow">Légal</p>
+    <h1>Politique de confidentialité</h1>
+    <p>Dernière mise à jour : juin 2026</p>
   </div>
 </section>
 
 <!-- CONTENT -->
 <section class="page-body">
-  <div class="wrap page-content">
-    <div class="contact-card">
-      <div>
-        <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-4);margin:0 0 14px;">Adresse e-mail</p>
-        <a class="contact-mail" href="mailto:contact@stagia.app">
-          <i data-lucide="mail"></i>
-          contact@stagia.app
-        </a>
-      </div>
+  <div class="wrap legal-content">
 
-      <div class="divider"></div>
-
-      <p class="contact-meta">On répond en général sous <strong>48 h</strong>, souvent moins. Pense à préciser l'app concernée et ton appareil pour qu'on puisse t'aider plus vite.</p>
-
-      <div>
-        <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-4);margin:0 0 14px;">On peut t'aider pour</p>
-        <div class="contact-topics">
-          <div class="topic"><i data-lucide="bug"></i> Signaler un bug</div>
-          <div class="topic"><i data-lucide="lightbulb"></i> Suggérer une idée</div>
-          <div class="topic"><i data-lucide="circle-help"></i> Question d'utilisation</div>
-          <div class="topic"><i data-lucide="receipt"></i> Achat & facturation Google Play</div>
-        </div>
-      </div>
+    <div class="legal-section">
+      <h2>Principes généraux</h2>
+      <p>Stagia accorde une importance particulière à la protection de ta vie privée. Les applications GigFlow Live, InBeat et GigFlow Editor fonctionnent <strong>entièrement hors ligne</strong> — tes chansons, setlists et données musicales ne quittent jamais ton appareil et ne sont transmises à aucun serveur.</p>
+      <p>Ce site web (stagia.app) utilise des outils d'analyse d'audience anonymes décrits ci-dessous.</p>
     </div>
+
+    <div class="legal-section">
+      <h2>Données collectées sur ce site</h2>
+      <p>Le site stagia.app utilise les outils suivants à des fins de mesure d'audience anonyme :</p>
+
+      <div class="tool-card">
+        <strong>Google Analytics 4 (GA4)</strong>
+        <p>Mesure de l'audience : pages visitées, durée des sessions, provenance géographique approximative. Les données sont anonymisées — aucune donnée personnelle identifiable n'est collectée. Politique de confidentialité : <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+      </div>
+
+      <div class="tool-card">
+        <strong>Google Tag Manager (GTM)</strong>
+        <p>Outil de gestion des balises de mesure. GTM lui-même ne collecte pas de données — il orchestre le déclenchement de GA4. Politique de confidentialité : <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+      </div>
+
+      <p>Aucune autre donnée n'est collectée. Il n'y a pas de cookies publicitaires, pas de tracking inter-sites, pas de formulaire de création de compte.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Cookies</h2>
+      <p>Ce site utilise uniquement les cookies nécessaires au fonctionnement de Google Analytics (cookies de session et d'identification anonyme). Tu peux désactiver ces cookies via les paramètres de ton navigateur ou via une extension de blocage (uBlock Origin, etc.).</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Durée de conservation</h2>
+      <p>Les données de navigation anonymes collectées par Google Analytics sont conservées pendant <strong>14 mois</strong> (paramètre par défaut de GA4), puis supprimées automatiquement.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Tes droits (RGPD)</h2>
+      <p>Conformément au Règlement Général sur la Protection des Données (RGPD), tu disposes des droits suivants :</p>
+      <ul>
+        <li><strong>Droit d'accès</strong> — connaître les données collectées te concernant</li>
+        <li><strong>Droit de rectification</strong> — corriger des données inexactes</li>
+        <li><strong>Droit à l'effacement</strong> — demander la suppression de tes données</li>
+        <li><strong>Droit d'opposition</strong> — t'opposer au traitement de tes données</li>
+      </ul>
+      <p>Pour exercer ces droits, contacte-nous à <a href="mailto:contact@stagia.app">contact@stagia.app</a>. Tu peux également adresser une réclamation à la <a href="https://www.cnil.fr" target="_blank" rel="noopener">CNIL</a>.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Responsable du traitement</h2>
+      <p>
+        <span class="placeholder">[NOM DE L'ENTITÉ]</span><br>
+        <span class="placeholder">[ADRESSE]</span><br>
+        <a href="mailto:contact@stagia.app">contact@stagia.app</a>
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Modifications</h2>
+      <p>Cette politique peut être mise à jour à tout moment. La date de dernière modification est indiquée en haut de cette page. En continuant à utiliser ce site après une modification, tu acceptes la nouvelle version.</p>
+    </div>
+
   </div>
 </section>
 
