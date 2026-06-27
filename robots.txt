@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /inbeat/
+Disallow: /gigflow-live/
