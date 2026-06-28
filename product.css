@@ -64,6 +64,7 @@ nav {
 }
 .btn-primary:hover { filter: brightness(1.07); box-shadow: var(--product-primary-glow); }
 .btn-primary:active { transform: scale(0.97); }
+.btn-primary:disabled { opacity: 0.55; cursor: not-allowed; pointer-events: none; }
 .btn-secondary {
   font-family: var(--font-display); font-weight: 700; font-size: 16px;
   background: transparent; color: var(--fg-1);

@@ -43,6 +43,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 </script>
 <style>html,body{background:#0C0A18}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="colors_and_type.css?v=3">
 <link rel="stylesheet" href="product.css?v=3">
 <style>
@@ -208,7 +210,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media (max-width: 980px) {
     .ib-hero-m { display: block; order: -2; }
     .ib-hero-m .eyebrow { margin-bottom: 12px; }
-    .ib-hero-m h1 { margin: 0 0 14px; }
+    .ib-hero-m .hero-h1-m { font-family: var(--font-display); font-weight: 900; font-size: clamp(38px, 4.6vw, 56px); line-height: 1.05; letter-spacing: -0.025em; margin: 0 0 14px; text-wrap: balance; }
+    .ib-hero-m .hero-h1-m .accent { color: var(--product-primary); }
     .ib-hero-m .sub { margin: 0; }
     .hero-copy > .eyebrow, .hero-copy > h1, .hero-copy > .ib-cta-line { display: none; }
   }
@@ -225,7 +228,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WF8H5RWM"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scripts"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <template id="__bundler_thumbnail">
@@ -280,7 +283,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </nav>
-
+<main>
 <!-- HERO -->
 <header class="hero">
   <div class="wrap hero-grid">
@@ -303,13 +306,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="ib-hero-m">
       <p class="eyebrow">InBeat · Android</p>
-      <h1>Le bon tempo, au bon moment. <span class="accent">Toujours.</span></h1>
+      <p class="hero-h1-m">Le bon tempo, au bon moment. <span class="accent">Toujours.</span></p>
       <p class="sub">Teste <span class="ib-name">InBeat</span> avec l'écran interactif :</p>
     </div>
     <div class="device-wrap">
       <div class="phone">
         <div class="screen">
-          <iframe class="ib-frame" id="ibFrame" title="InBeat — écran Live (démo réelle de l'app)"></iframe>
+          <iframe class="ib-frame" id="ibFrame" title="InBeat — écran Live (démo réelle de l'app)" sandbox="allow-scripts allow-forms"></iframe>
         </div>
       </div>
       <p class="ib-hint"><i data-lucide="smartphone" style="width:13px;height:13px"></i> Écran réel de l'app — ▶ lance le tempo, ◀ ▶ changent de titre, bip ♪, ½ subdivisions</p>
@@ -374,7 +377,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Chaque titre garde son tempo, sa signature et sa durée. Cherche, retrouve et dégaine n'importe quel morceau en deux taps.</p>
       </div>
       <div class="feat-media">
-        <div class="phone"><div class="screen"><img src="assets/screens/inbeat-library.png" alt="InBeat — Répertoire"></div></div>
+        <div class="phone"><div class="screen"><img src="assets/screens/inbeat-library.png" alt="InBeat — Répertoire" loading="lazy"></div></div>
       </div>
     </div>
 
@@ -385,8 +388,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Édite chaque titre — signature, BPM, durée, tonalité, notes — puis glisse-dépose tes morceaux dans l'ordre du show, avec lieu, date et durée totale. <span class="ib-name">InBeat</span> charge ensuite chaque tempo tout seul. À préparer en amont sur smartphone, ou juste avant le show.</p>
       </div>
       <div class="feat-media ib-duo">
-        <div class="phone"><div class="screen"><img src="assets/screens/inbeat-edit.png" alt="InBeat — Édition d'un titre"></div></div>
-        <div class="phone"><div class="screen"><img src="assets/screens/inbeat-setlist.png" alt="InBeat — Édition de setlist"></div></div>
+        <div class="phone"><div class="screen"><img src="assets/screens/inbeat-edit.png" alt="InBeat — Édition d'un titre" loading="lazy"></div></div>
+        <div class="phone"><div class="screen"><img src="assets/screens/inbeat-setlist.png" alt="InBeat — Édition de setlist" loading="lazy"></div></div>
       </div>
     </div>
 
@@ -397,7 +400,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Affichage plein écran. Le BPM et la signature en gros, le titre suivant toujours visible — tu anticipes sans perdre le fil. Thème sombre ou clair selon la luminosité de la scène, et un Tap tempo pour ajuster à la volée. — <span class="ib-name">InBeat</span> charge automatiquement le tempo du titre suivant. Un swipe, un tap, en avant la musique.</p>
       </div>
       <div class="feat-media">
-        <div class="phone"><div class="screen"><img src="assets/screens/inbeat-live.png" alt="InBeat — Mode Live"></div></div>
+        <div class="phone"><div class="screen"><img src="assets/screens/inbeat-live.png" alt="InBeat — Mode Live" loading="lazy"></div></div>
       </div>
     </div>
 
@@ -414,7 +417,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="feat-media">
         <div class="beat-emblem">
-          <img class="beat-logo" src="assets/stagia-logo-512.png" alt="Stagia">
+          <img class="beat-logo" src="assets/stagia-logo-512.png" alt="Stagia" loading="lazy">
         </div>
       </div>
     </div>
@@ -462,7 +465,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>Prêt à garder le tempo ?</h2>
     <p>Gratuit, sans limite, sans abonnement.</p>
     <div class="hero-actions">
-      <button class="btn-primary"><span class="gp-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M4 3.4v17.2a1 1 0 0 0 1.52.85l14.3-8.6a1 1 0 0 0 0-1.7L5.52 2.55A1 1 0 0 0 4 3.4z"/></svg></span> Téléchargement sur Google Play Store à venir</button>
+      <button class="btn-primary" type="button" disabled aria-label="Téléchargement Google Play — bientôt disponible"><span class="gp-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M4 3.4v17.2a1 1 0 0 0 1.52.85l14.3-8.6a1 1 0 0 0 0-1.7L5.52 2.55A1 1 0 0 0 4 3.4z"/></svg></span> Téléchargement sur Google Play Store à venir</button>
     </div>
   </div>
 </section>
@@ -495,6 +498,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+</main>
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
@@ -542,7 +546,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 (function () {
   var f = document.getElementById('ibFrame');
   if (!f || !window.__INBEAT_APP_B64) return;
-  try { f.srcdoc = decodeURIComponent(escape(atob(window.__INBEAT_APP_B64))); } catch (e) {}
+  try { f.srcdoc = new TextDecoder('utf-8').decode(Uint8Array.from(atob(window.__INBEAT_APP_B64), function(c) { return c.charCodeAt(0); })); } catch (e) {}
 })();
 /* CTA « Essaie l'écran interactif » : scrolle vers le téléphone + pulse */
 (function () {
