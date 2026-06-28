@@ -1,2 +1,5 @@
 # Config locale Claude Code (déjà ignorée globalement, mais explicite ici)
 .claude/
+
+# Sauvegardes app InBeat standalone — accès web uniquement, pas de versioning git
+inbeat/
