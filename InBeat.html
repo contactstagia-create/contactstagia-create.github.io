@@ -119,7 +119,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* InBeat hero: stack phone + hint vertically (overrides shared row layout) */
   .device-wrap { flex-direction: column; align-items: center; }
   /* Hero collé plus près du header + espacements verticaux réduits de moitié */
-  .hero { padding: 24px 0 40px; }
+  .hero { padding: 24px 0 20px; }
   section.block { padding: 36px 0; }
   .keys { margin-top: 22px; }
   .feature { padding: 28px 0; }
@@ -212,6 +212,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .ib-hero-m .sub { margin: 0; }
     .hero-copy > .eyebrow, .hero-copy > h1, .hero-copy > .ib-cta-line { display: none; }
   }
+  /* Écosystème cross-promo */
+  .ecosystem { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-top: 28px; }
+  .eco { background: var(--bg-surface-1); border: 1px solid var(--border-subtle); border-radius: var(--r-lg); padding: 18px 20px; display: flex; align-items: flex-start; gap: 13px; text-decoration: none; transition: border-color 140ms ease, transform 140ms ease; }
+  .eco:hover { transform: translateY(-2px); border-color: var(--border-default); }
+  .eco .d { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .eco b { font-family: var(--font-display); font-weight: 800; font-size: 15px; display: block; color: var(--fg-1); }
+  .eco small { font-size: 12.5px; color: var(--fg-3); }
+  @media (max-width: 600px) { .ecosystem { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -459,35 +467,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- CROSS-PROMO ÉCOSYSTÈME STAGIA -->
+<!-- ÉCOSYSTÈME STAGIA -->
 <section class="crosspromo">
-  <div class="wrap cp-wrap">
+  <div class="wrap">
     <div class="block-head">
       <p class="eyebrow">Écosystème Stagia</p>
-      <h2 style="font-size: clamp(24px, 2.6vw, 30px); line-height: 1.12; letter-spacing: -0.015em">Fait partie d'un tout cohérent.</h2>
-      <p><span class="ib-name">InBeat</span> parle le même langage que <span class="st-name">GigFlow Live</span> et <span class="st-name-ed">GigFlow Editor</span> — prépare, joue, garde le tempo sans jamais ressaisir un titre.</p>
+      <h2 style="font-size:clamp(22px,2.4vw,28px);line-height:1.12;letter-spacing:-0.015em">Conçu pour fonctionner ensemble.</h2>
     </div>
-    <div class="cp-inner">
-      <div class="cp-shot cp-shot-live">
-        <div class="phone"><div class="screen"><img src="assets/screens/gigflow-live-stage.png" alt="GigFlow Live"></div></div>
-      </div>
-      <div class="cp-text">
-        <p class="lbl" style="color:var(--brand-amber-300)">GigFlow Live · Scène</p>
-        <h3>Ton chanteur mérite son propre outil.</h3>
-        <p>GigFlow Live affiche textes et accords sur scène, navigation à la pédale, setlist en temps réel.</p>
-      </div>
-      <a class="btn-secondary cp-btn-live" href="gigflow-live.html"><i data-lucide="arrow-right"></i> Découvrir GigFlow Live</a>
-    </div>
-    <div class="cp-inner">
-      <div class="cp-shot cp-shot-wide cp-shot-editor">
-        <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="addr">editor.stagia.app</span></div><div class="screen"><img src="assets/screens/editor-edit.png" alt="GigFlow Editor"></div></div>
-      </div>
-      <div class="cp-text">
-        <p class="lbl" style="color:var(--brand-pink-500)">GigFlow Editor · Préparation</p>
-        <h3>Prépare tes morceaux au calme, sur PC.</h3>
-        <p>GigFlow Editor met en forme textes et accords, colorise les sections et synchronise tout vers la scène.</p>
-      </div>
-      <a class="btn-secondary cp-btn-editor" href="gigflow-editor.html"><i data-lucide="arrow-right"></i> Découvrir GigFlow Editor</a>
+    <div class="ecosystem">
+      <a class="eco" href="gigflow-live.html">
+        <span class="d" style="background:var(--brand-amber-300);flex:none;margin-top:5px"></span>
+        <div>
+          <b>GigFlow Live</b>
+          <small>Setlist · Android</small>
+          <small style="display:block;margin-top:6px;line-height:1.5">Affiche textes et accords sur scène. Navigation à la pédale, setlist en temps réel, 100 % offline.</small>
+        </div>
+      </a>
+      <a class="eco" href="gigflow-editor.html">
+        <span class="d" style="background:#E63429;flex:none;margin-top:5px"></span>
+        <div>
+          <b>GigFlow Editor</b>
+          <small>Préparation · Navigateur</small>
+          <small style="display:block;margin-top:6px;line-height:1.5">Prépare chansons et setlists sur PC, exporte vers InBeat ou Live en un clic.</small>
+        </div>
+      </a>
     </div>
   </div>
 </section>

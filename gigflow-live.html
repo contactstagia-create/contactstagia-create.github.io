@@ -75,6 +75,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .device-wrap .phone {
     box-shadow: var(--shadow-lg), 0 0 100px color-mix(in srgb, var(--product-primary) 18%, transparent);
   }
+  /* Écosystème cross-promo */
+  .ecosystem { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-top: 28px; }
+  .eco { background: var(--bg-surface-1); border: 1px solid var(--border-subtle); border-radius: var(--r-lg); padding: 18px 20px; display: flex; align-items: flex-start; gap: 13px; text-decoration: none; transition: border-color 140ms ease, transform 140ms ease; }
+  .eco:hover { transform: translateY(-2px); border-color: var(--border-default); }
+  .eco .d { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .eco b { font-family: var(--font-display); font-weight: 800; font-size: 15px; display: block; color: var(--fg-1); }
+  .eco small { font-size: 12.5px; color: var(--fg-3); }
+  @media (max-width: 600px) { .ecosystem { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -284,31 +292,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- CROSS-PROMO INBEAT + EDITOR -->
+<!-- ÉCOSYSTÈME STAGIA -->
 <section class="crosspromo">
-  <div class="wrap cp-inner">
-    <div class="cp-shot">
-      <div class="phone"><div class="screen"><img src="assets/screens/inbeat-live.png" alt="InBeat"></div></div>
+  <div class="wrap">
+    <div class="block-head">
+      <p class="eyebrow">Écosystème Stagia</p>
+      <h2 style="font-size:clamp(22px,2.4vw,28px);line-height:1.12;letter-spacing:-0.015em">Un écosystème pensé pour la scène.</h2>
     </div>
-    <div class="cp-text">
-      <p class="lbl" style="color:#2EB5AE;">Pour garder le rythme</p>
-      <h3>Ton batteur mérite son propre outil.</h3>
-      <p><span style="color:#2EB5AE;font-weight:700;">InBeat</span> affiche le tempo et la structure rythmique de ta setlist — gratuit, sans limite, sans abonnement.</p>
+    <div class="ecosystem">
+      <a class="eco" href="InBeat.html">
+        <span class="d" style="background:var(--inbeat-teal-300);flex:none;margin-top:5px"></span>
+        <div>
+          <b>InBeat</b>
+          <small>Tempo · Android</small>
+          <small style="display:block;margin-top:6px;line-height:1.5">Métronome dynamique pour ton batteur. Charge le tempo de chaque titre automatiquement à partir de ta setlist.</small>
+        </div>
+      </a>
+      <a class="eco" href="gigflow-editor.html">
+        <span class="d" style="background:#E63429;flex:none;margin-top:5px"></span>
+        <div>
+          <b>GigFlow Editor</b>
+          <small>Préparation · Navigateur</small>
+          <small style="display:block;margin-top:6px;line-height:1.5">Prépare chansons et setlists sur PC, exporte vers Live ou InBeat en un clic.</small>
+        </div>
+      </a>
     </div>
-    <a class="btn-secondary" href="InBeat.html" style="color:#2EB5AE;border-color:#2EB5AE;"><i data-lucide="arrow-right"></i> Découvrir InBeat</a>
-  </div>
-  <div class="wrap cp-inner" style="border-top:1px solid var(--border-subtle);">
-    <div class="cp-shot">
-      <div style="width:120px;height:88px;background:linear-gradient(160deg,#211D2F,#100D1B);border:1px solid var(--border-default);border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-md),0 0 40px color-mix(in srgb,#E63429 12%,transparent);">
-        <i data-lucide="monitor" style="width:40px;height:40px;color:#E63429;"></i>
-      </div>
-    </div>
-    <div class="cp-text">
-      <p class="lbl" style="color:#E63429;">Pour préparer ton concert</p>
-      <h3>Prépare tout sur PC. Importe en un clic.</h3>
-      <p><span style="color:#E63429;font-weight:700;">GigFlow Editor</span> tourne dans ton navigateur — saisis tes chansons, configure tes setlists au calme, exporte vers Live ou InBeat.</p>
-    </div>
-    <a class="btn-secondary" href="gigflow-editor.html" style="color:#E63429;border-color:#E63429;"><i data-lucide="arrow-right"></i> Découvrir Editor</a>
   </div>
 </section>
 

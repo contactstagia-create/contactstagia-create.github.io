@@ -87,29 +87,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .keys { grid-template-columns: repeat(3, minmax(0,1fr)); }
   @media (max-width: 980px) { .keys { grid-template-columns: repeat(2, minmax(0,1fr)); } }
 
-  /* Image hero pleine largeur sur mobile */
+  @media (min-width: 981px) {
+    .hero-grid { align-items: start; }
+    .hero-text { grid-column: 1; grid-row: 1; }
+    .hero-cta  { grid-column: 1; grid-row: 2; }
+    .device-wrap { grid-column: 2; grid-row: 1 / 3; align-self: center; }
+  }
+  /* Mobile : annule order:-1 de product.css, image pleine largeur */
   @media (max-width: 980px) {
+    .device-wrap { order: 0; }
     .device-wrap img, .editor-wide-img { width: 100% !important; }
   }
-  @media (min-width: 981px) {
-    .hero-copy { order: -1; }
-  }
-  .hero { padding: 24px 0 40px; }
+  .hero { padding: 24px 0 20px; }
   section.block { padding: 36px 0; }
   .keys { margin-top: 22px; }
   .feature { padding: 28px 0; }
   .final { padding: 40px 0; }
   footer { padding: 30px 0 19px; }
 
-  .ecosystem { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-top: 40px; }
+  .ecosystem { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-top: 28px; }
+  @media (max-width: 600px) { .ecosystem { grid-template-columns: 1fr; } }
 
   @keyframes flowRight     { 0%,100%{transform:translateX(0);opacity:0.5}  50%{transform:translateX(6px);opacity:1} }
   @keyframes flowLeft      { 0%,100%{transform:translateX(0);opacity:0.5}  50%{transform:translateX(-6px);opacity:1} }
   @keyframes flowDownRight { 0%,100%{transform:translate(0,0);opacity:0.5} 50%{transform:translate(5px,5px);opacity:1} }
   @keyframes flowDownLeft  { 0%,100%{transform:translate(0,0);opacity:0.5} 50%{transform:translate(-5px,5px);opacity:1} }
-  .eco { background: var(--bg-surface-1); border: 1px solid var(--border-subtle); border-radius: var(--r-lg); padding: 18px 20px; display: flex; align-items: flex-start; gap: 13px; }
+  .eco { background: var(--bg-surface-1); border: 1px solid var(--border-subtle); border-radius: var(--r-lg); padding: 18px 20px; display: flex; align-items: flex-start; gap: 13px; text-decoration: none; transition: border-color 140ms ease, transform 140ms ease; }
+  .eco:hover { transform: translateY(-2px); border-color: var(--border-default); }
   .eco .d { width: 8px; height: 8px; border-radius: 50%; flex: none; }
-  .eco b { font-family: var(--font-display); font-weight: 800; font-size: 15px; display: block; }
+  .eco b { font-family: var(--font-display); font-weight: 800; font-size: 15px; display: block; color: var(--fg-1); }
   .eco small { font-size: 12.5px; color: var(--fg-3); }
 </style>
 </head>
@@ -165,13 +171,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- HERO -->
 <header class="hero">
   <div class="wrap hero-grid">
-    <div class="device-wrap" style="overflow:visible;">
-      <img src="assets/screens/editor-live-preview.png" alt="GigFlow Editor — saisie" style="width:500%;border-radius:10px;">
-    </div>
-    <div class="hero-copy">
+    <div class="hero-text">
       <p class="eyebrow">GigFlow Editor · Navigateur</p>
       <h1><span data-tk="h1">Le confort du clavier, la précision de la souris.</span><br><span class="accent" data-tk="accent">La liberté pour la scène.</span></h1>
       <p class="sub" data-tk="sub">Grand écran, clavier, souris — prépare tes chansons et setlists dans les meilleures conditions. Un export, et tu montes sur scène avec Live ou InBeat.</p>
+    </div>
+    <div class="device-wrap" style="overflow:visible;">
+      <img src="assets/screens/editor-live-preview.png" alt="GigFlow Editor — saisie" style="width:500%;border-radius:10px;">
+    </div>
+    <div class="hero-cta">
       <div class="hero-actions">
         <a class="btn-primary" href="https://stagia.app/gigflow-editor/editor.html" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Lancer GigFlow Editor</a>
       </div>
@@ -299,8 +307,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="ecosystem">
-      <div class="eco"><span class="d" style="background:var(--brand-amber-300);margin-top:5px"></span><div><b>GigFlow Live</b><small>Scène · Android</small><small style="display:block;margin-top:6px;line-height:1.5">Affiche tes titres et setlists sur tablette. Navigue de chanson en chanson sur scène, en un glissement.</small></div></div>
-      <div class="eco"><span class="d" style="background:var(--inbeat-teal-300);margin-top:5px"></span><div><b>InBeat</b><small>Tempo · Android</small><small style="display:block;margin-top:6px;line-height:1.5">Importe tes setlists et morceaux depuis Editor. InBeat gère le tempo et le click en concert.</small></div></div>
+      <a class="eco" href="gigflow-live.html"><span class="d" style="background:var(--brand-amber-300);margin-top:5px"></span><div><b>GigFlow Live</b><small>Scène · Android</small><small style="display:block;margin-top:6px;line-height:1.5">Affiche tes titres et setlists sur tablette. Navigue de chanson en chanson sur scène, en un glissement.</small></div></a>
+      <a class="eco" href="InBeat.html"><span class="d" style="background:var(--inbeat-teal-300);margin-top:5px"></span><div><b>InBeat</b><small>Tempo · Android</small><small style="display:block;margin-top:6px;line-height:1.5">Importe tes setlists et morceaux depuis Editor. InBeat gère le tempo et le click en concert.</small></div></a>
     </div>
 
   </div>
