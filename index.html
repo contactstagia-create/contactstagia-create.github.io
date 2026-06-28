@@ -2,6 +2,7 @@
 <!doctype html>
 <html lang="fr" data-product="live">
 <head>
+<script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual';</script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -48,6 +49,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   ]
 }
 </script>
+<style>html,body{background:#0C0A18}</style>
 <link rel="stylesheet" href="colors_and_type.css?v=3">
 <style>
   * { box-sizing: border-box; }
@@ -107,23 +109,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .nav-cta:active { transform: scale(0.97); }
 
   /* ---------------- HERO ---------------- */
-  .hero { position: relative; padding: 96px 0 48px; overflow: hidden; }
+  .hero { position: relative; padding: 20px 0 48px; overflow: hidden; }
   .hero::before {
     content: ""; position: absolute; z-index: 0;
     top: -180px; right: -120px; width: 760px; height: 760px;
     background: radial-gradient(circle, rgba(245,194,95,0.16) 0%, rgba(245,194,95,0.05) 38%, transparent 68%);
     pointer-events: none;
   }
-  .hero-grid {
-    position: relative; z-index: 1;
-    display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center;
+  @media (min-width: 981px) {
+    .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 56px; }
+    .hero-copy { order: -1; }
   }
   .hero h1 {
     font-family: var(--font-display); font-weight: 900;
     font-size: clamp(40px, 5vw, 60px); line-height: 1.04; letter-spacing: -0.025em;
     margin: 20px 0 0; text-wrap: balance;
   }
-  .hero h1 .accent { color: var(--brand-amber-300); }
+  .hero .eyebrow { display: block; }
   .hero .sub {
     font-size: 19px; line-height: 1.55; color: var(--fg-2);
     margin: 22px 0 0; max-width: 30em;
@@ -159,16 +161,57 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-green); box-shadow: 0 0 8px var(--accent-green); }
   .chip .dot.amber { background: var(--brand-amber-300); box-shadow: 0 0 8px var(--brand-amber-300); }
 
-  /* device — InBeat « u screen » format : téléphone haut, écran plein et lisible */
-  .device-wrap { display: flex; justify-content: center; }
-  .phone {
-    width: 336px; border-radius: 40px; padding: 12px;
+  /* ---- Hero fan of 3 screens ---- */
+  .device-wrap {
+    display: flex; justify-content: center; align-items: flex-end;
+    position: relative; height: 420px;
+  }
+  .fan-phone {
+    position: absolute; bottom: 0;
+    width: 185px; border-radius: 20px; padding: 6px;
     background: linear-gradient(160deg, #211D2F, #100D1B);
     border: 1px solid var(--border-default);
-    box-shadow: var(--shadow-lg), 0 0 70px rgba(245,194,95,0.10);
+    transform-origin: bottom center;
+    transition: transform 300ms ease;
   }
-  .phone .screen { border-radius: 28px; overflow: hidden; border: 1px solid rgba(0,0,0,0.5); }
-  .phone .screen img { display: block; width: 100%; }
+  .fan-phone .screen {
+    border-radius: 14px; overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.5);
+  }
+  .fan-phone .screen img { display: block; width: 100%; }
+  .fan-phone .fan-lbl {
+    font-family: var(--font-mono); font-size: 9px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    text-align: center; margin-top: 7px; padding-bottom: 2px;
+    opacity: 0.5;
+  }
+  /* Left — Editor */
+  .fan-live {
+    left: 50%; transform: translateX(-50%);
+    z-index: 3;
+    width: 178px;
+    box-shadow: var(--shadow-lg), 0 0 90px rgba(46,181,174,0.38);
+  }
+  .fan-left {
+    left: calc(50% - 130px);
+    transform: rotate(-14deg) translateX(-30px);
+    z-index: 2;
+    width: 215px; border-radius: 23px; padding: 7px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 80px rgba(233,69,96,0.38);
+    opacity: 0.92;
+  }
+  .fan-right {
+    left: calc(50% + 130px);
+    transform: rotate(14deg) translateX(-170px);
+    z-index: 4;
+    width: 250px; border-radius: 27px; padding: 8px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 70px rgba(245,194,95,0.28);
+    opacity: 1;
+  }
+  .fan-left .fan-lbl  { color: #E94560; opacity: 0.7; }
+  .fan-live  .fan-lbl { color: var(--brand-teal, #2EB5AE); opacity: 0.7; }
+  .fan-right .fan-lbl { color: var(--brand-amber-300, #F5C25F); opacity: 0.7; }
+
 
   /* ---------------- VALUES ---------------- */
   section.block { padding: 52px 0; }
@@ -191,7 +234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .value p { font-size: 14px; color: var(--fg-3); line-height: 1.55; margin: 0; }
 
   /* ---------------- PRODUCTS ---------------- */
-  .products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 48px; }
+  .products { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 48px; }
   .pcard {
     position: relative; background: var(--bg-surface-1);
     border: 1px solid var(--border-subtle); border-radius: var(--r-xl);
@@ -214,6 +257,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     display: block; width: 100%; height: 100%;
     object-fit: cover; object-position: top center; border: 0; box-shadow: none;
   }
+  /* InBeat card — ratio smartphone (9:19) au lieu du 660/912 partagé */
+  .pcard.inbeat .phone-mini .screen { aspect-ratio: 9 / 19; }
+
+  /* Live card — hauteur alignée sur InBeat (303px → screen 287×396px ≈ 412px total) */
+  .pcard.live .phone-mini { width: 303px; border-radius: 45px; }
+  .pcard.live .phone-mini .screen { border-radius: 33px; }
+
+  /* Editor card — pleine largeur sur 2 colonnes */
+  .pcard.editor { grid-column: span 2; }
+  .pcard.editor .browser-mini { width: 70%; max-width: none; }
+
   /* Browser mockup for Editor card */
   .pcard .browser-mini {
     width: 100%; max-width: 260px; border-radius: 10px; overflow: hidden;
@@ -342,8 +396,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* ---------------- RESPONSIVE ---------------- */
   @media (max-width: 940px) {
-    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-    .device-wrap { order: -1; }
     .values { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
     .products { grid-template-columns: 1fr; }
     .sig-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -379,6 +431,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav-mobile .nav-mobile-cta { margin-top: 16px; border: 0; border-radius: var(--r-md); padding: 14px 18px; text-align: center; background: var(--product-primary); color: var(--product-primary-fg); font-weight: 700; }
     .nav-mobile .nav-mobile-cta:hover { color: var(--product-primary-fg); }
   }
+
 </style>
 </head>
 <body>
@@ -387,7 +440,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#0C0A18"/>
+    <text x="50" y="62" font-family="Mulish, sans-serif" font-size="40" font-weight="800" fill="#F5C25F" text-anchor="middle">S</text>
+  </svg>
+</template>
 
 <!-- NAV -->
 <nav>
@@ -436,6 +494,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- HERO -->
 <header class="hero" id="top">
   <div class="wrap hero-grid">
+    <div class="device-wrap">
+      <!-- Left: GigFlow Editor -->
+      <div class="fan-phone fan-left">
+        <div class="screen"><img src="assets/screens/editor-edit.png" alt="GigFlow Editor"></div>
+        <p class="fan-lbl">Editor</p>
+      </div>
+      <!-- Center: InBeat -->
+      <div class="fan-phone fan-live">
+        <div class="screen"><img src="assets/screens/inbeat-live.png" alt="InBeat"></div>
+        <p class="fan-lbl">InBeat</p>
+      </div>
+      <!-- Right: GigFlow Live -->
+      <div class="fan-phone fan-right">
+        <div class="screen"><img src="assets/screens/gigflow-live-stage.png" alt="GigFlow Live"></div>
+        <p class="fan-lbl">GigFlow Live</p>
+      </div>
+    </div>
     <div class="hero-copy">
       <p class="eyebrow" data-tk="eyebrow">Stagia</p>
       <h1><span data-tk="h1">Tools for musicians,</span><br><span class="accent" data-tk="accent">by musicians.*</span></h1>
@@ -449,11 +524,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="chip">Aucun abonnement · aucune pub</span>
       </div>
       <p style="font-family:var(--font-mono);font-size:11px;color:var(--fg-4);margin:14px 0 0;">* Des outils pour musiciens, par des musiciens.</p>
-    </div>
-    <div class="device-wrap">
-      <div class="phone">
-        <div class="screen"><img src="assets/screens/gigflow-live-stage.png" alt="GigFlow Live — Mode scène"></div>
-      </div>
     </div>
   </div>
 </header>
@@ -696,5 +766,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </script>
 
 <script src="cookie-banner.js"></script>
+
 </body>
 </html>

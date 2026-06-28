@@ -2,6 +2,7 @@
 <!doctype html>
 <html lang="fr" data-product="editor">
 <head>
+<script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual';</script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -42,6 +43,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "publisher": { "@type": "Organization", "name": "Stagia", "url": "https://stagia.app/" }
 }
 </script>
+<style>html,body{background:#0C0A18}</style>
 <link rel="stylesheet" href="colors_and_type.css?v=3">
 <link rel="stylesheet" href="product.css?v=3">
 <style>
@@ -88,6 +90,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* Image hero pleine largeur sur mobile */
   @media (max-width: 980px) {
     .device-wrap img, .editor-wide-img { width: 100% !important; }
+  }
+  @media (min-width: 981px) {
+    .hero-copy { order: -1; }
   }
   .hero { padding: 24px 0 40px; }
   section.block { padding: 36px 0; }
@@ -160,6 +165,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- HERO -->
 <header class="hero">
   <div class="wrap hero-grid">
+    <div class="device-wrap" style="overflow:visible;">
+      <img src="assets/screens/editor-live-preview.png" alt="GigFlow Editor — saisie" style="width:500%;border-radius:10px;">
+    </div>
     <div class="hero-copy">
       <p class="eyebrow">GigFlow Editor · Navigateur</p>
       <h1><span data-tk="h1">Le confort du clavier, la précision de la souris.</span><br><span class="accent" data-tk="accent">La liberté pour la scène.</span></h1>
@@ -174,9 +182,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="chip"><span class="dot" style="background:var(--brand-amber-300);box-shadow:0 0 8px var(--brand-amber-300)"></span> 100 % offline à l'utilisation</span>
         <span class="chip"><span class="dot" style="background:var(--brand-amber-300);box-shadow:0 0 8px var(--brand-amber-300)"></span> Aucun abonnement · aucune pub</span>
       </div>
-    </div>
-    <div class="device-wrap" style="overflow:visible;">
-      <img src="assets/screens/editor-live-preview.png" alt="GigFlow Editor — saisie" style="width:500%;border-radius:10px;">
     </div>
   </div>
 </header>
@@ -366,6 +371,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   m.addEventListener('click', function (e) { if (e.target.closest('a')) close(); });
 })();
 </script>
+
+<script src="cookie-banner.js"></script>
+</body>
+<template id="__bundler_thumbnail" data-bg-color="#0C0A18">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0C0A18"/>
+    <text x="600" y="420" text-anchor="middle" font-family="monospace" font-weight="700" font-size="180" fill="#E63429">GE</text>
+  </svg>
+</template>
 
 <script src="cookie-banner.js"></script>
 </body>
