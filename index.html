@@ -1,6 +1,6 @@
 <!-- @startingPoint section="Marketing" subtitle="Home stagia.app — hero, 3 produits, valeurs, footer (visuel aligné logo)" viewport="1280x3680" -->
 <!doctype html>
-<html lang="fr" data-product="live">
+<html lang="fr">
 <head>
 <script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual';</script>
 <script>
@@ -28,6 +28,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:url" content="https://stagia.app/">
 <meta property="og:image" content="https://stagia.app/assets/og-stagia.png">
 <meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stagia — Tools for musicians, by musicians.">
+<meta name="twitter:description" content="Stagia — outils numériques pour musiciens : GigFlow Live pour tes setlists en concert, InBeat pour le click track, GigFlow Editor pour préparer tes morceaux sur PC.">
+<meta name="twitter:image" content="https://stagia.app/assets/og-stagia.png">
+<meta name="theme-color" content="#0C0A18">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -358,6 +363,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background: #fff; box-shadow: var(--shadow-sm); transition: transform 300ms cubic-bezier(.4,1.3,.5,1);
   }
   .switch[aria-pressed="true"] .knob { transform: translateX(20px); }
+  .switch:focus-visible { outline: 2px solid var(--brand-amber-300); outline-offset: 3px; }
 
   /* ---------------- FINAL CTA ---------------- */
   .final { position: relative; text-align: center; padding: 32px 0 80px; overflow: hidden; }
@@ -453,7 +459,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
 </template>
 
 <!-- NAV -->
-<nav>
+<nav aria-label="Navigation principale">
   <div class="nav-inner">
     <a class="brand" href="#top">
       <img src="assets/stagia-logo-watermark.png" alt="Stagia">
@@ -468,7 +474,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
     <div class="lang-switcher">
       <button class="lang-btn">FR <i data-lucide="chevron-down" style="width:11px;height:11px;"></i></button>
       <div class="lang-dropdown">
-        <a href="#" class="lang-active">FR</a>
+        <span class="lang-active">FR</span>
         <span class="lang-soon">EN</span>
         <span class="lang-soon">US</span>
         <span class="lang-soon">DE</span>
@@ -489,7 +495,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
       
       <div class="lang-mobile">
         <span class="lang-label-m">Langue</span>
-        <div class="lang-mobile-options"><a href="#" class="lang-active-m">FR</a><span class="lang-soon-m">EN</span><span class="lang-soon-m">US</span><span class="lang-soon-m">DE</span><span class="lang-soon-m">IT</span><span class="lang-soon-m">ES</span><span class="lang-soon-m">NL</span><span class="lang-soon-m">PT</span></div>
+        <div class="lang-mobile-options"><span class="lang-active-m">FR</span><span class="lang-soon-m">EN</span><span class="lang-soon-m">US</span><span class="lang-soon-m">DE</span><span class="lang-soon-m">IT</span><span class="lang-soon-m">ES</span><span class="lang-soon-m">NL</span><span class="lang-soon-m">PT</span></div>
       </div>
       <a class="nav-mobile-cta" href="#produits">Découvrir les apps</a>
     </div>
@@ -517,6 +523,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
       </div>
     </div>
     <div class="hero-copy">
+      <!-- data-tk : hooks réservés au futur système de traduction (sélecteur de langue) — non utilisés par le JS actuel -->
       <p class="eyebrow" data-tk="eyebrow">Stagia</p>
       <h1><span data-tk="h1">Tools for musicians,</span><br><span class="accent" data-tk="accent">by musicians.*</span></h1>
       <p class="sub" data-tk="sub">GigFlow Live, InBeat, GigFlow Editor — des apps simples, fiables, offline. Faites pour jouer, pas pour naviguer dans des menus.</p>

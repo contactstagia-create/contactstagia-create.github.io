@@ -28,6 +28,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:url" content="https://stagia.app/gigflow-editor.html">
 <meta property="og:image" content="https://stagia.app/assets/og-gigflow-editor.png">
 <meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GigFlow Editor — Ton répertoire complet. À moindre effort.">
+<meta name="twitter:description" content="GigFlow Editor — prépare tes chansons et setlists sur PC ou Mac. Outil web gratuit, 100 % offline à l'utilisation. Exporte vers GigFlow Live et InBeat.">
+<meta name="twitter:image" content="https://stagia.app/assets/og-gigflow-editor.png">
+<meta name="theme-color" content="#0C0A18">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -127,7 +132,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scripts"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <!-- NAV -->
-<nav>
+<nav aria-label="Navigation principale">
   <div class="nav-inner">
     <a class="brand" href="index.html">
       <img src="assets/stagia-logo-watermark.png" alt="Stagia">
@@ -142,7 +147,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
     <div class="lang-switcher">
       <button class="lang-btn">FR <i data-lucide="chevron-down" style="width:11px;height:11px;"></i></button>
       <div class="lang-dropdown">
-        <a href="#" class="lang-active">FR</a>
+        <span class="lang-active">FR</span>
         <span class="lang-soon">EN</span>
         <span class="lang-soon">US</span>
         <span class="lang-soon">DE</span>
@@ -163,7 +168,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
       
       <div class="lang-mobile">
         <span class="lang-label-m">Langue</span>
-        <div class="lang-mobile-options"><a href="#" class="lang-active-m">FR</a><span class="lang-soon-m">EN</span><span class="lang-soon-m">US</span><span class="lang-soon-m">DE</span><span class="lang-soon-m">IT</span><span class="lang-soon-m">ES</span><span class="lang-soon-m">NL</span><span class="lang-soon-m">PT</span></div>
+        <div class="lang-mobile-options"><span class="lang-active-m">FR</span><span class="lang-soon-m">EN</span><span class="lang-soon-m">US</span><span class="lang-soon-m">DE</span><span class="lang-soon-m">IT</span><span class="lang-soon-m">ES</span><span class="lang-soon-m">NL</span><span class="lang-soon-m">PT</span></div>
       </div>
       <a class="nav-mobile-cta" href="https://stagia.app/gigflow-editor/editor.html" target="_blank" rel="noopener noreferrer">Lancer Editor</a>
     </div>
@@ -179,7 +184,8 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
       <p class="sub" data-tk="sub">Grand écran, clavier, souris — prépare tes chansons et setlists dans les meilleures conditions. Un export, et tu montes sur scène avec Live ou InBeat.</p>
     </div>
     <div class="device-wrap" style="overflow:visible;">
-      <img src="assets/screens/editor-live-preview.png" alt="GigFlow Editor — saisie" style="width:500%;border-radius:10px;">
+      <!-- width:500% intentionnel : bleed effect visuel, écrasé à 100% sur mobile par media query -->
+<img src="assets/screens/editor-live-preview.png" alt="GigFlow Editor — saisie" style="width:500%;border-radius:10px;">
     </div>
     <div class="hero-cta">
       <div class="hero-actions">
