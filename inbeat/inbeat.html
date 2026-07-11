@@ -310,11 +310,7 @@ textarea.inp{resize:vertical;min-height:72px}
 .sl-item.dragging{opacity:.35}
 .sl-item.drag-over-top{border-top:2px solid var(--red)!important}
 .sl-item.drag-over-bot{border-bottom:2px solid var(--red)!important}
-/* Tablette : centrer le contenu au-delà de 600px */
-@media(min-width:600px){
-  .view{max-width:540px;margin:0 auto}
-  #view-beat{max-width:540px;margin:0 auto}
-}
+/* Tablette : pleine largeur (plafond 540px supprimé en v0.5.60) */
 
 /* ── MODAL ── */
 .overlay{position:fixed;top:0;right:0;bottom:0;left:0;inset:0;background:rgba(0,0,0,.72);
@@ -829,7 +825,7 @@ document.querySelectorAll('.app-logo').forEach(img=>{img.src=LOGO_SRC;img.style.
 // ════════════════════════════════════════════
 //  I18N
 // ════════════════════════════════════════════
-const APP_VERSION='0.5.58';
+const APP_VERSION='0.5.60';
 document.querySelectorAll('.hdr-version').forEach(el=>{el.textContent='v'+APP_VERSION;});
 const LANG_LIST=[
   {code:'fr',flag:'🇫🇷',name:'Français'},
@@ -2352,7 +2348,7 @@ document.getElementById('btn-export-do').addEventListener('click',()=>{
     closeExportModal();return;
   }
   closeExportModal();
-  const escStr=s=>s.replace(/\\/g,'\\\\').replace(/`/g,'\\`').replace(/\$\{/g,'\\${');
+  const escStr=s=>s.replace(/\\/g,'\\\\').replace(/`/g,'\\`').replace(/\$\{/g,'\\${').replace(/</g,'\\u003c');
   const embSls=escStr(JSON.stringify(sel));
   const embLib=escStr(JSON.stringify(STATE.library));
   let html=document.documentElement.outerHTML;
@@ -2841,7 +2837,7 @@ function detectFormat(data){
   if(data.inbeat==='setlists') return'inbeat-setlists';
   if(data.inbeat==='export')   return'inbeat-legacy';
   if(data.gigflow==='export')  return'gigflow-editor';
-  if(Array.isArray(data.songs))return'gigflow-desktop';
+  if(Array.isArray(data.songs)||Array.isArray(data.setlists))return'gigflow-desktop';
   return null;
 }
 function importJSON(data){
@@ -2851,7 +2847,8 @@ function importJSON(data){
     const songs=safeArr(data.songs);const sls=safeArr(data.setlists);let slCount=0;
     sls.forEach(gsl=>{
       const ibSongs=[];
-      safeArr(gsl.songs).forEach(id=>{
+      const refs=safeArr(gsl.songs).length?safeArr(gsl.songs):safeArr(gsl.songIds).map(e=>e&&e.songId);
+      refs.forEach(id=>{
         const gs=songs.find(s=>s.id===id);
         if(gs)ibSongs.push(mapGfSong(gs));
       });
@@ -2868,7 +2865,8 @@ function importJSON(data){
     const rawSongs=safeArr(data.songs);const sls=safeArr(data.setlists);
     sls.forEach(gsl=>{
       const ibSongs=[];
-      safeArr(gsl.songs).forEach(id=>{
+      const refs=safeArr(gsl.songs).length?safeArr(gsl.songs):safeArr(gsl.songIds).map(e=>e&&e.songId);
+      refs.forEach(id=>{
         const gs=rawSongs.find(s=>s.id===id);
         if(gs)ibSongs.push(mapGfSong(gs));
       });
