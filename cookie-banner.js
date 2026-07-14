@@ -1,9 +1,29 @@
 /* cookie-banner.js — Stagia cookie consent (RGPD)
    Stocke le choix dans localStorage('stagia_consent').
-   Met à jour Google Consent Mode v2 selon le choix. */
+   Met à jour Google Consent Mode v2 selon le choix.
+   Bilingue FR/EN selon document.documentElement.lang. */
 (function () {
   var KEY = 'stagia_consent';
   var existing = localStorage.getItem(KEY);
+
+  var STRINGS = {
+    fr: {
+      dialogLabel: 'Consentement cookies',
+      text: 'Ce site utilise Google Analytics pour mesurer son audience de façon anonyme. ',
+      learnMore: 'En savoir plus',
+      refuse: 'Continuer sans accepter',
+      accept: 'Accepter'
+    },
+    en: {
+      dialogLabel: 'Cookie consent',
+      text: 'This site uses Google Analytics to anonymously measure its audience. ',
+      learnMore: 'Learn more',
+      refuse: 'Continue without accepting',
+      accept: 'Accept'
+    }
+  };
+  var lang = (document.documentElement.lang || 'fr').indexOf('en') === 0 ? 'en' : 'fr';
+  var s = STRINGS[lang];
 
   function applyConsent(choice) {
     if (typeof gtag === 'function') {
@@ -21,7 +41,7 @@
   var banner = document.createElement('div');
   banner.id = 'stagia-cookie-banner';
   banner.setAttribute('role', 'dialog');
-  banner.setAttribute('aria-label', 'Consentement cookies');
+  banner.setAttribute('aria-label', s.dialogLabel);
   banner.style.cssText = [
     'position:fixed', 'bottom:0', 'left:0', 'right:0', 'z-index:9999',
     'background:#16132A', 'border-top:1px solid rgba(255,255,255,0.1)',
@@ -34,18 +54,18 @@
 
   banner.innerHTML =
     '<p style="margin:0;font-size:13px;color:#9B97B4;line-height:1.55;max-width:640px;">' +
-      'Ce site utilise Google Analytics pour mesurer son audience de façon anonyme. ' +
-      '<a href="confidentialite.html" style="color:#F5C25F;text-underline-offset:3px;text-decoration:underline;">En savoir plus</a>' +
+      s.text +
+      '<a href="/confidentialite.html" style="color:#F5C25F;text-underline-offset:3px;text-decoration:underline;">' + s.learnMore + '</a>' +
     '</p>' +
     '<div style="display:flex;gap:10px;flex:none;">' +
       '<button id="stagia-refuse" style="all:unset;cursor:pointer;font-size:13px;color:#9B97B4;' +
         'padding:8px 16px;border:1px solid rgba(255,255,255,0.15);border-radius:8px;' +
         'white-space:nowrap;transition:border-color 120ms ease;">' +
-        'Continuer sans accepter' +
+        s.refuse +
       '</button>' +
       '<button id="stagia-accept" style="all:unset;cursor:pointer;font-size:13px;font-weight:700;' +
         'color:#0C0A18;background:#F5C25F;padding:8px 18px;border-radius:8px;white-space:nowrap;">' +
-        'Accepter' +
+        s.accept +
       '</button>' +
     '</div>';
 
