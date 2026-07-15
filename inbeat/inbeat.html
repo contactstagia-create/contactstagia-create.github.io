@@ -19,20 +19,20 @@
   --r:8px; --r2:4px; --tr:.12s ease;
 }
 [data-theme="light"]{
-  --bg:#E9ECF3;
+  --bg:#F1F0EA;
   --surface:#ffffff;
-  --s2:#e2e4f2;
-  --s3:#d0d3e6;
-  --border:#8E96B6;
-  --text:#0c0c24;
-  --dim:#33356e;
-  --muted:#6060a0;
-  --red:#0C9488;--red-g:rgba(12,148,136,.20);
-  --cyan:#1462D8;--cyan-g:rgba(20,98,216,.16);
-  --green:#0E9150;--orange:#a84000;
-  --gold:#B06A00;
+  --s2:#E4E2D8;
+  --s3:#D6D2C2;
+  --border:#9A9488;
+  --text:#1E1B14;
+  --dim:#6E6858;
+  --muted:#8C8676;
+  --red:#232A32;--red-g:rgba(35,42,50,.32);
+  --cyan:#135BC8;--cyan-g:rgba(19,91,200,.14);
+  --green:#0B7B3E;--orange:#C2410C;
+  --gold:#232A32;
 }
-[data-theme="light"] .btn{background:#dcdff0;border-color:#9090bc}
+[data-theme="light"] .btn{background:#ffffff;border-color:#9A9488}
 [data-theme="light"] .btn.primary{background:var(--red);border-color:var(--red);color:#fff}
 [data-theme="light"] .btn.success{background:transparent;border-color:var(--red);color:var(--red)}
 [data-theme="light"] .btn.danger{background:transparent;border-color:var(--red);color:var(--red)}
@@ -40,15 +40,19 @@
 [data-theme="light"] .btn.ghost:active{background:var(--s2)}
 [data-theme="light"] .btn.outline{background:transparent;border-color:currentColor}
 [data-theme="light"] .btn.chip{background:color-mix(in srgb,currentColor 16%,transparent);border-color:color-mix(in srgb,currentColor 52%,transparent)}
-[data-theme="light"] .btn.gold{background:#e09000;border-color:#e09000;color:#1a1200}
-[data-theme="light"] .dot{background:#DDE1EC;border-color:#8E96B6;color:#33356e}
-[data-theme="light"] .beat-bpm{color:#B06A00}
-[data-theme="light"] .dot.dn{background:#B06A00;border-color:#B06A00;color:#fff;box-shadow:none}
-[data-theme="light"] .dot.d1{box-shadow:none}
-[data-theme="light"] .sub-gap.sa{background:#B06A00;border-color:#B06A00}
-[data-theme="light"] .inp{background:#fafbff;border-color:var(--border)}
-[data-theme="light"] .hdr.h2{background:#C4CADC}
-[data-theme="light"] .beat-nav{background:#C4CADC}
+[data-theme="light"] .btn.gold{background:var(--green);border-color:var(--green);color:#fff}
+[data-theme="light"] .dot{background:#ffffff;border-color:#9A9488;color:#6E6858}
+[data-theme="light"] .beat-bpm{color:var(--gold)}
+[data-theme="light"] .dot.dn{background:var(--gold);border-color:var(--gold);color:#fff;box-shadow:none}
+[data-theme="light"] .sub-gap.sa{background:var(--gold);border-color:var(--gold)}
+[data-theme="light"] .inp{background:#ffffff;border-color:#9A9488}
+[data-theme="light"] .hdr.h2{background:#E4E2D8}
+[data-theme="light"] .beat-nav{background:#E4E2D8}
+[data-theme="light"] .sl-meta,[data-theme="light"] .sl-stats,[data-theme="light"] .song-sub,[data-theme="light"] .song-cum{color:var(--gold)}
+[data-theme="light"] .beat-bpm-unit,[data-theme="light"] .beat-sig{color:var(--gold)}
+[data-theme="light"] .song-pos,[data-theme="light"] .beat-times,[data-theme="light"] .beat-times strong,
+[data-theme="light"] .beat-artist{color:var(--text)}
+[data-theme="light"] .btn.tone{background:var(--red);border-color:var(--red);color:#fff}
 .lang-wrap{position:relative;display:inline-flex}
 .lang-menu{position:fixed;top:52px;right:8px;
   background:var(--s3);border:1px solid var(--border);border-radius:var(--r);
@@ -107,7 +111,7 @@ html,body{height:100%;height:100dvh;background:var(--bg);color:var(--text);
 .btn:disabled{opacity:.3;cursor:not-allowed}
 .btn.active-on{color:var(--text);border:2px solid var(--cyan);box-shadow:0 0 0 1px var(--cyan)}
 .arr{font-size:16px;line-height:1;vertical-align:middle}
-.btn.gold{background:var(--gold);border-color:var(--gold);color:#1a1200;font-weight:700}
+.btn.gold{background:var(--green);border-color:var(--green);color:#07240f;font-weight:700}
 #btn-open-lib,#btn-from-lib{border-color:var(--text)}
 
 /* ── Tooltips ── */
@@ -271,6 +275,8 @@ textarea.inp{resize:vertical;min-height:72px}
 .beat-bpm-unit{font-size:14px;color:var(--dim);font-weight:600}
 .beat-sig{font-size:clamp(15px,4vw,20px);font-weight:700;
   border-left:1px solid var(--border);padding-left:10px;margin-left:2px}
+.btn.tone{background:var(--red);border-color:var(--red);color:#fff;font-weight:700;min-width:56px}
+.btn.tone.playing{box-shadow:0 0 16px var(--red-g)}
 .beat-dots{display:flex;gap:clamp(6px,2vw,12px);align-items:center;
   justify-content:center;flex-wrap:wrap;flex-shrink:0;padding:12px 0;
   width:100%;cursor:pointer;border-radius:var(--r);
@@ -287,7 +293,7 @@ textarea.inp{resize:vertical;min-height:72px}
   box-shadow:0 0 18px rgba(255,212,59,.45)}
 .sub-gap{width:8px;height:8px;border-radius:50%;background:var(--s3);
   border:1px solid var(--border);flex-shrink:0;transition:background .05s}
-.sub-gap.sa{background:var(--orange);border-color:var(--orange)}
+.sub-gap.sa{background:var(--gold);border-color:var(--gold)}
 .beat-ctrl{display:flex;gap:8px;align-items:center;justify-content:center;
   flex-wrap:wrap;width:100%;flex-shrink:0}
 .beat-nav{display:flex;align-items:center;justify-content:space-between;
@@ -550,6 +556,8 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   </div>
   <div class="beat-nav">
     <button class="btn" id="btn-prev-song" style="min-width:90px;font-size:15px" data-tip="Titre précédent (←)"><span style="font-size:20px;line-height:1">◀</span> <span id="lbl-prev">Préc.</span></button>
+    <div class="spacer"></div>
+    <button class="btn tone" id="btn-tone" style="min-width:76px;font-size:15px">♪</button>
     <div class="spacer"></div>
     <button class="btn" id="btn-next-song" style="min-width:90px;font-size:15px" data-tip="Titre suivant (→)"><span id="lbl-next">Suiv.</span> <span style="font-size:20px;line-height:1">▶</span></button>
   </div>
@@ -825,7 +833,7 @@ document.querySelectorAll('.app-logo').forEach(img=>{img.src=LOGO_SRC;img.style.
 // ════════════════════════════════════════════
 //  I18N
 // ════════════════════════════════════════════
-const APP_VERSION='0.5.60';
+const APP_VERSION='0.5.61';
 document.querySelectorAll('.hdr-version').forEach(el=>{el.textContent='v'+APP_VERSION;});
 const LANG_LIST=[
   {code:'fr',flag:'🇫🇷',name:'Français'},
@@ -1604,7 +1612,7 @@ function genId(){return Date.now()*1000+(++_idSeq%1000);}
 const STATE = {
   view:'home', setlists:[], library:[],
   activeSlId:null, activeSongIdx:0,
-  beat:{ playing:false, currentBeat:-1, bpm:120, savedBpm:120, audioOn:false, showSubs:false, songStartTime:null, volume:0.8 },
+  beat:{ playing:false, currentBeat:-1, bpm:120, savedBpm:120, audioOn:false, showSubs:false, songStartTime:null, songElapsedMs:0, volume:0.8 },
   notesOpen:false,
   tapTimes:[], tapTimer:null,
   editSong:null, editSongIdx:-1,
@@ -2156,6 +2164,7 @@ document.getElementById('sl-list').addEventListener('click',async e=>{
     const sl=STATE.setlists[i];
     if(!sl||!sl.songs.length)return;
     STATE.activeSlId=sl.id;STATE.activeSongIdx=0;STATE.beatPreviewFromView='home';
+    STATE.beat.songElapsedMs=0;
     stopBeat();showView('beat');renderBeatView();startBeat();
   } else {
     openSetlist(i);
@@ -2375,20 +2384,22 @@ function updateCountdown(){
   const interDur=sl.songs.slice(STATE.activeSongIdx+1).reduce((a,x)=>a+(parseInt(x.duration)||0),0);
   let songRem=songDur;
   if(STATE.beat.playing&&STATE.beat.songStartTime){
-    songRem=Math.max(0,songDur-Math.floor((Date.now()-STATE.beat.songStartTime)/1000));
+    STATE.beat.songElapsedMs=Date.now()-STATE.beat.songStartTime;
   }
+  songRem=Math.max(0,songDur-Math.floor((STATE.beat.songElapsedMs||0)/1000));
   const rem=songRem+interDur;
   strong.textContent=fmtLong(rem)||'--';
   el.style.color=rem===0?'var(--gold)':rem<=60?'var(--gold)':'';
 }
 function startCountdown(){
   clearInterval(countdownTimer);
-  STATE.beat.songStartTime=Date.now();
+  STATE.beat.songStartTime=Date.now()-(STATE.beat.songElapsedMs||0);
   countdownTimer=setInterval(updateCountdown,500);
   updateCountdown();
 }
 function stopCountdown(){
   clearInterval(countdownTimer);countdownTimer=null;
+  if(STATE.beat.songStartTime)STATE.beat.songElapsedMs=Date.now()-STATE.beat.songStartTime;
   STATE.beat.songStartTime=null;
   updateCountdown();
 }
@@ -2486,8 +2497,89 @@ function getBeatsPerBar(){
   return getMeterInfo().num;
 }
 function updatePlayBtn(){
-  document.getElementById('btn-play').textContent=STATE.beat.playing?'■ Stop':'▶ Play';
+  const b=document.getElementById('btn-play');
+  b.textContent=STATE.beat.playing?'■ Stop':'▶ Play';
+  b.classList.toggle('playing',STATE.beat.playing);
 }
+// ════════════════════════════════════════════
+//  TONE — donner le ton au chanteur
+//  Un appui → la tonique du titre sonne ~3,5 s (mains libres), La 440 si pas de tonalité.
+// ════════════════════════════════════════════
+const NOTE_LATIN=['Do','Do#','Ré','Ré#','Mi','Fa','Fa#','Sol','Sol#','La','La#','Si'];
+const NOTE_LETTER=['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+const NOTE_GERMAN=['C','C#','D','D#','E','F','F#','G','G#','A','A#','H'];
+const TONE_TIP={fr:'Donner le ton au chanteur',en:'Give the singer the pitch',us:'Give the singer the pitch',
+  de:'Dem Sänger den Ton geben',nl:'De zanger de toon geven',it:'Dare il tono al cantante',
+  es:'Dar el tono al cantante',pt:'Dar o tom ao cantor',br:'Dar o tom ao cantor'};
+function toneNoteNames(){
+  if(lang==='de')return NOTE_GERMAN;
+  if(lang==='fr'||lang==='it'||lang==='es'||lang==='pt'||lang==='br')return NOTE_LATIN;
+  return NOTE_LETTER;
+}
+function parseKeyRoot(key){
+  if(!key)return null;
+  const k=String(key).trim().toLowerCase();
+  const latin={do:0,ut:0,'ré':2,re:2,mi:4,fa:5,sol:7,la:9,si:11,ti:11};
+  let m=k.match(/^(do|ut|ré|re|mi|fa|sol|la|si|ti)\s*(#|♯|b|♭)?/);
+  if(m&&latin[m[1]]!==undefined){let v=latin[m[1]];if(m[2]==='#'||m[2]==='♯')v++;if(m[2]==='b'||m[2]==='♭')v--;return((v%12)+12)%12;}
+  const letter={c:0,d:2,e:4,f:5,g:7,a:9,b:11,h:11};
+  m=k.match(/^([a-h])\s*(#|♯|b|♭)?/);
+  if(m&&letter[m[1]]!==undefined){let v=letter[m[1]];if(m[2]==='#'||m[2]==='♯')v++;if(m[2]==='b'||m[2]==='♭')v--;return((v%12)+12)%12;}
+  return null;
+}
+function currentBeatSong(){
+  if(STATE.beatPreviewMode)return STATE.beatPreviewSong;
+  const sl=getActiveSetlist();return sl?sl.songs[STATE.activeSongIdx]:null;
+}
+let toneNodes=null,toneTimer=null;
+function stopTone(){
+  if(toneNodes&&audioCtx){
+    try{
+      const now=audioCtx.currentTime;
+      toneNodes.g.gain.cancelScheduledValues(now);
+      toneNodes.g.gain.setValueAtTime(toneNodes.g.gain.value,now);
+      toneNodes.g.gain.linearRampToValueAtTime(0.0001,now+0.08);
+      toneNodes.oscs.forEach(o=>{try{o.stop(now+0.1)}catch(e){}});
+    }catch(e){}
+  }
+  toneNodes=null;if(toneTimer){clearTimeout(toneTimer);toneTimer=null;}
+  const b=document.getElementById('btn-tone');if(b)b.classList.remove('playing');
+}
+function playTone(){
+  initAudio();
+  if(toneNodes){stopTone();return;} // 2e appui = arrêt
+  stopTone();
+  const s=currentBeatSong();
+  const root=parseKeyRoot(s&&s.key);
+  // Tonique jouée à l'octave 3 (Do3 ≈ 130,8 Hz) — harmoniques ×2/×3/×4 pour porter
+  // sur haut-parleur de téléphone. Repli La 440 si aucune tonalité renseignée.
+  const freq=root===null?440:130.8128*Math.pow(2,root/12);
+  const DUR=3.5,t0=audioCtx.currentTime;
+  const g=audioCtx.createGain();
+  g.gain.setValueAtTime(0.0001,t0);
+  g.gain.linearRampToValueAtTime(0.5,t0+0.05);
+  g.gain.setValueAtTime(0.5,t0+DUR-1.0);
+  g.gain.exponentialRampToValueAtTime(0.0001,t0+DUR);
+  g.connect(masterGain);
+  const oscs=[[1,0.55],[2,0.28],[3,0.12],[4,0.05]].map(([mult,amp])=>{
+    const o=audioCtx.createOscillator(),og=audioCtx.createGain();
+    o.frequency.value=freq*mult;og.gain.value=amp;
+    o.connect(og);og.connect(g);o.start(t0);o.stop(t0+DUR+0.1);
+    return o;
+  });
+  toneNodes={oscs,g};
+  document.getElementById('btn-tone').classList.add('playing');
+  toneTimer=setTimeout(()=>{toneNodes=null;toneTimer=null;
+    const b=document.getElementById('btn-tone');if(b)b.classList.remove('playing');},DUR*1000);
+}
+function updateToneBtn(s){
+  const b=document.getElementById('btn-tone');if(!b)return;
+  stopTone();
+  const root=parseKeyRoot(s&&s.key);
+  b.textContent='♪ '+(root===null?'440':toneNoteNames()[root]);
+  b.dataset.tip=TONE_TIP[lang]||TONE_TIP.en;
+}
+document.getElementById('btn-tone').addEventListener('click',playTone);
 
 // ════════════════════════════════════════════
 //  BEAT DOTS
@@ -2684,11 +2776,12 @@ function renderBeatView(){
     document.getElementById('song-pos').textContent='▶ Test';
     document.getElementById('beat-times').innerHTML='';
     document.getElementById('beat-title').textContent=s.title||'—';
-    const sub=[s.artist,s.key,s.time,s.tempo?(s.tempo+' BPM'):''].filter(Boolean).join('  ·  ');
-    document.getElementById('beat-artist').textContent=sub;
+    const sub=[s.artist?esc(s.artist):'',s.key?esc(s.key):''].filter(Boolean).join('  ·  ');
+    document.getElementById('beat-artist').innerHTML=sub;
     document.getElementById('beat-notes').textContent=s.notes||'';
     document.getElementById('beat-bpm').textContent=STATE.beat.bpm;
     document.getElementById('beat-sig').textContent=s.time||'4/4';
+  updateToneBtn(s);
     document.getElementById('btn-prev-song').disabled=true;
     document.getElementById('btn-next-song').disabled=true;
     buildBeatDots();updateBeatDots();updatePlayBtn();updateSaveBpmBtn();
@@ -2711,11 +2804,12 @@ function renderBeatView(){
     `<span id="bt-remain">▶ ${t('iRemain')} <strong>${fmtLong(times.remain)}</strong></span>`;
 
   document.getElementById('beat-title').textContent=s.title||'—';
-  const sub=[s.artist,s.key,s.time,s.tempo?(s.tempo+' BPM'):'',s.duration?fmtDur(s.duration):''].filter(Boolean).join('  ·  ');
-  document.getElementById('beat-artist').textContent=sub;
+  const sub=[s.artist?esc(s.artist):'',s.key?esc(s.key):'',s.duration?esc(fmtDur(s.duration)):''].filter(Boolean).join('  ·  ');
+  document.getElementById('beat-artist').innerHTML=sub;
   document.getElementById('beat-notes').textContent=s.notes||'';
   document.getElementById('beat-bpm').textContent=STATE.beat.bpm;
   document.getElementById('beat-sig').textContent=s.time||'4/4';
+  updateToneBtn(s);
   document.getElementById('btn-prev-song').disabled=STATE.activeSongIdx===0;
   document.getElementById('btn-next-song').disabled=STATE.activeSongIdx===n-1;
   buildBeatDots();updateBeatDots();updatePlayBtn();updateSaveBpmBtn();
@@ -2729,7 +2823,7 @@ function syncVolUI(){
   document.getElementById('vol-pct').textContent=Math.round(v*100)+'%';
 }
 function goSong(idx){
-  stopBeat();STATE.activeSongIdx=idx;renderBeatView();
+  stopBeat();STATE.activeSongIdx=idx;STATE.beat.songElapsedMs=0;renderBeatView();
   savePrefs();startBeat();
 }
 
@@ -2985,6 +3079,7 @@ document.getElementById('btn-lib-exp-do').addEventListener('click',()=>{
 document.getElementById('lang-menu').addEventListener('click',e=>{
   const opt=e.target.closest('.lang-opt');if(!opt)return;
   lang=opt.dataset.lang;savePrefs();applyLang();
+  updateToneBtn(currentBeatSong());
   document.getElementById('lang-menu').classList.add('hidden');
 });
 document.addEventListener('click',()=>document.getElementById('lang-menu')?.classList.add('hidden'));
@@ -3009,6 +3104,7 @@ document.getElementById('btn-lang-picker-ok').addEventListener('click',()=>{
   const sel=document.getElementById('lang-picker-grid').querySelector('.selected');
   if(sel)lang=sel.dataset.code;
   savePrefs();applyLang();
+  updateToneBtn(currentBeatSong());
   document.getElementById('lang-picker-overlay').classList.add('hidden');
   checkIntro();
 });
@@ -3042,7 +3138,7 @@ document.getElementById('btn-sl-back').addEventListener('click',()=>{persistSetl
 document.getElementById('btn-sl-live').addEventListener('click',()=>{
   const sl=getActiveSetlist();
   if(!sl||!sl.songs.length)return;
-  STATE.activeSongIdx=0;stopBeat();showView('beat');renderBeatView();startBeat();});
+  STATE.activeSongIdx=0;STATE.beat.songElapsedMs=0;stopBeat();showView('beat');renderBeatView();startBeat();});
 document.getElementById('btn-add-song').addEventListener('click',()=>openSongModal(-1,'setlist'));
 document.getElementById('btn-from-lib').addEventListener('click',()=>{
   if(!STATE.library.length){toast(t('libEmpty').split('\n')[0],'err');return;}
@@ -3084,6 +3180,7 @@ function openBeatPreview(song,fromMode){
   STATE.beatPreviewMode=fromMode;
   STATE.beatPreviewSong={...song};
   STATE.beatPreviewFromView=STATE.view;
+  STATE.beat.songElapsedMs=0;
   stopBeat();
   if(fromMode==='modal')document.getElementById('modal-song').classList.add('hidden');
   showView('beat');renderBeatView();startBeat();}
