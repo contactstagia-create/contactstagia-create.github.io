@@ -85,6 +85,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .device-wrap .phone {
     box-shadow: var(--shadow-lg), 0 0 100px color-mix(in srgb, var(--product-primary) 18%, transparent);
   }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
+  .faq-item { background: var(--bg-surface-1); border: 1px solid var(--border-subtle); border-radius: var(--r-lg); padding: 20px 24px; }
+  .faq-item h4 { font-family: var(--font-display); font-weight: 800; font-size: 16px; margin: 0 0 8px; color: var(--fg-1); }
+  .faq-item p { font-size: 15px; color: var(--fg-2); line-height: 1.6; margin: 0; }
 </style>
 </head>
 <body>
@@ -151,6 +157,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
       <p class="eyebrow">GigFlow Live · Android</p>
       <h1><span data-tk="h1">Joue sans</span><br><span class="accent" data-tk="accent">perdre le fil.</span></h1>
       <p class="sub" data-tk="sub">Paroles, accords, setlist — tout sous les yeux sans toucher l'écran. Simple, fiable, pensé pour la scène.</p>
+      <p class="sub">Le chanteur change l'ordre du set à la dernière minute ? GigFlow Live suit sans interruption — glisse, réorganise, enchaîne.</p>
     </div>
     <div class="device-wrap">
       <div class="phone">
@@ -211,6 +218,11 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
       </div>
     </div>
 
+    <div class="freemium">
+      <i data-lucide="gift"></i>
+      <span>Essai gratuit, achat unique ensuite · 100 % hors-ligne · tes données restent sur ton téléphone.</span>
+    </div>
+
   </div>
 </section>
 
@@ -269,9 +281,13 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
     <div class="feature">
       <div class="feat-copy">
         <p class="eyebrow">Éditeur intégré</p>
-        <h3>Modification d'une chanson à la dernière minute sans quitter l'app.</h3>
-        <p>Un accord à changer à la dernière minute ? Ça prend dix secondes. Sinon, prépare tout sur PC avec GigFlow Editor.</p>
-        <a class="more" href="gigflow-editor.html" style="color:#E63429;">Découvrir GigFlow Editor <i data-lucide="arrow-right"></i></a>
+        <h3>Modifie, corrige, crée — sans jamais quitter l'app.</h3>
+        <p>Un accord ou une parole à changer à la dernière minute ? Ça prend dix secondes, directement depuis le mode Live. Tu peux aussi créer une chanson ou une setlist complète depuis ton téléphone ou ta tablette, sans passer par un PC.</p>
+        <ul class="feat-list">
+          <li><i data-lucide="pencil"></i> Paroles et accords modifiables en quelques secondes</li>
+          <li><i data-lucide="smartphone"></i> Création de chansons et setlists depuis mobile ou tablette</li>
+        </ul>
+        <a class="more" href="gigflow-editor.html" style="color:#E63429;">Découvrir GigFlow Editor pour une préparation plus confortable <i data-lucide="arrow-right"></i></a>
       </div>
       <div class="feat-media">
         <div class="framed"><img src="assets/screens/editor-edit.png" alt="Éditeur intégré GigFlow Live" loading="lazy"></div>
@@ -280,6 +296,51 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
 
   </div>
 </section>
+
+<!-- FAQ -->
+<section class="block">
+  <div class="wrap">
+    <div class="block-head">
+      <p class="eyebrow muted">Questions fréquentes</p>
+      <h2>Tout ce qu'il faut savoir avant de monter sur scène.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h4>GigFlow Live fonctionne-t-il sans connexion internet ?</h4>
+        <p>Oui. GigFlow Live est 100 % hors ligne : aucune connexion requise, aucun compte à créer. Tes setlists et ton répertoire restent stockés sur ton téléphone.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Comment j'importe mes setlists préparées sur PC ?</h4>
+        <p>Prépare tes chansons et ta setlist sur GigFlow Editor, puis importe le fichier en un clic dans GigFlow Live — aucune ressaisie. Tu peux aussi tout créer directement sur mobile ou tablette avec Live, mais Editor reste plus confortable pour une préparation complète.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Faut-il un abonnement ?</h4>
+        <p>Non. GigFlow Live se débloque avec un achat unique après l'essai gratuit — jamais d'abonnement, jamais de frais récurrents.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Puis-je tourner les pages sans toucher l'écran ?</h4>
+        <p>Oui, via une pédale Bluetooth compatible. Pratique quand tu as les mains prises par ton instrument.</p>
+      </div>
+      <div class="faq-item">
+        <h4>GigFlow Live est-il compatible avec InBeat ?</h4>
+        <p>Oui, les deux apps partagent le même écosystème Stagia : le tempo de chaque titre peut être chargé automatiquement dans InBeat à partir de ta setlist GigFlow Live.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "GigFlow Live fonctionne-t-il sans connexion internet ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. GigFlow Live est 100 % hors ligne : aucune connexion requise, aucun compte à créer. Tes setlists et ton répertoire restent stockés sur ton téléphone." } },
+    { "@type": "Question", "name": "Comment j'importe mes setlists préparées sur PC ?", "acceptedAnswer": { "@type": "Answer", "text": "Prépare tes chansons et ta setlist sur GigFlow Editor, puis importe le fichier en un clic dans GigFlow Live — aucune ressaisie. Tu peux aussi tout créer directement sur mobile ou tablette avec Live, mais Editor reste plus confortable pour une préparation complète." } },
+    { "@type": "Question", "name": "Faut-il un abonnement ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. GigFlow Live se débloque avec un achat unique après l'essai gratuit — jamais d'abonnement, jamais de frais récurrents." } },
+    { "@type": "Question", "name": "Puis-je tourner les pages sans toucher l'écran ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, via une pédale Bluetooth compatible. Pratique quand tu as les mains prises par ton instrument." } },
+    { "@type": "Question", "name": "GigFlow Live est-il compatible avec InBeat ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, les deux apps partagent le même écosystème Stagia : le tempo de chaque titre peut être chargé automatiquement dans InBeat à partir de ta setlist GigFlow Live." } }
+  ]
+}
+</script>
 
 <!-- FINAL CTA -->
 <section class="final" id="telecharger">
