@@ -225,10 +225,25 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
   var burger = document.getElementById('navBurger');
   var menu = document.getElementById('navMobile');
   if (burger && menu) {
+    var close = function (returnFocus) {
+      burger.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('open');
+      if (returnFocus) burger.focus();
+    };
     burger.addEventListener('click', function () {
       var open = burger.getAttribute('aria-expanded') === 'true';
       burger.setAttribute('aria-expanded', String(!open));
       menu.classList.toggle('open', !open);
+      if (!open) { var first = menu.querySelector('a, button'); if (first) first.focus(); }
+    });
+    menu.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { close(true); return; }
+      if (e.key !== 'Tab') return;
+      var items = menu.querySelectorAll('a, button');
+      if (!items.length) return;
+      var first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
   }
 })();

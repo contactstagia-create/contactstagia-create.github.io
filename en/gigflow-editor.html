@@ -376,13 +376,27 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
   var b = document.getElementById('navBurger');
   var m = document.getElementById('navMobile');
   if (!b || !m) return;
-  function close() { b.setAttribute('aria-expanded', 'false'); m.classList.remove('open'); }
+  function close(returnFocus) {
+    b.setAttribute('aria-expanded', 'false');
+    m.classList.remove('open');
+    if (returnFocus) b.focus();
+  }
   b.addEventListener('click', function () {
     var open = b.getAttribute('aria-expanded') === 'true';
     b.setAttribute('aria-expanded', String(!open));
     m.classList.toggle('open', !open);
+    if (!open) { var first = m.querySelector('a, button'); if (first) first.focus(); }
   });
   m.addEventListener('click', function (e) { if (e.target.closest('a')) close(); });
+  m.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { close(true); return; }
+    if (e.key !== 'Tab') return;
+    var items = m.querySelectorAll('a, button');
+    if (!items.length) return;
+    var first = items[0], last = items[items.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
 })();
 </script>
 
