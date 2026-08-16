@@ -97,6 +97,10 @@ nav {
   .hero-photo-bg { position: absolute; top: 0; left: 0; right: 0; height: 340px; bottom: auto; }
   .hero-photo-bg img { object-position: 50% 32%; }
   .hero-grid { padding-top: 300px; }
+  .device-wrap { height: 260px; }
+  .fan-left { width: 150px; }
+  .fan-right { width: 175px; }
+  .fan-live { width: 125px; }
 }
 .hero h1 {
   font-family: var(--font-display); font-weight: 900;
