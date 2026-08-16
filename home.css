@@ -67,9 +67,36 @@ nav {
   background: radial-gradient(circle, rgba(245,194,95,0.16) 0%, rgba(245,194,95,0.05) 38%, transparent 68%);
   pointer-events: none;
 }
+/* Photo de fond du hero, tirée au hasard par hero-rotation.js — rgba() reprend --bg-app (#0C0A18) littéralement, un gradient ne peut pas consommer une var() dans color-mix() ici. */
+.hero-photo-bg { position: absolute; inset: 0; z-index: 0; }
+.hero-photo-bg img {
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%;
+  opacity: 0; transition: opacity 420ms ease;
+}
+.hero-photo-bg img.show { opacity: 1; }
+.hero-photo-bg::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(12,10,24,.55) 0%, rgba(12,10,24,.72) 55%, var(--bg-app) 96%),
+    linear-gradient(90deg, rgba(12,10,24,.88) 0%, rgba(12,10,24,.35) 45%, rgba(12,10,24,.1) 100%);
+}
+.hero-grid { position: relative; z-index: 1; }
 @media (min-width: 981px) {
   .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; }
   .hero-copy { order: -1; }
+}
+@media (max-width: 980px) {
+  .hero-photo-bg::after {
+    background:
+      linear-gradient(180deg, rgba(12,10,24,.35) 0%, rgba(12,10,24,.6) 45%, var(--bg-app) 92%),
+      linear-gradient(180deg, rgba(12,10,24,.15) 0%, rgba(12,10,24,.15) 100%);
+  }
+}
+@media (max-width: 640px) {
+  .hero { padding-top: 8px; }
+  .hero-photo-bg { position: absolute; top: 0; left: 0; right: 0; height: 340px; bottom: auto; }
+  .hero-photo-bg img { object-position: 50% 32%; }
+  .hero-grid { padding-top: 300px; }
 }
 .hero h1 {
   font-family: var(--font-display); font-weight: 900;
