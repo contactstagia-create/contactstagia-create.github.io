@@ -94,13 +94,15 @@ nav {
 }
 @media (max-width: 640px) {
   .hero { padding-top: 8px; }
-  .hero-photo-bg { position: absolute; top: 0; left: 0; right: 0; height: 340px; bottom: auto; }
+  .hero-photo-bg { position: absolute; top: 0; left: 0; right: 0; height: 260px; bottom: auto; }
   .hero-photo-bg img { object-position: 50% 32%; }
-  .hero-grid { padding-top: 300px; }
-  .device-wrap { height: 260px; }
-  .fan-left { width: 150px; }
-  .fan-right { width: 175px; }
-  .fan-live { width: 125px; }
+  /* Texte juste après la photo, téléphones (secondaires) en dessous — priorité au message, pas besoin de scroller pour le lire */
+  .hero-grid { display: flex; flex-direction: column; gap: 28px; padding-top: 220px; }
+  .hero-copy { order: -1; }
+  .device-wrap { height: 220px; }
+  .fan-left { width: 130px; }
+  .fan-right { width: 150px; }
+  .fan-live { width: 108px; }
 }
 .hero h1 {
   font-family: var(--font-display); font-weight: 900;
