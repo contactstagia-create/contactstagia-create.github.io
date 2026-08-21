@@ -101,11 +101,17 @@ nav {
   .hero-copy { order: -1; }
   .device-wrap { height: 210px; }
   .monitor { width: 225px; transform: translateX(-50%) translateY(-10px); }
+  .monitor .screen { border-radius: 4px; padding: 3px 3px 4px; }
+  .monitor .screen img { border-radius: 1px; }
   .monitor .stand { width: 28px; height: 14px; }
   .monitor .base { width: 77px; height: 5px; }
-  .tablet { width: 96px; left: calc(50% - 120px); transform: rotate(-6deg) translateY(-10px); }
-  .phone { width: 64px; left: calc(50% + 70px); }
-  .phone .notch { width: 14px; height: 3px; }
+  .tablet { width: 96px; left: calc(50% - 118px); transform: rotate(-6deg) translateY(-10px); }
+  .tablet .screen { border-radius: 2px; padding: 3px; }
+  .tablet .screen img { border-radius: 1px; }
+  .phone { width: 58px; left: calc(50% + 46px); }
+  .phone .screen { border-radius: 2px; padding: 2px; }
+  .phone .screen img { border-radius: 1px; }
+  .phone .notch { width: 13px; height: 3px; }
 }
 .hero h1 {
   font-family: var(--font-display); font-weight: 900;
@@ -158,7 +164,7 @@ nav {
    0.95fr sur wrap 1120px) — testé dans une maquette isolée avant intégration, à revérifier
    sur le site live. */
 .device-wrap {
-  position: relative; height: 390px;
+  position: relative; height: 390px; margin-top: 32px;
 }
 .device { position: absolute; bottom: 0; transform-origin: bottom center; }
 .device .screen { overflow: hidden; }
@@ -170,13 +176,17 @@ nav {
   opacity: 0.6;
 }
 .device { filter: drop-shadow(0 18px 34px rgba(0,0,0,0.55)) drop-shadow(0 6px 12px rgba(0,0,0,0.4)); }
+/* filter + rotate sur le même élément pousse Chrome à rastériser le calque en basse résolution
+   (flou constaté sur tablette/phone, retour 21/08/2026) — will-change force un calque dédié
+   à la bonne échelle. */
+.tablet, .phone { will-change: transform; }
 
 .monitor {
   left: 50%; transform: translateX(-50%) translateY(-19px);
   z-index: 1; width: 420px;
 }
 .monitor .screen {
-  background: #0a0a0d; border-radius: 8px; padding: 9px 9px 12px;
+  background: #0a0a0d; border-radius: 8px; padding: 6px 6px 8px;
   border: 1px solid rgba(255,255,255,0.06);
 }
 .monitor .screen img { border-radius: 2px; }
@@ -193,10 +203,11 @@ nav {
   z-index: 2; width: 180px;
 }
 .tablet .screen {
-  background: #111017; border-radius: 17px; padding: 10px;
+  background: #111017; border-radius: 4px; padding: 6px;
   border: 1px solid rgba(255,255,255,0.08); position: relative;
+  transform: translateZ(0);
 }
-.tablet .screen img { border-radius: 6px; }
+.tablet .screen img { border-radius: 1px; }
 .tablet .cam {
   position: absolute; top: 5px; left: 50%; transform: translateX(-50%);
   width: 4px; height: 4px; border-radius: 50%; background: #3a3844; z-index: 2;
@@ -208,10 +219,11 @@ nav {
   z-index: 3; width: 119px;
 }
 .phone .screen {
-  background: #0e0d13; border-radius: 20px; padding: 6px;
+  background: #0e0d13; border-radius: 5px; padding: 4px;
   border: 1px solid rgba(255,255,255,0.1); position: relative;
+  transform: translateZ(0);
 }
-.phone .screen img { border-radius: 14px; }
+.phone .screen img { border-radius: 2px; }
 .phone .notch {
   position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
   width: 26px; height: 5px; border-radius: 3px; background: #1c1a22; z-index: 2;
