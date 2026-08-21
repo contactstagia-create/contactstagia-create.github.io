@@ -4,15 +4,15 @@
    sinon la nouvelle image se retrouve elle-même supprimée par erreur (bug corrigé en maquette). */
 (function () {
   var PHOTOS = [
-    'assets/hero-photos/H018.jpg',
-    'assets/hero-photos/H023.jpg',
-    'assets/hero-photos/H025.jpg',
-    'assets/hero-photos/H039.jpg',
-    'assets/hero-photos/H043.jpg',
-    'assets/hero-photos/H055.jpg',
-    'assets/hero-photos/H074.jpg',
-    'assets/hero-photos/H081.jpg',
-    'assets/hero-photos/H086.jpg'
+    '/assets/hero-photos/H018.jpg',
+    '/assets/hero-photos/H023.jpg',
+    '/assets/hero-photos/H025.jpg',
+    '/assets/hero-photos/H039.jpg',
+    '/assets/hero-photos/H043.jpg',
+    '/assets/hero-photos/H055.jpg',
+    '/assets/hero-photos/H074.jpg',
+    '/assets/hero-photos/H081.jpg',
+    '/assets/hero-photos/H086.jpg'
   ];
 
   var bg = document.getElementById('heroPhotoBg');
