@@ -164,7 +164,7 @@ nav {
    0.95fr sur wrap 1120px) — testé dans une maquette isolée avant intégration, à revérifier
    sur le site live. */
 .device-wrap {
-  position: relative; height: 390px; margin-top: 32px;
+  position: relative; height: 390px; margin-top: 90px;
 }
 .device { position: absolute; bottom: 0; transform-origin: bottom center; }
 .device .screen { overflow: hidden; }
