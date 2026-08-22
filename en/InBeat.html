@@ -54,7 +54,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <style>html,body{background:#0C0A18}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="/colors_and_type.css?v=3">
+<link rel="stylesheet" href="/colors_and_type.css?v=4">
 <link rel="stylesheet" href="/product.css?v=4">
 <style>
   /* InBeat-only mocks */
@@ -160,7 +160,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* Brand name highlight in body copy — un peu de "vie" */
   .ib-name { color: var(--product-primary); font-weight: 700; }
   .st-name { color: var(--brand-amber-300); font-weight: 700; }
-  .st-name-ed { color: var(--brand-pink-500); font-weight: 700; }
+  .st-name-ed { color: var(--brand-amber-300); font-weight: 700; }
   /* Import/export grid */
   .io-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; margin-top: 28px; }
   @media (max-width: 600px) { .io-grid { grid-template-columns: 1fr; } }
@@ -182,10 +182,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .cta-eco-logos { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
   .cta-eco-tile { display: flex; align-items: center; justify-content: center; width: 232px; height: 88px; padding: 16px 24px; background: #0C0A18; border: 1px solid var(--border-subtle); border-radius: var(--r-md); transition: border-color 140ms ease, transform 140ms ease; }
   .cta-eco-logos > a:nth-child(1) { border-color: var(--brand-amber-300); }
-  .cta-eco-logos > a:nth-child(2) { border-color: var(--brand-pink-500); }
+  .cta-eco-logos > a:nth-child(2) { border-color: var(--brand-amber-300); }
   .cta-eco-tile:hover { transform: translateY(-2px); }
   .cta-eco-logos > a:nth-child(1):hover { border-color: var(--brand-amber-200); box-shadow: var(--shadow-amber-glow); }
-  .cta-eco-logos > a:nth-child(2):hover { border-color: var(--brand-pink-300); box-shadow: var(--shadow-pink-glow); }
+  .cta-eco-logos > a:nth-child(2):hover { border-color: var(--brand-amber-200); box-shadow: var(--shadow-amber-glow); }
   .cta-eco-tile img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
   @media (max-width: 600px) { .cta-eco-tile { width: 100%; max-width: 280px; } }
   /* Cross-promo écosystème — 2 produits */
@@ -196,11 +196,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .cp-shot-editor { width: 196px; }
   .cp-shot-live { width: 196px; }
   .cp-shot-live .phone { width: 196px; box-shadow: var(--shadow-lg), 0 0 46px 2px rgba(245, 194, 95, 0.55); }
-  .cp-shot-editor .browser { box-shadow: var(--shadow-lg), 0 0 46px 2px rgba(233, 69, 96, 0.55); border-color: rgba(0,0,0,0.8); }
+  .cp-shot-editor .browser { box-shadow: var(--shadow-lg), 0 0 46px 2px rgba(245, 194, 95, 0.55); border-color: rgba(0,0,0,0.8); }
   .cp-btn-live { border-color: var(--brand-amber-300); color: var(--brand-amber-200); }
   .cp-btn-live:hover { background: var(--brand-amber-300); color: var(--fg-invert); border-color: var(--brand-amber-300); }
-  .cp-btn-editor { border-color: var(--brand-pink-500); color: var(--brand-pink-300); }
-  .cp-btn-editor:hover { background: var(--brand-pink-500); color: #FFF; border-color: var(--brand-pink-500); }
+  .cp-btn-editor { border-color: var(--brand-amber-300); color: var(--brand-amber-200); }
+  .cp-btn-editor:hover { background: var(--brand-amber-300); color: var(--fg-invert); border-color: var(--brand-amber-300); }
   /* Header — menu hamburger mobile (reprend les liens de la barre de nav) */
   .nav-burger { display: none; align-items: center; justify-content: center; width: 42px; height: 42px; flex: none; background: var(--bg-surface-1); border: 1px solid var(--border-subtle); border-radius: var(--r-md); color: var(--fg-1); cursor: pointer; }
   .nav-burger:hover { border-color: var(--product-primary); }
@@ -503,7 +503,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
         </div>
       </a>
       <a class="eco" href="gigflow-editor.html">
-        <span class="d" style="background:#E63429;flex:none;margin-top:5px"></span>
+        <span class="d" style="background:var(--brand-amber-300);flex:none;margin-top:5px"></span>
         <div>
           <b>GigFlow Editor</b>
           <small>Preparation · Browser</small>

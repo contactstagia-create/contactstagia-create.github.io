@@ -323,7 +323,7 @@ section.block { padding: 52px 0; }
 .pcard:hover .more { gap: 11px; }
 .pcard.live   { --p-strip: linear-gradient(90deg,#F9D77A,#F5C25F); --p-hue: var(--brand-amber-300); }
 .pcard.inbeat { --p-strip: linear-gradient(90deg,#7FD8D3,#2EB5AE); --p-hue: var(--inbeat-teal-300); }
-.pcard.editor { --p-hue: var(--brand-pink-500); }
+.pcard.editor { --p-hue: var(--brand-amber-300); }
 .pcard.editor .strip { display: none; }
 .pcard.editor .shot { min-height: 335px; }
 .pcard .free { font-family: var(--font-mono); font-size: 11px; color: var(--fg-4); margin-top: 14px; }

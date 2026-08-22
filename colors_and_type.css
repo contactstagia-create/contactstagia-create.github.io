@@ -276,9 +276,9 @@ code, kbd, .mono { font-family: var(--font-mono); font-size: 0.92em; }
    PRODUCT SKINS — Live / Editor / InBeat
    -------------------------------------------------------------
    Each product is the same chrome with one variable changed:
-   --product-primary. Live = amber, Editor = pink-red (signals
-   authoring), InBeat = violet (drummer / tempo). The whole CTA
-   system + active-tab underline + focus ring picks this up.
+   --product-primary. Live = amber, Editor = amber (same primary
+   as Live, migration 09/08/2026), InBeat = violet (drummer / tempo).
+   The whole CTA system + active-tab underline + focus ring picks this up.
 
    Apply via:  <html data-product="live | editor | inbeat">
    ============================================================= */
@@ -294,12 +294,12 @@ code, kbd, .mono { font-family: var(--font-mono); font-size: 0.92em; }
 }
 
 [data-product="editor"] {
-  --product-primary: var(--brand-pink-500);
-  --product-primary-pressed: var(--brand-pink-700);
-  --product-primary-glow: var(--shadow-pink-glow);
-  --product-primary-fg: #FFFFFF;
-  --product-tint: rgba(233, 69, 96, 0.14);
-  --product-strip: linear-gradient(90deg, #F26A86, #E94560); /* @kind color */
+  --product-primary: var(--brand-amber-300);
+  --product-primary-pressed: var(--brand-amber-400);
+  --product-primary-glow: var(--shadow-amber-glow);
+  --product-primary-fg: var(--fg-invert);
+  --product-tint: rgba(245, 194, 95, 0.14);
+  --product-strip: linear-gradient(90deg, #F9D77A, #F5C25F); /* @kind color */
   --product-name: 'Editor'; /* @kind other */
 }
 
