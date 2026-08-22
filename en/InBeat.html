@@ -167,6 +167,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* Beat visuel — logo Stagia (note + ondes) sur fond assorti */
   .beat-emblem { width: 100%; max-width: 330px; aspect-ratio: 1; background: #0C0A18; border: 1px solid var(--border-subtle); border-radius: var(--r-lg, 20px); display: grid; place-items: center; overflow: hidden; }
   .beat-logo { width: 72%; max-width: 240px; height: auto; display: block; }
+  /* Real photos (photothèque) — framed card, same visual register as screen mockups */
+  .photo-card { width: 100%; max-width: 300px; border-radius: var(--r-lg, 20px); overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-lg); }
+  .photo-card img { display: block; width: 100%; height: auto; }
+  /* Stacked photo duo (Live mode) — 3:2 landscape, better stacked than side by side */
+  .photo-duo { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 380px; margin: 0 auto; }
+  .photo-duo .photo-card { width: 100%; max-width: none; }
+  .eco-photo { width: 100%; max-width: 720px; margin: 26px auto 0; border-radius: var(--r-lg, 20px); overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-lg); }
+  .eco-photo img { display: block; width: 100%; height: auto; }
 
   /* CTA final — lockup écosystème (logos GigFlow) */
   .cta-eco { margin-top: 44px; }
@@ -405,8 +413,9 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
           <li><i data-lucide="hand"></i> Tap tempo — adjust the tempo by ear, on the fly</li>
         </ul>
       </div>
-      <div class="feat-media">
-        <div class="phone"><div class="screen"><img src="/assets/screens/inbeat-live.png" alt="InBeat — Live mode" loading="lazy"></div></div>
+      <div class="feat-media photo-duo">
+        <div class="photo-card"><img src="/assets/photos/inbeat-live-dark.jpg" alt="A drummer at a night festival, InBeat mounted on his kit in dark theme" loading="lazy"></div>
+        <div class="photo-card"><img src="/assets/photos/inbeat-live-light.jpg" alt="A band busking in daylight, InBeat mounted on the kit in light theme" loading="lazy"></div>
       </div>
     </div>
 
@@ -483,6 +492,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
       <p class="eyebrow">Stagia ecosystem</p>
       <h2 style="font-size:clamp(22px,2.4vw,28px);line-height:1.12;letter-spacing:-0.015em">Designed to work together.</h2>
     </div>
+    <div class="eco-photo"><img src="/assets/photos/ecosystem-band.jpg" alt="A band rehearsing, with InBeat and GigFlow Live" loading="lazy"></div>
     <div class="ecosystem">
       <a class="eco" href="gigflow-live.html">
         <span class="d" style="background:var(--brand-amber-300);flex:none;margin-top:5px"></span>
@@ -538,7 +548,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
     <div class="foot-bottom">
       <span>© 2026 Stagia · By musicians, for musicians.</span>
       <span>contact@stagia.app</span>
-      <span>v0.1.03</span>
+      <span>v0.1.04</span>
     </div>
   </div>
 </footer>
