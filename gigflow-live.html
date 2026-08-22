@@ -91,6 +91,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .faq-item { background: var(--bg-surface-1); border: 1px solid var(--border-subtle); border-radius: var(--r-lg); padding: 20px 24px; }
   .faq-item h4 { font-family: var(--font-display); font-weight: 800; font-size: 16px; margin: 0 0 8px; color: var(--fg-1); }
   .faq-item p { font-size: 15px; color: var(--fg-2); line-height: 1.6; margin: 0; }
+
+  /* Photos réelles (photothèque) — carte cadrée, même registre que les mockups d'écran */
+  .photo-card { width: 100%; max-width: 300px; border-radius: var(--r-lg, 20px); overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-lg); }
+  .photo-card img { display: block; width: 100%; height: auto; }
+  /* Duo photos empilé (Mode Live) — paysage 3:2, mieux en pile qu'en côte à côte */
+  .photo-duo { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 380px; margin: 0 auto; }
+  .photo-duo .photo-card { width: 100%; max-width: none; }
+  .eco-photo { width: 100%; max-width: 720px; margin: 26px auto 0; border-radius: var(--r-lg, 20px); overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-lg); }
+  .eco-photo img { display: block; width: 100%; height: auto; }
+  /* Grille 2 photos (Écosystème) — groupe complet + duo/soliste, toute taille de formation */
+  .eco-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 26px auto 0; max-width: 720px; }
+  .eco-photos .photo-card { max-width: none; }
+  .eco-cap { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; text-align: center; color: var(--fg-4); margin: 10px 0 0; }
+  @media (max-width: 700px) { .eco-photos { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -245,7 +259,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
       <div class="feat-copy">
         <p class="eyebrow">Setlists</p>
         <h3>Construis ton concert, lance-le en un tap.</h3>
-        <p>Crée tes listes, réorganise par glisser-déposer, ajoute le lieu et la date. La durée totale se calcule automatiquement. Lance le show — et garde la main du début à la fin.</p>
+        <p>Crée tes listes, réorganise par glisser-déposer, ajoute le lieu et la date. Sélectionne plusieurs titres du répertoire et crée une setlist en un tap, sans ressaisie. La durée totale se calcule automatiquement. Lance le show — et garde la main du début à la fin.</p>
       </div>
       <div class="feat-media">
         <div class="framed"><img src="assets/screens/setlists.png" alt="Setlists GigFlow Live" loading="lazy"></div>
@@ -260,10 +274,13 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
         <ul class="feat-list">
           <li><i data-lucide="palette"></i> Accords colorés, sections repérées au choix</li>
           <li><i data-lucide="maximize"></i> Plein écran, gros caractères lisibles à 1 m</li>
+          <li><i data-lucide="activity"></i> Métronome visuel intégré — temps forts/faibles à l'œil, sans quitter l'écran</li>
+          <li><i data-lucide="crosshair"></i> Ligne de repère centrale — garde l'œil au bon endroit pendant que ça défile</li>
         </ul>
       </div>
-      <div class="feat-media">
-        <div class="framed"><img src="assets/screens/gigflow-live-stage.png" alt="Mode Live GigFlow Live" loading="lazy"></div>
+      <div class="feat-media photo-duo">
+        <div class="photo-card"><img src="assets/photos/live-mode-dark.jpg" alt="Un groupe en concert de bistro le soir, GigFlow Live fixé sur les pieds de micro en thème sombre" loading="lazy"></div>
+        <div class="photo-card"><img src="assets/photos/live-mode-light.jpg" alt="Un groupe en concert de terrasse en plein jour, GigFlow Live fixé sur les pieds de micro en thème clair" loading="lazy"></div>
       </div>
     </div>
 
@@ -286,6 +303,8 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
         <ul class="feat-list">
           <li><i data-lucide="pencil"></i> Paroles et accords modifiables en quelques secondes</li>
           <li><i data-lucide="smartphone"></i> Création de chansons et setlists depuis mobile ou tablette</li>
+          <li><i data-lucide="repeat-2"></i> Transposition + Capo — décale tous les accords d'un titre en un tap</li>
+          <li><i data-lucide="hand"></i> Tap tempo — tapote au rythme, le BPM se règle automatiquement</li>
         </ul>
         <a class="more" href="gigflow-editor.html" style="color:#E63429;">Découvrir GigFlow Editor pour une préparation plus confortable <i data-lucide="arrow-right"></i></a>
       </div>
@@ -359,7 +378,17 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
   <div class="wrap">
     <div class="block-head">
       <p class="eyebrow">Écosystème Stagia</p>
-      <h2 style="font-size:clamp(22px,2.4vw,28px);line-height:1.12;letter-spacing:-0.015em">Un écosystème pensé pour la scène.</h2>
+      <h2 style="font-size:clamp(22px,2.4vw,28px);line-height:1.12;letter-spacing:-0.015em">Un écosystème qui s'adapte à toute formation.</h2>
+    </div>
+    <div class="eco-photos">
+      <div>
+        <div class="photo-card"><img src="assets/photos/live-ecosystem-band.jpg" alt="Un groupe complet en festival, GigFlow Live sur trois pieds de micro et InBeat sur la batterie" loading="lazy"></div>
+        <p class="eco-cap">Sur scène, groupe complet</p>
+      </div>
+      <div>
+        <div class="photo-card"><img src="assets/photos/live-duo.jpg" alt="Un duo au piano, GigFlow Live sur pied à côté du clavier" loading="lazy"></div>
+        <p class="eco-cap">En duo, à la maison</p>
+      </div>
     </div>
     <div class="ecosystem">
       <a class="eco" href="InBeat.html">
@@ -416,7 +445,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
     <div class="foot-bottom">
       <span>© 2026 Stagia · Par des musiciens, pour les musiciens.</span>
       <span>contact@stagia.app</span>
-      <span>v0.1.04</span>
+      <span>v0.1.05</span>
     </div>
   </div>
 </footer>

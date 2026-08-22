@@ -92,6 +92,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .faq-item { background: var(--bg-surface-1); border: 1px solid var(--border-subtle); border-radius: var(--r-lg); padding: 20px 24px; }
   .faq-item h4 { font-family: var(--font-display); font-weight: 800; font-size: 16px; margin: 0 0 8px; color: var(--fg-1); }
   .faq-item p { font-size: 15px; color: var(--fg-2); line-height: 1.6; margin: 0; }
+
+  /* Real photos (photothèque) — framed card, same visual register as screen mockups */
+  .photo-card { width: 100%; max-width: 300px; border-radius: var(--r-lg, 20px); overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-lg); }
+  .photo-card img { display: block; width: 100%; height: auto; }
+  /* Stacked photo duo (Stage mode) — 3:2 landscape, better stacked than side by side */
+  .photo-duo { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 380px; margin: 0 auto; }
+  .photo-duo .photo-card { width: 100%; max-width: none; }
+  .eco-photo { width: 100%; max-width: 720px; margin: 26px auto 0; border-radius: var(--r-lg, 20px); overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-lg); }
+  .eco-photo img { display: block; width: 100%; height: auto; }
+  /* 2-photo grid (Ecosystem) — full band + duo/soloist, any lineup size */
+  .eco-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 26px auto 0; max-width: 720px; }
+  .eco-photos .photo-card { max-width: none; }
+  .eco-cap { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; text-align: center; color: var(--fg-4); margin: 10px 0 0; }
+  @media (max-width: 700px) { .eco-photos { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -246,7 +260,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
       <div class="feat-copy">
         <p class="eyebrow">Setlists</p>
         <h3>Build your show, launch it in one tap.</h3>
-        <p>Create your setlists, reorder by drag-and-drop, add venue and date. Total duration is calculated automatically. Launch the show — and stay in control from start to finish.</p>
+        <p>Create your setlists, reorder by drag-and-drop, add venue and date. Select several songs from your library and create a setlist in one tap, no retyping. Total duration is calculated automatically. Launch the show — and stay in control from start to finish.</p>
       </div>
       <div class="feat-media">
         <div class="framed"><img src="/assets/screens/setlists.png" alt="GigFlow Live — Setlists" loading="lazy"></div>
@@ -261,10 +275,13 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
         <ul class="feat-list">
           <li><i data-lucide="palette"></i> Colored chords, sections marked as you choose</li>
           <li><i data-lucide="maximize"></i> Full screen, large text readable from 1 meter</li>
+          <li><i data-lucide="activity"></i> Built-in visual metronome — strong/weak beats at a glance, without leaving the screen</li>
+          <li><i data-lucide="crosshair"></i> Center marker line — keeps your eye in the right spot as the text scrolls</li>
         </ul>
       </div>
-      <div class="feat-media">
-        <div class="framed"><img src="/assets/screens/gigflow-live-stage.png" alt="GigFlow Live — Stage mode" loading="lazy"></div>
+      <div class="feat-media photo-duo">
+        <div class="photo-card"><img src="/assets/photos/live-mode-dark.jpg" alt="A band playing a bistro gig at night, GigFlow Live mounted on mic stands in dark theme" loading="lazy"></div>
+        <div class="photo-card"><img src="/assets/photos/live-mode-light.jpg" alt="A band playing a daytime terrace gig, GigFlow Live mounted on mic stands in light theme" loading="lazy"></div>
       </div>
     </div>
 
@@ -287,6 +304,8 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
         <ul class="feat-list">
           <li><i data-lucide="pencil"></i> Lyrics and chords editable in seconds</li>
           <li><i data-lucide="smartphone"></i> Create songs and setlists from mobile or tablet</li>
+          <li><i data-lucide="repeat-2"></i> Transpose + Capo — shift every chord in a song in one tap</li>
+          <li><i data-lucide="hand"></i> Tap tempo — tap along to the beat, BPM sets itself</li>
         </ul>
         <a class="more" href="gigflow-editor.html" style="color:#E63429;">Discover GigFlow Editor for a more comfortable setup <i data-lucide="arrow-right"></i></a>
       </div>
@@ -360,7 +379,17 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
   <div class="wrap">
     <div class="block-head">
       <p class="eyebrow">Stagia ecosystem</p>
-      <h2 style="font-size:clamp(22px,2.4vw,28px);line-height:1.12;letter-spacing:-0.015em">An ecosystem built for the stage.</h2>
+      <h2 style="font-size:clamp(22px,2.4vw,28px);line-height:1.12;letter-spacing:-0.015em">An ecosystem that adapts to any lineup.</h2>
+    </div>
+    <div class="eco-photos">
+      <div>
+        <div class="photo-card"><img src="/assets/photos/live-ecosystem-band.jpg" alt="A full band at a festival, GigFlow Live on three mic stands and InBeat on the drum kit" loading="lazy"></div>
+        <p class="eco-cap">On stage, full band</p>
+      </div>
+      <div>
+        <div class="photo-card"><img src="/assets/photos/live-duo.jpg" alt="A duo at the piano, GigFlow Live on a stand beside the keyboard" loading="lazy"></div>
+        <p class="eco-cap">As a duo, at home</p>
+      </div>
     </div>
     <div class="ecosystem">
       <a class="eco" href="InBeat.html">
@@ -417,7 +446,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
     <div class="foot-bottom">
       <span>© 2026 Stagia · By musicians, for musicians.</span>
       <span>contact@stagia.app</span>
-      <span>v0.1.04</span>
+      <span>v0.1.05</span>
     </div>
   </div>
 </footer>
