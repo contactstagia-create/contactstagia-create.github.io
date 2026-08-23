@@ -94,40 +94,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .led.sub .bulb { background: #FF9500; box-shadow: var(--shadow-led-amber); }
   .beat .tap { margin-top: 20px; display: inline-flex; gap: 10px; align-items: center; font-family: var(--font-mono); font-size: 12px; color: var(--fg-4); }
 
-  /* InBeat hero — embedded real app (iframe) */
-  .ib-frame { width: 100%; height: 590px; border: 0; display: block; background: #07070f; }
+  /* InBeat hero — static screenshot (no more live embed, decision 23/08/2026) */
   .hero .phone { width: 336px; }
-  /* InBeat hero — animated live screen recreation */
-  .ib-live { background: #0A0913; color: #C9CCD6; font-family: var(--font-display); padding: 14px 16px 16px; display: flex; flex-direction: column; min-height: 446px; cursor: pointer; user-select: none; }
-  .ib-top { display: flex; justify-content: space-between; align-items: center; }
-  .ib-top .arrow { color: #9aa0ad; font-size: 16px; }
-  .ib-tr { display: flex; gap: 8px; }
-  .ib-tr .b { width: 28px; height: 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #9aa0ad; font-family: var(--font-mono); cursor: pointer; background: transparent; transition: border-color 120ms ease, color 120ms ease, background 120ms ease; }
-  .ib-tr .b.active { border-color: var(--inbeat-teal-300); color: var(--inbeat-teal-300); background: rgba(127,216,211,0.12); }
-  .ib-idx { text-align: center; font-family: var(--font-mono); font-size: 11px; color: #6b7180; margin-top: 16px; }
-  .ib-tot { text-align: center; font-family: var(--font-mono); font-size: 10px; color: #5a6070; margin-top: 9px; }
-  .ib-title { text-align: center; font-weight: 800; font-size: 17px; color: #EAECF1; letter-spacing: 0.02em; margin-top: 22px; }
-  .ib-meta { text-align: center; font-family: var(--font-mono); font-size: 10px; color: var(--inbeat-teal-300); margin-top: 7px; }
-  .ib-bpm { margin-top: 20px; background: #100E1A; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 13px; display: flex; align-items: baseline; justify-content: center; gap: 8px; }
-  .ib-bpm b { font-weight: 900; font-size: 34px; color: #F5C25F; line-height: 1; transition: transform 90ms ease; }
-  .ib-bpm small { font-size: 9px; color: #6b7180; font-family: var(--font-mono); align-self: flex-end; margin-left: -4px; }
-  .ib-bpm .div { color: #3a3f4d; font-size: 22px; }
-  .ib-bpm .sig { font-size: 18px; color: #C9CCD6; font-weight: 700; }
-  .ib-pads { margin-top: 22px; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 10px; }
-  .ib-pad { width: 100%; min-width: 0; aspect-ratio: 1; border-radius: 10px; background: #13111E; border: 2px solid rgba(255,255,255,0.09); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 700; font-size: 18px; color: #5a6070; transition: background 60ms linear, border-color 60ms linear, color 60ms linear, box-shadow 60ms linear; }
-  .ib-pad.ib-on.ib-down { background: #FF3B2F; border-color: #FF3B2F; color: #fff; box-shadow: 0 0 18px rgba(255,59,47,0.55); }
-  .ib-pad.ib-on.ib-sub { background: #F5C25F; border-color: #F5C25F; color: #1A1200; box-shadow: 0 0 18px rgba(245,194,95,0.45); }
-  .ib-ctrl { margin-top: auto; padding-top: 22px; display: flex; align-items: center; justify-content: center; gap: 10px; }
-  .ib-ctrl .tag2 { font-family: var(--font-mono); font-size: 12px; color: #9aa0ad; background: #13111E; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 8px 12px; }
-  .ib-ctrl .play { font-family: var(--font-display); font-weight: 800; font-size: 12px; color: #04201E; background: var(--inbeat-teal-500); border: none; border-radius: 8px; padding: 9px 15px; cursor: pointer; display: inline-flex; gap: 6px; align-items: center; }
-  .ib-foot { margin-top: 16px; display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 10px; color: #5a6070; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 12px; }
-  .ib-ctrl .tag2 { cursor: pointer; -webkit-appearance: none; appearance: none; transition: color 120ms ease, border-color 120ms ease; }
-  .ib-ctrl .tag2.on { color: var(--inbeat-teal-300); border-color: var(--inbeat-teal-300); }
-  .ib-ctrl .play { cursor: pointer; }
-  .ib-foot .ib-navbtn { background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; transition: color 120ms ease; }
-  .ib-foot .ib-navbtn:hover { color: var(--inbeat-teal-300); }
-  .ib-hint { margin: 14px 0 0; text-align: center; font-family: var(--font-mono); font-size: 11px; color: var(--inbeat-teal-300); display: flex; align-items: center; justify-content: center; gap: 6px; }
-  /* InBeat hero: stack phone + hint vertically (overrides shared row layout) */
+  /* InBeat hero: stack phone vertically (overrides shared row layout) */
   .device-wrap { flex-direction: column; align-items: center; }
   /* Hero collé plus près du header + espacements verticaux réduits de moitié */
   .hero { padding: 24px 0 20px; }
@@ -148,15 +117,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .ib-duo { display: flex; gap: 14px; align-items: flex-start; }
   .ib-duo .phone { flex: 1 1 0; min-width: 0; width: auto; }
   @media (max-width: 600px) { .ib-duo { flex-direction: column; align-items: center; } .ib-duo .phone { width: 240px; flex: none; } }
-  /* CTA principal = écran interactif */
-  .ib-soon { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 12px; color: var(--fg-4); }
-  .ib-soon .gp-glyph { color: var(--fg-4); }
   /* Bandeau gratuit/offline en or (accent Stagia) */
   .freemium { background: color-mix(in srgb, var(--brand-amber-300) 12%, transparent); border-color: color-mix(in srgb, var(--brand-amber-300) 38%, transparent); }
   .freemium i { color: var(--brand-amber-300); }
   .freemium p { color: var(--brand-amber-300); font-weight: 600; }
-  .phone.ib-pulse { animation: ibPulse 1.4s ease; }
-  @keyframes ibPulse { 30% { box-shadow: var(--shadow-lg), 0 0 0 3px var(--product-primary), 0 0 90px color-mix(in srgb, var(--product-primary) 45%, transparent); } }
   /* Brand name highlight in body copy — un peu de "vie" */
   .ib-name { color: var(--product-primary); font-weight: 700; }
   .st-name { color: var(--brand-amber-300); font-weight: 700; }
@@ -209,7 +173,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .ib-hero-m .hero-h1-m { font-family: var(--font-display); font-weight: 900; font-size: clamp(38px, 4.6vw, 56px); line-height: 1.05; letter-spacing: -0.025em; margin: 0 0 14px; text-wrap: balance; }
     .ib-hero-m .hero-h1-m .accent { color: var(--product-primary); }
     .ib-hero-m .sub { margin: 0; }
-    .hero-copy > .eyebrow, .hero-copy > h1, .hero-copy > .ib-cta-line { display: none; }
+    .hero-copy > .eyebrow, .hero-copy > h1 { display: none; }
   }
 </style>
 </head>
@@ -280,10 +244,8 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
       <h1>The right tempo, at the right time. <span class="accent">Always.</span></h1>
       <p class="sub">Every song in your setlist has its own BPM and rhythmic structure. Move to the next one with a swipe — <span class="ib-name">InBeat</span> loads the tempo automatically.</p>
       <p class="sub">No more adjusting between songs: the dynamic metronome that follows your show, from the first song to the last.</p>
-      <p class="sub ib-cta-line">Try the real app right here, no installation needed:</p>
       <div class="hero-actions">
-        <button class="btn-primary" id="ibTryBtn"><i data-lucide="hand"></i> Try the interactive screen</button>
-        <span class="ib-soon"><span class="gp-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M4 3.4v17.2a1 1 0 0 0 1.52.85l14.3-8.6a1 1 0 0 0 0-1.7L5.52 2.55A1 1 0 0 0 4 3.4z"/></svg></span> Google Play — coming soon</span>
+        <button class="btn-primary" type="button" disabled aria-label="Google Play download — coming soon"><span class="gp-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M4 3.4v17.2a1 1 0 0 0 1.52.85l14.3-8.6a1 1 0 0 0 0-1.7L5.52 2.55A1 1 0 0 0 4 3.4z"/></svg></span> Google Play Store download coming soon</button>
       </div>
       <p class="adaptive">Designed for the drummer — useful to the whole band.</p>
       <div class="status-chips">
@@ -295,15 +257,14 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
     <div class="ib-hero-m">
       <p class="eyebrow">InBeat · Android</p>
       <p class="hero-h1-m">The right tempo, at the right time. <span class="accent">Always.</span></p>
-      <p class="sub">Try <span class="ib-name">InBeat</span> with the interactive screen:</p>
+      <p class="sub">A preview of <span class="ib-name">InBeat</span>:</p>
     </div>
     <div class="device-wrap">
       <div class="phone">
         <div class="screen">
-          <iframe class="ib-frame" id="ibFrame" title="InBeat — Live screen (real app demo)" ></iframe>
+          <img src="/assets/screens/inbeat-live.png" alt="InBeat — Live screen">
         </div>
       </div>
-      <p class="ib-hint"><i data-lucide="smartphone" style="width:13px;height:13px"></i> Real app screen — ▶ starts the tempo, ◀ ▶ change songs, beep ♪, ½ subdivisions</p>
     </div>
   </div>
 </header>
@@ -534,29 +495,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
 
 <script src="/assets/lucide.min.js"></script>
 <script>lucide.createIcons();</script>
-<script src="/inbeat-app.embed.js"></script>
 <script>
-/* Charge le vrai écran de l'app InBeat dans le hero, sans fetch :
-   le HTML de l'app est inliné en base64 dans inbeat-app.embed.js, on le
-   décode et on l'injecte via srcdoc — fonctionne dans le fichier servi. */
-(function () {
-  var f = document.getElementById('ibFrame');
-  if (!f || !window.__INBEAT_APP_B64) return;
-  try { f.srcdoc = new TextDecoder('utf-8').decode(Uint8Array.from(atob(window.__INBEAT_APP_B64), function(c) { return c.charCodeAt(0); })); } catch (e) {}
-})();
-/* CTA « Essaie l'écran interactif » : scrolle vers le téléphone + pulse */
-(function () {
-  var b = document.getElementById('ibTryBtn');
-  if (!b) return;
-  b.addEventListener('click', function () {
-    var d = document.querySelector('.device-wrap');
-    if (!d) return;
-    var y = d.getBoundingClientRect().top + window.scrollY - 90;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-    var ph = d.querySelector('.phone');
-    if (ph) { ph.classList.remove('ib-pulse'); void ph.offsetWidth; ph.classList.add('ib-pulse'); setTimeout(function () { ph.classList.remove('ib-pulse'); }, 1400); }
-  });
-})();
 /* Header : menu hamburger mobile reprenant les liens de la barre de nav */
 (function () {
   var b = document.getElementById('navBurger');
