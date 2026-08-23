@@ -176,7 +176,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
     </div>
     <div class="device-wrap">
       <div class="phone">
-        <div class="screen"><img src="/assets/screens/gigflow-live-stage.png" alt="GigFlow Live — Stage mode"></div>
+        <div class="screen lb-canvas"><img src="/assets/screens/gigflow-live-stage.png" alt="GigFlow Live — Stage mode" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div>
       </div>
     </div>
     <div class="hero-cta">
@@ -252,7 +252,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
         <p>Access any song instantly — no connection, no stress. Search, key, tempo, and duration all in view, ready for the stage.</p>
       </div>
       <div class="feat-media">
-        <div class="framed"><img src="/assets/screens/songs-list.png" alt="GigFlow Live — Song library" loading="lazy"></div>
+        <div class="framed lb-canvas"><img src="/assets/screens/songs-list.png" alt="GigFlow Live — Song library" loading="lazy" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div>
       </div>
     </div>
 
@@ -263,7 +263,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
         <p>Create your setlists, reorder by drag-and-drop, add venue and date. Select several songs from your library and create a setlist in one tap, no retyping. Total duration is calculated automatically. Launch the show — and stay in control from start to finish.</p>
       </div>
       <div class="feat-media">
-        <div class="framed"><img src="/assets/screens/setlists.png" alt="GigFlow Live — Setlists" loading="lazy"></div>
+        <div class="framed lb-canvas"><img src="/assets/screens/setlists.png" alt="GigFlow Live — Setlists" loading="lazy" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div>
       </div>
     </div>
 
@@ -292,7 +292,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
         <p>A row of colored pills at the top of the screen represents each section of the song. One tap takes you straight there. Sections are never split across two pages.</p>
       </div>
       <div class="feat-media">
-        <div class="framed"><img src="/assets/screens/preview-song.png" alt="Progress bar — section navigation" loading="lazy"></div>
+        <div class="framed lb-canvas"><img src="/assets/screens/preview-song.png" alt="Progress bar — section navigation" loading="lazy" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div>
       </div>
     </div>
 
@@ -310,7 +310,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
         <a class="more" href="gigflow-editor.html" style="color:var(--brand-amber-300);">Discover GigFlow Editor for a more comfortable setup <i data-lucide="arrow-right"></i></a>
       </div>
       <div class="feat-media">
-        <div class="framed"><img src="/assets/screens/editor-edit.png" alt="GigFlow Live — Built-in editor" loading="lazy"></div>
+        <div class="framed lb-canvas"><img src="/assets/screens/editor-edit.png" alt="GigFlow Live — Built-in editor" loading="lazy" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div>
       </div>
     </div>
 
@@ -451,6 +451,12 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
   </div>
 </footer>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged screenshot">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i data-lucide="x"></i></button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
 <script src="/assets/lucide.min.js"></script>
 <script>lucide.createIcons();</script>
 
@@ -481,6 +487,39 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
     if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   });
+})();
+/* Screenshot lightbox: tap/click to enlarge */
+(function () {
+  var lb = document.getElementById('lightbox');
+  var img = document.getElementById('lightboxImg');
+  var closeBtn = document.getElementById('lightboxClose');
+  if (!lb || !img || !closeBtn) return;
+  var lastTrigger = null;
+  function open(trigger) {
+    lastTrigger = trigger;
+    img.src = trigger.src;
+    img.alt = trigger.alt || '';
+    lb.classList.add('open');
+    closeBtn.focus();
+  }
+  function close() {
+    lb.classList.remove('open');
+    img.src = '';
+    if (lastTrigger) lastTrigger.focus();
+  }
+  document.querySelectorAll('[data-lightbox]').forEach(function (el) {
+    el.style.cursor = 'zoom-in';
+    el.setAttribute('tabindex', '0');
+    el.setAttribute('role', 'button');
+    el.setAttribute('aria-label', 'Enlarge screenshot');
+    el.addEventListener('click', function () { open(el); });
+    el.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(el); }
+    });
+  });
+  closeBtn.addEventListener('click', close);
+  lb.addEventListener('click', function (e) { if (e.target === lb || e.target === img) close(); });
+  lb.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
 })();
 </script>
 
