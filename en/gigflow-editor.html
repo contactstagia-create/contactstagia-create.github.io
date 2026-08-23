@@ -58,9 +58,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="stylesheet" href="/colors_and_type.css?v=4">
 <link rel="stylesheet" href="/product.css?v=4">
 <style>
-  /* Editor hero canvas: portrait app shot centred in a desktop window */
+  /* Editor hero canvas: desktop app shot centred in a browser-window frame */
   .browser .canvas { background: var(--bg-stage); padding: 20px; display: flex; justify-content: center; }
-  .browser .canvas img { max-height: 840px; width: auto; border-radius: 8px; border: 1px solid var(--border-subtle); }
+  .browser .canvas img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border-subtle); }
 
   /* Supprimer le strip produit sur .framed (spécifique Editor) */
   .framed::before { display: none; }
@@ -107,7 +107,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* Mobile : annule order:-1 de product.css, image pleine largeur */
   @media (max-width: 980px) {
     .device-wrap { order: 0; }
-    .device-wrap img, .editor-wide-img { width: 100% !important; }
+    .device-wrap img { width: 100% !important; }
   }
   .hero { padding: 24px 0 20px; }
   section.block { padding: 36px 0; }
@@ -115,6 +115,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .feature { padding: 28px 0; }
   .final { padding: 40px 0; }
   footer { padding: 30px 0 19px; }
+  .eco-photo { width: 100%; max-width: 720px; margin: 26px auto 0; border-radius: var(--r-lg, 20px); overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-lg); }
+  .eco-photo img { display: block; width: 100%; height: auto; }
 
   @keyframes flowRight     { 0%,100%{transform:translateX(0);opacity:0.5}  50%{transform:translateX(6px);opacity:1} }
   @keyframes flowDownRight { 0%,100%{transform:translate(0,0);opacity:0.5} 50%{transform:translate(5px,5px);opacity:1} }
@@ -177,9 +179,11 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
       <h1><span data-tk="h1">The comfort of the keyboard, the precision of the mouse.</span><br><span class="accent" data-tk="accent">Freedom for the stage.</span></h1>
       <p class="sub" data-tk="sub">Big screen, keyboard, mouse — prepare your songs and setlists in the best conditions. One export, and you're on stage with Live or InBeat.</p>
     </div>
-    <div class="device-wrap" style="overflow:visible;">
-      <!-- width:500% intentionnel : bleed effect visuel, écrasé à 100% sur mobile par media query -->
-<img src="/assets/screens/editor-live-preview.png" alt="GigFlow Editor — song entry" style="width:500%;border-radius:10px;">
+    <div class="device-wrap">
+      <div class="browser">
+        <div class="bar"><i data-lucide="lock" style="width:11px;height:11px;color:var(--fg-4);"></i><span class="addr">stagia.app/gigflow-editor</span></div>
+        <div class="canvas"><img src="/assets/screens/editor-edit-song-closed2.png" alt="GigFlow Editor — library and editor"></div>
+      </div>
     </div>
     <div class="hero-cta">
       <div class="hero-actions">
@@ -275,8 +279,11 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
         <h3>Write a song as fast as you sing it.</h3>
         <p>Keyboard, mouse, big screen — GigFlow Editor is built to prepare songs and setlists at your own pace. Lightweight syntax, real-time coloring, instant preview.</p>
       </div>
-      <div class="feat-media" style="overflow:visible;">
-        <img class="editor-wide-img" src="/assets/screens/editor-edit-song-closed2.png" alt="GigFlow Editor — text entry area" style="width:500%;border-radius:10px;" loading="lazy">
+      <div class="feat-media">
+        <div class="browser">
+          <div class="bar"><i data-lucide="lock" style="width:11px;height:11px;color:var(--fg-4);"></i></div>
+          <div class="canvas"><img src="/assets/screens/editor-live-preview.png" alt="Instant preview while typing — GigFlow Editor" loading="lazy"></div>
+        </div>
       </div>
     </div>
 
@@ -287,7 +294,10 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
         <p>Every section detected in the text becomes a colored button at the top of the editor — intro, verse, chorus, bridge... One click to get there, no scrolling. Library on the left, editor in the center, preview and chords on the right: everything stays in view at once.</p>
       </div>
       <div class="feat-media" style="width:100%;">
-        <img src="/assets/screens/editor-3panels-titre.png" alt="Chenillard section navigation — the 3 panels of GigFlow Editor" style="width:100%;border-radius:10px;border:1px solid var(--border-subtle);display:block;" loading="lazy">
+        <div class="browser">
+          <div class="bar"><i data-lucide="lock" style="width:11px;height:11px;color:var(--fg-4);"></i></div>
+          <div class="canvas"><img src="/assets/screens/editor-3panels-titre.png" alt="Chenillard section navigation — the 3 panels of GigFlow Editor" loading="lazy"></div>
+        </div>
       </div>
     </div>
 
@@ -296,8 +306,11 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
         <h3>A syntax designed for musicians.</h3>
         <p>Simple plain text — chords, sections, annotations, backing vocals. Every chord has its color, the song structure is readable at a glance. </p>
       </div>
-      <div class="feat-media" style="overflow:visible;">
-        <img class="editor-wide-img" src="/assets/screens/editor-edit-song-chords-diagrams.png" alt="Colored rendering preview — Stagia Format" style="width:400%;border-radius:10px;" loading="lazy">
+      <div class="feat-media">
+        <div class="browser">
+          <div class="bar"><i data-lucide="lock" style="width:11px;height:11px;color:var(--fg-4);"></i></div>
+          <div class="canvas"><img src="/assets/screens/editor-edit-song-chords-diagrams.png" alt="Colored rendering preview — Stagia Format" loading="lazy"></div>
+        </div>
       </div>
     </div>
 
@@ -327,7 +340,10 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
         <p>Name, venue, notes — every setlist has its own sheet. Add songs from your library, drag and drop to reorder, preview each song before exporting — the setlist reaches Live in the right order, with every song checked.</p>
       </div>
       <div class="feat-media" style="width:100%;">
-        <img src="/assets/screens/editor-3panels-setlist.png" alt="Editing a setlist in GigFlow Editor — song order, preview and chords" style="width:100%;border-radius:10px;border:1px solid var(--border-subtle);display:block;" loading="lazy">
+        <div class="browser">
+          <div class="bar"><i data-lucide="lock" style="width:11px;height:11px;color:var(--fg-4);"></i></div>
+          <div class="canvas"><img src="/assets/screens/editor-3panels-setlist.png" alt="Editing a setlist in GigFlow Editor — song order, preview and chords" loading="lazy"></div>
+        </div>
       </div>
     </div>
 
@@ -355,6 +371,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
       </div>
     </div>
 
+    <div class="eco-photo"><img src="/assets/photos/editor-ecosystem-band.jpg" alt="A group of friends preparing for the next rehearsal, tablets and setlist notes on the table" loading="lazy"></div>
     <div class="ecosystem">
       <a class="eco" href="gigflow-live.html"><span class="d" style="background:var(--brand-amber-300);margin-top:5px"></span><div><b>GigFlow Live</b><small>Stage · Android</small><small style="display:block;margin-top:6px;line-height:1.5">Displays your songs and setlists on tablet. Navigate from song to song on stage with a single swipe.</small></div></a>
       <a class="eco" href="InBeat.html"><span class="d" style="background:var(--inbeat-teal-300);margin-top:5px"></span><div><b>InBeat</b><small>Tempo · Android</small><small style="display:block;margin-top:6px;line-height:1.5">Import your setlists and songs from Editor. InBeat handles the tempo and click track during the show.</small></div></a>
