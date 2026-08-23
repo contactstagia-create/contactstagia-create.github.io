@@ -9,7 +9,7 @@
      tort vers la racine du disque). */
   var scriptEl = document.currentScript;
   var base = scriptEl ? scriptEl.src.replace(/hero-rotation\.js(\?.*)?$/, '') : '';
-  var PHOTOS = ['H018.jpg', 'H023.jpg', 'H025.jpg', 'H039.jpg', 'H043.jpg', 'H055.jpg', 'H074.jpg', 'H081.jpg', 'H086.jpg']
+  var PHOTOS = ['H018.jpg', 'H023.jpg', 'H025.jpg', 'H039.jpg', 'H043.jpg', 'H074.jpg', 'H081.jpg', 'H086.jpg']
     .map(function (f) { return base + 'assets/hero-photos/' + f; });
 
   var bg = document.getElementById('heroPhotoBg');
