@@ -55,7 +55,7 @@
   banner.innerHTML =
     '<p style="margin:0;font-size:13px;color:#9B97B4;line-height:1.55;max-width:640px;">' +
       s.text +
-      '<a href="/confidentialite.html" style="color:#F5C25F;text-underline-offset:3px;text-decoration:underline;">' + s.learnMore + '</a>' +
+      '<a href="/' + (lang === 'en' ? 'en/confidentialite.html' : 'confidentialite.html') + '" style="color:#F5C25F;text-underline-offset:3px;text-decoration:underline;">' + s.learnMore + '</a>' +
     '</p>' +
     '<div style="display:flex;gap:10px;flex:none;">' +
       '<button id="stagia-refuse" style="all:unset;cursor:pointer;font-size:13px;color:#9B97B4;' +
