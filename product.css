@@ -110,20 +110,42 @@ nav {
 /* device frames */
 .device-wrap { display: flex; justify-content: center; }
 .phone {
-  width: 300px; border-radius: 36px; padding: 11px;
+  width: 300px; border-radius: var(--r-sm); padding: 11px;
   background: linear-gradient(160deg, #211D2F, #100D1B);
   border: 1px solid var(--border-default);
   box-shadow: var(--shadow-lg), 0 0 70px color-mix(in srgb, var(--product-primary) 12%, transparent);
 }
-.phone .screen { border-radius: 26px; overflow: hidden; border: 1px solid rgba(0,0,0,0.5); }
+.phone .screen { border-radius: 3px; overflow: hidden; border: 1px solid rgba(0,0,0,0.5); }
 .browser {
-  width: 100%; border-radius: 14px; overflow: hidden;
+  width: 100%; border-radius: 6px; overflow: hidden;
   border: 1px solid var(--border-default); background: #100D1B;
   box-shadow: var(--shadow-lg), 0 0 70px color-mix(in srgb, var(--product-primary) 12%, transparent);
 }
 .browser .bar { display: flex; align-items: center; gap: 7px; padding: 11px 14px; background: var(--bg-surface-1); border-bottom: 1px solid var(--border-subtle); }
 .browser .bar i { width: 11px; height: 11px; border-radius: 50%; background: var(--border-strong); }
 .browser .bar .addr { margin-left: 12px; font-family: var(--font-mono); font-size: 11px; color: var(--fg-4); }
+
+/* Lightbox — capture d'écran agrandie au clic/tap, surtout utile sur mobile
+   où une capture large (mockup bureau) devient trop petite pour être lisible */
+.lb-canvas { position: relative; cursor: zoom-in; }
+.lb-badge {
+  position: absolute; bottom: 10px; right: 10px; width: 30px; height: 30px;
+  border-radius: 50%; background: rgba(12,10,24,0.72); border: 1px solid var(--border-subtle);
+  display: flex; align-items: center; justify-content: center; color: var(--fg-1); pointer-events: none;
+}
+.lb-badge svg { width: 15px; height: 15px; }
+.lightbox {
+  position: fixed; inset: 0; z-index: 1000; display: none; align-items: center; justify-content: center;
+  padding: 32px; background: rgba(6,5,12,0.92);
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 100%; max-height: 100%; border-radius: 6px; box-shadow: var(--shadow-lg); cursor: zoom-out; }
+.lightbox-close {
+  position: absolute; top: 18px; right: 18px; width: 40px; height: 40px; border-radius: 50%;
+  background: var(--bg-surface-1); border: 1px solid var(--border-subtle); color: var(--fg-1);
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+}
+.lightbox-close:hover { border-color: var(--border-default); }
 
 /* ---------------- SECTION BASICS ---------------- */
 section.block { padding: 72px 0; }
@@ -182,15 +204,15 @@ section.block { padding: 72px 0; }
   position: relative; overflow: hidden;
 }
 .framed::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--product-strip); }
-.framed img { border-radius: 10px; border: 1px solid var(--border-subtle); width: 100%; max-width: 300px; }
+.framed img { border-radius: 5px; border: 1px solid var(--border-subtle); width: 100%; max-width: 300px; }
 .framed.wide img { max-width: 100%; }
 
 /* ---------------- CROSS-PROMO ---------------- */
 .crosspromo { background: var(--bg-stage); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
 .cp-inner { display: grid; grid-template-columns: auto 1fr auto; gap: 28px; align-items: center; padding: 40px 0; }
 .cp-shot { width: 120px; }
-.cp-shot .phone { width: 120px; border-radius: 18px; padding: 5px; }
-.cp-shot .phone .screen { border-radius: 14px; }
+.cp-shot .phone { width: 120px; border-radius: 4px; padding: 5px; }
+.cp-shot .phone .screen { border-radius: 2px; }
 .cp-text .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-4); margin: 0 0 6px; }
 .cp-text h3 { font-family: var(--font-display); font-weight: 900; font-size: 22px; margin: 0; letter-spacing: -0.01em; }
 .cp-text p { font-size: 15px; color: var(--fg-2); margin: 8px 0 0; max-width: 46em; }

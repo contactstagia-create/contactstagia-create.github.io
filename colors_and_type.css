@@ -116,11 +116,11 @@
   --section-label:     var(--fg-3);
 
   /* ---------- Radii ---------- */
-  --r-xs:  4px;
-  --r-sm:  6px;
-  --r-md:  10px;
-  --r-lg:  14px;
-  --r-xl:  20px;
+  --r-xs:  2px;
+  --r-sm:  3px;
+  --r-md:  5px;
+  --r-lg:  6px;
+  --r-xl:  8px;
   --r-pill: 999px;
 
   /* ---------- Spacing (4pt base) ---------- */

@@ -181,7 +181,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
     <div class="device-wrap">
       <div class="browser">
         <div class="bar"><i data-lucide="lock" style="width:11px;height:11px;color:var(--fg-4);"></i><span class="addr">stagia.app/gigflow-editor</span></div>
-        <div class="canvas"><img src="assets/screens/editor-edit-song-closed2.png" alt="GigFlow Editor — bibliothèque et éditeur"></div>
+        <div class="canvas lb-canvas"><img src="assets/screens/editor-edit-song-closed2.png" alt="GigFlow Editor — bibliothèque et éditeur" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div>
       </div>
     </div>
     <div class="hero-cta">
@@ -281,7 +281,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
       <div class="feat-media">
         <div class="browser">
           <div class="bar"><i data-lucide="lock" style="width:11px;height:11px;color:var(--fg-4);"></i></div>
-          <div class="canvas"><img src="assets/screens/editor-live-preview.png" alt="Aperçu instantané pendant la saisie — GigFlow Editor" loading="lazy"></div>
+          <div class="canvas lb-canvas"><img src="assets/screens/editor-live-preview.png" alt="Aperçu instantané pendant la saisie — GigFlow Editor" loading="lazy" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div>
         </div>
       </div>
     </div>
@@ -295,7 +295,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
       <div class="feat-media" style="width:100%;">
         <div class="browser">
           <div class="bar"><i data-lucide="lock" style="width:11px;height:11px;color:var(--fg-4);"></i></div>
-          <div class="canvas"><img src="assets/screens/editor-3panels-titre.png" alt="Chenillard de navigation par sections — les 3 panneaux de GigFlow Editor" loading="lazy"></div>
+          <div class="canvas lb-canvas"><img src="assets/screens/editor-3panels-titre.png" alt="Chenillard de navigation par sections — les 3 panneaux de GigFlow Editor" loading="lazy" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div>
         </div>
       </div>
     </div>
@@ -308,7 +308,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
       <div class="feat-media">
         <div class="browser">
           <div class="bar"><i data-lucide="lock" style="width:11px;height:11px;color:var(--fg-4);"></i></div>
-          <div class="canvas"><img src="assets/screens/editor-edit-song-chords-diagrams.png" alt="Aperçu rendu coloré — Stagia Format" loading="lazy"></div>
+          <div class="canvas lb-canvas"><img src="assets/screens/editor-edit-song-chords-diagrams.png" alt="Aperçu rendu coloré — Stagia Format" loading="lazy" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div>
         </div>
       </div>
     </div>
@@ -341,7 +341,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
       <div class="feat-media" style="width:100%;">
         <div class="browser">
           <div class="bar"><i data-lucide="lock" style="width:11px;height:11px;color:var(--fg-4);"></i></div>
-          <div class="canvas"><img src="assets/screens/editor-3panels-setlist.png" alt="Édition d'une setlist dans GigFlow Editor — ordre des titres, aperçu et accords" loading="lazy"></div>
+          <div class="canvas lb-canvas"><img src="assets/screens/editor-3panels-setlist.png" alt="Édition d'une setlist dans GigFlow Editor — ordre des titres, aperçu et accords" loading="lazy" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div>
         </div>
       </div>
     </div>
@@ -439,6 +439,12 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
   </div>
 </footer>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Capture d'écran agrandie">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Fermer"><i data-lucide="x"></i></button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
 <script src="assets/lucide.min.js"></script>
 <script>lucide.createIcons();</script>
 <script>
@@ -467,6 +473,40 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
     if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   });
+})();
+/* Lightbox captures d'écran : tap/clic pour agrandir, surtout utile sur mobile
+   où les mockups larges (bureau) deviennent trop petits pour être lisibles */
+(function () {
+  var lb = document.getElementById('lightbox');
+  var img = document.getElementById('lightboxImg');
+  var closeBtn = document.getElementById('lightboxClose');
+  if (!lb || !img || !closeBtn) return;
+  var lastTrigger = null;
+  function open(trigger) {
+    lastTrigger = trigger;
+    img.src = trigger.src;
+    img.alt = trigger.alt || '';
+    lb.classList.add('open');
+    closeBtn.focus();
+  }
+  function close() {
+    lb.classList.remove('open');
+    img.src = '';
+    if (lastTrigger) lastTrigger.focus();
+  }
+  document.querySelectorAll('[data-lightbox]').forEach(function (el) {
+    el.style.cursor = 'zoom-in';
+    el.setAttribute('tabindex', '0');
+    el.setAttribute('role', 'button');
+    el.setAttribute('aria-label', 'Agrandir la capture d\'écran');
+    el.addEventListener('click', function () { open(el); });
+    el.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(el); }
+    });
+  });
+  closeBtn.addEventListener('click', close);
+  lb.addEventListener('click', function (e) { if (e.target === lb || e.target === img) close(); });
+  lb.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
 })();
 </script>
 

@@ -263,12 +263,12 @@ section.block { padding: 52px 0; }
 .pcard .strip { height: 4px; width: 100%; background: var(--p-strip); }
 .pcard .shot { background: var(--bg-stage); padding: 30px 22px; display: flex; justify-content: center; align-items: center; }
 .pcard .phone-mini {
-  width: 204px; border-radius: 30px; padding: 8px;
+  width: 204px; border-radius: 6px; padding: 8px;
   background: linear-gradient(160deg, #211D2F, #100D1B);
   border: 1px solid var(--border-default); box-shadow: var(--shadow-lg);
 }
 .pcard .phone-mini .screen {
-  border-radius: 22px; overflow: hidden; border: 1px solid rgba(0,0,0,0.5);
+  border-radius: 3px; overflow: hidden; border: 1px solid rgba(0,0,0,0.5);
   aspect-ratio: 660 / 912;
 }
 .pcard .phone-mini .screen img {
@@ -279,8 +279,8 @@ section.block { padding: 52px 0; }
 .pcard.inbeat .phone-mini .screen { aspect-ratio: 9 / 19; }
 
 /* Live card — hauteur alignée sur InBeat (303px → screen 287×396px ≈ 412px total) */
-.pcard.live .phone-mini { width: 303px; border-radius: 45px; }
-.pcard.live .phone-mini .screen { border-radius: 33px; }
+.pcard.live .phone-mini { width: 303px; border-radius: 8px; }
+.pcard.live .phone-mini .screen { border-radius: 4px; }
 
 /* Editor card — pleine largeur sur 2 colonnes */
 .pcard.editor { grid-column: span 2; }
@@ -288,7 +288,7 @@ section.block { padding: 52px 0; }
 
 /* Browser mockup for Editor card */
 .pcard .browser-mini {
-  width: 100%; max-width: 260px; border-radius: 10px; overflow: hidden;
+  width: 100%; max-width: 260px; border-radius: 4px; overflow: hidden;
   background: #100D1B; border: 1px solid var(--border-default);
   box-shadow: var(--shadow-lg);
 }
@@ -345,7 +345,7 @@ section.block { padding: 52px 0; }
   box-shadow: var(--shadow-md); overflow-x: auto;
 }
 .lsec {
-  background: var(--bg-surface-1); border-radius: 10px;
+  background: var(--bg-surface-1); border-radius: 5px;
   border-left: 4px solid var(--sec); padding: 10px 13px 11px; margin-bottom: 9px;
 }
 .lsec:last-child { margin-bottom: 0; }
@@ -422,8 +422,8 @@ footer { border-top: 1px solid var(--border-subtle); padding: 64px 0 40px; }
   .values { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
   .products { grid-template-columns: 1fr; }
   .pcard.editor { grid-column: auto; }
-  .pcard.live .phone-mini { width: 204px; border-radius: 30px; }
-  .pcard.live .phone-mini .screen { border-radius: 22px; }
+  .pcard.live .phone-mini { width: 204px; border-radius: 6px; }
+  .pcard.live .phone-mini .screen { border-radius: 3px; }
   .sig-grid { grid-template-columns: 1fr; gap: 36px; }
   .foot-grid { grid-template-columns: 1fr 1fr; gap: 36px 24px; }
 }
