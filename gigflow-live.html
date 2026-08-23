@@ -102,7 +102,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .eco-photo img { display: block; width: 100%; height: auto; }
   /* Grille 2 photos (Écosystème) — groupe complet + duo/soliste, toute taille de formation */
   .eco-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 26px auto 0; max-width: 720px; }
-  .eco-photos .photo-card { max-width: none; }
+  .eco-photos .photo-card { max-width: none; aspect-ratio: 3 / 2; }
+  .eco-photos .photo-card img { height: 100%; object-fit: cover; }
   .eco-cap { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; text-align: center; color: var(--fg-4); margin: 10px 0 0; }
   @media (max-width: 700px) { .eco-photos { grid-template-columns: 1fr; } }
 </style>
@@ -309,7 +310,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
         <a class="more" href="gigflow-editor.html" style="color:var(--brand-amber-300);">Découvrir GigFlow Editor pour une préparation plus confortable <i data-lucide="arrow-right"></i></a>
       </div>
       <div class="feat-media">
-        <div class="framed lb-canvas"><img src="assets/screens/editor-edit.png" alt="Éditeur intégré GigFlow Live" loading="lazy" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div>
+        <div class="framed lb-canvas"><img src="assets/screens/gigflow-live-builtin-editor.png" alt="Éditeur intégré GigFlow Live" loading="lazy" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div>
       </div>
     </div>
 

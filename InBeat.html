@@ -127,9 +127,68 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* Import/export grid */
   .io-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; margin-top: 28px; }
   @media (max-width: 600px) { .io-grid { grid-template-columns: 1fr; } }
-  /* Beat visuel — logo Stagia (note + ondes) sur fond assorti */
-  .beat-emblem { width: 100%; max-width: 330px; aspect-ratio: 1; background: #0C0A18; border: 1px solid var(--border-subtle); border-radius: var(--r-lg, 20px); display: grid; place-items: center; overflow: hidden; }
-  .beat-logo { width: 72%; max-width: 240px; height: auto; display: block; }
+  /* Beat visuel — mini métronome vivant, même vocabulaire visuel que l'app (LED rouge/ambre, case SUBS, sélecteur signature, bloc BPM) */
+  .beat-emblem {
+    width: 100%; max-width: 400px; background: #0C0A18;
+    border: 1px solid var(--border-subtle); border-radius: var(--r-lg, 20px);
+    display: flex; flex-direction: column; gap: 16px; padding: 18px; box-sizing: border-box;
+  }
+  .bw-toolbar { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .bw-play {
+    display: flex; align-items: center; gap: 6px; height: 30px; padding: 0 14px; flex: none;
+    border-radius: var(--r-md); border: 1px solid var(--inbeat-teal-500);
+    background: var(--inbeat-teal-500); color: #fff; font-family: var(--font-mono);
+    font-weight: 700; font-size: 11px; letter-spacing: 0.02em; cursor: pointer;
+    transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+  }
+  .bw-play svg { width: 13px; height: 13px; }
+  .bw-play[aria-pressed="true"] { background: transparent; border-color: var(--inbeat-teal-500); color: var(--inbeat-teal-500); }
+  .bw-sub {
+    display: flex; align-items: center; gap: 6px; flex: none; cursor: pointer; user-select: none;
+    font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--fg-3);
+  }
+  .bw-sub input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .bw-sub-box {
+    width: 18px; height: 18px; border-radius: var(--r-xs, 4px); flex: none;
+    border: 1px solid var(--border-default); display: flex; align-items: center; justify-content: center;
+    transition: border-color 120ms ease;
+  }
+  .bw-sub-box svg { width: 12px; height: 12px; color: var(--inbeat-teal-500); opacity: 0; transform: scale(.6); transition: opacity 100ms ease, transform 100ms ease; }
+  .bw-sub input:checked ~ .bw-sub-box { border-color: var(--inbeat-teal-500); }
+  .bw-sub input:checked ~ .bw-sub-box svg { opacity: 1; transform: scale(1); }
+  .bw-sig-wrap { margin-left: auto; position: relative; display: flex; align-items: center; flex: none; }
+  .bw-sig {
+    height: 30px; padding: 0 26px 0 12px; border-radius: var(--r-sm); cursor: pointer;
+    background: var(--bg-surface-1); border: 1px solid var(--border-default); color: var(--fg-1);
+    font-family: var(--font-mono); font-weight: 700; font-size: 12px;
+    appearance: none; -webkit-appearance: none; -moz-appearance: none;
+  }
+  .bw-sig:hover { border-color: var(--border-strong); }
+  .bw-sig-chevron { position: absolute; right: 8px; width: 12px; height: 12px; color: var(--fg-3); pointer-events: none; }
+  .bw-pads { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 60px; }
+  .bw-group { display: flex; align-items: center; gap: 4px; }
+  .bw-pad {
+    width: 36px; height: 36px; border-radius: var(--r-md); background: var(--bg-surface-1);
+    border: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono); font-weight: 700; font-size: 13px; color: var(--fg-3);
+    transition: background 80ms ease, border-color 80ms ease, color 80ms ease; flex: none;
+  }
+  .bw-pad.on-1 { background: var(--inbeat-led-red); border-color: var(--inbeat-led-red); color: #fff; }
+  .bw-pad.on-x { background: var(--brand-amber-300); border-color: var(--brand-amber-300); color: #1a1305; }
+  .bw-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--fg-4); flex: none; transition: background 80ms ease, transform 80ms ease; }
+  .bw-dot.on { background: var(--brand-amber-300); transform: scale(1.5); }
+  .bw-readout {
+    display: flex; align-items: center; justify-content: center; gap: 12px; align-self: center;
+    border: 1px solid var(--border-subtle); border-radius: var(--r-sm); padding: 6px 16px;
+  }
+  .bw-bpm-btn {
+    background: none; border: none; color: var(--fg-2); font-size: 18px; font-weight: 700;
+    line-height: 1; cursor: pointer; padding: 2px 4px; flex: none;
+  }
+  .bw-bpm-btn:hover { color: var(--fg-1); }
+  .bw-bpm-display { display: flex; flex-direction: column; align-items: center; line-height: 1.1; }
+  .bw-bpm-num { font-family: var(--font-mono); font-weight: 700; font-size: 19px; color: var(--brand-amber-300); }
+  .bw-bpm-lbl { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.08em; color: var(--fg-4); }
   /* Photos réelles (photothèque) — carte cadrée, même registre que les mockups d'écran */
   .photo-card { width: 100%; max-width: 300px; border-radius: var(--r-lg, 20px); overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-lg); }
   .photo-card img { display: block; width: 100%; height: auto; }
@@ -371,8 +430,35 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
         </ul>
       </div>
       <div class="feat-media">
-        <div class="beat-emblem">
-          <img class="beat-logo" src="assets/stagia-logo-512.png" alt="" loading="lazy">
+        <div class="beat-emblem" id="bwWidget">
+          <div class="bw-toolbar">
+            <button class="bw-play" id="bwPlayBtn" type="button" aria-pressed="false"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9-5.5-9-5.5z"/></svg>Lecture</button>
+            <label class="bw-sub">
+              <input type="checkbox" id="bwSubChk" checked>
+              <span class="bw-sub-box"><i data-lucide="check"></i></span>
+              SUBS
+            </label>
+            <label class="bw-sub">
+              <input type="checkbox" id="bwBipChk">
+              <span class="bw-sub-box"><i data-lucide="check"></i></span>
+              BIP
+            </label>
+            <div class="bw-sig-wrap">
+              <select class="bw-sig" id="bwSigSelect" aria-label="Signature rythmique">
+                <option value="4/4" selected>4/4</option>
+                <option value="3/4">3/4</option>
+                <option value="6/8">6/8</option>
+                <option value="12/8">12/8</option>
+              </select>
+              <i data-lucide="chevron-down" class="bw-sig-chevron"></i>
+            </div>
+          </div>
+          <div class="bw-pads" id="bwPads"></div>
+          <div class="bw-readout">
+            <button class="bw-bpm-btn" id="bwBpmDown" type="button" aria-label="Diminuer le tempo">−</button>
+            <div class="bw-bpm-display"><span class="bw-bpm-num" id="bwBpmNum">60</span><span class="bw-bpm-lbl">BPM</span></div>
+            <button class="bw-bpm-btn" id="bwBpmUp" type="button" aria-label="Augmenter le tempo">+</button>
+          </div>
         </div>
       </div>
     </div>
@@ -561,6 +647,174 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
   closeBtn.addEventListener('click', close);
   lb.addEventListener('click', function (e) { if (e.target === lb || e.target === img) close(); });
   lb.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+})();
+/* Mini métronome vivant — décoratif, ne reflète pas de données réelles de l'app.
+   Les subdivisions comptent réellement les croches : quand SUBS est actif, chaque
+   pulsation visuelle dure une croche (et non un temps entier), pour rendre visible
+   le "1 et 2 et" (mesures simples) ou "1 la li 2 la li" (mesures composées). */
+(function () {
+  var widget = document.getElementById('bwWidget');
+  if (!widget) return;
+  var padsEl = document.getElementById('bwPads');
+  var bpmNumEl = document.getElementById('bwBpmNum');
+  var sigSelect = document.getElementById('bwSigSelect');
+  var playBtn = document.getElementById('bwPlayBtn');
+  var subChk = document.getElementById('bwSubChk');
+  var bipChk = document.getElementById('bwBipChk');
+  var bpmDown = document.getElementById('bwBpmDown');
+  var bpmUp = document.getElementById('bwBpmUp');
+  var audioCtx = null;
+
+  function ensureAudio() {
+    if (audioCtx) { if (audioCtx.state === 'suspended') audioCtx.resume(); return; }
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (AC) audioCtx = new AC();
+  }
+
+  function bip(strong) {
+    if (!audioCtx) return;
+    var t = audioCtx.currentTime;
+    var osc = audioCtx.createOscillator();
+    var gain = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = strong ? 1400 : 1000;
+    gain.gain.setValueAtTime(0, t);
+    gain.gain.linearRampToValueAtTime(0.3, t + 0.002);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.05);
+    osc.connect(gain).connect(audioCtx.destination);
+    osc.start(t);
+    osc.stop(t + 0.06);
+  }
+
+  function bipSub() {
+    if (!audioCtx) return;
+    var t = audioCtx.currentTime;
+    var osc = audioCtx.createOscillator();
+    var gain = audioCtx.createGain();
+    osc.type = 'triangle';
+    osc.frequency.value = 1800;
+    gain.gain.setValueAtTime(0, t);
+    gain.gain.linearRampToValueAtTime(0.14, t + 0.002);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.03);
+    osc.connect(gain).connect(audioCtx.destination);
+    osc.start(t);
+    osc.stop(t + 0.04);
+  }
+
+  var SIG_CONF = {
+    '4/4':  { pads: 4, compound: false },
+    '3/4':  { pads: 3, compound: false },
+    '6/8':  { pads: 2, compound: true },
+    '12/8': { pads: 4, compound: true }
+  };
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ICON_PLAY = '<svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9-5.5-9-5.5z"/></svg>';
+  var ICON_PAUSE = '<svg viewBox="0 0 16 16" fill="currentColor"><rect x="3" y="2" width="3.4" height="12" rx="1"/><rect x="9.6" y="2" width="3.4" height="12" rx="1"/></svg>';
+
+  var state = { sig: '4/4', bpm: 60, subs: true, bip: false, playing: false, pulse: 0, timer: null };
+
+  function subsPerBeat(conf) {
+    if (!state.subs) return 1;
+    return conf.compound ? 3 : 2;
+  }
+
+  function buildPads() {
+    var conf = SIG_CONF[state.sig];
+    padsEl.innerHTML = '';
+    for (var i = 0; i < conf.pads; i++) {
+      var group = document.createElement('div');
+      group.className = 'bw-group';
+      var pad = document.createElement('div');
+      pad.className = 'bw-pad';
+      pad.textContent = String(i + 1);
+      group.appendChild(pad);
+      var dotCount = conf.compound ? 2 : 1;
+      for (var d = 0; d < dotCount; d++) {
+        var dot = document.createElement('span');
+        dot.className = 'bw-dot';
+        if (!state.subs) dot.style.visibility = 'hidden';
+        group.appendChild(dot);
+      }
+      padsEl.appendChild(group);
+    }
+    state.pulse = 0;
+    lightPulse();
+  }
+
+  function lightPulse() {
+    var conf = SIG_CONF[state.sig];
+    var spb = subsPerBeat(conf);
+    var groupIdx = Math.floor(state.pulse / spb);
+    var subIdx = state.pulse % spb;
+    var groups = padsEl.querySelectorAll('.bw-group');
+    groups.forEach(function (g, idx) {
+      var pad = g.querySelector('.bw-pad');
+      var isCurrent = idx === groupIdx;
+      pad.classList.toggle('on-1', isCurrent && subIdx === 0 && idx === 0);
+      pad.classList.toggle('on-x', isCurrent && subIdx === 0 && idx !== 0);
+      g.querySelectorAll('.bw-dot').forEach(function (dot, dIdx) {
+        dot.classList.toggle('on', isCurrent && subIdx === dIdx + 1);
+      });
+    });
+  }
+
+  function tick() {
+    var conf = SIG_CONF[state.sig];
+    var spb = subsPerBeat(conf);
+    var total = conf.pads * spb;
+    state.pulse = (state.pulse + 1) % total;
+    lightPulse();
+    if (state.bip) {
+      var subIdx = state.pulse % spb;
+      if (subIdx === 0) { bip(Math.floor(state.pulse / spb) === 0); } else { bipSub(); }
+    }
+  }
+
+  function stopTimer() { if (state.timer) { clearInterval(state.timer); state.timer = null; } }
+  function startTimer() {
+    stopTimer();
+    var conf = SIG_CONF[state.sig];
+    var spb = subsPerBeat(conf);
+    var beatMs = 60000 / state.bpm;
+    state.timer = setInterval(tick, beatMs / spb);
+  }
+
+  function setPlaying(on) {
+    state.playing = on;
+    playBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    playBtn.innerHTML = (on ? ICON_PAUSE : ICON_PLAY) + (on ? 'Pause' : 'Lecture');
+    if (on) { startTimer(); } else { stopTimer(); state.pulse = 0; lightPulse(); }
+  }
+
+  playBtn.addEventListener('click', function () { setPlaying(!state.playing); });
+
+  subChk.addEventListener('change', function () {
+    state.subs = subChk.checked;
+    buildPads();
+    if (state.playing) startTimer();
+  });
+
+  bipChk.addEventListener('change', function () {
+    state.bip = bipChk.checked;
+    if (state.bip) ensureAudio();
+  });
+
+  sigSelect.addEventListener('change', function () {
+    state.sig = sigSelect.value;
+    buildPads();
+    if (state.playing) startTimer();
+  });
+
+  function setBpm(v) {
+    state.bpm = Math.max(40, Math.min(220, v));
+    bpmNumEl.textContent = state.bpm;
+    if (state.playing) startTimer();
+  }
+  bpmDown.addEventListener('click', function () { setBpm(state.bpm - 5); });
+  bpmUp.addEventListener('click', function () { setBpm(state.bpm + 5); });
+
+  buildPads();
+  if (!reduceMotion) setPlaying(true);
 })();
 </script>
 

@@ -233,11 +233,12 @@ nav {
 
 /* ---------------- VALUES ---------------- */
 section.block { padding: 52px 0; }
+#produits { padding-top: 24px; }
 #pourquoi { padding-top: 16px; }
 .block-head { max-width: 640px; }
 .block-head h2 {
   font-family: var(--font-display); font-weight: 900;
-  font-size: clamp(28px, 3.4vw, 38px); line-height: 1.1; letter-spacing: -0.02em; margin: 14px 0 0;
+  font-size: clamp(28px, 3.2vw, 38px); line-height: 1.1; letter-spacing: -0.02em; margin: 14px 0 0;
 }
 .block-head p { font-size: 17px; color: var(--fg-2); margin: 16px 0 0; line-height: 1.55; }
 
@@ -250,6 +251,10 @@ section.block { padding: 52px 0; }
 }
 .value h3 { font-family: var(--font-display); font-weight: 800; font-size: 17px; margin: 0 0 8px; }
 .value p { font-size: 14px; color: var(--fg-3); line-height: 1.55; margin: 0; }
+
+/* Photo photothèque — même registre que .eco-photo sur les pages produit */
+.idx-photo { width: 100%; max-width: 720px; margin: 0 auto; border-radius: var(--r-lg, 20px); overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-lg); }
+.idx-photo img { display: block; width: 100%; height: auto; }
 
 /* ---------------- PRODUCTS ---------------- */
 .products { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 48px; }
@@ -383,7 +388,7 @@ section.block { padding: 52px 0; }
   background: radial-gradient(ellipse 60% 80% at 50% 120%, rgba(245,194,95,0.14), transparent 70%);
 }
 .final-inner { position: relative; z-index: 1; }
-.final h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(32px,4.4vw,52px); line-height: 1.05; letter-spacing: -0.025em; margin: 0; text-wrap: balance; }
+.final h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(32px,4.2vw,50px); line-height: 1.05; letter-spacing: -0.025em; margin: 0; text-wrap: balance; }
 .final p { font-size: 18px; color: var(--fg-2); margin: 20px 0 0; }
 .final .hero-actions { justify-content: center; }
 
