@@ -129,7 +129,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
   <div class="wrap">
     <p class="eyebrow">Legal</p>
     <h1>Legal Notice</h1>
-    <p>Last updated: June 2026</p>
+    <p>Last updated: August 2026</p>
   </div>
 </section>
 
@@ -235,6 +235,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
       menu.classList.toggle('open', !open);
       if (!open) { var first = menu.querySelector('a, button'); if (first) first.focus(); }
     });
+    menu.addEventListener('click', function (e) { if (e.target.closest('a')) close(); });
     menu.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') { close(true); return; }
       if (e.key !== 'Tab') return;

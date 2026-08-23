@@ -78,22 +78,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .ib-shot-bar .ct { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); }
   .ib-shot .lib { max-width: 100%; }
 
-  .beat { width: 100%; max-width: 360px; text-align: center; }
-  .beat .read { font-family: var(--font-mono); margin-bottom: 22px; }
-  .beat .read b { font-family: var(--font-display); font-weight: 900; font-size: 44px; color: var(--product-primary); line-height: 1; }
-  .beat .read span { font-size: 14px; color: var(--fg-3); margin-left: 8px; }
-  .leds { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-  .led {
-    aspect-ratio: 1; border-radius: var(--r-md); display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-mono); font-size: 20px; color: var(--fg-3);
-    background: var(--bg-surface-1); border: 1px solid var(--border-subtle);
-  }
-  .led .bulb { width: 14px; height: 14px; border-radius: 50%; }
-  .led.down { border-color: rgba(255,59,47,0.5); color: #FF6A5F; }
-  .led.down .bulb { background: #FF3B2F; box-shadow: var(--shadow-led-red); }
-  .led.sub .bulb { background: #FF9500; box-shadow: var(--shadow-led-amber); }
-  .beat .tap { margin-top: 20px; display: inline-flex; gap: 10px; align-items: center; font-family: var(--font-mono); font-size: 12px; color: var(--fg-4); }
-
   /* InBeat hero — static screenshot (no more live embed, decision 23/08/2026) */
   .hero .phone { width: 336px; }
   /* InBeat hero: stack phone vertically (overrides shared row layout) */
@@ -105,7 +89,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .feature { padding: 28px 0; }
   .freemium { margin-top: 18px; }
   .final { padding: 40px 0; }
-  .cp-inner { padding: 20px 0; }
   footer { padding: 30px 0 19px; }
   @media (min-width: 981px) { .keys { grid-template-columns: repeat(3, minmax(0,1fr)); } }
   .ib-feat-lib { align-items: start; }
@@ -138,7 +121,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .bw-play {
     display: flex; align-items: center; gap: 6px; height: 30px; padding: 0 14px; flex: none;
     border-radius: var(--r-md); border: 1px solid var(--inbeat-teal-500);
-    background: var(--inbeat-teal-500); color: #fff; font-family: var(--font-mono);
+    background: var(--inbeat-teal-500); color: var(--product-primary-fg); font-family: var(--font-mono);
     font-weight: 700; font-size: 11px; letter-spacing: 0.02em; cursor: pointer;
     transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
   }
@@ -146,17 +129,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .bw-play[aria-pressed="true"] { background: transparent; border-color: var(--inbeat-teal-500); color: var(--inbeat-teal-500); }
   .bw-sub {
     display: flex; align-items: center; gap: 6px; flex: none; cursor: pointer; user-select: none;
-    font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--fg-3);
+    padding: 4px 0; font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    letter-spacing: 0.1em; color: var(--fg-3);
   }
   .bw-sub input { position: absolute; opacity: 0; width: 1px; height: 1px; }
   .bw-sub-box {
-    width: 18px; height: 18px; border-radius: var(--r-xs, 4px); flex: none;
+    width: 20px; height: 20px; border-radius: var(--r-xs, 4px); flex: none;
     border: 1px solid var(--border-default); display: flex; align-items: center; justify-content: center;
-    transition: border-color 120ms ease;
+    transition: border-color 120ms ease, outline-color 120ms ease;
   }
   .bw-sub-box svg { width: 12px; height: 12px; color: var(--inbeat-teal-500); opacity: 0; transform: scale(.6); transition: opacity 100ms ease, transform 100ms ease; }
   .bw-sub input:checked ~ .bw-sub-box { border-color: var(--inbeat-teal-500); }
   .bw-sub input:checked ~ .bw-sub-box svg { opacity: 1; transform: scale(1); }
+  .bw-sub input:focus-visible ~ .bw-sub-box { outline: 2px solid var(--product-primary); outline-offset: 2px; }
   .bw-sig-wrap { margin-left: auto; position: relative; display: flex; align-items: center; flex: none; }
   .bw-sig {
     height: 30px; padding: 0 26px 0 12px; border-radius: var(--r-sm); cursor: pointer;
@@ -184,7 +169,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .bw-bpm-btn {
     background: none; border: none; color: var(--fg-2); font-size: 18px; font-weight: 700;
-    line-height: 1; cursor: pointer; padding: 2px 4px; flex: none;
+    line-height: 1; cursor: pointer; padding: 10px 10px; flex: none;
   }
   .bw-bpm-btn:hover { color: var(--fg-1); }
   .bw-bpm-display { display: flex; flex-direction: column; align-items: center; line-height: 1.1; }
@@ -211,19 +196,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .cta-eco-logos > a:nth-child(2):hover { border-color: var(--brand-amber-200); box-shadow: var(--shadow-amber-glow); }
   .cta-eco-tile img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
   @media (max-width: 600px) { .cta-eco-tile { width: 100%; max-width: 280px; } }
-  /* Cross-promo écosystème — 2 produits */
-  .cp-wrap > .block-head { margin: 0 0 6px; }
-  .cp-wrap > .cp-inner { padding: 28px 0; }
-  .cp-wrap > .cp-inner + .cp-inner { border-top: 1px solid var(--border-subtle); }
-  .cp-shot-wide { width: 188px; }
-  .cp-shot-editor { width: 196px; }
-  .cp-shot-live { width: 196px; }
-  .cp-shot-live .phone { width: 196px; box-shadow: var(--shadow-lg), 0 0 46px 2px rgba(245, 194, 95, 0.55); }
-  .cp-shot-editor .browser { box-shadow: var(--shadow-lg), 0 0 46px 2px rgba(245, 194, 95, 0.55); border-color: rgba(0,0,0,0.8); }
-  .cp-btn-live { border-color: var(--brand-amber-300); color: var(--brand-amber-200); }
-  .cp-btn-live:hover { background: var(--brand-amber-300); color: var(--fg-invert); border-color: var(--brand-amber-300); }
-  .cp-btn-editor { border-color: var(--brand-amber-300); color: var(--brand-amber-200); }
-  .cp-btn-editor:hover { background: var(--brand-amber-300); color: var(--fg-invert); border-color: var(--brand-amber-300); }
   /* Mobile-only hero intro shown ABOVE the demo screen */
   .ib-hero-m { display: none; }
   @media (max-width: 980px) {
@@ -442,7 +414,7 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
             <label class="bw-sub">
               <input type="checkbox" id="bwBipChk">
               <span class="bw-sub-box"><i data-lucide="check"></i></span>
-              BIP
+              BEEP
             </label>
             <div class="bw-sig-wrap">
               <select class="bw-sig" id="bwSigSelect" aria-label="Time signature">
