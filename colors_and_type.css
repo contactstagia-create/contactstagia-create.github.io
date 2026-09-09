@@ -66,12 +66,12 @@
      rotation; designers should not pick by feel.
   -------------------------------------------------------- */
   --hue-rose:    #F26A78;   /* H1 · intro / outro / "A" */
-  --hue-orange:  #F49A55;   /* H2 · verse 2 / solo */
-  --hue-amber:   #F5C25F;   /* H3 · accent — same as brand */
+  --hue-orange:  #F49A55;   /* H2 · disponible pour un type de section supplémentaire */
+  --hue-amber:   #F5C25F;   /* H3 · solo — aussi l'accent, même teinte que le brand */
   --hue-green:   #6BD18A;   /* H4 · chorus (all) */
   --hue-teal:    #4FCFC9;   /* H5 · bridge / "B" */
-  --hue-blue:    #5FA3F0;   /* H6 · verse / "E" */
-  --hue-violet:  #B284F0;   /* H7 · verse 3 / "Fm" */
+  --hue-blue:    #5FA3F0;   /* H6 · verse (toutes les instances numérotées partagent la même teinte) / "E" */
+  --hue-violet:  #B284F0;   /* H7 · disponible pour un type de section supplémentaire */
 
   /* Each hue also has a -bg variant for tinted pill fills
      (15% alpha of the hue). Used by section chips on dark. */
