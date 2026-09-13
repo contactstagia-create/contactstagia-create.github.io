@@ -19,7 +19,22 @@
    (JetBrains Mono) so chord brackets line up over characters.
    ============================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+/* Polices auto-hébergées (2 fichiers woff2 variables) au lieu du CDN Google Fonts —
+   site indépendant de fonts.googleapis.com, cf. GigFlow-Editor/colors_and_type.css. */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url('./assets/fonts/Mulish-Variable.woff2') format('woff2-variations'), url('./assets/fonts/Mulish-Variable.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url('./assets/fonts/JetBrainsMono-Variable.woff2') format('woff2-variations'), url('./assets/fonts/JetBrainsMono-Variable.woff2') format('woff2');
+}
 
 :root {
   /* ---------- BRAND ---------- */
