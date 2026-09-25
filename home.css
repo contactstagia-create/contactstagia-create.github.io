@@ -113,10 +113,12 @@ nav {
   .tablet { width: 96px; left: calc(50% + 22px); transform: translateY(-10px); }
   .tablet .screen { border-radius: 2px; padding: 3px; }
   .tablet .screen img { border-radius: 1px; }
-  .phone { width: 58px; left: calc(50% - 70px); transform: translateY(-16px); }
-  .phone .screen { border-radius: 2px; padding: 2px; }
-  .phone .screen img { border-radius: 1px; }
-  .phone .notch { width: 13px; height: 3px; }
+  /* InBeat flotte sans cadre au premier plan, en bas à gauche, juste devant le coin d'Editor (pas centré dessus) */
+  .phone { width: 90px; left: calc(50% - 145px); transform: translateY(-12px); filter: none; }
+  .phone .tilt { transform: rotate(8deg); }
+  .phone .screen { background: transparent; border: none; padding: 0; border-radius: 4px; }
+  .phone .screen img { border-radius: 4px; }
+  .phone .notch { display: none; }
 }
 .hero h1 {
   font-family: var(--font-display); font-weight: 900;
@@ -434,7 +436,6 @@ footer { border-top: 1px solid var(--border-subtle); padding: 64px 0 40px; }
   .brand .name { font-size: 19px; }
   .values { grid-template-columns: 1fr; }
   .foot-grid { grid-template-columns: 1fr; }
-  .phone { width: min(336px, 84vw); }
 }
 /* NAV — menu hamburger mobile */
 .nav-burger { display: none; align-items: center; justify-content: center; width: 42px; height: 42px; flex: none; background: var(--bg-surface-1); border: 1px solid var(--border-subtle); border-radius: var(--r-md); color: var(--fg-1); cursor: pointer; }
