@@ -158,7 +158,7 @@ section.block { padding: 72px 0; }
 
 /* ---------------- VIDEO (vidéo YouTube intégrée : présentation ou tutoriel) ---------------- */
 .video-embed {
-  position: relative; aspect-ratio: 16 / 9; max-width: 860px; margin-top: 32px;
+  position: relative; aspect-ratio: 16 / 9; width: clamp(220px, 70vw, 560px); max-width: 100%; margin-top: 28px;
   border-radius: 12px; overflow: hidden; background: #000;
   border: 1px solid var(--border-subtle); box-shadow: var(--shadow-lg);
 }
