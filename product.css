@@ -343,3 +343,29 @@ footer { border-top: 1px solid var(--border-subtle); padding: 60px 0 38px; }
 .eco b { font-family: var(--font-display); font-weight: 800; font-size: 15px; display: block; color: var(--fg-1); }
 .eco small { font-size: 12.5px; color: var(--fg-3); }
 @media (max-width: 600px) { .ecosystem { grid-template-columns: 1fr; } }
+
+/* ---------------- DEUX BOUTONS : badge Google Play officiel + bouton navigateur de même format ---------------- */
+/* Le badge (PNG Google, non modifié) a des marges transparentes différentes en FR et EN : on le recadre en CSS pour
+   que les deux langues affichent la même hauteur visible (--bh). Mesures : FR 646x192 visibles (haut 29), EN 564x168 (41/41). */
+.hero-actions.dual { --bh: 56px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; scroll-margin-top: 90px; }
+.gp-badge, .web-badge { display: block; height: var(--bh); flex: none; }
+.gp-badge { position: relative; overflow: hidden; }
+.gp-badge img { position: absolute; display: block; max-width: none; width: auto; }
+.gp-badge-fr { width: calc(var(--bh) * 3.3646); }
+.gp-badge-fr img { height: calc(var(--bh) * 1.30208); left: 0; top: calc(var(--bh) * -0.15104); }
+.gp-badge-en { width: calc(var(--bh) * 3.3571); }
+.gp-badge-en img { height: calc(var(--bh) * 1.4881); left: calc(var(--bh) * -0.24405); top: calc(var(--bh) * -0.24405); }
+.web-badge { box-sizing: border-box; width: calc(var(--bh) * 3.36); display: flex; align-items: center; gap: calc(var(--bh) * 0.21); padding: 0 calc(var(--bh) * 0.2) 0 calc(var(--bh) * 0.23); background: #000; color: #fff; border: 1px solid #a6a6a6; border-radius: calc(var(--bh) * 0.14); text-decoration: none; transition: border-color 120ms ease, transform 80ms ease; }
+.web-badge:hover { border-color: #fff; }
+.web-badge:active { transform: scale(0.97); }
+.web-badge i, .web-badge svg { width: calc(var(--bh) * 0.6); height: calc(var(--bh) * 0.6); flex: none; stroke-width: 1.6; }
+.wb-text { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+.wb-text small { font-family: var(--font-display); font-weight: 600; font-size: calc(var(--bh) * 0.2); line-height: 1.15; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; }
+.wb-text b { font-family: var(--font-display); font-weight: 700; font-size: calc(var(--bh) * 0.4); line-height: 1.05; white-space: nowrap; }
+.cta-note { font-size: 14px; line-height: 1.55; color: var(--fg-2); margin: 16px 0 0; max-width: 34em; }
+.cta-note .cta-limit { color: var(--fg-3); }
+.final .cta-note { margin-left: auto; margin-right: auto; text-align: center; }
+@media (max-width: 700px) {
+  .hero-actions.dual { --bh: 60px; flex-direction: column; align-items: flex-start; }
+  .final .hero-actions.dual { align-items: center; }
+}
