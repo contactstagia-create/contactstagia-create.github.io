@@ -5283,4 +5283,67 @@ applyLang();renderHome();renderLibrary();showView('home');initDragDrop();
 checkLangPicker();
 </script>
 
+<script>
+/* Couche « version web » d'InBeat — injectée par build-web.cjs dans le paquet web UNIQUEMENT (jamais dans l'appli Android).
+   S'exécute après le script de l'appli (fonctions et variables globales déjà définies). */
+(function(){
+  if(!window.INBEAT_WEB) return;
+
+  var IOS=/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+
+  // Messages (le texte retombe sur le français pour les langues sans traduction : t() cherche lang -> fr -> en)
+  try{
+    LANGS.fr.webStopped="InBeat s'est arrêté quand l'écran s'est verrouillé. Relancez le morceau.";
+    LANGS.en.webStopped="InBeat stopped when the screen locked. Press Play to restart.";
+    LANGS.fr.webAudioStuck="Le son était bloqué : touchez Play pour relancer.";
+    LANGS.en.webAudioStuck="Sound was blocked: tap Play to restart.";
+  }catch(e){}
+
+  // 1. Son : le Web Audio de Safari suit l'interrupteur silencieux, sauf si la page déclare une lecture « playback ».
+  try{ if(navigator.audioSession) navigator.audioSession.type='playback'; }catch(e){}
+
+  // 2. Après un verrouillage, un appel ou une veille, WebKit met l'AudioContext à « interrupted » (l'appli ne gère que « suspended »)
+  //    -> relancer tout état différent de « running », au démarrage du beat et au retour sur la page.
+  function reviveAudio(){
+    try{
+      if(audioCtx&&audioCtx.state!=='running'&&audioCtx.state!=='closed') audioCtx.resume().catch(function(){});
+    }catch(e){}
+  }
+  var _initAudio=initAudio;
+  initAudio=function(){ _initAudio.apply(this,arguments); reviveAudio(); };
+
+  // 3. Filet de sécurité : si le son reste bloqué 1,2 s après Play, recréer le contexte audio une seule fois, puis relancer.
+  var rebuilt=false;
+  var _startBeat=startBeat;
+  startBeat=function(){
+    _startBeat.apply(this,arguments);
+    setTimeout(function(){
+      try{
+        if(!STATE.beat.playing||!audioCtx) return;
+        if(audioCtx.state==='running'){ rebuilt=false; return; }
+        if(rebuilt){ stopBeat(true); toast(t('webAudioStuck'),'err',4000); return; }
+        rebuilt=true;
+        try{ audioCtx.close(); }catch(e){}
+        audioCtx=null; masterGain=null;
+        stopBeat(true); startBeat();
+      }catch(e){}
+    },1200);
+  };
+
+  // 4. Cadrage produit : l'écran reste allumé ; si l'on quitte InBeat, on rouvre et on relance.
+  //    Sur iPhone/iPad, page cachée = le moteur ne tient plus le rythme : on arrête proprement et on le dit au retour.
+  var stoppedWhileHidden=false;
+  document.addEventListener('visibilitychange',function(){
+    try{
+      if(document.visibilityState==='hidden'){
+        if(IOS&&STATE.beat.playing){ stopBeat(true); stoppedWhileHidden=true; }
+      }else{
+        if(stoppedWhileHidden){ stoppedWhileHidden=false; toast(t('webStopped'),'',6000); }
+        reviveAudio();
+      }
+    }catch(e){}
+  });
+})();
+
+</script>
 </body>
