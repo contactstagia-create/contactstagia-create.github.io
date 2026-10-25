@@ -364,6 +364,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 60px 0 38px; }
 .wb-text b { font-family: var(--font-display); font-weight: 700; font-size: calc(var(--bh) * 0.4); line-height: 1.05; white-space: nowrap; }
 .cta-note { font-size: 14px; line-height: 1.55; color: var(--fg-2); margin: 16px 0 0; max-width: 34em; }
 .cta-note .cta-limit { color: var(--fg-3); }
+.cta-note a { color: var(--product-primary); text-decoration: underline; text-underline-offset: 3px; }
 .final .cta-note { margin-left: auto; margin-right: auto; text-align: center; }
 @media (max-width: 700px) {
   .hero-actions.dual { --bh: 60px; flex-direction: column; align-items: flex-start; }

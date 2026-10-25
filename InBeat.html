@@ -275,10 +275,10 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
       <p class="sub">Fini les réglages entre deux morceaux : le métronome dynamique qui suit votre show, du premier au dernier titre.</p>
       <!-- MAQUETTE : inbeat-web/ n’existe pas encore (bouton navigateur = emplacement) -->
       <div class="hero-actions dual" id="obtenir" role="group" aria-label="Choisir comment utiliser InBeat">
-        <a class="gp-badge gp-badge-fr" href="https://play.google.com/store/apps/details?id=com.stagia.inbeat" target="_blank" rel="noopener noreferrer" aria-label="InBeat sur Google Play"><img src="assets/google-play/fr_badge_web_generic.png" alt="Disponible sur Google Play" width="646" height="250"></a>
+        <a class="gp-badge gp-badge-fr" href="https://play.google.com/store/apps/details?id=com.stagia.inbeat&referrer=utm_source%3Dstagia.app%26utm_medium%3Dsite%26utm_campaign%3Dbouton_play" target="_blank" rel="noopener noreferrer" aria-label="InBeat sur Google Play"><img src="assets/google-play/fr_badge_web_generic.png" alt="Disponible sur Google Play" width="646" height="250"></a>
         <a class="web-badge" href="inbeat-web/" target="_blank" rel="noopener noreferrer" aria-label="InBeat dans le navigateur"><i data-lucide="globe" aria-hidden="true"></i><span class="wb-text"><small>InBeat dans le</small><b>Navigateur</b></span></a>
       </div>
-      <p class="cta-note">Sur scène, l’appli Android est la version complète. Dans le navigateur, essayez et répétez sans rien installer. <span class="cta-limit">La synchro entre appareils (Master/Slave) est réservée à l’appli Android.</span></p>
+      <p class="cta-note">Sur scène, l’appli Android est la version complète. Dans le navigateur, essayez et répétez sans rien installer. <span class="cta-limit">La synchro entre appareils (Master/Slave) est réservée à l’appli Android. Compatibilité non garantie sur les anciens iPhone et navigateurs. <a href="aide.html#inbeat-web">Voir les limites</a></span></p>
       <p class="adaptive">Conçu pour le batteur — utile à tout le groupe.</p>
       <div class="status-chips">
         <span class="chip"><span class="dot"></span> Appli 100 % offline</span>
@@ -494,10 +494,10 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
     <h2>Prêt à garder le tempo ?</h2>
     <p>Gratuit, sans limite, sans abonnement.</p>
     <div class="hero-actions dual" role="group" aria-label="Choisir comment utiliser InBeat">
-      <a class="gp-badge gp-badge-fr" href="https://play.google.com/store/apps/details?id=com.stagia.inbeat" target="_blank" rel="noopener noreferrer" aria-label="InBeat sur Google Play"><img src="assets/google-play/fr_badge_web_generic.png" alt="Disponible sur Google Play" width="646" height="250"></a>
+      <a class="gp-badge gp-badge-fr" href="https://play.google.com/store/apps/details?id=com.stagia.inbeat&referrer=utm_source%3Dstagia.app%26utm_medium%3Dsite%26utm_campaign%3Dbouton_play" target="_blank" rel="noopener noreferrer" aria-label="InBeat sur Google Play"><img src="assets/google-play/fr_badge_web_generic.png" alt="Disponible sur Google Play" width="646" height="250"></a>
       <a class="web-badge" href="inbeat-web/" target="_blank" rel="noopener noreferrer" aria-label="InBeat dans le navigateur"><i data-lucide="globe" aria-hidden="true"></i><span class="wb-text"><small>InBeat dans le</small><b>Navigateur</b></span></a>
     </div>
-    <p class="cta-note">Sur scène, l’appli Android est la version complète. Dans le navigateur, essayez et répétez sans rien installer. <span class="cta-limit">La synchro entre appareils (Master/Slave) est réservée à l’appli Android.</span></p>
+    <p class="cta-note">Sur scène, l’appli Android est la version complète. Dans le navigateur, essayez et répétez sans rien installer. <span class="cta-limit">La synchro entre appareils (Master/Slave) est réservée à l’appli Android. Compatibilité non garantie sur les anciens iPhone et navigateurs. <a href="aide.html#inbeat-web">Voir les limites</a></span></p>
   </div>
 </section>
 
@@ -808,6 +808,15 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
 })();
 </script>
 
+<script>
+/* Mesure des clics sur les deux boutons : événement poussé dans le dataLayer, pris en compte par GTM seulement si l’utilisateur a accepté la mesure (Consent Mode). Aucun contenu, aucun identifiant. */
+document.querySelectorAll('.gp-badge,.web-badge').forEach(function (a) {
+  a.addEventListener('click', function () {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'cta_click', cta: a.classList.contains('web-badge') ? 'inbeat_web' : 'google_play' });
+  });
+});
+</script>
 <script src="cookie-banner.js"></script>
 </body>
 </html>

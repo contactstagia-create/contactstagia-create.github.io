@@ -75,6 +75,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     padding: 0;
   }
   .faq-item.open .faq-a { max-height: 400px; padding-bottom: 20px; }
+  .faq-item.open .faq-a.long { max-height: 900px; }
   .faq-a a { color: var(--brand-amber-300); text-decoration: underline; text-underline-offset: 3px; }
 
   .cta-block {
@@ -159,17 +160,22 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
 
       <div class="faq-item">
         <button class="faq-q">Les apps fonctionnent-elles sans connexion internet ?<i data-lucide="chevron-down"></i></button>
-        <div class="faq-a">GigFlow Live et InBeat : oui, entièrement hors ligne. Aucune connexion n'est requise pendant l'utilisation — en répétition, en déplacement, sur scène. GigFlow Editor est un outil web : il s'ouvre dans votre navigateur (connexion nécessaire pour l'ouvrir) et vos données restent stockées sur votre appareil.</div>
+        <div class="faq-a">GigFlow Live et InBeat (apps Android) : oui, entièrement hors ligne. Aucune connexion n'est requise pendant l'utilisation — en répétition, en déplacement, sur scène. InBeat existe aussi dans le navigateur : la page se charge en ligne la première fois, puis peut fonctionner hors ligne (voir la question « InBeat dans le navigateur » ci-dessous). GigFlow Editor est un outil web : il s'ouvre dans votre navigateur (connexion nécessaire pour l'ouvrir) et vos données restent stockées sur votre appareil.</div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">Sur quels appareils puis-je utiliser les apps ?<i data-lucide="chevron-down"></i></button>
-        <div class="faq-a">GigFlow Live et InBeat sont des apps Android (smartphone ou tablette), disponibles exclusivement sur le <strong>Google Play Store</strong>. GigFlow Editor tourne dans un navigateur sur PC ou Mac — aucune installation nécessaire, ouvrez simplement la page.</div>
+        <div class="faq-a">GigFlow Live et InBeat sont des apps Android (smartphone ou tablette), disponibles sur le <strong>Google Play Store</strong>. InBeat existe aussi dans le navigateur (iPhone, iPad, ordinateur, Android), en version d'essai. GigFlow Editor tourne dans un navigateur sur PC ou Mac — aucune installation nécessaire, ouvrez simplement la page.</div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">Mes données sont-elles sauvegardées dans le cloud ?<i data-lucide="chevron-down"></i></button>
         <div class="faq-a">Non. Toutes vos données restent sur votre appareil. Il n'y a aucun compte, aucun cloud, aucune synchronisation automatique de vos données (seule la synchro du tempo InBeat entre appareils, en bêta, passe par votre réseau Wi-Fi local). Vous gardez le contrôle total de vos chansons et setlists. Pour éviter toute perte en cas de changement d'appareil ou de réinitialisation, pensez à exporter régulièrement vos données depuis l'app.</div>
+      </div>
+
+      <div class="faq-item" id="inbeat-web">
+        <button class="faq-q">InBeat dans le navigateur : que fait-il, quelles sont ses limites ?<i data-lucide="chevron-down"></i></button>
+        <div class="faq-a long">Il sert à essayer et à répéter sans rien installer, notamment sur iPhone, iPad ou ordinateur. Sur scène, l'appli Android reste la version complète. Limites : la synchro Master/Slave entre appareils est réservée à l'appli Android ; gardez l'écran allumé et InBeat au premier plan (si vous le quittez, rouvrez-le et relancez le morceau) ; la compatibilité n'est pas garantie sur les anciens iPhone et navigateurs. Vos setlists restent sur l'appareil, dans le navigateur : exportez-les régulièrement, car un navigateur peut effacer les données d'un site peu visité. Sur iPhone, « Partager » puis « Sur l'écran d'accueil » donne un affichage plein écran et un fonctionnement hors ligne. La version navigateur mesure son audience avec votre consentement, contrairement aux apps Android (voir la <a href="confidentialite.html">politique de confidentialité</a>). <a href="inbeat-web/">Ouvrir InBeat dans le navigateur</a>.</div>
       </div>
     </div>
 
@@ -306,6 +312,15 @@ height="0" width="0" style="display:none;visibility:hidden" sandbox="allow-scrip
       if (!wasOpen) item.classList.add('open');
     });
   });
+  // Lien direct vers une question (ex. aide.html#inbeat-web) : ouvre l'élément correspondant
+  var hashId = location.hash.slice(1);
+  if (hashId) {
+    var target = document.getElementById(hashId);
+    if (target && target.classList.contains('faq-item')) {
+      target.classList.add('open');
+      setTimeout(function () { target.scrollIntoView({ block: 'center' }); }, 150);
+    }
+  }
 })();
 </script>
 
