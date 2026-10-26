@@ -1,5 +1,5 @@
-// Service worker d'InBeat (version web). Généré par build-web.cjs à partir de ce modèle : inbeat-web-0.5.76-0b47bd74 est remplacé par le nom de cache versionné.
-const CACHE = 'inbeat-web-0.5.76-0b47bd74';
+// Service worker d'InBeat (version web). Généré par build-web.cjs à partir de ce modèle : inbeat-web-0.5.76-9fa99646 est remplacé par le nom de cache versionné.
+const CACHE = 'inbeat-web-0.5.76-9fa99646';
 const FILES = ['./', 'index.html', 'manifest.json', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(FILES))); });
 self.addEventListener('activate', (e) => {

@@ -5462,7 +5462,7 @@ checkLangPicker();
   }catch(e){}
 
   /* ---------- 7. Mesure d'audience : mêmes moyens qu'Editor (GTM + Consent Mode refusé par défaut + bandeau du site) ----------
-     Uniquement sur stagia.app (jamais en local ni sur une copie) ; aucun événement personnalisé : jamais de contenu musical. */
+     Uniquement sur stagia.app (jamais en local ni sur une copie) ; jamais de contenu musical dans la mesure. */
   try{
     var h=location.hostname;
     if(h==='stagia.app'||h==='www.stagia.app'){
@@ -5472,6 +5472,19 @@ checkLangPicker();
       window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});
       var g=document.createElement('script'); g.async=true; g.setAttribute('data-ib-web',''); g.src='https://www.googletagmanager.com/gtm.js?id=GTM-WF8H5RWM'; document.head.appendChild(g);
       var b=document.createElement('script'); b.defer=true; b.setAttribute('data-ib-web',''); b.src='/cookie-banner.js'; document.head.appendChild(b);
+
+      /* Seul événement personnalisé : l'installation de l'appli (« Ajouter à l'écran d'accueil »), sans aucune donnée.
+         Chrome/Android/PC : événement appinstalled ; iPhone (pas d'événement) : premier lancement en mode plein écran.
+         Un seul envoi par appareil et par navigateur (drapeau local). */
+      var sentInstall=function(method){
+        try{
+          if(localStorage.getItem('inbeat_web_install_sent')) return;
+          localStorage.setItem('inbeat_web_install_sent','1');
+        }catch(e){}
+        window.dataLayer.push({event:'inbeat_web_install',method:method});
+      };
+      window.addEventListener('appinstalled',function(){ sentInstall('appinstalled'); });
+      if(STANDALONE) sentInstall('first_standalone_launch');
     }
   }catch(e){}
 
