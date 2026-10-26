@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+<!-- InBeat — © 2026 Stagia. Tous droits réservés. All rights reserved. https://stagia.app -->
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -70,7 +71,6 @@
 .lang-opt.current{color:var(--cyan);font-weight:600}
 .lang-flag{width:20px;height:14px;flex-shrink:0;border-radius:2px;overflow:hidden;display:inline-block}
 .lang-flag svg{display:block;width:100%;height:100%}
-/* ── DROPDOWN MENU générique (hamburger, tri, actions de ligne) — réutilise le style lang-menu ── */
 .dd-menu{position:fixed;background:var(--s3);border:1px solid var(--border);border-radius:var(--r);
   min-width:200px;z-index:500;box-shadow:0 4px 12px rgba(0,0,0,.45);
   max-height:70vh;overflow-y:auto;padding:4px 0}
@@ -115,7 +115,6 @@ html,body{height:100%;height:100dvh;background:var(--bg);color:var(--text);
   padding-right:env(safe-area-inset-right,0px)}
 .hidden{display:none!important}
 
-/* ── Buttons ── */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;
   padding:8px 14px;border:1px solid var(--border);border-radius:var(--r2);
   background:var(--s2);color:var(--text);font-size:13px;font-weight:500;
@@ -138,7 +137,6 @@ html,body{height:100%;height:100dvh;background:var(--bg);color:var(--text);
 .btn.gold{background:var(--red);border-color:var(--red);color:#fff;font-weight:700}
 #btn-open-lib{border-color:var(--text)}
 
-/* ── Tooltips ── */
 [data-tip]{position:relative}
 [data-tip]::after{content:attr(data-tip);position:absolute;top:calc(100% + 7px);left:50%;
   transform:translateX(-50%);background:var(--s3);border:1px solid var(--border);
@@ -153,11 +151,6 @@ html,body{height:100%;height:100dvh;background:var(--bg);color:var(--text);
   .hdr.h2 .r1{gap:4px;padding:4px 8px}
   .hdr.h2 .r2{gap:4px;padding:4px 8px}
   .app-title{font-size:14px}
-  /* Le gap flex passe de 8px à 4px ici : sans compensation, margin-right:-16px
-     (fixé en JS, cf. querySelectorAll('.app-logo')) rapproche le texte 4px de plus
-     que sur les écrans larges et grignote la marge transparente du logo. On
-     recale margin-right pour retrouver le même espacement net (-8px) qu'au-delà
-     de 390px. !important nécessaire pour passer devant le style inline JS. */
   .app-logo{margin-right:-12px!important}
   .hdr.h2 .btn-lbl{display:none}
   #btn-open-lib,#btn-from-lib{min-width:36px;justify-content:center;padding:4px 6px}
@@ -168,7 +161,6 @@ html,body{height:100%;height:100dvh;background:var(--bg);color:var(--text);
   .beat-vol-row input[type=range]{width:70px}
 }
 
-/* ── Inputs ── */
 .inp{padding:9px 12px;border:1px solid var(--border);border-radius:var(--r);
   background:var(--s3);color:var(--text);font-size:16px;width:100%;
   outline:none;transition:border-color var(--tr);min-height:42px}
@@ -180,7 +172,6 @@ select.inp{appearance:none;-webkit-appearance:none;cursor:pointer;
   background-repeat:no-repeat;background-position:right 12px center;padding-right:30px}
 textarea.inp{resize:vertical;min-height:72px}
 
-/* ── Layout helpers ── */
 .scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .hdr{display:flex;align-items:center;gap:8px;padding:10px 14px;
   background:var(--surface);border-bottom:1px solid var(--border);
@@ -206,7 +197,6 @@ textarea.inp{resize:vertical;min-height:72px}
   color:var(--muted);margin:6px 0 14px;display:flex;align-items:center;gap:8px}
 .opt-sep::before,.opt-sep::after{content:'';flex:1;height:1px;background:var(--border)}
 
-/* ── HOME ── */
 .app-title{font-size:22px;font-weight:800;color:var(--brand);letter-spacing:-.5px}
 #sl-list{display:flex;flex-direction:column;gap:8px;padding:8px 14px 14px}
 .sl-item{display:flex;align-items:center;padding:12px 14px;
@@ -224,7 +214,6 @@ textarea.inp{resize:vertical;min-height:72px}
 .sec-label{font-size:18px;letter-spacing:.01em;
   color:var(--red);padding:14px 14px 6px;font-weight:700}
 
-/* ── SETLIST EDITOR ── */
 .sl-meta-bar{display:grid;grid-template-columns:2fr 1fr auto;gap:8px;
   padding:10px 14px;background:var(--surface);border-bottom:1px solid var(--border)}
 .meta-cell{display:flex;flex-direction:column;gap:3px}
@@ -253,7 +242,6 @@ textarea.inp{resize:vertical;min-height:72px}
 .song-item.dragging{opacity:.35}
 .add-bar{padding:10px 14px;border-top:1px solid var(--border);
   background:var(--surface);flex-shrink:0;display:flex;gap:8px}
-/* ── SELECTION ── */
 .sel-bar{background:var(--s2);border-top:none;border-bottom:1px solid var(--border);padding:8px 14px;
   display:flex;gap:8px;align-items:center;flex-shrink:0}
 .sel-bar.hidden{display:none!important}
@@ -262,7 +250,6 @@ textarea.inp{resize:vertical;min-height:72px}
 .song-item.sel{background:var(--s2)}
 .song-num:hover,.song-num:active{border-color:var(--red);color:var(--red)}
 
-/* ── LIBRARY ── */
 #lib-list{display:flex;flex-direction:column;gap:8px;padding:8px 14px}
 .lib-item{display:flex;align-items:center;padding:12px 14px;
   border:1px solid var(--border);border-radius:10px;background:var(--surface);gap:8px}
@@ -272,7 +259,6 @@ textarea.inp{resize:vertical;min-height:72px}
 .lib-sub{font-size:11px;color:var(--dim);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .search-bar{padding:8px 14px;background:var(--surface);flex-shrink:0}
 
-/* ── LIBRARY PICKER ── */
 .lib-pick-item{display:flex;align-items:center;padding:10px 16px;
   border-bottom:1px solid var(--border);gap:12px;cursor:pointer;
   transition:background var(--tr)}
@@ -283,7 +269,6 @@ textarea.inp{resize:vertical;min-height:72px}
   background:transparent;font-size:13px;font-weight:700;transition:all var(--tr);cursor:pointer}
 .chk.on{background:transparent;border-color:var(--accent);color:var(--accent)}
 
-/* ── EXPORT MODAL ── */
 .exp-item{display:flex;align-items:center;padding:12px 16px;
   border-bottom:1px solid var(--border);gap:12px;cursor:pointer;
   transition:background var(--tr)}
@@ -294,12 +279,7 @@ textarea.inp{resize:vertical;min-height:72px}
 .exp-meta{font-size:11px;color:var(--dim);margin-top:2px}
 .modal-ftr.col{flex-direction:column;gap:10px}
 
-/* ── BEAT VIEW ── */
 #view-beat,#view-slave{background:var(--bg)}
-/* Écran immersif : header/footer au même fond que le corps, pas de liseré
-   (contrairement aux vues à liste, où le contraste chrome/contenu aide à
-   séparer le scroll — ici tout l'écran doit lire comme une seule surface).
-   Sélecteur #view-beat prioritaire sur les surcharges thème clair de .hdr.h2/.beat-nav. */
 #view-beat .hdr,#view-slave .hdr{background:var(--bg)}
 #view-beat .beat-nav,#view-slave .beat-nav{background:var(--bg);border-top:none}
 .beat-content{flex:1;display:flex;flex-direction:column;
@@ -336,7 +316,7 @@ textarea.inp{resize:vertical;min-height:72px}
 .dot{border-radius:10px;background:var(--s2);border:2px solid var(--border);
   display:flex;align-items:center;justify-content:center;
   font-weight:700;color:var(--muted);
-  transition:none; /* pas de fondu : l’allumage se fait en 1 seule peinture (le fondu .05s animait l’ombre floue sur plusieurs images, ce qui faisait sauter des images sur un P20) */
+  transition:none;  
   user-select:none;cursor:pointer;flex-shrink:0}
 .dot.d1{background:#FF3B2F;border-color:#FF3B2F;color:#fff}
 .dot.dn{background:var(--gold);border-color:var(--gold);color:#1a1200;
@@ -344,7 +324,6 @@ textarea.inp{resize:vertical;min-height:72px}
 .sub-gap{width:8px;height:8px;border-radius:50%;background:var(--s3);
   border:1px solid var(--border);flex-shrink:0;transition:none}
 .sub-gap.sa{background:var(--gold);border-color:var(--gold)}
-/* ── SYNC MASTER/SLAVE ── */
 .sync-badge-beta{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.04em;
   text-transform:uppercase;color:var(--dim);border:1px solid var(--border);border-radius:999px;
   padding:2px 7px;margin-left:7px;vertical-align:middle}
@@ -369,7 +348,6 @@ textarea.inp{resize:vertical;min-height:72px}
 .sync-peer-item{display:flex;align-items:center;justify-content:space-between;
   background:var(--s2);border:1px solid var(--border);border-radius:var(--r2);
   padding:8px 10px;font-size:13px;gap:8px}
-/* Écran Slave (suivi du Master) : mêmes classes que l'écran Beat, sans commandes de lecture. */
 .sv-status{font-size:13px;color:var(--dim);text-align:center;min-height:18px;flex-shrink:0}
 .sv-off{opacity:.35}
 .beat-nav.sv-foot{flex-direction:column;align-items:stretch;justify-content:flex-start;gap:8px}
@@ -411,9 +389,7 @@ textarea.inp{resize:vertical;min-height:72px}
 .sl-item.dragging{opacity:.35}
 .sl-item.drag-over-top{border-top:2px solid var(--red)!important}
 .sl-item.drag-over-bot{border-bottom:2px solid var(--red)!important}
-/* Tablette : pleine largeur (plafond 540px supprimé en v0.5.60) */
 
-/* ── MODAL ── */
 .overlay{position:fixed;top:0;right:0;bottom:0;left:0;inset:0;background:rgba(0,0,0,.72);
   z-index:200;display:flex;align-items:flex-end;justify-content:center}
 .modal{background:var(--surface);border-radius:16px 16px 0 0;
@@ -439,7 +415,6 @@ textarea.inp{resize:vertical;min-height:72px}
 
 .intro-logo{font-size:28px;font-weight:900;color:var(--brand);letter-spacing:-.5px;text-align:center}
 
-/* ── CONFIRM ── */
 .confirm{position:fixed;top:0;right:0;bottom:0;left:0;inset:0;background:rgba(0,0,0,.72);
   z-index:300;display:flex;align-items:center;justify-content:center;padding:20px}
 .confirm-box{background:var(--s2);border:1px solid var(--border);
@@ -447,7 +422,6 @@ textarea.inp{resize:vertical;min-height:72px}
 .confirm-txt{margin-bottom:18px;font-size:15px;line-height:1.6}
 .confirm-acts{display:flex;gap:10px;justify-content:flex-end}
 
-/* ── TOAST ── */
 #toasts{position:fixed;bottom:72px;left:50%;transform:translateX(-50%);
   z-index:500;display:flex;flex-direction:column;gap:8px;
   align-items:center;pointer-events:none}
@@ -465,17 +439,14 @@ textarea.inp{resize:vertical;min-height:72px}
 .help-row{display:flex;gap:10px;margin-bottom:7px;font-size:13px;align-items:baseline}
 .help-key{background:var(--s3);border:1px solid var(--border);border-radius:4px;padding:1px 7px;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0;color:var(--text)}
 .help-desc{color:var(--dim);line-height:1.4}
-/* iOS zoom prevention: all inputs must be ≥16px on touch devices */
 @media(pointer:coarse){
 input.inp,select.inp,textarea.inp{font-size:16px!important}
 }
-/* fiche titre : tous les champs alignés sur la taille du nom de titre dans le répertoire (14px), zoom iOS accepté au profit de la lisibilité de la mise en page */
 #f-title.inp,#f-time.inp,#f-tempo.inp,#f-dur-min.inp,#f-dur-sec.inp,#f-key.inp,#f-artist.inp,#f-notes.inp{font-size:14px!important}
 ::-webkit-scrollbar{width:3px}
 ::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
 #file-import,#file-lib{display:none}
 
-/* ── PRINT ── */
 #print-sl{display:none}
 @page{@bottom-center{content:"Retrouvez les produits Stagia sur stagia.app";font-size:9px;color:#aaa;font-family:Arial,sans-serif}}
 @media print{
@@ -494,7 +465,6 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   .pr-ssub{font-size:11px;color:#555;margin-top:2px}
   .pr-cum{font-size:11px;color:#aaa;white-space:nowrap;padding-top:1px;text-align:right}
 }
-/* ONBOARDING — tutoriel spotlight, 1ère visite écran beat */
 .onboard-overlay{position:fixed;inset:0;z-index:9999;pointer-events:none}
 .onboard-hole{position:absolute;border-radius:14px;pointer-events:none;
   box-shadow:0 0 0 9999px rgba(0,0,0,.78);
@@ -517,7 +487,6 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
 </head>
 <body>
 
-<!-- Bandeau affiché uniquement si JS ne tourne pas (Quick Look iOS) -->
 <div id="no-js" style="display:none;position:fixed;inset:0;z-index:9999;
   background:#07070f;color:#dde0f0;flex-direction:column;
   align-items:center;justify-content:center;gap:20px;padding:32px;text-align:center">
@@ -534,9 +503,6 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     VIEW: HOME
-════════════════════════════════════════ -->
 <div id="view-home" class="view">
   <div class="hdr h2">
     <div class="r1">
@@ -572,9 +538,6 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     VIEW: SETLIST EDITOR
-════════════════════════════════════════ -->
 <div id="view-setlist" class="view hidden">
   <div class="hdr h2">
     <div class="r1">
@@ -625,9 +588,6 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     VIEW: BEAT
-════════════════════════════════════════ -->
 <div id="view-beat" class="view hidden">
   <div class="hdr h2">
     <div class="r1">
@@ -702,8 +662,6 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   </div>
 </div>
 
-<!-- VIEW: SLAVE — suivi du Master en synchro. Même présentation que l'écran Beat, sans les
-     commandes de lecture (Play/Stop, Préc./Suiv., TAP, ±BPM) : le Slave ne pilote rien. -->
 <div id="view-slave" class="view hidden">
   <div class="hdr h2">
     <div class="r1">
@@ -720,8 +678,7 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
         <span class="hlabel" id="lbl-sv-subs">Subs. 1/2</span>
         <button type="button" class="chk" id="sv-subs"></button>
       </div>
-      <!-- Le clic audio reste réservé au Master (décision du POC) : affiché comme sur le Master mais grisé -->
-      <div class="sv-off" id="sv-bip-box" style="display:flex;flex-direction:column;align-items:center;gap:2px">
+            <div class="sv-off" id="sv-bip-box" style="display:flex;flex-direction:column;align-items:center;gap:2px">
         <span class="hlabel" id="lbl-sv-bip">Bip</span>
         <button type="button" class="chk" id="sv-audio"></button>
         <span id="lbl-sv-audio-all" style="color:var(--dim);font-size:9px;font-weight:700;text-decoration:underline;padding:2px 0;white-space:nowrap">tous</span>
@@ -764,9 +721,6 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     VIEW: LIBRARY
-════════════════════════════════════════ -->
 <div id="view-library" class="view hidden">
   <div class="hdr h2">
     <div class="r1">
@@ -799,9 +753,6 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     MODAL: SONG EDITOR
-════════════════════════════════════════ -->
 <div class="overlay hidden" id="modal-song">
   <div class="modal">
     <div class="modal-hdr">
@@ -870,9 +821,6 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     MODAL: LIBRARY PICKER
-════════════════════════════════════════ -->
 <div class="overlay hidden" id="modal-lib-pick">
   <div class="modal">
     <div class="modal-hdr">
@@ -890,9 +838,6 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     MODAL: EXPORT
-════════════════════════════════════════ -->
 <div class="overlay hidden" id="modal-export">
   <div class="modal">
     <div class="modal-hdr">
@@ -916,7 +861,6 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   </div>
 </div>
 
-<!-- MODAL: LIBRARY EXPORT -->
 <div class="overlay hidden" id="modal-lib-export">
   <div class="modal">
     <div class="modal-hdr">
@@ -943,7 +887,6 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   </div>
 </div>
 
-<!-- MODAL: IMPORT PICKER -->
 <div class="overlay hidden" id="modal-import-pick">
   <div class="modal">
     <div class="modal-hdr">
@@ -961,7 +904,6 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   </div>
 </div>
 
-<!-- MODAL: SYNC MASTER/SLAVE -->
 <div class="overlay hidden" id="modal-sync">
   <div class="modal">
     <div class="modal-hdr">
@@ -972,7 +914,6 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   </div>
 </div>
 
-<!-- PRINT MODAL -->
 <div class="confirm hidden" id="modal-print">
   <div class="confirm-box">
     <div class="confirm-txt" id="lbl-print-hdr" style="margin-bottom:10px"></div>
@@ -984,7 +925,6 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   </div>
 </div>
 
-<!-- CONFIRM -->
 <div class="confirm hidden" id="confirm-dlg">
   <div class="confirm-box">
     <div class="confirm-txt" id="confirm-txt"></div>
@@ -995,7 +935,6 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   </div>
 </div>
 
-<!-- LANG MENU (global, position fixed) -->
 <div class="lang-menu hidden" id="lang-menu">
   <div class="lang-opt" data-lang="fr"><span class="lang-flag"></span>FR — Français</div>
   <div class="lang-opt" data-lang="en"><span class="lang-flag"></span>EN — English</div>
@@ -1008,7 +947,6 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   <div class="lang-opt" data-lang="br"><span class="lang-flag"></span>BR — Português (Brasil)</div>
 </div>
 
-<!-- LANG PICKER (premier démarrage) -->
 <div id="lang-picker-overlay" class="lang-picker-overlay hidden">
   <div class="lang-picker-card">
     <div class="intro-logo" style="margin-bottom:12px">InBeat</div>
@@ -1018,7 +956,6 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   </div>
 </div>
 
-<!-- MODAL: HELP -->
 <div class="overlay hidden" id="modal-help">
   <div class="modal">
     <div class="modal-hdr">
@@ -1029,7 +966,6 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   </div>
 </div>
 
-<!-- ONBOARDING (tutoriel spotlight écran beat) -->
 <div class="onboard-overlay hidden" id="onboard-overlay">
   <div class="onboard-hole" id="onboard-hole"></div>
   <div class="onboard-card" id="onboard-card">
@@ -1042,19 +978,13 @@ input.inp,select.inp,textarea.inp{font-size:16px!important}
   </div>
 </div>
 
-<!-- TOAST -->
 <div id="toasts"></div>
-<!-- PRINT VIEW -->
 <div id="print-sl"></div>
 
-<!-- file inputs -->
 <input type="file" id="file-import" accept=".json,.inb">
 <input type="file" id="file-lib" accept=".json,.inb">
 
 <script>
-// Filet de sécurité global : sans ça, une exception imprévue en plein concert
-// (import corrompu, état inattendu…) se traduit par un silence total sans
-// aucun message — l'utilisateur ne sait même pas qu'un bug vient de se produire.
 window.addEventListener('error',e=>{
   console.error('Erreur non interceptée',e.error||e.message);
   try{toast(t('errUnexpected'),'err');}catch(_){}
@@ -1066,13 +996,7 @@ window.addEventListener('unhandledrejection',e=>{
 document.getElementById('no-js').style.display='none';
 const LOGO_SRC='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAA9vSURBVHhe7Z0LUFRXmscnmclmz+3u2930A5jJZN5TO1uVytTOs2pndnZqZ3Z36giCh25e8mhRFJQIBEUUUV5CFFEQTYziIxLiGx8BTfAFERF8oQnOxDzU+JrZcadmTLJmkujZ+k4/bA7dPDJmBO73q/qqoc+5l1v1/77vfOfccy9fIIw+/AVEkxBGH5K/QxAEQRAEQRAEQRAEQRAEQZDRis4V95B1f6PRdmyP0dK0Ti+3I2MYwqjNvHbpfvvxl2+G9rT+KexCxzVTXfk0uR8yRjFvrIm2Hd7O7cf28tCzB3j4lZPc9tqu04TRL8p9kTGIdX+jw9q6xecAYZe6ue3o7hPEGfEluS8yBrG+/EJMPwd4bVc3caADaAJ0AI2DDqBx0AE0DjqAxkEH0DjoABoHHUDjoANoHHQAjYMOoHHQATQOOoDGQQfQOOgAGgcdQOOgA2gcdACNgw6gcdABNA46gMZBB9A46AAaBx1A46ADaBx0AI2DDqBx0AE0DjqAxkEH0DjoABoHHUDjoANoHHQAjYMOoHHQAcYohoKsh/U56Y8aZmUSwuijuqlJAQW1tjSgA4wF9E9PM6oL8/7DtKx4jnn14oaQl55tD9m6+nXL9jVvhjTUvRGy+bku88aaRmNV0dNqYfaP9TnpQmBrS0OU9QA6wKhFLZ/zS3N99TrLjrWXrfte5BDN1gNbPZ9buPXgVm47tJ3bDu/gtrYmbmtv4rZD2z6xNNV3murKXSEba1NtB7fdRQcYZajlc/4rZGPNXmvzpjvWVzdz6ysv3TP4HQwcwOsEB7eB8Nx2BBxhJ7d17IH3AXJr6+b/tR3adgd+RwcYBRgKsh4zrShbZ21puCtE3t/IReT7C+/NAgcg+rdxeBOoyABe8V/b5baju0XqB/HtnXt5aE8rOsBIRi3Oi7PsrL94T/jGe8K3eoT3j3YQHkQHg9TvEV0YiH5sr9uOv8ztx5u5/Qw6wIjFWL1wgS/Fg/hg/sJDtMvCQ7QHEN4nfieI38ztXc3c3t3C7Sf28bB3j6MDjCTgX5gaZmdWi5TuFd8rvGeMF8KDBUr1csQL0V92i97Vwu3d+4Tw9pP7hYX+7jV0gJGEPie9BMTsU+D1qfD9irsgqb6/+B7hQfRTr7jt9KvCQnuPwHm68WXRIwAlKSbGdmjbXSG4N+qDjfEBIt4nfLCI9wp/ppWH9hwQswBwAOuBregADxrC6LcsO+v/ACIHFX6wMT6Q8P4RD8KDgfDnDrrtt+0wzHQTRtEBHiTGJUUNYp4OY7831fuP7wGE71fVewq7gMJDxIMJ4Q+57Y3D7hqgbecxtTAb/2HEg4Iw+i/W1i0fi0j3n8cHEt4zlw9Y3MljvL/wIuoP8dDXwQ6L1B96vo2HXeiAv9Whz56CDvCgMFbOrRMLNIOk+j7Ce4s7//FdFh5E9xceIh6E720TqR+iP+ydTlg6PmDIn/6QfF3I3wHiGKe37N5wWYgdUHg/8b2pXqT7YML7iQ/pHqJdFv637TzszaPCwt87yUO2rt7Q/7oivq+kOn8uf4/cZ/RPpf18wOlcoFQ/UFUfKOLP+0W8R3hI/WFvH+PhV05xU01Jrnxd5vXLqsxrl7bK3yP3GbUsf6pI/3Kq96/qobgLFPEwj/cXX454WfgLHnvrmNve7YLPj9X52U/I12V6trLUsnvDW/oZrgFnB4TRh0ns+AzCKJPbkCFgqi1dAAL7ijvvOD+U4s43nfMUdsGE90b8W+6oD3u7U4z94dfPwKyjA0Tsd12rKpbajuz4s1qUq8ht/hBGFUNB1i19Tnqb3IYMAVPdokohrJzqAxR3/aLdK7wY34/4xvegEf9Op1j7D7vYxcMun+Bfvt7DDYXZifI1ASEv1G63HdlxS0mIHvA/ixJGiWF25iXDvJnX4Ge5HRkEU03pXBHVAwgfcDoHNqDwEPEQ7ZLwl7qFPXa9B1Yb2wItABFG/8G670UoTN9TF+YNlgGIoSDrbbU471PiiHhcbkcGwbioYKIQ/ASYtIDTL+qlebwsvFd8SPVCfK/w3W67fEJY+LUzPPzqqY+VZMfP5OsBdFOTfgpOZ23e1KGkOPoND/4QRvVqYfYf1LJ8Thj9idyODIJ+hutJe1fLpwEjPliqDzrGB4l4EP29k267eoo/fuMsV8vnFMjX4sW0sqIWnCdk04o1cpsMcUR8TS2Zddu4qIAryTG/ltuDQRjVEUZXEUbL4A6o3K4ZlIToL1mbN3VBAddnrd4b8b45fDDhg4zxEPGXuu8JD3btNP/GjbPcvGH5cvk6vOjS4q22o7t/D+dTy+ekye0yhNFfgfjGynlc54r7T7k9GITRX5DYSE6cER8SRs1yu6YwVsxNFOL636TxVfVt/YUfaIz3CO+L+qunhEHB9/j1Hh569uBzusmJQZd91eK8WXC+0HMH39fPnPx1uV1GSXHmGquKuHFx4R0lJfCQEgjC6L8RZyRX4sbf1fzQAYWYub56D4zdQnSv8PIY76vqPeL7hJdEB7viFj786mn+1es94AB3LU31pebVi4OmW8Lol21Hd12H4y071r4ktwdCn5vebKxeCA5wW0mc8B25PRiE0Z+S2Mi7SkI01A7JcrvmIIx+xXZszzkQVogOUd9vjPfM4wcZ493in3ZH/Y2z0O+GaVVFgvw3ZcxrlrwgCsV3Ou/oZ04ZNJoJo4+p5XP+YlpWzI2LCm4QRlW5TzAIoz9T4qLuKBMZOMA8uV2TqGX5j9vadh4WAoPggebxIs17Un2giL92xpfuv3K957b95P4NxiXzvyv/LRlDYfZTYnHo6mlufn7Jark9EEp89FQQ37S8hKtFuUcCLSgFgzD630p8NFeSYsABauR2zaKWzNJZmxtKQ8+3/VFEI4gN0e6f6v2LOyH6aR5+vUfM7b924yz8fMve1bzBVFf+Q/n8gVDio6JCe9s+gnPZu1t+Rxi1yn1kxN7F/BntIL5pRRk35GVUyX0GAtK+kjiBiwwQO77fzSjNY1pZ8S3LrvVVoecOvgtOAJEJIovP905CdIso94zvkAE+DO1tO2ltaSg1r1/2Pfl8wTBWzv2Vvav5z5BBwi5231bixv+73CcQhNF/NVYv/FRkgBVlXEmNjZb7DARhtFBJjuFKsgMyQKPcjngwVsw1hrxQ+2vrvhfzbQe3rrKffvXFsEsnttjamzZaD2ypsbY05Ft2rYs21ZZ+21i98BH5+IGAR8VCe4+8LzLNWx23dRkpg9YJXgz507eaasu4aUU5Ny6Z/3vCqEXuMxCE0U0gvpLqBAcYUsGJ3CfU4llGy671NWJfgLuQ/EAty4+R+wWDMPpL0/KST0w1pdz0bCU3zM4cdMHIH8LoI8Qx7nW3A8Ry4ohYJ/dBPgf0WWmPGBcXOm3tTWfFzOJiN2wguWCuXzqcFbxHDfNmdpnqykX0m1ZV3CGMDmvjCGH0n5WJ7CNwAF1aPGSAZXIf5D6iluV/3fz8khnW/Y3HYZFJLPS8cfj/rK+8tNy0vCRM7j8QSlLMHNPKCm6qLeXm1Yu5Wjp7/3CXcgmj2TpXLFdSnFyXlgAOMFvug/wNEGfEE+bnnikJ2Viz2rJr/TFbx547YnWx9wjcafwfy96Na4c6Q/CHMPoDY3Xx+1D0mVYugvT/MRSDcr/BIIy+onPFcXAC3SSRAeLkPsjfgC4t4TeWpnWtIY0ruy0769stTeu2hDSuKjOvXsyMVUXDingvhNFwtSy/V0R/XTk311dz/czJK+R+gwHPPyhJMR8IB5gEFv8JYfT7cj9kBCF2/cyb2QoFnxD/+SVQ+b853MofIIzmQ9oXDjA5AYaBy3BnUO6HjBBgdU8/3bXR9Nwz7qLv2UpuXlP1V8LokAtHL1D9K3FRPVD4QerXpU/kxBm5Q+6HjBCUpBiiz0lfZ6pbJCLftKqCm9cuheXbDLnvUCCMRvrEh8+pSTD+f6ZzIZ8zStx4k1qctxtEF5G/ssI97k93LZL7DgW440lixnXopiS6xU+fCDOAvxBGvyr3RR4wSlLMk2rp7KNCeFjtA/HXLuXqgqdrhzvl80IYdcCYL8SHz2nJsBdgp9wPeYCQmHEP6bOnZBqrFtwUwoNB2nfP94vk/kMFikglIfqciH4QH6J/WjKk/2HdP0A+R3STE3+gzs/ZK+7uwRIviA9V/8qKDwxzn5om9x8OhNFcIbqf+LpJcXDXEbeRP2iUZMcT+pz0lcaqog+F+OL2bjmHqt/4zLwO/XTXsBd6/CGMflfnir0poh8sfSLXT0+F6M+S+yJ/J5T4KLsuM8VpKMjabqyc96HY0lVd7I58qPaXl1wxzJ4+S0l2DPhMwGBAhCux4w+LqPeIr8tIgRtAvYRRg9wfuc9AwUYY/YaSOOFHSmpspD4zNdeQl7FZLc67Abt4xWbOpQvdUV9TCr9fU8vyK/W5Ux+Tz/VZgC3fMNXziT8tyRv9E+S+yOeAEh81Xp2fw9XiPCjiuLFiLmzedAu/ZD7YXePiwhvq/Jzt+pz0FJ0rLlQ+x2cFRNalT/zEJ/5UEN/FlYTo3Z91JoEME8LoP+kzU0r101PXGGZnbjYUZG3R506t12dPqdDPnJyhy0j5hW5K4rCXcwcDtnnrXHE3hfBey0gBJ/gTYXTIO4eRUQhh9Hs6V+zFPuJPS+b6GZMg9Q/6oAkyiiGMflNJcfaKcd8rPqT+rDROHONw5+9YBoYbJSH6PBR6fcb9rEmw8/cwzvnHMPCUj5LqfKfPdA/Ez0yFn8/BAyTyMcgYgTAaq5sU12ehx13xp8LnWdgAIh+DjAHEzt6YcWVic4dY45cif1L8eeKI+LZ8HDIGgL2BSlLMq0J8WN/vk/ZTwBngzSPflI9DRjnwNhDC6AKdK/ZWYPFT4SURm3CZd4wB7wwijCYqiRNO9dnR41vfT4a5/i0lLip/OA+IIiMceHMHYdSlxI7v9NvFe098mO/DrV1XbDtxRPxYPh4ZhYitW4w+SRgtUhInXFBg777fHv4+4k9JvKrER80ijP6jfB5khEMY/SII54nyJwij8YTRKhIbeVw8tpXiEE/uwLN7PvG9GzrS4q8QZ+Qi3M83CoEVOXgWjzDaSRg9T5yRf1Tioj5SEtzP6sMLG4QJ8Z3utO/ey/dXJdlxlDA6gzBql8+LjBLgKRzijIDbsly8ocPzkgYliYln9e9FvvOukuq8qSROaCOOiFLC6A+xwBsDeDKAE97LQxhdShh9njC6gTC6ljBaDS9uIIxOEq9xY9SOoiMIgiAIgiAIgiAIgiAIgiAIgiBjA9gkIX+HaAPQ/v8B0ZM4JHAFpn4AAAAASUVORK5CYII=';
 document.querySelectorAll('.app-logo').forEach(img=>{img.src=LOGO_SRC;img.style.cssText='height:44px;width:44px;padding:5px;object-fit:contain;flex-shrink:0;margin-right:-16px';});
-// ════════════════════════════════════════════
-//  I18N
-// ════════════════════════════════════════════
 const APP_VERSION='0.5.76';
-// SVG plats maison (remplacent les émojis drapeaux 🇫🇷 etc. dont le rendu
-// dépend du fabricant Android — ex. Samsung One UI rend des drapeaux
-// glossy/3D hors charte Stagia). viewBox 20x14 commun, couleurs simplifiées.
 const FLAG_SVG={
   fr:'<svg viewBox="0 0 20 14"><rect width="20" height="14" fill="#fff"/><rect width="6.67" height="14" fill="#0055A4"/><rect x="13.33" width="6.67" height="14" fill="#EF4135"/></svg>',
   en:'<svg viewBox="0 0 20 14"><rect width="20" height="14" fill="#00247D"/><g stroke="#fff" stroke-width="3"><line x1="0" y1="0" x2="20" y2="14"/><line x1="20" y1="0" x2="0" y2="14"/></g><g stroke="#CF142B" stroke-width="1.2"><line x1="0" y1="0" x2="20" y2="14"/><line x1="20" y1="0" x2="0" y2="14"/></g><rect x="8" width="4" height="14" fill="#fff"/><rect y="5" width="20" height="4" fill="#fff"/><rect x="8.8" width="2.4" height="14" fill="#CF142B"/><rect y="5.8" width="20" height="2.4" fill="#CF142B"/></svg>',
@@ -1356,7 +1280,7 @@ const LANGS = {
     syncSlaveWaiting:'Waiting for the Master…', syncMasterOnly:'Master only', syncPlayBtn:'Play mode', syncLatency:'Measured audio latency',
     helpSync:'Master/Slave sync',
   },
-  us:{}, // filled after LANGS definition
+  us:{},
   de:{
     setlists:'Setlists', newSl:'Neue Setlist',
     noSl:'Keine Setlists.\nErstelle eine oder importiere aus GigFlow.',
@@ -1994,13 +1918,11 @@ const LANGS = {
     helpSync:'Sincronização Master/Slave',
   },
 };
-// us = en avec orthographe américaine
 LANGS.us={...LANGS.en,
   noSl:'No setlists.\nCreate one or import from GigFlow.',
   libEmpty:'Library is empty.\nAdd songs or import from GigFlow / InBeat.',
   demoRestore:'Restore demo data',demoRestoreDesc:'Re-injects a sample setlist and songs (in English) — does not delete your data.',demoRestoreBtn:'Reinstall demos',demoRestoreOk:'Demo data restored.',
 };
-// Données démo — toujours en anglais, compréhensibles sans traduction
 const DEMO_TITLES=['SLOW GROOVE','STANDARD ROCK','FAST TEMPO','DEMO WALTZ','SWING BALLAD','MID TEMPO FUNK','FAST FINALE'];
 const DEMO_SL_NAME='Demo Gig - InBeat';
 const DEMO_SL_NOTES='Sample setlist with 7 songs. Delete when ready.';
@@ -2097,7 +2019,6 @@ function applyLang(){
   document.getElementById('inp-sl-search').placeholder=t('searchPh');
   const syncTitleEl=document.getElementById('lbl-sync-title');if(syncTitleEl)syncTitleEl.textContent=t('menuSync');
   const syncBetaEl=document.getElementById('lbl-sync-beta');if(syncBetaEl)syncBetaEl.textContent=t('syncBeta');
-  // Tooltips I18N
   const TIPS_BY_LANG={
     de:{lang:'Sprache wechseln',newSl:'Neue Setlist erstellen',slBack:'Zurück zur Startseite',slUndo:'Letzte Änderung rückgängig',slRedo:'Rückgängig gemachte Änderung wiederherstellen',slPrint:'Drucken / PDF exportieren',slLive:'Bühnenmodus',fromLib:'Aus Repertoire hinzufügen',beatBack:'Zurück zur Setlist',subs:'Unterteilungen ein/aus',audio:'Klickton ein/aus',audioAll:'Auf alle Titel der Setlist anwenden',saveBpm:'Tempo für diesen Titel speichern',tap:'Tap Tempo',minus:'BPM −1',plus:'BPM +1',play:'Start / Stop',prevSong:'Vorheriger Titel',nextSong:'Nächster Titel',libBack:'Zurück zur Startseite',libImport:'Titel importieren',libAdd:'Neuen Titel hinzufügen',modalClose:'Schließen',songDel:'Titel löschen',songCancel:'Abbrechen',songSave:'Speichern',pickClose:'Schließen',pickCancel:'Abbrechen',pickAdd:'Titel zur Setlist hinzufügen',expClose:'Schließen',expCancel:'Abbrechen',expDo:'HTML-Datei generieren',import:'Importieren',expInb:'Setlists exportieren',libExpInb:'Repertoire exportieren',theme:'Thema wechseln',openLib:'Repertoire verwalten',exportHtml:'Als HTML exportieren',libPrint:'Repertoire drucken'},
     nl:{lang:'Taal wisselen',newSl:'Nieuwe setlist maken',slBack:'Terug naar home',slUndo:'Laatste wijziging ongedaan',slRedo:'Ongedaan gemaakte wijziging opnieuw uitvoeren',slPrint:'Afdrukken / PDF exporteren',slLive:'Podiumsmodus',fromLib:'Uit repertoire toevoegen',beatBack:'Terug naar setlist',subs:'Onderverdelingen aan/uit',audio:'Klikgeluid aan/uit',audioAll:'Toepassen op alle nummers van de setlist',saveBpm:'Tempo opslaan',tap:'Tap Tempo',minus:'BPM −1',plus:'BPM +1',play:'Start / Stop',prevSong:'Vorig nummer',nextSong:'Volgend nummer',libBack:'Terug naar home',libImport:'Nummers importeren',libAdd:'Nieuw nummer toevoegen',modalClose:'Sluiten',songDel:'Nummer verwijderen',songCancel:'Annuleren',songSave:'Opslaan',pickClose:'Sluiten',pickCancel:'Annuleren',pickAdd:'Nummers toevoegen',expClose:'Sluiten',expCancel:'Annuleren',expDo:'HTML-bestand genereren',import:'Importeren',expInb:'Setlists exporteren',libExpInb:'Repertoire exporteren',theme:'Thema wisselen',openLib:'Repertoire beheren',exportHtml:'Als HTML exporteren',libPrint:'Repertoire afdrukken'},
@@ -2167,7 +2088,6 @@ function applyLang(){
   T('btn-export-close','expClose');T('btn-export-cancel','expCancel');T('btn-sync-close','expClose');
   T('btn-export-do','expDo');
   T('btn-import','import');T('btn-export-inb','expInb');T('btn-lib-export-inb','libExpInb');
-  // Tooltips précédemment hardcodés en français
   ['btn-theme','btn-theme-sl','btn-theme-lib','btn-theme-beat'].forEach(id=>T(id,'theme'));
   ['btn-help','btn-help-sl','btn-help-beat','btn-help-lib'].forEach(id=>{const el=document.getElementById(id);if(el)el.dataset.tip=t('helpTitle');});
   T('btn-open-lib','openLib');T('btn-from-lib','fromLib');
@@ -2177,7 +2097,6 @@ function applyLang(){
   document.getElementById('btn-print-cancel').textContent=t('printCancel');
   const slNotesLbl=document.getElementById('lbl-sl-notes');if(slNotesLbl)slNotesLbl.textContent=t('slNotes');
   const slNotesPh=document.getElementById('inp-sl-notes');if(slNotesPh)slNotesPh.placeholder=t('slNotesPh');
-  // Chaînes précédemment hardcodées en français, trouvées lors de l'audit i18n (session courante)
   const lblBeatKey=document.getElementById('lbl-beat-key');if(lblBeatKey)lblBeatKey.textContent=t('fKey');
   const lblBeatSubs=document.getElementById('lbl-beat-subs');if(lblBeatSubs)lblBeatSubs.textContent=t('hlabelSubs');
   const lblBeatBip=document.getElementById('lbl-beat-bip');if(lblBeatBip)lblBeatBip.textContent=t('hlabelBip');
@@ -2215,9 +2134,6 @@ function applyLang(){
   }
 }
 
-// ════════════════════════════════════════════
-//  STATE & STORAGE
-// ════════════════════════════════════════════
 const SK='inbeat_setlists', LK='inbeat_library', PK='inbeat_prefs';
 let _idSeq=0;
 function genId(){return Date.now()*1000+(++_idSeq%100000);}
@@ -2259,9 +2175,6 @@ function loadSetlists(){
     if(!d)return;
     const parsed=JSON.parse(d);
     if(!Array.isArray(parsed))throw new Error('setlists non-array');
-    // Un JSON syntaxiquement valide mais structurellement incomplet (écriture
-    // interrompue, quota dépassé) ne doit jamais planter le démarrage : on
-    // normalise chaque entrée plutôt que de supposer que tous les champs existent.
     STATE.setlists=parsed.filter(sl=>sl&&typeof sl==='object').map(sl=>({
       id:sl.id||genId(),
       name:String(sl.name||''),venue:String(sl.venue||''),date:String(sl.date||''),notes:String(sl.notes||''),
@@ -2281,14 +2194,6 @@ function loadLibrary(){
 }
 function savePrefs(){try{localStorage.setItem(PK,JSON.stringify({lang,bandName,theme,volume:STATE.beat.volume,activeSlId:STATE.activeSlId,activeSongIdx:STATE.activeSongIdx,syncCalibMs:STATE.sync.calibMs,onboardDone,essentialsDone}))}catch(e){toast(t('storageFull'),'err');}}
 function loadPrefs(){try{const d=localStorage.getItem(PK);if(d){const p=JSON.parse(d);if(p.lang)lang=p.lang;if(p.bandName!=null)bandName=p.bandName;if(p.theme==='light'||p.theme==='dark')theme=p.theme;if(p.volume!=null&&p.volume>=0&&p.volume<=1)STATE.beat.volume=p.volume;if(p.activeSlId)STATE.activeSlId=p.activeSlId;if(p.activeSongIdx>=0)STATE.activeSongIdx=p.activeSongIdx;if(p.syncCalibMs>=-100&&p.syncCalibMs<=100)STATE.sync.calibMs=p.syncCalibMs;if(p.onboardDone===true)onboardDone=true;if(p.essentialsDone===true)essentialsDone=true;}}catch(e){}}
-// Concurrence multi-instance (deux onglets, ou intent Android "Ouvrir avec"
-// pendant qu'une instance tourne déjà en tâche de fond) : sans ce hook, la
-// dernière instance à sauvegarder écrase silencieusement TOUTES les données
-// de l'autre (pas de fusion). On recharge depuis le disque dès qu'une autre
-// instance a écrit, pour réduire la fenêtre où une copie mémoire périmée
-// écraserait des données plus fraîches. Les vues déjà protégées par un garde
-// `if(!sl)return` (renderSetlistView, etc.) absorbent sans crash le cas où
-// l'élément affiché aurait entre-temps été supprimé par l'autre instance.
 window.addEventListener('storage',e=>{
   if(e.key===SK){
     loadSetlists();
@@ -2350,9 +2255,6 @@ function totalDur(sl){return sl.songs.reduce((a,s)=>a+(parseInt(s.duration)||0),
 function esc(s){return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;')}
 function sanitizeName(n){return(n||'inbeat').replace(/[^a-z0-9À-ɏ_\- ]/gi,'_').replace(/\s+/g,'_').replace(/_+/g,'_').trim().slice(0,40)||'inbeat'}
 
-// ════════════════════════════════════════════
-//  TOAST & CONFIRM
-// ════════════════════════════════════════════
 function toast(msg,type='',dur=2600){
   const el=document.createElement('div');
   el.className='toast'+(type?' '+type:'');el.textContent=msg;
@@ -2386,42 +2288,25 @@ document.getElementById('btn-conf-no').onclick=()=>{
   if(STATE.confirmResolve){STATE.confirmResolve(false);STATE.confirmResolve=null;}
 };
 
-// ════════════════════════════════════════════
-//  ROUTER
-// ════════════════════════════════════════════
 function showView(name){
   closeDD();
   ['home','setlist','beat','library','slave'].forEach(v=>
     document.getElementById('view-'+v).classList.toggle('hidden',v!==name));
   STATE.view=name;
   syncWakeLock();
-  // Un tutoriel spotlight est ancré à la vue où il a démarré (onbActiveView) — la
-  // quitter (ex: lancer un titre en direct pendant le tutoriel essentiels sur
-  // Setlists) doit clore le tutoriel, sinon le spotlight reste affiché par-dessus
-  // la nouvelle vue, calé sur des éléments désormais masqués (rect nul).
   if(!document.getElementById('onboard-overlay').classList.contains('hidden')&&name!==onbActiveView){
     endOnboarding();
   }
 }
-// Bouton retour matériel Android : sans ce hook, Capacitor ferme l'app
-// instantanément depuis n'importe quelle vue (y compris en plein morceau en
-// vue Beat) au lieu de repasser par le routeur interne.
 if(window.Capacitor?.isNativePlatform?.()){
   window.Capacitor.Plugins.App?.addListener('backButton',()=>{
     closeDD();
-    // .confirm (oui/non) est toujours le calque le plus haut quand il est ouvert
-    // par-dessus une .overlay déjà affichée (ex: suppression depuis la fiche
-    // titre) : il faut le fermer en premier, sinon querySelector prend la
-    // première correspondance dans l'ordre du DOM (souvent la mauvaise), qui
-    // masque la modale de dessous sans fermer le dialogue réellement visible.
     const openOverlay=document.querySelector('.confirm:not(.hidden)')||document.querySelector('.overlay:not(.hidden)');
     if(openOverlay){
       openOverlay.classList.add('hidden');
       if(STATE.confirmResolve){STATE.confirmResolve(false);STATE.confirmResolve=null;}
       return;
     }
-    // Slave en session : un « retour » involontaire (geste de bord d'écran) ne doit pas fermer la
-    // synchro en plein morceau — on ne la quitte que par le bouton « Quitter la synchro ».
     if(STATE.view==='slave')return;
     if(STATE.view==='beat'){document.getElementById('btn-beat-back').click();return;}
     if(STATE.view==='library'){document.getElementById('btn-lib-back').click();return;}
@@ -2430,9 +2315,6 @@ if(window.Capacitor?.isNativePlatform?.()){
   });
 }
 
-// ════════════════════════════════════════════
-//  HOME VIEW
-// ════════════════════════════════════════════
 function filterSetlists(query){
   const entries=STATE.setlists.map((sl,i)=>({sl,i}));
   if(!query)return entries;
@@ -2501,9 +2383,6 @@ function openSetlist(idx){
   showView('setlist');renderSetlistView();resetHistory();snapshot();
 }
 
-// ════════════════════════════════════════════
-//  SETLIST VIEW
-// ════════════════════════════════════════════
 const SL_DIRTY_FIELDS=['inp-sl-name','inp-sl-venue','inp-sl-date','inp-sl-notes'];
 let SL_FIELDS_INITIAL={};
 function renderSetlistView(){
@@ -2569,7 +2448,6 @@ document.getElementById('btn-sl-notes-toggle').addEventListener('click',()=>{
   if(STATE.notesOpen)ta.focus();
 });
 
-// ── Historique undo/redo ──
 const SL_HIST=[];let SL_HIST_IDX=-1;
 function snapshot(){
   const sl=getActiveSetlist();if(!sl)return;
@@ -2682,7 +2560,6 @@ document.getElementById('btn-song-del-sel').onclick=delSelSongs;
 document.getElementById('btn-lib-dup-sel').onclick=dupSelLib;
 document.getElementById('btn-lib-del-sel').onclick=delSelLib;
 
-// ── Drag & Drop ──
 const DD={from:null,to:null,el:null};
 function ddClear(){
   document.querySelectorAll('.drag-over-top,.drag-over-bot,.dragging')
@@ -2731,9 +2608,6 @@ function initDragDrop(){
   });
 }
 
-// ════════════════════════════════════════════
-//  SONG MODAL  (setlist + library)
-// ════════════════════════════════════════════
 function openSongModal(idx, mode='setlist'){
   STATE.modalMode=mode;
   if(mode==='setlist'){
@@ -2832,8 +2706,6 @@ DIRTY_FIELDS.forEach(id=>{
     this.classList.toggle('dirty',this.value!==STATE.editSongInitial[id]);
   });
 });
-// Champs 100% numériques (séparateur ":" fixe entre les deux) : aucun clavier
-// mobile ne peut bloquer la saisie, contrairement à un champ unique "m:ss".
 ['f-dur-min','f-dur-sec'].forEach(id=>{
   const isSec=id==='f-dur-sec';
   document.getElementById(id).addEventListener('input',function(){
@@ -2871,9 +2743,6 @@ document.getElementById('modal-song').addEventListener('click',e=>{
   if(e.target===document.getElementById('modal-song'))closeSongModal();
 });
 
-// ════════════════════════════════════════════
-//  LIBRARY VIEW
-// ════════════════════════════════════════════
 function filterLibrary(query){
   const q=(query||'').toLowerCase();
   const sorted=[...STATE.library].sort((a,b)=>a.title.localeCompare(b.title));
@@ -2921,7 +2790,6 @@ function renderLibrary(query=''){
   const libSortActive=STATE.sortLib.field&&!(STATE.sortLib.field==='title'&&STATE.sortLib.dir===1);
   document.getElementById('btn-sort-lib').classList.toggle('active',libSortActive);
 }
-// Délégation home — un seul listener, jamais accumulé
 document.getElementById('sl-list').addEventListener('click',async e=>{
   const chk=e.target.closest('.sl-check');
   const more=e.target.closest('.sl-more');
@@ -2953,7 +2821,6 @@ document.getElementById('sl-list').addEventListener('click',async e=>{
     openSetlist(i);
   }
 });
-// Délégation song-list setlist — un seul listener
 document.getElementById('song-list').addEventListener('click',e=>{
   const chk=e.target.closest('.song-check');
   if(chk){
@@ -3039,9 +2906,6 @@ document.getElementById('inp-sl-search').addEventListener('input',debounce(funct
   renderHome(this.value);
 },180));
 
-// ════════════════════════════════════════════
-//  LIBRARY PICKER MODAL
-// ════════════════════════════════════════════
 function openLibPicker(){
   STATE.libPickSelected.clear();
   document.getElementById('inp-lib-pick-search').value='';
@@ -3101,9 +2965,6 @@ document.getElementById('btn-lib-pick-add').addEventListener('click',()=>{
   STATE.libPickSelected.clear();
 });
 
-// ════════════════════════════════════════════
-//  EXPORT MODAL
-// ════════════════════════════════════════════
 function openExportModal(fmt){
   STATE.exportFormat=fmt||'html';
   STATE.exportSelected=new Set(STATE.setlists.map(sl=>sl.id));
@@ -3189,9 +3050,6 @@ document.getElementById('btn-export-do').addEventListener('click',()=>{
   downloadBlob(blob,name+'.html');
 });
 
-// ════════════════════════════════════════════
-//  BEAT ENGINE
-// ════════════════════════════════════════════
 let audioCtx=null, masterGain=null, schedHandle=null, nextNoteTime=0, schedBeat=0, beatGen=0, beatFirstAudioTime=0;
 const LOOKAHEAD=0.12, INTERVAL=25, CLICK_DUR=0.05;
 function initAudio(){
@@ -3226,9 +3084,6 @@ function scheduleVisual(beat,isDown,time){
 }
 function visualLoop(){
   if(!STATE.beat.playing)return;
-  // Master en session de synchro : l'écran s'allume quand le son SORT, pas quand il est programmé
-  // (sinon il précède son propre clic de la latence audio, ~150 ms sur un P20, et paraît en avance
-  // sur les Slaves, calés sur le son). Hors session : comportement inchangé (horloge audio).
   const now=(STATE.sync.role==='master'&&syncVisualOff!==null)?(performance.now()-syncVisualOff)/1000:audioCtx.currentTime;
   let idx=-1;
   for(let i=0;i<visualQueue.length;i++){
@@ -3246,8 +3101,6 @@ function visualLoop(){
 }
 let _meterInfoCache={time:null,info:null};
 function getMeterInfo(){
-  // Appelée à haute fréquence par runScheduler (toutes les 25 ms pendant la
-  // lecture) : ne recalculer que quand la signature du titre actif change.
   const time=(getActiveSong()?.time||'4/4');
   if(_meterInfoCache.time===time)return _meterInfoCache.info;
   const parts=time.split('/');
@@ -3271,15 +3124,9 @@ function runScheduler(){
       beats=subs?bpb*2:bpb;
       spb=(60/bpm)*(4/den)/(subs?2:1);
     }
-    // Filet de sécurité : une valeur importée/corrompue en amont ne doit jamais
-    // pouvoir produire un pas de temps non fini ou négatif (boucle infinie sinon).
     if(!isFinite(spb)||spb<=0||!isFinite(beats)||beats<=0){
       stopBeat();toast(t('errUnexpected'),'err');return;
     }
-    // Reprise après un gel du thread JS (verrouillage bref, notification…) sans
-    // que l'AudioContext soit passé par 'suspended' : rattraper directement au
-    // prochain battement au lieu de rejouer en rafale tous ceux manqués pendant
-    // la coupure (qui se chevaucheraient tous immédiatement, cf. visibilitychange).
     const behind=audioCtx.currentTime-nextNoteTime;
     if(behind>0){
       const missed=Math.floor(behind/spb);
@@ -3307,9 +3154,9 @@ function runScheduler(){
 }
 function startBeat(){
   beatGen++;
-  initAudio();stopBeat(true); // silencieux : une ancre suit, inutile d'annoncer une pause aux Slaves
+  initAudio();stopBeat(true);
   schedBeat=0;nextNoteTime=audioCtx.currentTime+.05;
-  beatFirstAudioTime=nextNoteTime; // 1er clic (temps 1), sur l'horloge audio — sert à dater l'ancre de synchro
+  beatFirstAudioTime=nextNoteTime;
   STATE.beat.playing=true;STATE.beat.currentBeat=-1;
   runScheduler();updatePlayBtn();
   visualRafHandle=requestAnimationFrame(visualLoop);
@@ -3334,15 +3181,6 @@ function updatePlayBtn(){
   b.textContent=STATE.beat.playing?'■ Stop':'▶ Play';
   b.classList.toggle('playing',STATE.beat.playing);
 }
-// ════════════════════════════════════════════
-//  SYNC MASTER/SLAVE (bêta)
-//  Horloge NTP-like + ancres par titre, fidèle au POC (poc-sync/RESULTATS.md).
-//  Transport : en natif Android, le Master héberge un serveur WebSocket embarqué
-//  (plugin SyncServer, Wi-Fi local) et le Slave s'y connecte en WebSocket pur JS
-//  via son adresse IP. Hors natif (dev/preview), repli sur BroadcastChannel
-//  (même navigateur/appareil) — cf. A faire - InBeat.txt pour les limites restantes
-//  (pas de découverte auto / QR, adresse à saisir manuellement).
-// ════════════════════════════════════════════
 const SyncServer=window.Capacitor?.Plugins?.SyncServer||null;
 const SYNC_LAN=!!(window.Capacitor?.isNativePlatform?.()&&SyncServer);
 const SYNC_PORT=8993;
@@ -3350,9 +3188,9 @@ const SYNC_PROTO_VERSION=1;
 let syncChannel=null,syncSocket=null,syncLanMsgListener=null,
   syncClientId=null,syncClockOffset=0,syncPingTimer=null,syncRafHandle=null,syncAnchor=null,
   syncPeerPurgeTimer=null,syncReconnectTimer=null;
-const SYNC_PEER_TIMEOUT_MS=75000; // ~2.5× l'intervalle de ping (30s) des slaves
-const SYNC_RECONNECT_MAX=40,SYNC_RECONNECT_DELAY_MS=1500; // ~1 min de tentatives avant d'abandonner
-const SYNC_SLAVE_STALE_MS=45000; // sans pong depuis > 1,5× l'intervalle de ping : connexion jugée morte
+const SYNC_PEER_TIMEOUT_MS=75000;
+const SYNC_RECONNECT_MAX=40,SYNC_RECONNECT_DELAY_MS=1500;
+const SYNC_SLAVE_STALE_MS=45000;
 function genSyncCode(){
   const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
   let s='';for(let i=0;i<5;i++)s+=chars[Math.floor(Math.random()*chars.length)];
@@ -3394,10 +3232,6 @@ function syncSend(msg){
     else if(syncSocket&&syncSocket.readyState===WebSocket.OPEN)syncSocket.send(s);
   } else if(syncChannel)syncChannel.postMessage(msg);
 }
-// Rafale de mesures d'horloge : l'offset retenu est celui du meilleur RTT (cf. pong). Une seule
-// mesure à la connexion (puis une toutes les 30 s) donnait une 1re ancre souvent décalée de
-// quelques dizaines de ms — il fallait relancer le Master 2-3 fois, le temps que de meilleures
-// mesures arrivent (POC, décision 9 : se re-synchroniser AVANT la 1re ancre).
 function syncSlavePingBurst(count,gapMs){
   for(let k=0;k<count;k++)setTimeout(()=>{
     if(STATE.sync.role==='slave')syncSend({type:'ping',from:syncClientId,t1:performance.now()});
@@ -3408,23 +3242,16 @@ function syncSlaveHandshakeStart(){
   STATE.sync.lastPongAt=performance.now();
   if(syncPingTimer)clearInterval(syncPingTimer);
   syncPingTimer=setInterval(()=>{
-    // Plus aucun pong : connexion morte sans fermeture propre — reconnexion plutôt que d'animer
-    // une ancre périmée.
     if(syncSlaveStale()){syncSlaveDrop();return;}
     syncSend({type:'ping',from:syncClientId,t1:performance.now()});
   },30000);
   syncSlavePingBurst(16,125);
 }
-// ── MASTER ──
 async function startSyncMaster(){
   STATE.sync.role='master';STATE.sync.code=null;STATE.sync.ip=null;STATE.sync.lanError=false;STATE.sync.lanErrorDetail=null;
   STATE.sync.peers=[];STATE.sync.status='hosting';
   syncWakeLock();
-  // Chauffe le contexte audio dès l'ouverture de la session (geste utilisateur en cours) : à la
-  // toute 1re lecture, son démarrage (latence de sortie encore instable) décalait le clic par
-  // rapport à l'ancre envoyée aux Slaves — d'où une 1re association « pas parfaite ».
   try{initAudio();}catch(e){}
-  // Mesures régulières du décalage horloge audio / horloge de performance (cf. syncAudibleAtMs)
   syncAudioOffsets=[];syncAudioLats=[];syncOffHist=[];syncVisualOff=null;
   if(syncAudioSampleTimer)clearInterval(syncAudioSampleTimer);
   syncAudioSampleTimer=setInterval(()=>{syncSampleAudioOffset();syncShowLatency();},250);
@@ -3455,10 +3282,6 @@ function stopSyncMaster(){
   syncWakeLock();
   renderSyncModal();
 }
-// Infos du titre en cours, envoyées avec l'ancre/la pause pour que l'écran Slave affiche la même
-// chose que l'écran Beat du Master (titre, artiste, tonalité, durée, notes, position, Total/Reste).
-// Champ additif : un ancien Slave l'ignore, un ancien Master n'en envoie pas (le Slave se replie
-// alors sur title/tempo/sig de l'ancre).
 function syncSongInfo(){
   const song=getActiveSong();if(!song)return null;
   const {num,den}=getMeterInfo();
@@ -3468,40 +3291,13 @@ function syncSongInfo(){
     notes:song.notes||'',tempo:STATE.beat.bpm,sig:[num,den],subs:!!STATE.beat.showSubs,
     idx:sl?STATE.activeSongIdx+1:0,n:sl?sl.songs.length:0,total:times.total,remain:times.remain};
 }
-// ── Horloge audio → horloge de performance ──
-// Le clic est programmé sur l'horloge de l'AudioContext, mais il ne sort du haut-parleur qu'après
-// une latence propre à chaque appareil (≈20-40 ms sur un téléphone récent, 100 ms et plus sur un
-// modèle plus ancien comme le P20 Lite). L'ancre doit dater le temps 1 tel qu'on l'ENTEND, sinon
-// les Slaves sont décalés d'un écart qui change d'un Master à l'autre (une constante de 150 ms
-// réglée sur le P20 laissait un S26 Master ~70 ms d'écart — inacceptable).
-// getOutputTimestamp() donne un couple (contextTime, performanceTime) : l'échantillon de rang
-// contextTime est audible à performanceTime. On moyenne (médiane) l'écart performanceTime −
-// contextTime sur les 24 dernières mesures, comme dans le POC, plutôt que de se fier à une seule
-// lecture bruitée.
 let syncAudioOffsets=[],syncAudioLats=[],syncAudioSampleTimer=null,syncAnchorTimer=null,syncAnchorSampler=null,syncRefreshTimer=null;
-// Dernier écart horloge audio / performance fiable (≥ 8 mesures), conservé d'un départ à l'autre :
-// sert à caler l'écran du Master sur son propre son (visualLoop).
 var syncVisualOff=null;
-// Délai entre le départ du Master et l'envoi de l'ancre : au tout 1er départ, le flux audio démarre
-// à peine (sortie encore « à froid ») et la latence mesurée AVANT le son n'est pas celle du régime
-// établi — d'où un 1er départ décalé alors que stop/play ou le titre suivant étaient bons. On repart
-// de mesures prises PENDANT que le son joue, puis on envoie l'ancre. Le décompte (≥ 2 mesures) laisse
-// largement le temps aux Slaves de la recevoir.
 const SYNC_ANCHOR_DELAY_MS=600;
-// Re-datation périodique de l'ancre : l'ancre est datée UNE fois, en temps « horloge de performance »,
-// et les Slaves la prolongent à cadence fixe. Or le son du Master avance sur l'horloge audio, qui ne
-// reste pas collée à l'horloge système (dérive du quartz audio, buffers qui gonflent, sous-alimentations) :
-// laissé en lecture quelques minutes, le Master se retrouvait ~300 ms en retard sur les Slaves. Toutes
-// les 5 s, on mesure où le temps 1 est AUDIBLE maintenant et, si l'écart dépasse quelques ms, on renvoie
-// l'ancre recalée — les Slaves suivent alors le son réel du Master au lieu d'une date périmée.
-// Les mesures d'un Master à grosse latence (Tab8 : ~270 ms, tampons larges) sont bruitées de plusieurs
-// dizaines de ms : recaler sur la médiane des 6 dernières secondes faisait sauter la grille des Slaves de
-// ±10 à 30 ms toutes les 5 s (« les temps 1 et 4 sont bons, puis 2 et 3 »). On lisse donc par une droite
-// d'ajustement sur 60 s (syncOffsetFit) : elle suit la vraie dérive (lente, régulière) sans suivre le bruit.
-const SYNC_REFRESH_MS=5000,SYNC_REFRESH_MIN_MS=10; // sous 10 ms : bruit de mesure, on ne bouge pas les Slaves
-const SYNC_FIT_WINDOW_MS=60000,SYNC_FIT_MIN_SAMPLES=60,SYNC_FIT_MIN_SPAN_MS=20000; // 1re re-datation vers 20 s : sur moins, la droite extrapole trop de bruit
-let syncOffHist=[]; // [instant (performance.now), écart horloge audio → performance] sur les 60 dernières s
-let syncOffSd=null,syncRefreshCount=0,syncRefreshLast=0; // diagnostic affiché dans la fenêtre Master
+const SYNC_REFRESH_MS=5000,SYNC_REFRESH_MIN_MS=10;
+const SYNC_FIT_WINDOW_MS=60000,SYNC_FIT_MIN_SAMPLES=60,SYNC_FIT_MIN_SPAN_MS=20000;
+let syncOffHist=[];
+let syncOffSd=null,syncRefreshCount=0,syncRefreshLast=0;
 function syncCancelAnchor(){
   if(syncAnchorTimer){clearTimeout(syncAnchorTimer);syncAnchorTimer=null;}
   if(syncAnchorSampler){clearInterval(syncAnchorSampler);syncAnchorSampler=null;}
@@ -3523,10 +3319,6 @@ function syncRefreshAnchor(){
   if(STATE.sync.role!=='master'||!STATE.beat.playing||!a||!audioCtx||!beatFirstAudioTime)return;
   const bpm=Math.min(320,Math.max(20,parseFloat(a.tempo)||120));
   const measureMs=(60/bpm)*(4/a.sig[1])*a.sig[0]*1000;
-  // Temps 1 du 1er clic tel qu'on l'entend aujourd'hui ; on garde le même nombre de mesures d'avance
-  // que l'ancre (décompte encore en cours côté Slave), la grille étant périodique.
-  // Pas assez de mesures pour lisser (début de lecture) : on ne touche à rien, le bruit ferait plus de mal.
-  // (Une pente trop raide pour la droite — saut de sortie audio — repasse par la médiane dans syncAudioOffsetMs.)
   syncSampleAudioOffset();
   if(!syncOffHistReady())return;
   const cand=syncAudibleAtMs(beatFirstAudioTime);
@@ -3544,22 +3336,16 @@ function syncSampleAudioOffset(){
       const off=ts.performanceTime-ts.contextTime*1000,nowMs=performance.now();
       syncAudioOffsets.push(off);
       if(syncAudioOffsets.length>24)syncAudioOffsets.shift();
-      if(!syncOffHist.length||nowMs-syncOffHist[syncOffHist.length-1][0]>=100){ // ≤ 600 points sur 60 s
+      if(!syncOffHist.length||nowMs-syncOffHist[syncOffHist.length-1][0]>=100){
         syncOffHist.push([nowMs,off]);
         while(syncOffHist.length&&nowMs-syncOffHist[0][0]>SYNC_FIT_WINDOW_MS)syncOffHist.shift();
       }
       if(syncAudioOffsets.length>=8)syncVisualOff=syncAudioOffsetMs();
-      // Latence « instantanée » (pour l'affichage seulement) : audible(currentTime) − maintenant. currentTime
-      // n'avance que par blocs audio, donc cette valeur est en dents de scie, toujours SOUS la vraie latence
-      // (de la durée d'un bloc) — on affiche le maximum récent, pas la dernière lecture.
       syncAudioLats.push(ts.performanceTime+(audioCtx.currentTime-ts.contextTime)*1000-performance.now());
       if(syncAudioLats.length>24)syncAudioLats.shift();
     }
   }catch(e){}
 }
-// Écart horloge audio → performance « maintenant », lissé : droite des moindres carrés sur les ≤ 60
-// dernières secondes (valeur extrapolée à l'instant présent), ou null s'il y a trop peu de mesures
-// (< 40 points ou < 10 s) ou une pente absurde (> 1 %).
 function syncOffHistReady(){
   const h=syncOffHist,n=h.length;
   return n>=SYNC_FIT_MIN_SAMPLES&&h[n-1][0]-h[0][0]>=SYNC_FIT_MIN_SPAN_MS;
@@ -3573,7 +3359,7 @@ function syncOffsetFit(){
   if(!(sxx>0))return null;
   const slope=sxy/sxx;
   let ss=0;for(const p of h){const r=p[1]-(my+slope*(p[0]-t1-mx));ss+=r*r;}
-  syncOffSd=Math.sqrt(ss/Math.max(1,n-2)); // bruit de mesure (écart-type des résidus), affiché dans la fenêtre Master
+  syncOffSd=Math.sqrt(ss/Math.max(1,n-2));
   if(Math.abs(slope)>0.01)return null;
   return my-slope*mx;
 }
@@ -3581,36 +3367,27 @@ function syncAudioOffsetMs(){
   if(!syncAudioOffsets.length)return null;
   const a=[...syncAudioOffsets].sort((x,y)=>x-y);
   const med=a[a.length>>1],fit=syncOffsetFit();
-  // Lissé tant qu'il reste cohérent avec la médiane récente ; un saut franc (> 60 ms : changement de
-  // sortie audio, Bluetooth…) fait reprendre la médiane, plus réactive.
   return fit!==null&&Math.abs(fit-med)<=60?fit:med;
 }
-// Instant (performance.now) où le son programmé à `audioTime` (horloge audio) est audible.
 function syncAudibleAtMs(audioTime){
   syncSampleAudioOffset();
   const off=syncAudioOffsetMs();
   if(off!==null)return off+audioTime*1000;
-  // Repli sans mesure (contexte suspendu, API absente) : latence annoncée par le navigateur.
   const lat=((audioCtx&&audioCtx.outputLatency)||0)*1000;
   return performance.now()+(audioTime-(audioCtx?audioCtx.currentTime:0))*1000+lat;
 }
 function syncShowLatency(){
   const el=document.getElementById('sync-latency');if(!el)return;
   if(!syncAudioLats.length){el.textContent='';return;}
-  // Diagnostic (symboles, sans texte à traduire) : σ = bruit des mesures d'horloge audio ; ↻ = nombre de
-  // re-datations de l'ancre depuis le départ (dernier saut) — un σ élevé fait « trembler » les Slaves.
   let diag='';
   if(syncOffSd!==null)diag+=` · σ ±${Math.round(syncOffSd)} ms`;
   if(syncRefreshCount)diag+=` · ↻ ${syncRefreshCount} (${syncRefreshLast>0?'+':''}${Math.round(syncRefreshLast)} ms)`;
   el.textContent=`${t('syncLatency')} : ${Math.max(0,Math.round(Math.max(...syncAudioLats)))} ms${diag}`;
 }
-// Bouton « Mode play » de la fenêtre Master : ferme la fenêtre et ouvre le titre courant de la
-// setlist active en mode play (même chemin que ▶ LIVE). Sans lui, il faut fermer la fenêtre, ouvrir
-// une setlist puis un titre pendant que les Slaves attendent.
 function syncGoPlay(){
   const sl=getActiveSetlist();
   closeSyncModal();
-  if(!sl)return; // aucune setlist active : on reste sur l'accueil, à l'utilisateur d'en choisir une
+  if(!sl)return;
   if(!sl.songs.length){toast(t('noSongs'),'err');return;}
   if(!sl.songs[STATE.activeSongIdx])STATE.activeSongIdx=0;
   STATE.beatPreviewMode=null;STATE.beatPreviewSong=null;
@@ -3624,7 +3401,7 @@ function syncBroadcastAnchor(){
   const {num,den}=getMeterInfo();
   const tempo=STATE.beat.bpm,sig=[num,den];
   const spbMs=syncBeatIntervalSec(tempo,sig)*1000;
-  const countInMs=num*2*spbMs; // nombre entier de mesures : ne change pas la phase, laisse le temps au message d'arriver
+  const countInMs=num*2*spbMs;
   const firstAudio=beatFirstAudioTime||(audioCtx?audioCtx.currentTime+.05:0);
   syncAnchor={v:SYNC_PROTO_VERSION,songId:song?song.id:null,title:song?song.title:'',
     tempo,sig,t0:syncAudibleAtMs(firstAudio)+countInMs,info:syncSongInfo()};
@@ -3636,13 +3413,11 @@ function syncBroadcastPause(){
   syncAnchor=null;
   syncSend({type:'pause',from:syncClientId,info:syncSongInfo()});
 }
-// ── SLAVE ──
 function syncSlaveOpenSocket(target){
   syncSocket=new WebSocket('ws://'+target+':'+SYNC_PORT);
   syncSocket.onopen=syncSlaveHandshakeStart;
   syncSocket.onmessage=e=>{try{syncHandleMessage(JSON.parse(e.data));}catch(err){}};
   syncSocket.onerror=()=>{
-    // Session déjà ouverte (écran Slave) : onclose suit toujours et gère la reconnexion.
     if(STATE.view==='slave')return;
     STATE.sync.lanError=true;renderSyncModal();
   };
@@ -3675,9 +3450,6 @@ function stopSyncSlave(){
   syncWakeLock();
   renderSyncModal();
 }
-// Connexion perdue sans action de l'utilisateur (écran verrouillé, Wi-Fi qui saute, Master relancé).
-// Session ouverte (écran Slave affiché) : on retente la même adresse en boucle, sans quitter l'écran
-// de suivi. Échec de la 1re connexion ou reconnexions épuisées : retour à la modale avec l'erreur.
 function syncSlaveLost(){
   if(syncPingTimer){clearInterval(syncPingTimer);syncPingTimer=null;}
   syncAnchor=null;STATE.sync.connected=false;
@@ -3702,8 +3474,6 @@ function syncSlaveReconnect(){
     else syncSlaveHandshakeStart();
   }catch(e){syncSlaveLost();}
 }
-// Connexion « fantôme » (socket encore OPEN côté Slave alors que plus rien n'arrive : écran resté
-// verrouillé, Wi-Fi coupé sans fermeture propre) : détectée à l'absence de pong, coupée de force.
 function syncSlaveStale(){
   return STATE.sync.role==='slave'&&STATE.sync.connected&&performance.now()-STATE.sync.lastPongAt>SYNC_SLAVE_STALE_MS;
 }
@@ -3711,13 +3481,11 @@ function syncSlaveDrop(){
   if(syncSocket){try{syncSocket.onopen=syncSocket.onmessage=syncSocket.onerror=syncSocket.onclose=null;syncSocket.close();}catch(e){}syncSocket=null;}
   syncSlaveLost();
 }
-// Retour au premier plan (écran rallumé) : ne pas attendre le prochain ping pour se rendre compte
-// que la connexion est tombée.
 function syncSlaveResume(){
   if(STATE.sync.role!=='slave'||STATE.view!=='slave')return;
   if(syncSlaveStale()){STATE.sync.reconnectTries=0;syncSlaveDrop();return;}
   if(STATE.sync.connected)return;
-  if(syncSocket&&syncSocket.readyState===WebSocket.CONNECTING)return; // tentative déjà en cours
+  if(syncSocket&&syncSocket.readyState===WebSocket.CONNECTING)return;
   STATE.sync.reconnectTries=0;
   if(syncReconnectTimer){clearTimeout(syncReconnectTimer);syncReconnectTimer=null;}
   syncSlaveReconnect();
@@ -3731,9 +3499,6 @@ function syncStartSlaveRender(){
   const loop=()=>{renderSyncSlaveVisual();syncRafHandle=requestAnimationFrame(loop);};
   syncRafHandle=requestAnimationFrame(loop);
 }
-// ── Écran Slave : mêmes règles de grille que l'écran Beat du Master (signature composée →
-// subdivisions toujours affichées ; « Subs. 1/2 » → deux pas par temps), déduites de la signature
-// reçue et du réglage Subs local du Slave.
 function syncGridFor(sig,showSubs){
   const num=Math.min(32,Math.max(1,parseInt(sig&&sig[0])||4));
   const den=Math.min(32,Math.max(1,parseInt(sig&&sig[1])||4));
@@ -3744,7 +3509,6 @@ function syncGridFor(sig,showSubs){
   return{num,den,isCompound,groupSize,subs,total};
 }
 function syncSlaveGrid(){const s=STATE.sync.song;return syncGridFor(s?s.sig:null,STATE.sync.slaveSubs);}
-// Durée d'un pas de la grille — même formule que runScheduler() du Master.
 function syncStepSec(tempo,g){
   const bpm=Math.min(320,Math.max(20,parseFloat(tempo)||120));
   return g.isCompound?(60/bpm)*(4/g.den)*(g.subs?1:g.groupSize):(60/bpm)*(4/g.den)/(g.subs?2:1);
@@ -3765,8 +3529,6 @@ function syncSlaveSubsButton(){
   const b=document.getElementById('sv-subs');if(!b)return;
   const on=syncSlaveGrid().subs;b.classList.toggle('on',on);b.textContent=on?'✓':'';
 }
-// Infos du titre reçues du Master (cf. syncSongInfo). Un pair quelconque du réseau peut émettre
-// ces messages : tout est borné/typé avant affichage.
 function syncApplySongInfo(anchor,info){
   const i=info&&typeof info==='object'?info:{};
   const a=anchor||{};
@@ -3780,10 +3542,6 @@ function syncApplySongInfo(anchor,info){
     dur:num(i.dur,86400),notes:str(i.notes,300),
     tempo:Number.isFinite(tempoRaw)?Math.min(320,Math.max(20,tempoRaw)):120,sig,
     idx:num(i.idx,9999),n:num(i.n,9999),total:num(i.total,864000),remain:num(i.remain,864000)};
-  // « Subs. 1/2 » suit le réglage du Master à chaque message (ancre/pause : le Master relance une
-  // ancre dès qu'il bascule ce réglage). Sinon, Master en subdivisions et Slave sans (ou l'inverse),
-  // les pastilles ne restent pas allumées la même durée (temps entier / demi-temps) et la synchro
-  // paraît décalée. Le Slave peut le basculer localement jusqu'au prochain message du Master.
   if(info&&typeof info==='object')STATE.sync.slaveSubs=!!i.subs;
   STATE.sync.song=song;
   if(STATE.view==='slave')renderSlaveView();
@@ -3825,8 +3583,6 @@ function renderSyncSlaveVisual(){
   else{
     const stepMs=syncStepSec(syncAnchor.tempo,g)*1000;
     const elapsed=performance.now()-(syncAnchor.t0-syncClockOffset+STATE.sync.calibMs);
-    // t0 = temps 1. La grille est périodique (le décompte dure un nombre entier de mesures) : le même
-    // calcul vaut avant t0 (décompte) et après.
     step=((Math.floor(elapsed/stepMs)%g.total)+g.total)%g.total;
     if(elapsed<0)status=t('syncCountIn');
   }
@@ -3847,10 +3603,6 @@ function isValidSyncAnchor(a){
     &&typeof a.tempo==='number'&&typeof a.t0==='number';
 }
 function syncHandleMessage(msg){
-  // Un pair quelconque du même réseau Wi-Fi peut émettre ces messages (LAN/BroadcastChannel) —
-  // valider la forme avant usage : un `from` hors gabarit ou un `anchor` malformé sans
-  // `sig` exploitable planterait sinon silencieusement le rendu du Slave (`.sig[0]` sur
-  // une valeur inattendue) et figerait la boucle requestAnimationFrame sans reprise.
   if(!msg||typeof msg.from!=='string'||!/^[ms]-[a-z0-9]{1,20}$/.test(msg.from))return;
   if(msg.from===syncClientId)return;
   if(STATE.sync.role==='master'){
@@ -3859,12 +3611,9 @@ function syncHandleMessage(msg){
       if(peer)peer.lastSeen=performance.now();
       else STATE.sync.peers.push({id:msg.from,lastSeen:performance.now()});
       if(syncAnchor)syncSend({type:'anchor',from:syncClientId,anchor:syncAnchor});
-      else if(STATE.view==='beat')syncSend({type:'pause',from:syncClientId,info:syncSongInfo()}); // titre courant, même à l'arrêt
+      else if(STATE.view==='beat')syncSend({type:'pause',from:syncClientId,info:syncSongInfo()});
       renderSyncModal();
     } else if(msg.type==='ping'){
-      // Un pair encore vivant ping toutes les 30s (`syncSlaveHandshakeStart`) — sert aussi de
-      // heartbeat pour purger les pairs fantômes (`syncPurgeStalePeers`) qui ont disparu sans
-      // envoyer de « bye » (crash, coupure réseau).
       const peer=STATE.sync.peers.find(p=>p.id===msg.from);
       if(peer)peer.lastSeen=performance.now();
       const now=performance.now();
@@ -3887,15 +3636,13 @@ function syncHandleMessage(msg){
     } else if(msg.type==='anchor'){
       if(isValidSyncAnchor(msg.anchor)){
         const prev=syncAnchor,a=msg.anchor;
-        // Re-datation périodique du Master (cf. syncRefreshAnchor) : même titre, tempo et signature →
-        // on ne fait que recaler la date, sans reconstruire l'écran ni relancer de mesures d'horloge.
         if(a.refresh===true&&prev&&prev.songId===a.songId&&prev.tempo===a.tempo&&String(prev.sig)===String(a.sig)){
           syncAnchor=a;
           return;
         }
         syncAnchor=a;
         syncApplySongInfo(msg.anchor,msg.anchor.info);
-        syncSlavePingBurst(3,200); // affine l'offset d'horloge à chaque (re)lancement du Master
+        syncSlavePingBurst(3,200);
       }
     } else if(msg.type==='pause'){
       syncAnchor=null;
@@ -3939,12 +3686,8 @@ function renderSyncModal(){
           </div>
           <div style="margin-top:14px">${syncTuto(t('syncTutoSlave'))}</div>
         </div>`;
-      // Champ + boutons AVANT le tutoriel : le WebView n'est pas redimensionné à
-      // l'ouverture du clavier (plein écran) — placé sous le tutoriel, le champ et
-      // « Rejoindre » passaient sous le clavier (constaté sur P20 Lite).
       const inp=document.getElementById('inp-sync-code');
       const joinLan=()=>{
-        // Claviers numériques FR : la virgule tient lieu de point décimal.
         const ip=inp.value.trim().replace(/[,\s]/g,'.');
         if(!/^(\d{1,3}\.){3}\d{1,3}$/.test(ip)){toast(t('syncIpInvalid'),'err');return;}
         startSyncSlave(ip);
@@ -4008,7 +3751,6 @@ function renderSyncModal(){
   } else if(STATE.sync.status==='joining'||STATE.sync.status==='connected'){
     const connected=STATE.sync.status==='connected';
     if(SYNC_LAN&&STATE.sync.lanError){
-      // « Rejoindre » retente la même adresse (reconnexion manuelle après une coupure définitive).
       const retryIp=STATE.sync.ip;
       body.innerHTML=`
         <div class="sync-panel">
@@ -4023,8 +3765,6 @@ function renderSyncModal(){
       if(retry)retry.addEventListener('click',()=>{syncCloseChannel();startSyncSlave(retryIp);});
       return;
     }
-    // Le suivi du Master se fait sur l'écran Slave (showSlaveView, dès la 1re mesure d'horloge) :
-    // la modale ne sert plus qu'à l'état « Connexion… » avant l'ouverture de cet écran.
     const target=STATE.sync.ip||STATE.sync.code;
     body.innerHTML=`
       <div class="sync-panel">
@@ -4038,10 +3778,6 @@ document.getElementById('btn-sync-close').addEventListener('click',closeSyncModa
 document.getElementById('modal-sync').addEventListener('click',e=>{
   if(e.target===document.getElementById('modal-sync'))closeSyncModal();
 });
-// ════════════════════════════════════════════
-//  TONE — donner le ton au chanteur
-//  Un appui → la tonique du titre sonne ~3,5 s (mains libres), La 440 si pas de tonalité.
-// ════════════════════════════════════════════
 const NOTE_LETTER=['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
 const TONE_TIP={fr:'Donner le ton au chanteur',en:'Give the singer the pitch',us:'Give the singer the pitch',
   de:'Dem Sänger den Ton geben',nl:'De zanger de toon geven',it:'Dare il tono al cantante',
@@ -4058,7 +3794,7 @@ function parseKeyRoot(key){
   return null;
 }
 function currentBeatSong(){
-  if(STATE.view==='slave')return STATE.sync.song; // titre suivi sur le Master (diapason de l'écran Slave)
+  if(STATE.view==='slave')return STATE.sync.song;
   if(STATE.beatPreviewMode)return STATE.beatPreviewSong;
   const sl=getActiveSetlist();return sl?sl.songs[STATE.activeSongIdx]:null;
 }
@@ -4078,12 +3814,10 @@ function stopTone(){
 }
 function playTone(){
   initAudio();
-  if(toneNodes){stopTone();return;} // 2e appui = arrêt
+  if(toneNodes){stopTone();return;}
   stopTone();
   const s=currentBeatSong();
   const root=parseKeyRoot(s&&s.key);
-  // Tonique jouée à l'octave 3 (Do3 ≈ 130,8 Hz) — harmoniques ×2/×3/×4 pour porter
-  // sur haut-parleur de téléphone. Repli La 440 si aucune tonalité renseignée.
   const freq=root===null?440:130.8128*Math.pow(2,root/12);
   const DUR=3.5,t0=audioCtx.currentTime;
   const g=audioCtx.createGain();
@@ -4106,7 +3840,6 @@ function playTone(){
 function updateToneBtn(s){
   stopTone();
   const root=parseKeyRoot(s&&s.key);
-  // Écran Beat (Master/solo) et écran Slave ont chacun leur bouton, même titre → même libellé.
   [['btn-tone','lbl-tone'],['sv-tone','sv-lbl-tone']].forEach(([btnId,lblId])=>{
     const b=document.getElementById(btnId),l=document.getElementById(lblId);if(!b||!l)return;
     l.textContent=root===null?'440':NOTE_LETTER[root];
@@ -4116,10 +3849,6 @@ function updateToneBtn(s){
 document.getElementById('btn-tone').addEventListener('click',playTone);
 document.getElementById('sv-tone').addEventListener('click',playTone);
 
-// ════════════════════════════════════════════
-//  BEAT DOTS
-// ════════════════════════════════════════════
-// Grille de pastilles partagée par l'écran Beat (ids « d0… ») et l'écran Slave (ids « sv-d0… »).
 function dotsMarkup(bpb,isCompound,groupSize,subs,idPrefix){
   const total=isCompound?(subs?bpb:bpb/groupSize):(subs?bpb*2:bpb);
   const totalGroups=isCompound&&subs?bpb/groupSize:0;
@@ -4169,9 +3898,6 @@ function updateBeatDots(){
   }
 }
 
-// ════════════════════════════════════════════
-//  BEAT VIEW
-// ════════════════════════════════════════════
 function updateSaveBpmBtn(){
   document.getElementById('btn-save-bpm').classList.toggle('hidden',STATE.beat.bpm===STATE.beat.savedBpm);
 }
@@ -4372,17 +4098,10 @@ function goSong(idx){
   savePrefs();startBeat();
 }
 
-// ════════════════════════════════════════════
-//  TAP TEMPO
-// ════════════════════════════════════════════
 function tapTempo(){
   const now=Date.now();
   if(STATE.tapTimer)clearTimeout(STATE.tapTimer);
   const lastTap=STATE.tapTimes[STATE.tapTimes.length-1];
-  // Rebond/double-tap parasite (<150 ms, >400 BPM — hors de portée humaine et
-  // au-delà du plafond 320 BPM de l'app) : on l'ignore plutôt que de le garder
-  // dans la fenêtre glissante, où il fausserait la moyenne des prochains taps
-  // légitimes jusqu'à en sortir (5 taps plus tard) ou expiration du timer.
   if(lastTap==null||now-lastTap>=150){
     STATE.tapTimes.push(now);
     if(STATE.tapTimes.length>6)STATE.tapTimes=STATE.tapTimes.slice(-6);
@@ -4406,20 +4125,12 @@ function tapTempo(){
   setTimeout(()=>{btn.style.background='';btn.style.borderColor='';btn.style.color='';},120);
 }
 
-// ════════════════════════════════════════════
-//  WAKELOCK
-// ════════════════════════════════════════════
 let wakeLockRef=null,_wakeLockWarned=false,_wakeLockRequesting=false;
 function warnWakeLockFailed(){
-  // Un seul avertissement par session : sinon un rejet persistant (mode
-  // économie de batterie) spammerait un toast à chaque entrée en vue Beat.
   if(_wakeLockWarned)return;
   _wakeLockWarned=true;
   toast(t('wakeLockUnsupported'),'err',5000);
 }
-// Verrou natif (FLAG_KEEP_SCREEN_ON, plugin SyncServer) : respecté sur tous les appareils, contrairement
-// à navigator.wakeLock du WebView (P20 Lite : écran éteint au bout de ~10 s en Slave). Renvoie true si
-// le natif prend le relais — le verrou web n'est alors pas demandé.
 function nativeKeepScreenOn(on){
   try{
     if(SYNC_LAN&&typeof SyncServer.keepScreenOn==='function'){
@@ -4432,19 +4143,12 @@ function nativeKeepScreenOn(on){
 async function requestWakeLock(){
   if(nativeKeepScreenOn(true))return;
   if(!('wakeLock' in navigator)){warnWakeLockFailed();return;}
-  // Garde synchrone avant le 1er await : sans _wakeLockRequesting, un aller-
-  // retour rapide en vue Beat peut lancer 2 requêtes concurrentes (le 2e appel
-  // passe le test `wakeLockRef` encore null tant que le 1er n'est pas résolu),
-  // orphelinant le 1er verrou (jamais libéré) une fois le 2e assigné en dernier.
   if(wakeLockRef||_wakeLockRequesting)return;
   _wakeLockRequesting=true;
   try{
     wakeLockRef=await navigator.wakeLock.request('screen');
     wakeLockRef.addEventListener('release',()=>{
       wakeLockRef=null;
-      // Le verrou peut être révoqué par l'OS sans passer par visibilitychange
-      // (ex: optimisation batterie agressive) — le spec garantit cet event
-      // dans tous les cas de perte, donc on retente ici plutôt que d'attendre.
       if(wakeLockWanted()&&document.visibilityState==='visible')requestWakeLock();
     });
   }catch(e){warnWakeLockFailed();}
@@ -4454,9 +4158,6 @@ function releaseWakeLock(){
   nativeKeepScreenOn(false);
   if(wakeLockRef){try{wakeLockRef.release();}catch(e){}wakeLockRef=null;}
 }
-// L'écran reste allumé sur les vues de jeu (Beat, Slave) ET tant qu'une session de synchro est
-// ouverte, quelle que soit la vue : un Master qui se verrouille coupe son serveur WebSocket, un
-// Slave qui se verrouille perd sa connexion (écran du S26 éteint en plein test = synchro KO).
 function wakeLockWanted(){return STATE.view==='beat'||STATE.view==='slave'||!!STATE.sync.role;}
 function syncWakeLock(){if(wakeLockWanted())requestWakeLock();else releaseWakeLock();}
 document.addEventListener('visibilitychange',()=>{
@@ -4474,15 +4175,9 @@ window.addEventListener('resize',()=>{
   if(STATE.view==='beat'||STATE.view==='slave'){
     clearTimeout(_resizeTimer);_resizeTimer=setTimeout(STATE.view==='slave'?syncRenderDotsShell:buildBeatDots,150);
   }
-  // Le tutoriel essentiels tourne sur la vue Setlists, pas Beat — le repositionnement
-  // du spotlight doit donc être indépendant de STATE.view, pas seulement actif sur Beat.
   if(!document.getElementById('onboard-overlay').classList.contains('hidden'))positionOnboardStep();
 });
 
-// ════════════════════════════════════════════
-//  ONBOARDING (spotlight) — essentiels (répertoire/setlists) au 1er lancement,
-//  fonctionnalités secondaires (diapason/tap) uniquement à la demande depuis Aide/Tutoriels
-// ════════════════════════════════════════════
 const ESS_STEPS=[
   {id:'btn-open-lib',key:'essLib'},
   {id:'tab-setlists-home',key:'essSetlists'},
@@ -4503,12 +4198,6 @@ function positionOnboardStep(){
   hole.style.width=(r.width+pad*2)+'px';hole.style.height=(r.height+pad*2)+'px';
   const card=document.getElementById('onboard-card');
   const cardH=card.offsetHeight||120,cardW=card.offsetWidth||240;
-  // La 1ère ligne de la liste (Setlists/Répertoire) peut être assez proche du header pour que la
-  // carte, placée sous la cible par défaut, la recouvre visuellement — un tap sur le bouton ▶ de
-  // cette ligne atterrirait alors sur la carte (pointer-events:auto) au lieu du bouton. La cible
-  // étant elle-même tout en haut de l'écran, "au-dessus" n'a souvent pas plus de place : on
-  // essaie dans l'ordre sous la cible (si ça tient avant la 1ère ligne), sous la 1ère ligne (la
-  // page a presque toujours de la place plus bas), puis au-dessus de la cible en dernier recours.
   const rowEl=document.querySelector('#sl-list .sl-item,#lib-list .lib-item');
   const rowRect=rowEl?rowEl.getBoundingClientRect():null;
   let top;
@@ -4529,10 +4218,6 @@ function renderOnboardStep(){
   document.getElementById('btn-onboard-next').textContent=onbIdx===onbSteps.length-1?t('onbDone'):t('onbNext');
   document.getElementById('btn-onboard-skip').textContent=t('onbSkip');
   positionOnboardStep();
-  // Nettoie le listener du PAS PRÉCÉDENT via l'élément réellement mémorisé
-  // (_onbTargetEl), jamais recalculé depuis onbIdx (déjà incrémenté ici) —
-  // sinon le nettoyage cible le nouvel élément au lieu de l'ancien, et le
-  // vrai listener précédent reste accroché indéfiniment sur son bouton.
   if(_onbTargetEl&&_onbTargetListener)_onbTargetEl.removeEventListener('click',_onbTargetListener);
   const target=document.getElementById(step.id);
   _onbTargetListener=target?()=>advanceOnboard():null;
@@ -4575,11 +4260,6 @@ function replayEssentialsTutorial(){
 }
 function replayFeatureTutorial(){
   if(STATE.view==='beat'){startFeatureTour(true);return;}
-  // N'utilise qu'un titre pour l'aperçu (openBeatPreview passe par son propre
-  // beatPreviewSong, indépendant de STATE.activeSlId) — ne JAMAIS réassigner
-  // la setlist/le titre actifs ici : ça écraserait silencieusement le contexte
-  // d'une setlist en cours d'édition (ex. si elle est vide), avec risque que le
-  // debounce de sauvegarde (persistSetlist) écrive ensuite sur la mauvaise setlist.
   let song=getActiveSetlist()?.songs[STATE.activeSongIdx];
   if(!song)song=STATE.setlists[0]?.songs[0];
   if(!song){toast(t('tutoNoSong'),'err');return;}
@@ -4587,9 +4267,6 @@ function replayFeatureTutorial(){
   startFeatureTour(true);
 }
 
-// ════════════════════════════════════════════
-//  LIBRARY SYNC
-// ════════════════════════════════════════════
 function addToLibraryIfNew(song){
   const title=String((song&&song.title)||'').trim();
   if(!title)return false;
@@ -4604,9 +4281,6 @@ function syncLibraryFromSetlists(){
   if(added>0)saveLibrary();
 }
 
-// ════════════════════════════════════════════
-//  DOWNLOAD HELPER (iOS Safari compat)
-// ════════════════════════════════════════════
 function isIOS(){return/iP(hone|ad|od)/i.test(navigator.userAgent)||(/Mac/.test(navigator.platform)&&navigator.maxTouchPoints>1);}
 function downloadBlob(blob,filename){
   markExported();
@@ -4623,9 +4297,6 @@ function downloadBlob(blob,filename){
   }
 }
 
-// ════════════════════════════════════════════
-//  IMPORT / EXPORT
-// ════════════════════════════════════════════
 function mapGfSong(gs){
   return{id:genId(),title:String((gs&&gs.title)||'').trim(),artist:String((gs&&gs.artist)||'').trim(),
     key:String((gs&&gs.key)||'').trim(),time:String((gs&&gs.time)||'4/4'),
@@ -4633,9 +4304,6 @@ function mapGfSong(gs){
     duration:parseDur(gs&&gs.duration),notes:''};
 }
 function safeArr(v){return Array.isArray(v)?v:[];}
-// Un fichier importé (.inb/.json) est une source externe non fiable : un titre
-// non-string ou un tempo aberrant ne doivent jamais pouvoir se propager tels
-// quels (crash silencieux à l'import, ou gel du métronome à la lecture).
 function sanitizeImportedSong(s){
   s=(s&&typeof s==='object')?s:{};
   return{...s,
@@ -4836,17 +4504,10 @@ document.getElementById('btn-lib-exp-do').addEventListener('click',()=>{
   r.readAsText(f);el.value='';
 }
 
-// ════════════════════════════════════════════
-//  EVENT BINDINGS
-// ════════════════════════════════════════════
 
-// Home
 ['btn-theme','btn-theme-sl','btn-theme-lib','btn-theme-beat'].forEach(id=>{
   const el=document.getElementById(id);if(el)el.addEventListener('click',toggleTheme);
 });
-// ════════════════════════════════════════════
-//  DROPDOWN MENU générique (hamburger, tri, actions de ligne)
-// ════════════════════════════════════════════
 let _ddMenu=null;
 function closeDD(){if(_ddMenu){_ddMenu.remove();_ddMenu=null;}}
 function openDD(anchor,items){
@@ -4973,7 +4634,6 @@ document.getElementById('lang-menu').addEventListener('click',e=>{
   document.getElementById('lang-menu').classList.add('hidden');
 });
 document.addEventListener('click',()=>document.getElementById('lang-menu')?.classList.add('hidden'));
-// Lang picker (premier démarrage)
 function buildLangPicker(selected){
   const grid=document.getElementById('lang-picker-grid');
   grid.innerHTML=LANG_LIST.map(l=>`<button class="lang-picker-btn${l.code===selected?' selected':''}" data-code="${l.code}"><span class="lang-picker-flag">${l.flag}</span><span class="lang-picker-name">${l.name}</span></button>`).join('');
@@ -5022,7 +4682,6 @@ document.getElementById('btn-open-lib').addEventListener('click',()=>{
   renderLibrary('');
 });
 
-// Setlist
 document.getElementById('btn-sl-undo').addEventListener('click',undoSetlist);
 document.getElementById('btn-sl-redo').addEventListener('click',redoSetlist);
 document.getElementById('btn-sl-back').addEventListener('click',()=>{persistSetlist();showView('home');renderHome();});
@@ -5036,7 +4695,6 @@ document.getElementById('btn-from-lib').addEventListener('click',()=>{
   openLibPicker();
 });
 
-// Print & save BPM
 document.getElementById('btn-sl-print').addEventListener('click',()=>{
   document.getElementById('inp-print-band').value=bandName;
   document.getElementById('modal-print').classList.remove('hidden');
@@ -5055,7 +4713,6 @@ document.getElementById('inp-print-band').addEventListener('keydown',e=>{
 });
 document.getElementById('btn-save-bpm').addEventListener('click',saveBpm);
 
-// Library view
 document.getElementById('btn-lib-back').addEventListener('click',()=>{showView('home');renderHome();});
 document.getElementById('btn-lib-print').addEventListener('click',()=>{
   if(!STATE.library.length){toast(t('libEmpty').split('\n')[0],'err');return;}
@@ -5066,7 +4723,6 @@ document.getElementById('btn-lib-add-song').addEventListener('click',()=>openSon
 document.getElementById('btn-lib-import-file').addEventListener('click',()=>document.getElementById('file-lib').click());
 document.getElementById('file-lib').addEventListener('change',e=>readFile(e.target,data=>openImportPicker(data,'library')));
 
-// Beat
 function openBeatPreview(song,fromMode){
   STATE.beatPreviewMode=fromMode;
   STATE.beatPreviewSong={...song};
@@ -5134,7 +4790,6 @@ document.getElementById('btn-next-song').addEventListener('click',()=>{
   const sl=getActiveSetlist();
   if(sl&&STATE.activeSongIdx<sl.songs.length-1)goSong(STATE.activeSongIdx+1);
 });
-// Swipe left/right on beat content → next/prev song
 {
   let _tx=0,_ty=0;
   const bc=document.getElementById('beat-content');
@@ -5151,7 +4806,6 @@ document.getElementById('btn-next-song').addEventListener('click',()=>{
   },{passive:true});
 }
 
-// Keyboard / pédale Bluetooth (beat view uniquement)
 document.addEventListener('keydown',e=>{
   if(STATE.view!=='beat')return;
   if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
@@ -5165,8 +4819,6 @@ document.addEventListener('keydown',e=>{
   if(e.key==='t'||e.key==='T')tapTempo();
 });
 
-// Contrôle volume
-// Même réglage depuis l'écran Beat et l'écran Slave (sur le Slave il règle le diapason).
 ['inp-volume','sv-volume'].forEach(id=>document.getElementById(id).addEventListener('input',e=>{
   const v=+e.target.value;
   STATE.beat.volume=v;
@@ -5175,7 +4827,6 @@ document.addEventListener('keydown',e=>{
   savePrefs();
 }));
 
-// ── Écran Slave : actions locales (aucune ne pilote le Master) ──
 document.getElementById('sv-quit').addEventListener('click',()=>{
   stopTone();stopSyncSlave();showView('home');renderHome();
 });
@@ -5184,7 +4835,6 @@ document.getElementById('sv-subs').addEventListener('click',()=>{
   syncSlaveSubsButton();syncRenderDotsShell();
 });
 document.getElementById('sv-bip-box').addEventListener('click',()=>toast(t('syncMasterOnly')));
-// Calage visuel propre à chaque Slave (délai d'affichage de l'appareil), mémorisé. « − » = plus tôt.
 function syncSetCalib(v){
   STATE.sync.calibMs=Math.max(-100,Math.min(100,Math.round(v)||0));
   document.getElementById('sv-calib').value=STATE.sync.calibMs;
@@ -5195,19 +4845,12 @@ document.getElementById('sv-calib').addEventListener('input',e=>syncSetCalib(par
 document.getElementById('sv-calib-minus').addEventListener('click',()=>syncSetCalib(STATE.sync.calibMs-5));
 document.getElementById('sv-calib-plus').addEventListener('click',()=>syncSetCalib(STATE.sync.calibMs+5));
 
-// Scroll hint setlists home
 (function(){
   const sc=document.getElementById('home-scroll');
   sc.addEventListener('scroll',updateHomeScrollHint,{passive:true});
 })();
 
-// ════════════════════════════════════════════
-//  INIT
-// ════════════════════════════════════════════
 
-// ════════════════════════════════════════════
-//  HELP MODAL
-// ════════════════════════════════════════════
 function buildHelpContent(){
   const rows=t('helpRows');
   const section=(title,data)=>`
@@ -5275,19 +4918,14 @@ try{
   }
 }catch(e){}
 syncLibraryFromSetlists();
-// Valider la position restaurée (setlist + index dans les bornes)
 {const sl=STATE.setlists.find(s=>s.id===STATE.activeSlId);
  if(!sl){STATE.activeSlId=null;STATE.activeSongIdx=0;}
  else{STATE.activeSongIdx=Math.min(STATE.activeSongIdx,Math.max(0,sl.songs.length-1));}}
 applyLang();renderHome();renderLibrary();showView('home');initDragDrop();
-// Fullscreen géré nativement par Android (styles.xml windowFullscreen)
 checkLangPicker();
 </script>
 
 <script data-ib-web>
-/* Couche « version web » d'InBeat — injectée par build-web.cjs dans le paquet web UNIQUEMENT (jamais dans l'appli Android).
-   S'exécute après le script de l'appli (fonctions et variables globales déjà définies).
-   Éléments ajoutés par cette couche : attribut data-ib-web (retirés de l'export HTML par ibCleanOuterHTML). */
 (function(){
   if(!window.INBEAT_WEB) return;
 
@@ -5295,7 +4933,6 @@ checkLangPicker();
   var STANDALONE=(window.navigator.standalone===true)||(window.matchMedia&&matchMedia('(display-mode: standalone)').matches);
   var PLAY_URL='https://play.google.com/store/apps/details?id=com.stagia.inbeat&referrer=utm_source%3Dinbeat-web%26utm_medium%3Dapp%26utm_campaign%3Dinfo';
 
-  /* ---------- Textes : FR pour le français, EN pour toutes les autres langues (traductions groupées plus tard) ---------- */
   function setAll(key,fr,en){ try{ Object.keys(LANGS).forEach(function(l){ if(LANGS[l]) LANGS[l][key]=(l==='fr')?fr:en; }); }catch(e){} }
   setAll('webStopped',"InBeat s'est arrêté quand l'écran s'est verrouillé. Relancez le morceau.","InBeat stopped when the screen locked. Press Play to restart.");
   setAll('webAudioStuck',"Le son était bloqué : touchez Play pour relancer.","Sound was blocked: tap Play to restart.");
@@ -5315,10 +4952,8 @@ checkLangPicker();
   setAll('webInfoIos',"Pour un affichage plein écran et un stockage plus durable : Partager, puis « Sur l'écran d'accueil ».","For full-screen display and longer-lasting storage: Share, then “Add to Home Screen”.");
   setAll('webPlay',"Appli Android sur Google Play","Android app on Google Play");
   setAll('essTutoHint',"D'autres tutoriels (diapason, tap tempo…) t'attendent dans Aide/Tutoriels.","More tutorials (tuning fork, tap tempo…) are waiting in Help/Tutorials.");
-  // Aide : retirer la ligne « Plein écran … (Android) » (le plein écran automatique est propre à l'appli Android)
   try{ Object.keys(LANGS).forEach(function(l){ var r=LANGS[l]&&LANGS[l].helpRows&&LANGS[l].helpRows.fn; if(r){ for(var i=r.length-1;i>=0;i--){ if(/Android/.test(String(r[i][1]))) r.splice(i,1); } } }); }catch(e){}
 
-  /* ---------- Styles ---------- */
   var st=document.createElement('style'); st.setAttribute('data-ib-web','');
   st.textContent=
     'html,body{overscroll-behavior:none}'+
@@ -5335,7 +4970,6 @@ checkLangPicker();
     '.ibw-btn{background:#14b8a6;color:#04201c;border:0;border-radius:8px;padding:10px 18px;font:700 15px system-ui,-apple-system,sans-serif}';
   document.head.appendChild(st);
 
-  /* ---------- 1. Son ---------- */
   try{ if(navigator.audioSession) navigator.audioSession.type='playback'; }catch(e){}
   function reviveAudio(){
     try{ if(audioCtx&&audioCtx.state!=='running'&&audioCtx.state!=='closed') audioCtx.resume().catch(function(){}); }catch(e){}
@@ -5370,7 +5004,6 @@ checkLangPicker();
     }catch(e){}
   });
 
-  /* ---------- 2. Écran allumé : bandeau persistant si le verrou n'a pas pu être pris ---------- */
   var wlBanner=null;
   function hideWl(){ if(wlBanner){ wlBanner.remove(); wlBanner=null; } }
   warnWakeLockFailed=function(){
@@ -5384,7 +5017,6 @@ checkLangPicker();
   };
   setInterval(function(){ try{ if(wlBanner&&(wakeLockRef||!wakeLockWanted())) hideWl(); }catch(e){} },1500);
 
-  /* ---------- 3. Export iPhone via la feuille de partage (le nom .inb est conservé) ; import sans filtre d'extension ---------- */
   try{
     var _downloadBlob=downloadBlob;
     downloadBlob=function(blob,filename){
@@ -5403,16 +5035,14 @@ checkLangPicker();
     if(IOS){ ['file-import','file-lib'].forEach(function(id){ var el=document.getElementById(id); if(el) el.removeAttribute('accept'); }); }
   }catch(e){}
 
-  /* ---------- 4. Stockage durable (demande, sans garantie) ---------- */
   try{ if(navigator.storage&&navigator.storage.persist) navigator.storage.persist(); }catch(e){}
 
-  /* ---------- 5. Message d'information (une fois) ---------- */
   var INFO_KEY='inbeat_web_info_v1';
   function infoSeen(){ try{ return !!localStorage.getItem(INFO_KEY); }catch(e){ return true; } }
   function showInfo(){
     try{
       if(infoSeen()||document.querySelector('.ibw-ov')) return;
-      var onb=document.getElementById('onboard-overlay'); if(onb&&!onb.classList.contains('hidden')) return; // pas pendant un tutoriel
+      var onb=document.getElementById('onboard-overlay'); if(onb&&!onb.classList.contains('hidden')) return;
       var isFr=(typeof lang!=='undefined')&&lang==='fr';
       var ov=document.createElement('div'); ov.className='ibw-ov'; ov.setAttribute('data-ib-web',''); ov.setAttribute('role','dialog'); ov.setAttribute('aria-modal','true');
       var box=document.createElement('div'); box.className='ibw-box';
@@ -5438,7 +5068,6 @@ checkLangPicker();
   }catch(e){}
   var infoTimer=setInterval(function(){ try{ if(infoSeen()){ clearInterval(infoTimer); return; } if(essentialsDone) showInfo(); }catch(e){} },1500);
 
-  /* ---------- 6. Hors ligne et mises à jour (service worker versionné) ---------- */
   try{
     var okHost=location.protocol==='https:'||location.hostname==='localhost'||location.hostname==='127.0.0.1';
     if('serviceWorker' in navigator&&okHost){
@@ -5461,8 +5090,6 @@ checkLangPicker();
     }
   }catch(e){}
 
-  /* ---------- 7. Mesure d'audience : mêmes moyens qu'Editor (GTM + Consent Mode refusé par défaut + bandeau du site) ----------
-     Uniquement sur stagia.app (jamais en local ni sur une copie) ; jamais de contenu musical dans la mesure. */
   try{
     var h=location.hostname;
     if(h==='stagia.app'||h==='www.stagia.app'){
@@ -5473,9 +5100,6 @@ checkLangPicker();
       var g=document.createElement('script'); g.async=true; g.setAttribute('data-ib-web',''); g.src='https://www.googletagmanager.com/gtm.js?id=GTM-WF8H5RWM'; document.head.appendChild(g);
       var b=document.createElement('script'); b.defer=true; b.setAttribute('data-ib-web',''); b.src='/cookie-banner.js'; document.head.appendChild(b);
 
-      /* Seul événement personnalisé : l'installation de l'appli (« Ajouter à l'écran d'accueil »), sans aucune donnée.
-         Chrome/Android/PC : événement appinstalled ; iPhone (pas d'événement) : premier lancement en mode plein écran.
-         Un seul envoi par appareil et par navigateur (drapeau local). */
       var sentInstall=function(method){
         try{
           if(localStorage.getItem('inbeat_web_install_sent')) return;
@@ -5488,7 +5112,6 @@ checkLangPicker();
     }
   }catch(e){}
 
-  /* ---------- 8. Export HTML autonome : sans les ajouts de la version web (bandeaux, mesure, couche web) ---------- */
   window.ibCleanOuterHTML=function(){
     var c=document.documentElement.cloneNode(true);
     [].slice.call(c.querySelectorAll('[data-ib-web],#stagia-cookie-banner,script[src*="googletagmanager"],script[src*="google-analytics"]')).forEach(function(n){ n.remove(); });
