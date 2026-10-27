@@ -5096,14 +5096,14 @@ checkLangPicker();
       window.dataLayer=window.dataLayer||[];
       window.gtag=function(){ window.dataLayer.push(arguments); };
       window.gtag('consent','default',{analytics_storage:'denied'});
-      window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-      var g=document.createElement('script'); g.async=true; g.setAttribute('data-ib-web',''); g.src='https://www.googletagmanager.com/gtm.js?id=GTM-WF8H5RWM'; document.head.appendChild(g);
       var b=document.createElement('script'); b.defer=true; b.setAttribute('data-ib-web',''); b.src='/cookie-banner.js'; document.head.appendChild(b);
 
       var sentInstall=function(method){
         try{
-          if(localStorage.getItem('inbeat_web_install_sent')) return;
-          localStorage.setItem('inbeat_web_install_sent','1');
+          if(localStorage.getItem('stagia_consent')==='granted'){
+            if(localStorage.getItem('inbeat_web_install_sent')) return;
+            localStorage.setItem('inbeat_web_install_sent','1');
+          }
         }catch(e){}
         window.dataLayer.push({event:'inbeat_web_install',method:method});
       };

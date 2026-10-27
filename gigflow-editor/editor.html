@@ -2,7 +2,7 @@
 <html lang="fr" data-product="editor">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-FuJWudIG+FlXSKm2L8tMSxq5CZ3/h6axidvu2Ny5grQ=' 'sha256-YtA0+hkPIWD2FuiNrXIyEzlpmOjDFA87gdGkVOsaT/U=' 'sha256-26F0sFjkgvnTLoZBSIr7P678M3PKraezRAu6vUIycHI=' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.google.com; font-src 'self' data:; worker-src 'self' blob:; connect-src 'self' blob: data: https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.google.com; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-eCvCT3MHOEZXR+u85iLzrVSE0HB2B3SkqDl6zcjOD/o=' 'sha256-YtA0+hkPIWD2FuiNrXIyEzlpmOjDFA87gdGkVOsaT/U=' 'sha256-26F0sFjkgvnTLoZBSIr7P678M3PKraezRAu6vUIycHI=' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.google.com; font-src 'self' data:; worker-src 'self' blob:; connect-src 'self' blob: data: https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.google.com; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'" />
     <script>
       (function () {
         var h = location.hostname
@@ -11,10 +11,6 @@
         window.dataLayer = window.dataLayer || []
         window.gtag = function () { window.dataLayer.push(arguments) }
         window.gtag('consent', 'default', { analytics_storage: 'denied' })
-        window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
-        var g = document.createElement('script'); g.async = true
-        g.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-WF8H5RWM'
-        document.head.appendChild(g)
         var b = document.createElement('script'); b.defer = true
         b.src = '/cookie-banner.js'
         document.head.appendChild(b)
