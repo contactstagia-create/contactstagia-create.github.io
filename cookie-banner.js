@@ -9,14 +9,14 @@
   var STRINGS = {
     fr: {
       dialogLabel: 'Consentement cookies',
-      text: 'Ce site utilise Google Analytics pour mesurer son audience de façon anonyme. ',
+      text: 'Ce site utilise Google Analytics pour mesurer son audience. Si vous refusez, aucun cookie n\'est déposé, mais des informations techniques de visite (sans cookie) sont tout de même transmises à Google. ',
       learnMore: 'En savoir plus',
       refuse: 'Continuer sans accepter',
       accept: 'Accepter'
     },
     en: {
       dialogLabel: 'Cookie consent',
-      text: 'This site uses Google Analytics to anonymously measure its audience. ',
+      text: 'This site uses Google Analytics to measure its audience. If you decline, no cookie is set, but technical visit information (cookie-free) is still sent to Google. ',
       learnMore: 'Learn more',
       refuse: 'Continue without accepting',
       accept: 'Accept'
