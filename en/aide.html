@@ -69,6 +69,7 @@
     padding: 0;
   }
   .faq-item.open .faq-a { max-height: 400px; padding-bottom: 20px; }
+  .faq-item.open .faq-a.long { max-height: 900px; }
   .faq-a a { color: var(--brand-amber-300); text-decoration: underline; text-underline-offset: 3px; }
 
   .cta-block {
@@ -151,17 +152,22 @@
 
       <div class="faq-item">
         <button class="faq-q">Do the apps work without an internet connection?<i data-lucide="chevron-down"></i></button>
-        <div class="faq-a">GigFlow Live and InBeat: yes, completely offline. No connection is required during use — in rehearsal, on the move, or on stage. GigFlow Editor is a web tool: it opens in your browser (a connection is needed to open it) and your data stays stored on your device.</div>
+        <div class="faq-a">GigFlow Live and InBeat (Android apps): yes, completely offline. No connection is required during use — in rehearsal, on the move, or on stage. InBeat also runs in the browser: the page loads online the first time, then can work offline (see the “InBeat in your browser” question below). GigFlow Editor is a web tool: it opens in your browser (a connection is needed to open it) and your data stays stored on your device.</div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">What do I need to use the apps?<i data-lucide="chevron-down"></i></button>
-        <div class="faq-a">The minimum: a mobile device, phone or tablet. GigFlow Live and InBeat are Android apps, from Android 7.0 onward, available on the <strong>Google Play Store</strong>. GigFlow Editor opens in your browser, on a computer (PC or Mac), to prepare your songs and setlists — no installation needed.</div>
+        <div class="faq-a">The minimum: a mobile device, phone or tablet. GigFlow Live and InBeat are Android apps, from Android 7.0 onward, available on the <strong>Google Play Store</strong>. InBeat also runs in the browser (for example on iPhone or on a computer), as a trial version. GigFlow Editor opens in your browser, on a computer (PC or Mac), to prepare your songs and setlists — no installation needed.</div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">Is my data backed up in the cloud?<i data-lucide="chevron-down"></i></button>
         <div class="faq-a">No. All your data stays on your device. There's no account, no cloud, no automatic sync of your data (only InBeat's device-to-device tempo sync, in beta, runs over your local Wi-Fi network). You keep full control of your songs and setlists. To avoid any loss when switching devices or resetting your phone, remember to export your data regularly from the app.</div>
+      </div>
+
+      <div class="faq-item" id="inbeat-web">
+        <button class="faq-q">InBeat in your browser: what does it do, and what are its limits?<i data-lucide="chevron-down"></i></button>
+        <div class="faq-a long">It lets you try InBeat and rehearse without installing anything, notably on iPhone, iPad or a computer. On stage, the Android app remains the complete version. Limits: Master/Slave device sync is Android-only; keep the screen on and InBeat in the foreground (if you leave it, reopen it and restart the song); compatibility is not guaranteed on older iPhones and browsers. Your setlists stay on the device, inside the browser: export them regularly, because a browser may erase the data of a rarely visited site. On iPhone, “Share” then “Add to Home Screen” gives a full-screen display and offline use. The browser version measures its audience with your consent, unlike the Android apps (see the <a href="confidentialite.html">privacy policy</a>). <a href="/inbeat-web/">Open InBeat in your browser</a>.</div>
       </div>
     </div>
 
@@ -300,6 +306,15 @@
       if (!wasOpen) item.classList.add('open');
     });
   });
+  // Direct link to a question (e.g. aide.html#inbeat-web): opens the matching item
+  var hashId = location.hash.slice(1);
+  if (hashId) {
+    var target = document.getElementById(hashId);
+    if (target && target.classList.contains('faq-item')) {
+      target.classList.add('open');
+      setTimeout(function () { target.scrollIntoView({ block: 'center' }); }, 150);
+    }
+  }
 })();
 </script>
 

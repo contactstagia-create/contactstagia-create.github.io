@@ -1089,7 +1089,7 @@ const LANGS = {
     libExportOk:(n)=>`${n} titre(s) exporté(s)`,
     exportReminder:'💾 Pensez à sauvegarder vos données',exportNowBtn:'Exporter',
     libExpTitle:'Export répertoire',
-    importBtn:'Importer',importOkGf:(sl,s)=>sl+' setlist(s), '+s+' titre(s)',exportInb:'Export .inb',exportInbTitle:'Export .inb',exportInbDo:'Export .inb',libExpInb:'Export .inb',
+    importBtn:'Importer',importOkGf:(sl,s)=>sl+' setlist(s), '+s+' titre(s)',importOkGfSkip:(sl,s,k)=>sl+' setlist(s), '+s+' titre(s) — '+k+' déjà présente(s), ignorée(s)',importNothingNew:'Rien de nouveau',exportInb:'Export .inb',exportInbTitle:'Export .inb',exportInbDo:'Export .inb',libExpInb:'Export .inb',
     exportTitle:'Exporter HTML', exportName:'Nom du fichier',
     exportDo:'Exporter', exportNone:'Sélectionnez au moins une setlist.',
     searchPh:'Rechercher…', saveBpmOk:'Tempo sauvegardé',
@@ -1217,7 +1217,7 @@ const LANGS = {
     libExportOk:(n)=>`${n} song(s) exported`,
     exportReminder:'💾 Back up your data',exportNowBtn:'Export now',
     libExpTitle:'Export library',
-    importBtn:'Import',importOkGf:(sl,s)=>sl+' setlist(s), '+s+' song(s)',exportInb:'Export .inb',exportInbTitle:'Export .inb',exportInbDo:'Export .inb',libExpInb:'Export .inb',
+    importBtn:'Import',importOkGf:(sl,s)=>sl+' setlist(s), '+s+' song(s)',importOkGfSkip:(sl,s,k)=>sl+' setlist(s), '+s+' song(s) — '+k+' already there, skipped',importNothingNew:'Nothing new',exportInb:'Export .inb',exportInbTitle:'Export .inb',exportInbDo:'Export .inb',libExpInb:'Export .inb',
     exportTitle:'Export HTML', exportName:'Filename',
     exportDo:'Export', exportNone:'Select at least one setlist.',
     searchPh:'Search…', saveBpmOk:'Tempo saved',
@@ -1346,7 +1346,7 @@ const LANGS = {
     libExportOk:(n)=>`${n} Titel exportiert`,
     exportReminder:'💾 Daten sichern',exportNowBtn:'Exportieren',
     libExpTitle:'Repertoire exportieren',
-    importBtn:'Importieren',importOkGf:(sl,s)=>sl+' Setlist(s), '+s+' Titel',exportInb:'Export .inb',exportInbTitle:'.inb exportieren',exportInbDo:'.inb exportieren',libExpInb:'.inb exportieren',
+    importBtn:'Importieren',importOkGf:(sl,s)=>sl+' Setlist(s), '+s+' Titel',importOkGfSkip:(sl,s,k)=>sl+' Setlist(s), '+s+' Titel — '+k+' bereits vorhanden, übersprungen',importNothingNew:'Nichts Neues',exportInb:'Export .inb',exportInbTitle:'.inb exportieren',exportInbDo:'.inb exportieren',libExpInb:'.inb exportieren',
     exportTitle:'HTML exportieren', exportName:'Dateiname',
     exportDo:'Exportieren', exportNone:'Wähle mindestens eine Setlist.',
     searchPh:'Suchen…', saveBpmOk:'Tempo gespeichert',
@@ -1452,7 +1452,7 @@ const LANGS = {
     libExportOk:(n)=>`${n} nummer(s) geëxporteerd`,
     exportReminder:'💾 Maak een back-up',exportNowBtn:'Exporteren',
     libExpTitle:'Repertoire exporteren',
-    importBtn:'Importeren',importOkGf:(sl,s)=>sl+' setlist(s), '+s+' nummer(s)',exportInb:'Export .inb',exportInbTitle:'.inb exporteren',exportInbDo:'.inb exporteren',libExpInb:'.inb exporteren',
+    importBtn:'Importeren',importOkGf:(sl,s)=>sl+' setlist(s), '+s+' nummer(s)',importOkGfSkip:(sl,s,k)=>sl+' setlist(s), '+s+' nummer(s) — '+k+' al aanwezig, overgeslagen',importNothingNew:'Niets nieuws',exportInb:'Export .inb',exportInbTitle:'.inb exporteren',exportInbDo:'.inb exporteren',libExpInb:'.inb exporteren',
     exportTitle:'HTML exporteren', exportName:'Bestandsnaam',
     exportDo:'Exporteren', exportNone:'Selecteer ten minste één setlist.',
     searchPh:'Zoeken…', saveBpmOk:'Tempo opgeslagen',
@@ -1558,7 +1558,7 @@ const LANGS = {
     libExportOk:(n)=>`${n} brano/i esportato/i`,
     exportReminder:'💾 Esegui il backup',exportNowBtn:'Esporta ora',
     libExpTitle:'Esporta repertorio',
-    importBtn:'Importa',importOkGf:(sl,s)=>sl+' setlist, '+s+' brani',exportInb:'Export .inb',exportInbTitle:'Esporta .inb',exportInbDo:'Esporta .inb',libExpInb:'Esporta .inb',
+    importBtn:'Importa',importOkGf:(sl,s)=>sl+' setlist, '+s+' brani',importOkGfSkip:(sl,s,k)=>sl+' setlist, '+s+' brani — '+k+' già presente/i, ignorata/e',importNothingNew:'Niente di nuovo',exportInb:'Export .inb',exportInbTitle:'Esporta .inb',exportInbDo:'Esporta .inb',libExpInb:'Esporta .inb',
     exportTitle:'Esporta HTML', exportName:'Nome file',
     exportDo:'Esporta', exportNone:'Seleziona almeno una setlist.',
     searchPh:'Cerca…', saveBpmOk:'Tempo salvato',
@@ -1664,7 +1664,7 @@ const LANGS = {
     libExportOk:(n)=>`${n} canción/es exportada/s`,
     exportReminder:'💾 Haz una copia de seguridad',exportNowBtn:'Exportar',
     libExpTitle:'Exportar repertorio',
-    importBtn:'Importar',importOkGf:(sl,s)=>sl+' setlist(s), '+s+' canciones',exportInb:'Export .inb',exportInbTitle:'Exportar .inb',exportInbDo:'Exportar .inb',libExpInb:'Exportar .inb',
+    importBtn:'Importar',importOkGf:(sl,s)=>sl+' setlist(s), '+s+' canciones',importOkGfSkip:(sl,s,k)=>sl+' setlist(s), '+s+' canciones — '+k+' ya existente(s), omitida(s)',importNothingNew:'Nada nuevo',exportInb:'Export .inb',exportInbTitle:'Exportar .inb',exportInbDo:'Exportar .inb',libExpInb:'Exportar .inb',
     exportTitle:'Exportar HTML', exportName:'Nombre de archivo',
     exportDo:'Exportar', exportNone:'Selecciona al menos una setlist.',
     searchPh:'Buscar…', saveBpmOk:'Tempo guardado',
@@ -1770,7 +1770,7 @@ const LANGS = {
     libExportOk:(n)=>`${n} música(s) exportada(s)`,
     exportReminder:'💾 Faça uma cópia de segurança',exportNowBtn:'Exportar',
     libExpTitle:'Exportar repertório',
-    importBtn:'Importar',importOkGf:(sl,s)=>sl+' setlist(s), '+s+' músicas',exportInb:'Export .inb',exportInbTitle:'Exportar .inb',exportInbDo:'Exportar .inb',libExpInb:'Exportar .inb',
+    importBtn:'Importar',importOkGf:(sl,s)=>sl+' setlist(s), '+s+' músicas',importOkGfSkip:(sl,s,k)=>sl+' setlist(s), '+s+' músicas — '+k+' já existente(s), ignorada(s)',importNothingNew:'Nada de novo',exportInb:'Export .inb',exportInbTitle:'Exportar .inb',exportInbDo:'Exportar .inb',libExpInb:'Exportar .inb',
     exportTitle:'Exportar HTML', exportName:'Nome do ficheiro',
     exportDo:'Exportar', exportNone:'Seleciona pelo menos uma setlist.',
     searchPh:'Pesquisar…', saveBpmOk:'Tempo guardado',
@@ -1876,7 +1876,7 @@ const LANGS = {
     libExportOk:(n)=>`${n} música(s) exportada(s)`,
     exportReminder:'💾 Faça um backup dos dados',exportNowBtn:'Exportar',
     libExpTitle:'Exportar repertório',
-    importBtn:'Importar',importOkGf:(sl,s)=>sl+' setlist(s), '+s+' músicas',exportInb:'Export .inb',exportInbTitle:'Exportar .inb',exportInbDo:'Exportar .inb',libExpInb:'Exportar .inb',
+    importBtn:'Importar',importOkGf:(sl,s)=>sl+' setlist(s), '+s+' músicas',importOkGfSkip:(sl,s,k)=>sl+' setlist(s), '+s+' músicas — '+k+' já existente(s), ignorada(s)',importNothingNew:'Nada de novo',exportInb:'Export .inb',exportInbTitle:'Exportar .inb',exportInbDo:'Exportar .inb',libExpInb:'Exportar .inb',
     exportTitle:'Exportar HTML', exportName:'Nome do arquivo',
     exportDo:'Exportar', exportNone:'Selecione pelo menos uma setlist.',
     searchPh:'Pesquisar…', saveBpmOk:'Andamento salvo',
@@ -4301,7 +4301,8 @@ function mapGfSong(gs){
   return{id:genId(),title:String((gs&&gs.title)||'').trim(),artist:String((gs&&gs.artist)||'').trim(),
     key:String((gs&&gs.key)||'').trim(),time:String((gs&&gs.time)||'4/4'),
     tempo:Math.min(320,Math.max(20,parseInt(gs&&gs.tempo)||120)),
-    duration:parseDur(gs&&gs.duration),notes:''};
+    duration:parseDur(gs&&gs.duration),
+    notes:(gs&&typeof gs.notes==='string')?gs.notes.slice(0,2000):''};
 }
 function safeArr(v){return Array.isArray(v)?v:[];}
 function sanitizeImportedSong(s){
@@ -4399,12 +4400,17 @@ document.getElementById('btn-import-pick-toggle-all').addEventListener('click',(
 function closeImportPicker(){document.getElementById('modal-import-pick').classList.add('hidden');}
 function commitImportPick(){
   const p=STATE.importPick;
-  let slCount=0,songCount=0;
+  let slCount=0,songCount=0,slSkip=0;
+  const slKey=sl=>[sl.name,sl.venue,sl.date].map(v=>String(v||'').toLowerCase().replace(/\s+/g,' ').trim()).join('|');
+  const slHave=new Set(STATE.setlists.map(slKey));
   try{
     [...p.selSl].forEach(i=>{
       const sl=p.setlists[i];if(!sl)return;
+      const eff={name:sl.name||t('newSl'),venue:sl.venue||'',date:sl.date||''};
+      if(slHave.has(slKey(eff))){slSkip++;return;}
+      slHave.add(slKey(eff));
       const mapped=safeArr(sl.songs).map(s=>({...structuredClone(s),id:genId()}));
-      STATE.setlists.push({id:genId(),name:sl.name||t('newSl'),venue:sl.venue||'',date:sl.date||'',notes:sl.notes||'',songs:mapped});
+      STATE.setlists.push({id:genId(),name:eff.name,venue:eff.venue,date:eff.date,notes:sl.notes||'',songs:mapped});
       mapped.forEach(s=>addToLibraryIfNew(s));slCount++;
     });
     [...p.selSongs].forEach(i=>{
@@ -4419,7 +4425,8 @@ function commitImportPick(){
       toast(t('libImportOk',songCount),'ok');
     } else {
       renderHome();
-      toast(t('importOkGf',slCount,songCount),'ok');
+      if(slSkip&&!slCount&&!songCount)toast(t('importNothingNew'),'ok');
+      else toast(slSkip?t('importOkGfSkip',slCount,songCount,slSkip):t('importOkGf',slCount,songCount),'ok');
     }
   }catch(e){
     console.error('commitImportPick',e);
