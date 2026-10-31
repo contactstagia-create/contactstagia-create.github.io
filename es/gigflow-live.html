@@ -1,0 +1,554 @@
+<!-- @startingPoint section="Marketing" subtitle="Page produit GigFlow Live EN — hero, 5 features, détails, cross-promo InBeat" viewport="1280x4200" -->
+<!doctype html>
+<html lang="es" data-product="live">
+<head>
+<script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual';</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {analytics_storage: 'denied'});
+</script>
+<meta charset="utf-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- Google Tag Manager : chargé par cookie-banner.js, uniquement après acceptation du visiteur -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GigFlow Live — Tú tocas. Nosotros nos ocupamos del resto.</title>
+<meta name="description" content="GigFlow Live — la app de setlists para músicos. Toca sin perder el hilo. Gratis durante el lanzamiento, sin suscripción, 100 % sin conexión. Disponible en Android.">
+<link rel="canonical" href="https://stagia.app/es/gigflow-live.html">
+<link rel="alternate" hreflang="fr" href="https://stagia.app/gigflow-live.html">
+<link rel="alternate" hreflang="en" href="https://stagia.app/en/gigflow-live.html">
+<link rel="alternate" hreflang="es" href="https://stagia.app/es/gigflow-live.html">
+<link rel="alternate" hreflang="x-default" href="https://stagia.app/gigflow-live.html">
+<link rel="icon" type="image/png" href="/assets/stagia-logo-512.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GigFlow Live — Tú tocas. Nosotros nos ocupamos del resto.">
+<meta property="og:description" content="GigFlow Live — la app de setlists para músicos. Toca sin perder el hilo. Gratis durante el lanzamiento, sin suscripción, 100 % sin conexión. Disponible en Android.">
+<meta property="og:url" content="https://stagia.app/es/gigflow-live.html">
+<meta property="og:image" content="https://stagia.app/assets/og-gigflow-live.png">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GigFlow Live — Tú tocas. Nosotros nos ocupamos del resto.">
+<meta name="twitter:description" content="GigFlow Live — la app de setlists para músicos. Toca sin perder el hilo. Gratis durante el lanzamiento, sin suscripción, 100 % sin conexión. Disponible en Android.">
+<meta name="twitter:image" content="https://stagia.app/assets/og-gigflow-live.png">
+<meta name="theme-color" content="#0C0A18">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "GigFlow Live",
+  "description": "La app de setlists para músicos. Toca sin perder el hilo. Gratis durante el lanzamiento, sin suscripción, 100 % sin conexión.",
+  "applicationCategory": "MusicApplication",
+  "operatingSystem": "Android",
+  "inLanguage": "es",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "url": "https://stagia.app/es/gigflow-live.html",
+  "image": "https://stagia.app/assets/gigflow-live-logo.png",
+  "publisher": { "@type": "Organization", "name": "Stagia", "url": "https://stagia.app/" }
+}
+</script>
+<style>html,body{background:#0C0A18}</style>
+<link rel="stylesheet" href="/colors_and_type.css?v=4">
+<link rel="stylesheet" href="/product.css?v=4">
+<style>
+  /* Espacements verticaux alignés sur InBeat */
+  .hero { padding: 48px 0 32px; }
+  section.block { padding: 36px 0; }
+  .feature { padding: 28px 0; }
+  .final { padding: 40px 0; }
+  footer { padding: 30px 0 19px; }
+
+  /* Supprimer le strip produit sur .framed */
+  .framed::before { display: none; }
+  /* Halo subtil */
+  .framed { padding: 10px; box-shadow: var(--shadow-md), 0 0 40px color-mix(in srgb, var(--product-primary) 10%, transparent); }
+
+  /* Hero visuel agrandi */
+  @media (min-width: 981px) {
+    .hero-grid { grid-template-columns: 0.82fr 1.18fr; gap: 48px; align-items: start; }
+    .hero-text { grid-column: 1; grid-row: 1; }
+    .hero-cta  { grid-column: 1; grid-row: 2; }
+    .device-wrap { grid-column: 2; grid-row: 1 / 3; align-self: center; }
+    .device-wrap .phone { width: 420px; border-radius: 8px; padding: 14px; }
+    .device-wrap .phone .screen { border-radius: 4px; }
+    .keys { margin-top: 22px; grid-template-columns: repeat(3, 1fr); }
+  }
+  /* Annule le order:-1 de product.css — on veut l'ordre DOM sur mobile */
+  @media (max-width: 980px) {
+    .device-wrap { order: 0; }
+  }
+  .device-wrap .phone {
+    box-shadow: var(--shadow-lg), 0 0 100px color-mix(in srgb, var(--product-primary) 18%, transparent);
+  }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
+  .faq-item { background: var(--bg-surface-1); border: 1px solid var(--border-subtle); border-radius: var(--r-lg); padding: 20px 24px; }
+  .faq-item h4 { font-family: var(--font-display); font-weight: 800; font-size: 16px; margin: 0 0 8px; color: var(--fg-1); }
+  .faq-item p { font-size: 15px; color: var(--fg-2); line-height: 1.6; margin: 0; }
+
+  /* Real photos (photothèque) — framed card, same visual register as screen mockups */
+  .photo-card { width: 100%; max-width: 300px; border-radius: var(--r-lg, 20px); overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-lg); }
+  .photo-card img { display: block; width: 100%; height: auto; }
+  /* Stacked photo duo (Stage mode) — 3:2 landscape, better stacked than side by side */
+  .photo-duo { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 380px; margin: 0 auto; }
+  .photo-duo .photo-card { width: 100%; max-width: none; }
+  .eco-photo { width: 100%; max-width: 720px; margin: 26px auto 0; border-radius: var(--r-lg, 20px); overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-lg); }
+  .eco-photo img { display: block; width: 100%; height: auto; }
+  /* 2-photo grid (Ecosystem) — full band + duo/soloist, any lineup size */
+  .eco-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 26px auto 0; max-width: 720px; }
+  .eco-photos .photo-card { max-width: none; aspect-ratio: 3 / 2; }
+  .eco-photos .photo-card img { height: 100%; object-fit: cover; }
+  .eco-cap { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; text-align: center; color: var(--fg-4); margin: 10px 0 0; }
+  @media (max-width: 700px) { .eco-photos { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#0C0A18"/>
+    <text x="50" y="62" font-family="Mulish, sans-serif" font-size="34" font-weight="800" fill="#F5C25F" text-anchor="middle">GF</text>
+  </svg>
+</template>
+
+<!-- NAV -->
+<nav aria-label="Navegación principal">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <img src="/assets/stagia-logo-watermark.png" alt="">
+      <span class="name">Stagia</span>
+    </a>
+    <div class="nav-links">
+      <a href="InBeat.html">InBeat</a>
+      <a href="gigflow-live.html" class="active">GigFlow Live</a>
+      <a href="gigflow-editor.html">GigFlow Editor</a>
+      <a href="videos.html">Vídeos</a>
+    </div>
+
+    <div class="lang-switcher">
+      <button class="lang-btn">ES <i data-lucide="chevron-down" style="width:11px;height:11px;"></i></button>
+      <div class="lang-dropdown">
+        <a class="lang-link" href="/gigflow-live.html">FR</a>
+        <a class="lang-link" href="/en/gigflow-live.html">EN</a>
+        <span class="lang-active">ES</span>
+        <span class="lang-soon">DE</span>
+        <span class="lang-soon">IT</span>
+        <span class="lang-soon">NL</span>
+        <span class="lang-soon">PT-BR</span>
+      </div>
+    </div>
+    <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.stagia.gigflow.live" target="_blank" rel="noopener noreferrer">Descargar</a>
+    <button class="nav-burger" id="navBurger" aria-expanded="false" aria-controls="navMobile" aria-label="Menú"><span class="burger-icon"><span class="ic-menu"><i data-lucide="menu"></i></span><span class="ic-x"><i data-lucide="x"></i></span></span></button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <div class="nav-mobile-inner">
+      <a href="InBeat.html">InBeat</a>
+      <a href="gigflow-live.html" class="active">GigFlow Live</a>
+      <a href="gigflow-editor.html">GigFlow Editor</a>
+      <a href="videos.html">Vídeos</a>
+
+      <div class="lang-mobile">
+        <span class="lang-label-m">Idioma</span>
+        <div class="lang-mobile-options"><a class="lang-link-m" href="/gigflow-live.html">FR</a><a class="lang-link-m" href="/en/gigflow-live.html">EN</a><span class="lang-active-m">ES</span><span class="lang-soon-m">DE</span><span class="lang-soon-m">IT</span><span class="lang-soon-m">NL</span><span class="lang-soon-m">PT-BR</span></div>
+      </div>
+      <a class="nav-mobile-cta" href="https://play.google.com/store/apps/details?id=com.stagia.gigflow.live" target="_blank" rel="noopener noreferrer">Descargar</a>
+    </div>
+  </div>
+</nav>
+<main>
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow">GigFlow Live · Android</p>
+      <h1><span data-tk="h1">Toca sin</span><br><span class="accent" data-tk="accent">perder el hilo.</span></h1>
+      <p class="sub" data-tk="sub">Letras, acordes, setlist: todo a la vista sin tocar la pantalla. Sencilla, fiable, hecha para el escenario.</p>
+      <p class="sub">¿El cantante cambia el orden de la setlist en el último minuto? GigFlow Live lo sigue sin problema: arrastra, reordena y sigue tocando.</p>
+    </div>
+    <div class="device-wrap">
+      <div class="phone">
+        <div class="screen lb-canvas"><img src="/assets/screens/gigflow-live-stage.png" alt="GigFlow Live — Modo escenario" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <div class="hero-actions">
+        <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.stagia.gigflow.live" target="_blank" rel="noopener noreferrer"><span class="gp-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M4 3.4v17.2a1 1 0 0 0 1.52.85l14.3-8.6a1 1 0 0 0 0-1.7L5.52 2.55A1 1 0 0 0 4 3.4z"/></svg></span> Disponible en Google Play</a>
+      </div>
+      <p class="adaptive">GigFlow Live se adapta a tus necesidades: activa solo lo que necesites.</p>
+      <div class="status-chips">
+        <span class="chip"><span class="dot"></span> 100 % sin conexión</span> <span class="chip"><span class="dot brand"></span> Gratis durante el lanzamiento · sin suscripción</span> <span class="chip">Pedal Bluetooth</span> <span class="chip">Tableta, mini tableta · smartphone posible</span> <span class="chip">6 idiomas</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 5 KEY FEATURES -->
+<section class="block">
+  <div class="wrap">
+    <div class="block-head">
+      <p class="eyebrow muted">Lo esencial</p>
+      <h2>Sencilla. Eficaz. Hecha para el escenario.</h2>
+    </div>
+    <div class="keys">
+      <div class="key">
+        <div class="ic"><i data-lucide="footprints"></i></div>
+        <h3>Navegación sin manos</h3>
+        <p>Pasa de página con un pedal Bluetooth, sin soltar tu instrumento.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="sun"></i></div>
+        <h3>Legible en cualquier lugar</h3>
+        <p>Tres temas (oscuro, día, sol) y contraste ajustable: ensayo, sala oscura o pleno sol.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="timer"></i></div>
+        <h3>Tiempo restante, en directo</h3>
+        <p>La duración restante de tu setlist está siempre visible durante el concierto.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="wifi-off"></i></div>
+        <h3>100 % sin conexión</h3>
+        <p>Sin conexión ni cuenta. Tus datos se quedan contigo.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="badge-check"></i></div>
+        <h3>Gratis durante el lanzamiento</h3>
+        <p>Aún no hay precio definido. Nunca una suscripción.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="monitor"></i></div>
+        <h3>Importar desde GigFlow Editor</h3>
+        <p>Prepara canciones y setlists en el PC e impórtalas en tu tableta desde un solo archivo.</p>
+      </div>
+    </div>
+
+    <div class="freemium">
+      <i data-lucide="gift"></i> <span>Gratis durante el lanzamiento · 100 % sin conexión · tus datos se quedan en tu dispositivo.</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- DETAIL FEATURES -->
+<section class="block" style="padding:0">
+  <div class="wrap">
+
+    <div class="feature">
+      <div class="feat-copy">
+        <p class="eyebrow">Repertorio digital</p>
+        <h3>Todo tu repertorio, a un toque.</h3>
+        <p>Accede a cualquier canción al instante, sin conexión y sin estrés. Búsqueda, tonalidad, tempo y duración a la vista, listos para el escenario. Clasifica tus canciones por categorías y filtra por artista o por categoría.</p>
+      </div>
+      <div class="feat-media">
+        <div class="framed lb-canvas"><img src="/assets/screens/en/songs-list.png" alt="GigFlow Live — Biblioteca de canciones" loading="lazy" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div>
+      </div>
+    </div>
+
+    <div class="feature reverse">
+      <div class="feat-copy">
+        <p class="eyebrow">Setlists</p>
+        <h3>Monta tu concierto y lánzalo con un toque.</h3>
+        <p>Crea tus setlists, reordénalas arrastrando y soltando, añade lugar y fecha. Selecciona varias canciones de tu biblioteca y crea una setlist con un solo toque, sin volver a escribir nada. La duración total se calcula automáticamente. Cambia el orden o sustituye una canción cuando quieras, incluso en el último minuto, directamente desde tu biblioteca. Lanza el concierto y mantén el control de principio a fin.</p>
+      </div>
+      <div class="feat-media">
+        <div class="framed lb-canvas"><img src="/assets/screens/en/setlists.png" alt="GigFlow Live — Setlists" loading="lazy" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feat-copy">
+        <p class="eyebrow">Modo escenario</p>
+        <h3>Hecha para el escenario, del primer acorde al último bis.</h3>
+        <p>Pantalla completa optimizada para tocar. Cada acorde tiene su propio color: anticipas los cambios de un vistazo. Tema y contraste ajustables al momento, con el tiempo restante siempre visible.</p>
+        <ul class="feat-list">
+          <li><i data-lucide="palette"></i> Acordes de colores, secciones marcadas como prefieras</li>
+          <li><i data-lucide="maximize"></i> Pantalla completa, texto grande legible a 1 metro</li>
+          <li><i data-lucide="activity"></i> Metrónomo visual integrado: tiempos fuertes y débiles de un vistazo, sin salir de la pantalla</li>
+          <li><i data-lucide="grid-3x3"></i> Cuadrícula de acordes: oculta la letra y deja solo los acordes</li>
+        </ul>
+      </div>
+      <div class="feat-media photo-duo">
+        <div class="photo-card"><img src="/assets/photos/live-mode-dark.jpg" alt="Una banda tocando de noche en un bistró, con GigFlow Live montado en los pies de micrófono en tema oscuro" loading="lazy"></div>
+        <div class="photo-card"><img src="/assets/photos/live-mode-light.jpg" alt="Una banda tocando de día en una terraza, con GigFlow Live montado en los pies de micrófono en tema claro" loading="lazy"></div>
+      </div>
+    </div>
+
+    <div class="feature reverse">
+      <div class="feat-copy">
+        <p class="eyebrow">Navegación por secciones · Barra de progreso</p>
+        <h3>Salta a la intro, al estribillo, al puente, sin perder el hilo.</h3>
+        <p>Una fila de píldoras de colores en la parte superior de la pantalla representa cada sección de la canción. Un toque te lleva directamente. Las secciones nunca se cortan entre dos páginas.</p>
+      </div>
+      <div class="feat-media">
+        <div class="framed lb-canvas"><img src="/assets/screens/en/preview-song.png" alt="Barra de progreso — navegación por secciones" loading="lazy" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feat-copy">
+        <p class="eyebrow">Creado en Editor, tocado con Live</p>
+        <h3>Tus canciones y setlists nacen en Editor; Live las lleva al escenario.</h3>
+        <p>Creas tus canciones y setlists en GigFlow Editor, con los acordes colocados con precisión sobre la letra, y las importas en GigFlow Live desde un solo archivo. En el escenario, Live las muestra tal como las imaginaste, y ajustas el aspecto a la sala y a la iluminación: tema, contraste, letra coloreada, tamaño del texto.</p>
+        <ul class="feat-list">
+          <li><i data-lucide="download"></i> Importación desde un único archivo de GigFlow Editor: todo llega listo para tocar</li>
+          <li><i data-lucide="list-ordered"></i> Setlists editables en cualquier momento: elige de tu biblioteca, reordena con un gesto</li>
+          <li><i data-lucide="sun"></i> Pantalla ajustable en el escenario: tema, contraste, letra coloreada, tamaño del texto</li>
+          <li><i data-lucide="sliders-horizontal"></i> Ficha de la canción: título, artista, tonalidad, duración, tempo, compás, categoría, posición del capo</li>
+          <li><i data-lucide="hand"></i> Tap tempo: marca el pulso con el dedo y el BPM se ajusta solo</li>
+          <li><i data-lucide="music"></i> Tonalidad y capo tal como los configuraste en Editor</li>
+        </ul>
+        <a class="more" href="gigflow-editor.html" style="color:var(--brand-amber-300);">Descubre GigFlow Editor para preparar tus canciones <i data-lucide="arrow-right"></i></a>
+      </div>
+      <div class="feat-media">
+        <div class="framed lb-canvas"><img src="/assets/screens/editor-live-preview.png" alt="Vista previa en GigFlow Editor: cómo se verá una canción en el escenario" loading="lazy" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="block">
+  <div class="wrap">
+    <div class="block-head">
+      <p class="eyebrow muted">Preguntas frecuentes</p>
+      <h2>Todo lo que necesitas saber antes de subir al escenario.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>¿GigFlow Live funciona sin conexión a internet?</h3>
+        <p>Sí. GigFlow Live funciona 100 % sin conexión: no necesita conexión ni cuenta. Tus setlists y tu repertorio se guardan en tu dispositivo.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Cómo importo las setlists que preparé en el PC?</h3>
+        <p>Creas tus canciones y setlists en GigFlow Editor y las importas en GigFlow Live desde un solo archivo para leerlas en el escenario. Una vez en Live, montas y reordenas tus setlists desde tu biblioteca, incluso en el último minuto.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Necesito una suscripción?</h3>
+        <p>No. GigFlow Live es gratis durante la fase de lanzamiento, sin fecha de fin fijada y sin precio definido: nunca una suscripción, nunca cuotas recurrentes.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Puedo pasar de página sin tocar la pantalla?</h3>
+        <p>Sí, con un pedal Bluetooth compatible: pasa a la siguiente sección, luego a la siguiente canción, y retrocede de la misma forma. Muy práctico cuando tienes las manos ocupadas con el instrumento.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿GigFlow Live es compatible con InBeat?</h3>
+        <p>Sí. Las dos apps forman parte del mismo ecosistema Stagia: exporta tu setlist desde GigFlow Live, impórtala en InBeat y cada canción llega con su tempo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿GigFlow Live funciona sin conexión a internet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. GigFlow Live funciona 100 % sin conexión: no necesita conexión ni cuenta. Tus setlists y tu repertorio se guardan en tu dispositivo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo importo las setlists que preparé en el PC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Creas tus canciones y setlists en GigFlow Editor y las importas en GigFlow Live desde un solo archivo para leerlas en el escenario. Una vez en Live, montas y reordenas tus setlists desde tu biblioteca, incluso en el último minuto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito una suscripción?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. GigFlow Live es gratis durante la fase de lanzamiento, sin fecha de fin fijada y sin precio definido: nunca una suscripción, nunca cuotas recurrentes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo pasar de página sin tocar la pantalla?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, con un pedal Bluetooth compatible: pasa a la siguiente sección, luego a la siguiente canción, y retrocede de la misma forma. Muy práctico cuando tienes las manos ocupadas con el instrumento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿GigFlow Live es compatible con InBeat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Las dos apps forman parte del mismo ecosistema Stagia: exporta tu setlist desde GigFlow Live, impórtala en InBeat y cada canción llega con su tempo."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- FINAL CTA -->
+<section class="final" id="telecharger">
+  <div class="wrap final-inner">
+    <p class="eyebrow">Android · disponible en Google Play</p>
+    <h2>¿Listo para subir al escenario?</h2>
+    <p>Gratis durante el lanzamiento · Sin suscripción.</p>
+    <p style="font-size:15px;opacity:.85;margin-top:-4px">Requisitos: un teléfono o una tableta con Android 7.0 o posterior.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.stagia.gigflow.live" target="_blank" rel="noopener noreferrer"><span class="gp-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M4 3.4v17.2a1 1 0 0 0 1.52.85l14.3-8.6a1 1 0 0 0 0-1.7L5.52 2.55A1 1 0 0 0 4 3.4z"/></svg></span> Disponible en Google Play</a>
+    </div>
+  </div>
+</section>
+
+<!-- ÉCOSYSTÈME STAGIA -->
+<section class="crosspromo">
+  <div class="wrap">
+    <div class="block-head">
+      <p class="eyebrow">Ecosistema Stagia</p>
+      <h2 style="font-size:clamp(22px,2.4vw,28px);line-height:1.12;letter-spacing:-0.015em">Un ecosistema que se adapta a cualquier formación.</h2>
+    </div>
+    <div class="eco-photos">
+      <div>
+        <div class="photo-card"><img src="/assets/photos/live-ecosystem-band.jpg" alt="Una banda completa en un festival, con GigFlow Live en tres pies de micrófono e InBeat en la batería" loading="lazy"></div>
+        <p class="eco-cap">En el escenario, con banda completa</p>
+      </div>
+      <div>
+        <div class="photo-card"><img src="/assets/photos/live-duo.jpg" alt="Un dúo al piano, con GigFlow Live en un atril junto al teclado" loading="lazy"></div>
+        <p class="eco-cap">En dúo, en casa</p>
+      </div>
+    </div>
+    <div class="ecosystem">
+      <a class="eco" href="InBeat.html">
+        <span class="d" style="background:var(--inbeat-teal-300);flex:none;margin-top:5px"></span>
+        <div>
+          <b>InBeat</b> <small>Tempo · Android</small> <small style="display:block;margin-top:6px;line-height:1.5">Metrónomo dinámico para tu baterista. Carga automáticamente el tempo de cada canción de tu setlist.</small>
+        </div>
+      </a>
+      <a class="eco" href="gigflow-editor.html">
+        <span class="d" style="background:var(--brand-amber-300);flex:none;margin-top:5px"></span>
+        <div>
+          <b>GigFlow Editor</b> <small>Preparación · Navegador</small> <small style="display:block;margin-top:6px;line-height:1.5">Prepara canciones y setlists en el PC y exporta un único archivo que leen Live e InBeat.</small>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html">
+          <img src="/assets/stagia-logo-watermark.png" alt="" style="width:40px;height:40px">
+          <span class="name">Stagia</span>
+        </a>
+        <p>Herramientas digitales creadas para músicos, por músicos: olvida el papel, quédate con la música. Pensadas para el escenario, el ensayo y la organización.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Productos</h4>
+        <a href="gigflow-live.html">GigFlow Live →</a>
+        <a href="InBeat.html">InBeat →</a>
+        <a href="gigflow-editor.html">GigFlow Editor →</a>
+      </div>
+      <div class="foot-col">
+        <h4>Recursos</h4>
+        <a href="videos.html">Vídeos →</a>
+        <a href="aide.html">Ayuda →</a>
+        <a href="contact.html">Contacto →</a>
+        <a href="mentions-legales.html">Aviso legal →</a>
+        <a href="confidentialite.html">Privacidad →</a>
+        <a href="#" data-cookie-settings>Gestionar cookies →</a>
+      </div>
+      <div class="foot-col">
+        <h4>Síguenos</h4>
+        <a href="https://www.youtube.com/channel/UCV0tsMnSp8-WRGDS5DfXsGA" target="_blank" rel="noopener noreferrer">YouTube →</a>
+        <a href="mailto:contact@stagia.app">contact@stagia.app</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Stagia · Por músicos, para músicos.</span>
+      <span>contact@stagia.app</span>
+      <span>v0.1.35</span>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Captura de pantalla ampliada">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar"><i data-lucide="x"></i></button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script src="/assets/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+
+
+<script>
+(function () {
+  var b = document.getElementById('navBurger');
+  var m = document.getElementById('navMobile');
+  if (!b || !m) return;
+  function close(returnFocus) {
+    b.setAttribute('aria-expanded', 'false');
+    m.classList.remove('open');
+    if (returnFocus) b.focus();
+  }
+  b.addEventListener('click', function () {
+    var open = b.getAttribute('aria-expanded') === 'true';
+    b.setAttribute('aria-expanded', String(!open));
+    m.classList.toggle('open', !open);
+    if (!open) { var first = m.querySelector('a, button'); if (first) first.focus(); }
+  });
+  m.addEventListener('click', function (e) { if (e.target.closest('a')) close(); });
+  m.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { close(true); return; }
+    if (e.key !== 'Tab') return;
+    var items = m.querySelectorAll('a, button');
+    if (!items.length) return;
+    var first = items[0], last = items[items.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+})();
+/* Screenshot lightbox: tap/click to enlarge */
+(function () {
+  var lb = document.getElementById('lightbox');
+  var img = document.getElementById('lightboxImg');
+  var closeBtn = document.getElementById('lightboxClose');
+  if (!lb || !img || !closeBtn) return;
+  var lastTrigger = null;
+  function open(trigger) {
+    lastTrigger = trigger;
+    img.src = trigger.src;
+    img.alt = trigger.alt || '';
+    lb.classList.add('open');
+    closeBtn.focus();
+  }
+  function close() {
+    lb.classList.remove('open');
+    img.src = '';
+    if (lastTrigger) lastTrigger.focus();
+  }
+  document.querySelectorAll('[data-lightbox]').forEach(function (el) {
+    el.style.cursor = 'zoom-in';
+    el.setAttribute('tabindex', '0');
+    el.setAttribute('role', 'button');
+    el.setAttribute('aria-label', 'Ampliar la captura de pantalla');
+    el.addEventListener('click', function () { open(el); });
+    el.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(el); }
+    });
+  });
+  closeBtn.addEventListener('click', close);
+  lb.addEventListener('click', function (e) { if (e.target === lb || e.target === img) close(); });
+  lb.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+})();
+</script>
+
+<script src="/cookie-banner.js"></script>
+</body>
+</html>

@@ -4,7 +4,7 @@
    aucune requête n'est envoyée à Google pour la mesure d'audience (les pages ne contiennent plus que le dataLayer et le
    consentement « refusé » par défaut). Le choix peut être changé à tout moment : tout élément [data-cookie-settings]
    (lien « Gérer les cookies » du pied de page) rouvre le bandeau ; un refus supprime les cookies de mesure.
-   Bilingue FR/EN selon document.documentElement.lang. */
+   Multilingue (FR/EN/ES) selon document.documentElement.lang. */
 (function () {
   var KEY = 'stagia_consent';
   var GTM_ID = 'GTM-WF8H5RWM';
@@ -27,9 +27,17 @@
       learnMore: 'Learn more',
       refuse: 'Decline',
       accept: 'Accept'
+    },
+    es: {
+      dialogLabel: 'Consentimiento de cookies',
+      text: 'Este sitio utiliza Google Analytics para medir su audiencia, solo si aceptas. Si rechazas, no se instala ninguna cookie y no se envía nada a Google para esta medición. ',
+      learnMore: 'Más información',
+      refuse: 'Rechazar',
+      accept: 'Aceptar'
     }
   };
-  var lang = (document.documentElement.lang || 'fr').indexOf('en') === 0 ? 'en' : 'fr';
+  var lang = (document.documentElement.lang || 'fr').slice(0, 2).toLowerCase();
+  if (!STRINGS[lang]) lang = 'fr';
   var s = STRINGS[lang];
 
   // Charge Google Tag Manager (une seule fois), seulement après acceptation
@@ -90,7 +98,7 @@
     banner.innerHTML =
       '<p style="margin:0;font-size:13px;color:#9B97B4;line-height:1.55;max-width:640px;">' +
         s.text +
-        '<a href="/' + (lang === 'en' ? 'en/confidentialite.html' : 'confidentialite.html') + '" style="color:#F5C25F;text-underline-offset:3px;text-decoration:underline;">' + s.learnMore + '</a>' +
+        '<a href="/' + (lang === 'fr' ? '' : lang + '/') + 'confidentialite.html" style="color:#F5C25F;text-underline-offset:3px;text-decoration:underline;">' + s.learnMore + '</a>' +
       '</p>' +
       '<div style="display:flex;gap:10px;flex:none;">' +
         '<button id="stagia-refuse" style="' + btn + '">' + s.refuse + '</button>' +
