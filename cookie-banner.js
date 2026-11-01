@@ -4,7 +4,7 @@
    aucune requête n'est envoyée à Google pour la mesure d'audience (les pages ne contiennent plus que le dataLayer et le
    consentement « refusé » par défaut). Le choix peut être changé à tout moment : tout élément [data-cookie-settings]
    (lien « Gérer les cookies » du pied de page) rouvre le bandeau ; un refus supprime les cookies de mesure.
-   Multilingue (FR/EN/ES/PT-BR/DE) selon document.documentElement.lang. */
+   Multilingue (FR/EN/ES/PT-BR/DE/IT) selon document.documentElement.lang. */
 (function () {
   var KEY = 'stagia_consent';
   var GTM_ID = 'GTM-WF8H5RWM';
@@ -48,6 +48,13 @@
       learnMore: 'Mehr erfahren',
       refuse: 'Ablehnen',
       accept: 'Akzeptieren'
+    },
+    it: {
+      dialogLabel: 'Consenso ai cookie',
+      text: 'Questo sito utilizza Google Analytics per misurare il pubblico, solo se accetti. Se rifiuti, non viene installato alcun cookie e per questa misurazione non viene inviato nulla a Google. ',
+      learnMore: 'Per saperne di più',
+      refuse: 'Rifiuta',
+      accept: 'Accetta'
     }
   };
   var lang = (document.documentElement.lang || 'fr').slice(0, 2).toLowerCase();
