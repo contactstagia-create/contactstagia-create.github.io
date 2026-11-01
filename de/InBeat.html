@@ -1,0 +1,829 @@
+<!-- @startingPoint section="Marketing" subtitle="Page produit InBeat EN — hero, 5 features, beat visuel LED, cross-promo GigFlow Live" viewport="1280x3800" -->
+<!doctype html>
+<html lang="de" data-product="inbeat">
+<head>
+<script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual';</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {analytics_storage: 'denied'});
+</script>
+<meta charset="utf-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- Google Tag Manager : chargé par cookie-banner.js, uniquement après acceptation du visiteur -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InBeat — Das richtige Tempo, im richtigen Moment. Immer.</title>
+<meta name="description" content="InBeat — das Metronom und der Click für Musiker. Steuere dein Tempo live und importiere deine Setlists aus GigFlow Editor. Kostenlos für Android.">
+<link rel="canonical" href="https://stagia.app/de/InBeat.html">
+<link rel="alternate" hreflang="fr" href="https://stagia.app/InBeat.html">
+<link rel="alternate" hreflang="en" href="https://stagia.app/en/InBeat.html">
+<link rel="alternate" hreflang="es" href="https://stagia.app/es/InBeat.html">
+<link rel="alternate" hreflang="pt-BR" href="https://stagia.app/pt-br/InBeat.html">
+<link rel="alternate" hreflang="de" href="https://stagia.app/de/InBeat.html">
+<link rel="alternate" hreflang="x-default" href="https://stagia.app/InBeat.html">
+<link rel="icon" type="image/png" href="/assets/stagia-logo-512.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="InBeat — Das richtige Tempo, im richtigen Moment. Immer.">
+<meta property="og:description" content="InBeat — das Metronom und der Click für Musiker. Steuere dein Tempo live und importiere deine Setlists aus GigFlow Editor. Kostenlos für Android.">
+<meta property="og:url" content="https://stagia.app/de/InBeat.html">
+<meta property="og:image" content="https://stagia.app/assets/og-inbeat.png">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="InBeat — Das richtige Tempo, im richtigen Moment. Immer.">
+<meta name="twitter:description" content="InBeat — das Metronom und der Click für Musiker. Steuere dein Tempo live und importiere deine Setlists aus GigFlow Editor. Kostenlos für Android.">
+<meta name="twitter:image" content="https://stagia.app/assets/og-inbeat.png">
+<meta name="theme-color" content="#0C0A18">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "InBeat",
+  "description": "Das Metronom und der Click für Musiker. Steuere dein Tempo live und importiere deine Setlists aus GigFlow Editor. Kostenlos für Android.",
+  "applicationCategory": "MusicApplication",
+  "operatingSystem": "Android",
+  "inLanguage": "de",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "url": "https://stagia.app/de/InBeat.html",
+  "image": "https://stagia.app/assets/stagia-logo-512.png",
+  "publisher": { "@type": "Organization", "name": "Stagia", "url": "https://stagia.app/" }
+}
+</script>
+<style>html,body{background:#0C0A18}</style>
+<link rel="stylesheet" href="/colors_and_type.css?v=4">
+<link rel="stylesheet" href="/product.css?v=4">
+<style>
+  /* InBeat-only mocks */
+  .lib { width: 100%; max-width: 340px; display: flex; flex-direction: column; gap: 10px; }
+  .lib .row2 {
+    display: flex; align-items: center; gap: 12px; background: var(--bg-surface-1);
+    border: 1px solid var(--border-subtle); border-radius: var(--r-md); padding: 12px 14px;
+  }
+  .lib .row2 .t { flex: 1; min-width: 0; }
+  .lib .row2 .t b { font-family: var(--font-display); font-weight: 800; font-size: 14px; display: block; }
+  .lib .row2 .t small { font-size: 12px; color: var(--fg-3); }
+  .lib .bpm { font-family: var(--font-mono); font-weight: 700; font-size: 15px; color: var(--product-primary); }
+  .lib .sig { font-family: var(--font-mono); font-size: 12px; color: var(--fg-3); border: 1px solid var(--border-default); border-radius: var(--r-pill); padding: 2px 9px; }
+
+  /* InBeat feature screens — format « u screen » (téléphone vertical, écran plein) */
+  .feat-media .phone { width: 300px; }
+  .feat-media .phone .screen img { display: block; width: 100%; border: 0; border-radius: 0; box-shadow: none; max-width: none; }
+  .ib-shot { background: var(--bg-stage); padding: 16px 13px; min-height: 388px; display: flex; flex-direction: column; }
+  .ib-shot-bar { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 13px; margin-bottom: 14px; border-bottom: 1px solid var(--border-subtle); }
+  .ib-shot-bar .ttl { font-family: var(--font-display); font-weight: 800; font-size: 16px; color: var(--fg-2); }
+  .ib-shot-bar .ct { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); }
+  .ib-shot .lib { max-width: 100%; }
+
+  /* InBeat hero — static screenshot (no more live embed, decision 23/08/2026) */
+  .hero .phone { width: 336px; }
+  /* InBeat hero: stack phone vertically (overrides shared row layout) */
+  .device-wrap { flex-direction: column; align-items: center; }
+  /* Hero collé plus près du header + espacements verticaux réduits de moitié */
+  .hero { padding: 24px 0 20px; }
+  section.block { padding: 36px 0; }
+  .keys { margin-top: 22px; }
+  .feature { padding: 28px 0; }
+  .freemium { margin-top: 18px; }
+  .final { padding: 40px 0; }
+  footer { padding: 30px 0 19px; }
+  @media (min-width: 981px) { .keys { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+  .ib-feat-lib { align-items: start; }
+  .ib-feat-solo { grid-template-columns: 1fr; }
+  .ib-feat-solo .feat-copy { max-width: 820px; }
+  .ib-feat-solo .feat-list { flex-direction: row; flex-wrap: wrap; gap: 14px 28px; }
+  .ib-feat-solo .feat-list li { flex: 1 1 230px; }
+  /* Duo phones (Préparation) */
+  .ib-duo { display: flex; gap: 14px; align-items: flex-start; }
+  .ib-duo .phone { flex: 1 1 0; min-width: 0; width: auto; }
+  @media (max-width: 600px) { .ib-duo { flex-direction: column; align-items: center; } .ib-duo .phone { width: 240px; flex: none; } }
+  /* Bandeau gratuit/offline en or (accent Stagia) */
+  .freemium { background: color-mix(in srgb, var(--brand-amber-300) 12%, transparent); border-color: color-mix(in srgb, var(--brand-amber-300) 38%, transparent); }
+  .freemium i { color: var(--brand-amber-300); }
+  .freemium p { color: var(--brand-amber-300); font-weight: 600; }
+  /* Brand name highlight in body copy — un peu de "vie" */
+  .ib-name { color: var(--product-primary); font-weight: 700; }
+  .st-name { color: var(--brand-amber-300); font-weight: 700; }
+  .st-name-ed { color: var(--brand-amber-300); font-weight: 700; }
+  /* Import/export grid */
+  .io-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; margin-top: 28px; }
+  @media (max-width: 600px) { .io-grid { grid-template-columns: 1fr; } }
+  /* Beat visual — mini live metronome, same visual vocabulary as the app (red/amber LED, SUBS box, signature select, BPM block) */
+  .beat-emblem {
+    width: 100%; max-width: 400px; background: #0C0A18;
+    border: 1px solid var(--border-subtle); border-radius: var(--r-lg, 20px);
+    display: flex; flex-direction: column; gap: 16px; padding: 18px; box-sizing: border-box;
+  }
+  .bw-toolbar { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .bw-play {
+    display: flex; align-items: center; gap: 6px; height: 30px; padding: 0 14px; flex: none;
+    border-radius: var(--r-md); border: 1px solid var(--inbeat-teal-500);
+    background: var(--inbeat-teal-500); color: var(--product-primary-fg); font-family: var(--font-mono);
+    font-weight: 700; font-size: 11px; letter-spacing: 0.02em; cursor: pointer;
+    transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+  }
+  .bw-play svg { width: 13px; height: 13px; }
+  .bw-play[aria-pressed="true"] { background: transparent; border-color: var(--inbeat-teal-500); color: var(--inbeat-teal-500); }
+  .bw-sub {
+    display: flex; align-items: center; gap: 6px; flex: none; cursor: pointer; user-select: none;
+    padding: 4px 0; font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    letter-spacing: 0.1em; color: var(--fg-3);
+  }
+  .bw-sub input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .bw-sub-box {
+    width: 20px; height: 20px; border-radius: var(--r-xs, 4px); flex: none;
+    border: 1px solid var(--border-default); display: flex; align-items: center; justify-content: center;
+    transition: border-color 120ms ease, outline-color 120ms ease;
+  }
+  .bw-sub-box svg { width: 12px; height: 12px; color: var(--inbeat-teal-500); opacity: 0; transform: scale(.6); transition: opacity 100ms ease, transform 100ms ease; }
+  .bw-sub input:checked ~ .bw-sub-box { border-color: var(--inbeat-teal-500); }
+  .bw-sub input:checked ~ .bw-sub-box svg { opacity: 1; transform: scale(1); }
+  .bw-sub input:focus-visible ~ .bw-sub-box { outline: 2px solid var(--product-primary); outline-offset: 2px; }
+  .bw-sig-wrap { margin-left: auto; position: relative; display: flex; align-items: center; flex: none; }
+  .bw-sig {
+    height: 30px; padding: 0 26px 0 12px; border-radius: var(--r-sm); cursor: pointer;
+    background: var(--bg-surface-1); border: 1px solid var(--border-default); color: var(--fg-1);
+    font-family: var(--font-mono); font-weight: 700; font-size: 12px;
+    appearance: none; -webkit-appearance: none; -moz-appearance: none;
+  }
+  .bw-sig:hover { border-color: var(--border-strong); }
+  .bw-sig-chevron { position: absolute; right: 8px; width: 12px; height: 12px; color: var(--fg-3); pointer-events: none; }
+  .bw-pads { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 60px; }
+  .bw-group { display: flex; align-items: center; gap: 4px; }
+  .bw-pad {
+    width: 36px; height: 36px; border-radius: var(--r-md); background: var(--bg-surface-1);
+    border: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono); font-weight: 700; font-size: 13px; color: var(--fg-3);
+    transition: background 80ms ease, border-color 80ms ease, color 80ms ease; flex: none;
+  }
+  .bw-pad.on-1 { background: var(--inbeat-led-red); border-color: var(--inbeat-led-red); color: #fff; }
+  .bw-pad.on-x { background: var(--brand-amber-300); border-color: var(--brand-amber-300); color: #1a1305; }
+  .bw-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--fg-4); flex: none; transition: background 80ms ease, transform 80ms ease; }
+  .bw-dot.on { background: var(--brand-amber-300); transform: scale(1.5); }
+  .bw-readout {
+    display: flex; align-items: center; justify-content: center; gap: 12px; align-self: center;
+    border: 1px solid var(--border-subtle); border-radius: var(--r-sm); padding: 6px 16px;
+  }
+  .bw-bpm-btn {
+    background: none; border: none; color: var(--fg-2); font-size: 18px; font-weight: 700;
+    line-height: 1; cursor: pointer; padding: 10px 10px; flex: none;
+  }
+  .bw-bpm-btn:hover { color: var(--fg-1); }
+  .bw-bpm-display { display: flex; flex-direction: column; align-items: center; line-height: 1.1; }
+  .bw-bpm-num { font-family: var(--font-mono); font-weight: 700; font-size: 19px; color: var(--brand-amber-300); }
+  .bw-bpm-lbl { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.08em; color: var(--fg-4); }
+  /* Real photos (photothèque) — framed card, same visual register as screen mockups */
+  .photo-card { width: 100%; max-width: 300px; border-radius: var(--r-lg, 20px); overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-lg); }
+  .photo-card img { display: block; width: 100%; height: auto; }
+  /* Stacked photo duo (Live mode) — 3:2 landscape, better stacked than side by side */
+  .photo-duo { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 380px; margin: 0 auto; }
+  .photo-duo .photo-card { width: 100%; max-width: none; }
+  .eco-photo { width: 100%; max-width: 720px; margin: 26px auto 0; border-radius: var(--r-lg, 20px); overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-lg); }
+  .eco-photo img { display: block; width: 100%; height: auto; }
+
+  /* CTA final — lockup écosystème (logos GigFlow) */
+  .cta-eco { margin-top: 44px; }
+  .cta-eco-lbl { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-4); margin: 0 0 18px; }
+  .cta-eco-logos { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .cta-eco-tile { display: flex; align-items: center; justify-content: center; width: 232px; height: 88px; padding: 16px 24px; background: #0C0A18; border: 1px solid var(--border-subtle); border-radius: var(--r-md); transition: border-color 140ms ease, transform 140ms ease; }
+  .cta-eco-logos > a:nth-child(1) { border-color: var(--brand-amber-300); }
+  .cta-eco-logos > a:nth-child(2) { border-color: var(--brand-amber-300); }
+  .cta-eco-tile:hover { transform: translateY(-2px); }
+  .cta-eco-logos > a:nth-child(1):hover { border-color: var(--brand-amber-200); box-shadow: var(--shadow-amber-glow); }
+  .cta-eco-logos > a:nth-child(2):hover { border-color: var(--brand-amber-200); box-shadow: var(--shadow-amber-glow); }
+  .cta-eco-tile img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+  @media (max-width: 600px) { .cta-eco-tile { width: 100%; max-width: 280px; } }
+  /* Mobile-only hero intro shown ABOVE the demo screen */
+  .ib-hero-m { display: none; }
+  @media (max-width: 980px) {
+    .ib-hero-m { display: block; order: -2; }
+    .ib-hero-m .eyebrow { margin-bottom: 12px; }
+    .ib-hero-m .hero-h1-m { font-family: var(--font-display); font-weight: 900; font-size: clamp(38px, 4.6vw, 56px); line-height: 1.05; letter-spacing: -0.025em; margin: 0 0 14px; text-wrap: balance; }
+    .ib-hero-m .hero-h1-m .accent { color: var(--product-primary); }
+    .ib-hero-m .sub { margin: 0; }
+    .hero-copy > .eyebrow, .hero-copy > h1 { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#0C0A18"/>
+    <text x="50" y="62" font-family="Mulish, sans-serif" font-size="34" font-weight="800" fill="#2BC4B8" text-anchor="middle">iB</text>
+  </svg>
+</template>
+
+<!-- NAV -->
+<nav aria-label="Hauptnavigation">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <img src="/assets/stagia-logo-watermark.png" alt="">
+      <span class="name">Stagia</span>
+    </a>
+    <div class="nav-links">
+      <a href="InBeat.html" class="active">InBeat</a>
+      <a href="gigflow-live.html">GigFlow Live</a>
+      <a href="gigflow-editor.html">GigFlow Editor</a>
+      <a href="videos.html">Vídeos</a>
+    </div>
+
+    <div class="lang-switcher">
+      <button class="lang-btn">DE <i data-lucide="chevron-down" style="width:11px;height:11px;"></i></button>
+      <div class="lang-dropdown">
+        <a class="lang-link" href="/InBeat.html">FR</a>
+        <a class="lang-link" href="/en/InBeat.html">EN-US</a>
+        <a class="lang-link" href="/es/InBeat.html">ES</a>
+        <span class="lang-active">DE</span>
+        <span class="lang-soon">IT</span>
+        <span class="lang-soon">NL</span>
+        <a class="lang-link" href="/pt-br/InBeat.html">PT-BR</a>
+      </div>
+    </div>
+    <a class="nav-cta" href="#obtenir">InBeat holen</a>
+    <button class="nav-burger" id="navBurger" aria-expanded="false" aria-controls="navMobile" aria-label="Menü">
+      <span class="burger-icon"><span class="ic-menu"><i data-lucide="menu"></i></span><span class="ic-x"><i data-lucide="x"></i></span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <div class="nav-mobile-inner">
+      <a href="InBeat.html" class="active">InBeat</a>
+      <a href="gigflow-live.html">GigFlow Live</a>
+      <a href="gigflow-editor.html">GigFlow Editor</a>
+      <a href="videos.html">Videos</a>
+
+      <div class="lang-mobile">
+        <span class="lang-label-m">Sprache</span>
+        <div class="lang-mobile-options"><a class="lang-link-m" href="/InBeat.html">FR</a><a class="lang-link-m" href="/en/InBeat.html">EN-US</a><a class="lang-link-m" href="/es/InBeat.html">ES</a><span class="lang-active-m">DE</span><span class="lang-soon-m">IT</span><span class="lang-soon-m">NL</span><a class="lang-link-m" href="/pt-br/InBeat.html">PT-BR</a></div>
+      </div>
+      <a class="nav-mobile-cta" href="#obtenir">InBeat holen</a>
+    </div>
+  </div>
+</nav>
+<main>
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">InBeat · Android und Browser</p>
+      <h1>Das richtige Tempo, im richtigen Moment. <span class="accent">Immer.</span></h1>
+      <p class="sub">Jeder Song deiner Setlist hat sein eigenes BPM und seine eigene rhythmische Struktur. Wechsle mit einer Geste zum nächsten: <span class="ib-name">InBeat</span> lädt das Tempo automatisch.</p>
+      <p class="sub">Schluss mit dem Nachstellen zwischen den Songs: das dynamische Metronom, das deinem Konzert folgt, vom ersten bis zum letzten Song.</p>
+      <div class="hero-actions dual" id="obtenir" role="group" aria-label="Wähle, wie du InBeat nutzt">
+        <a class="gp-badge gp-badge-fr" href="https://play.google.com/store/apps/details?id=com.stagia.inbeat&referrer=utm_source%3Dstagia.app%26utm_medium%3Dsite%26utm_campaign%3Dbouton_play" target="_blank" rel="noopener noreferrer" aria-label="InBeat bei Google Play"><img src="/assets/google-play/de_badge_web_generic.png" alt="Jetzt bei Google Play" width="646" height="250"></a> <a class="web-badge" href="/inbeat-web/" target="_blank" rel="noopener noreferrer" aria-label="InBeat im Browser"><i data-lucide="globe" aria-hidden="true"></i><span class="wb-text"><small>InBeat im</small><b>Browser</b></span></a>   </div>
+      <p class="cta-note">Auf der Bühne ist die Android-App die vollständige Version. Im Browser kannst du sie ausprobieren und üben, ohne etwas zu installieren. <span class="cta-limit">Die Synchronisierung zwischen Geräten (Master/Slave) gibt es nur für Android. Die Kompatibilität ist auf iPhones und älteren Browsern nicht garantiert. <a href="aide.html#inbeat-web">Grenzen ansehen</a></span></p>
+      <p class="adaptive">Für den Schlagzeuger gedacht, nützlich für die ganze Band.</p>
+      <div class="status-chips">
+        <span class="chip"><span class="dot"></span> App 100 % offline</span> <span class="chip"><span class="dot brand"></span> Kostenlos · ohne Abo</span> <span class="chip">11 exakte Taktarten</span>
+      </div>
+    </div>
+    <div class="ib-hero-m">
+      <p class="eyebrow">InBeat · Android und Browser</p>
+      <p class="hero-h1-m">Das richtige Tempo, im richtigen Moment. <span class="accent">Immer.</span></p>
+      <p class="sub">Ein Vorgeschmack auf <span class="ib-name">InBeat</span>:</p>
+    </div>
+    <div class="device-wrap">
+      <div class="phone">
+        <div class="screen lb-canvas">
+          <img src="/assets/screens/de/inbeat-live.png" alt="InBeat — Live-Bildschirm" data-lightbox>
+          <span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- OVERVIEW (promo video) -->
+<section class="block" id="presentation">
+  <div class="wrap">
+    <div class="block-head">
+      <p class="eyebrow">Überblick</p>
+      <h2>Was ist InBeat?</h2>
+      <p>Das Metronom, das deine Setlist kennt, im Video.</p>
+    </div>
+    <div class="video-embed video-facade" style="background:url(/assets/videos/presentation-en.jpg) center/cover;" data-yt="M_MXd8o6AAQ" data-yt-title="InBeat, the essentials for drummers and bands: the Android metronome that knows your setlist"><button type="button" class="video-play" aria-label="Video abspielen" style="padding:0;width:64px;height:64px;justify-content:center;font-size:23px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+    <p class="video-note" style="margin:8px 0 0">Beim Klick wird das Video von YouTube (Google) geladen. <a href="confidentialite.html">Mehr erfahren</a></p>
+    <p class="video-more"><a href="https://www.youtube.com/channel/UCV0tsMnSp8-WRGDS5DfXsGA" target="_blank" rel="noopener noreferrer">Unser YouTube-Kanal →</a></p>
+  </div>
+</section>
+
+<!-- 5 KEY FEATURES -->
+<section class="block">
+  <div class="wrap">
+    <div class="block-head">
+      <p class="eyebrow muted">Das Wesentliche</p>
+      <h2>Die richtige Stimmung für jeden Song.</h2>
+    </div>
+    <div class="keys">
+      <div class="key">
+        <div class="ic"><i data-lucide="gauge"></i></div>
+        <h3>Voreingestellte Tempi</h3>
+        <p>Jeder Song lädt sein BPM automatisch. Auf der Bühne musst du nichts einstellen.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="contrast"></i></div>
+        <h3>Dunkel oder hell</h3>
+        <p>Wähle dein Design: lesbar drinnen oder in praller Sonne.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="music"></i></div>
+        <h3>Alle Taktarten</h3>
+        <p>11 exakte Taktarten, von einfach bis zusammengesetzt (bis 12/8). Unterteilungen lassen sich aktivieren.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="wifi-off"></i></div>
+        <h3>100 % offline</h3>
+        <p>Für immer kostenlos, ohne Konto und ohne Werbung. Nur eine einzige Android-Berechtigung (Internet, für die optionale Synchronisierung): Deine Daten bleiben bei dir.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="users"></i></div>
+        <h3>Nützlich für die ganze Band</h3>
+        <p>Kompatibel mit GigFlow Live und Editor: Ihre Dateien lassen sich direkt in InBeat importieren.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="timer"></i></div>
+        <h3>Konzertdauer</h3>
+        <p>Gesamtdauer und Restzeit: Du weißt immer, wo du in deinem Repertoire stehst.</p>
+      </div>
+    </div>
+    <div class="freemium">
+      <i data-lucide="gift"></i>
+      <p>100 % kostenlos, ohne Abo · 100 % offline · ohne Werbung · deine Daten bleiben auf deinem Smartphone.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DETAIL FEATURES -->
+<section class="block" style="padding:0">
+  <div class="wrap">
+
+    <div class="feature ib-feat-lib">
+      <div class="feat-copy">
+        <p class="eyebrow">Bibliothek</p>
+        <h3>Dein ganzes Repertoire an einem Ort.</h3>
+        <p>Jeder Song behält sein Tempo, seine Taktart und seine Dauer. Suche, finde und öffne jeden Song mit zwei Tipps.</p>
+      </div>
+      <div class="feat-media">
+        <div class="phone"><div class="screen lb-canvas"><img src="/assets/screens/de/inbeat-library.png" alt="InBeat — Bibliothek" loading="lazy" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div></div>
+      </div>
+    </div>
+
+    <div class="feature reverse ib-feat-lib">
+      <div class="feat-copy">
+        <p class="eyebrow">Vorbereitung</p>
+        <h3>Alles ist vor dem Konzert bereit.</h3>
+        <p>Bearbeite jeden Song (Taktart, BPM, Dauer, Tonart, Notizen) und ordne deine Songs per Drag-and-drop in der Reihenfolge des Konzerts an, mit Ort, Datum und Gesamtdauer. Danach lädt <span class="ib-name">InBeat</span> jedes Tempo automatisch. Bereite es früh auf deinem Smartphone vor oder kurz vor dem Konzert.</p>
+      </div>
+      <div class="feat-media ib-duo">
+        <div class="phone"><div class="screen lb-canvas"><img src="/assets/screens/de/inbeat-edit.png" alt="InBeat — Song bearbeiten" loading="lazy" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div></div>
+        <div class="phone"><div class="screen lb-canvas"><img src="/assets/screens/de/inbeat-setlist.png" alt="InBeat — Setlist bearbeiten" loading="lazy" data-lightbox><span class="lb-badge" aria-hidden="true"><i data-lucide="maximize-2"></i></span></div></div>
+      </div>
+    </div>
+
+    <div class="feature ib-feat-lib">
+      <div class="feat-copy">
+        <p class="eyebrow">Live-Modus</p>
+        <h3>Groß, lesbar, ohne Ablenkung.</h3>
+        <p>Vollbildanzeige. BPM und Taktart groß, der nächste Song immer sichtbar: Du bist vorbereitet, ohne den Faden zu verlieren. Dunkles oder helles Design je nach Bühnenbeleuchtung. <span class="ib-name">InBeat</span> lädt automatisch das Tempo des nächsten Songs.</p>
+        <ul class="feat-list">
+          <li><i data-lucide="bluetooth"></i> Bluetooth-Pedal oder Wischen: freihändig zwischen den Songs navigieren</li>
+          <li><i data-lucide="music-2"></i> Stimmgabel: spielt den Referenzton, damit Sänger ihre Tonart finden</li>
+          <li><i data-lucide="hand"></i> Tap-Tempo: Stell das Tempo nach Gehör ein, spontan</li>
+        </ul>
+      </div>
+      <div class="feat-media photo-duo">
+        <div class="photo-card"><img src="/assets/photos/inbeat-live-dark.jpg" alt="Ein Schlagzeuger bei einem nächtlichen Festival, InBeat am Schlagzeug befestigt, im dunklen Design" loading="lazy"></div>
+        <div class="photo-card"><img src="/assets/photos/inbeat-live-light.jpg" alt="Eine Band spielt bei Tageslicht auf der Straße, InBeat am Schlagzeug befestigt, im hellen Design" loading="lazy"></div>
+      </div>
+    </div>
+
+    <div class="feature reverse ib-feat-lib">
+      <div class="feat-copy">
+        <p class="eyebrow">Visueller Puls und Beep</p>
+        <h3>Die Eins springt ins Auge.</h3>
+        <p>Betonte und unbetonte Schläge sind optisch unterscheidbar: roter Punkt auf der Eins, bernsteinfarben auf den folgenden. Ein optionaler <strong>Beep</strong> verstärkt das Signal, ganz nach Wahl des Nutzers. Unterteilungen lassen sich aktivieren, und alle 11 Taktarten werden unterstützt.</p>
+        <ul class="feat-list">
+          <li><i data-lucide="circle-dot"></i> Punkte auf dem Bildschirm: rot auf der 1, bernsteinfarben auf 2·3·4</li>
+          <li><i data-lucide="volume-2"></i> Optionaler Beep: nur visuell oder visuell + Ton</li>
+          <li><i data-lucide="hand"></i> Tap-Tempo, um das Tempo nach Gehör festzulegen</li>
+          <li><i data-lucide="radio"></i> Master/Slave-Synchronisierung (Beta): Deine anderen Geräte folgen dem Tempo live, im selben lokalen WLAN</li>
+        </ul>
+      </div>
+      <div class="feat-media">
+        <div class="beat-emblem" id="bwWidget">
+          <div class="bw-toolbar">
+            <button class="bw-play" id="bwPlayBtn" type="button" aria-pressed="false"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9-5.5-9-5.5z"/></svg>Abspielen</button>
+            <label class="bw-sub">
+              <input type="checkbox" id="bwSubChk" checked>
+              <span class="bw-sub-box"><i data-lucide="check"></i></span>
+              UNTERT.
+            </label>
+            <label class="bw-sub">
+              <input type="checkbox" id="bwBipChk">
+              <span class="bw-sub-box"><i data-lucide="check"></i></span>
+              BEEP
+            </label>
+            <div class="bw-sig-wrap">
+              <select class="bw-sig" id="bwSigSelect" aria-label="Taktart">
+                <option value="4/4" selected>4/4</option>
+                <option value="3/4">3/4</option>
+                <option value="6/8">6/8</option>
+                <option value="12/8">12/8</option>
+              </select>
+              <i data-lucide="chevron-down" class="bw-sig-chevron"></i>
+            </div>
+          </div>
+          <div class="bw-pads" id="bwPads"></div>
+          <div class="bw-readout">
+            <button class="bw-bpm-btn" id="bwBpmDown" type="button" aria-label="Tempo verringern">−</button>
+            <div class="bw-bpm-display"><span class="bw-bpm-num" id="bwBpmNum">60</span><span class="bw-bpm-lbl">BPM</span></div>
+            <button class="bw-bpm-btn" id="bwBpmUp" type="button" aria-label="Tempo erhöhen">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- IMPORT / EXPORT -->
+<section class="block">
+  <div class="wrap">
+    <div class="block-head">
+      <p class="eyebrow">Import und Export</p>
+      <h2 style="font-size: clamp(24px, 2.6vw, 30px); line-height: 1.12; letter-spacing: -0.015em">Deine Daten, immer bei dir.</h2>
+      <p>Sichere, teile mit der Band oder bereite auf einem großen Bildschirm vor: <span class="ib-name">InBeat</span> spricht dieselbe Sprache wie das gesamte <span class="st-name">Stagia</span>-Ökosystem.</p>
+    </div>
+    <div class="io-grid">
+      <div class="key">
+        <div class="ic"><i data-lucide="file-down"></i></div>
+        <h3>.inb exportieren</h3>
+        <p>Exportiere deine Bibliothek und deine Setlists im Format <strong>.inb</strong>. Mach ein Backup, wechsle das Smartphone oder teile sie mit dem Rest der Band.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="file-up"></i></div>
+        <h3>.inb importieren</h3>
+        <p>Empfange eine .inb-Datei und importiere sie: Songs, Tempi, Taktarten und Dauern kommen fertig eingestellt an.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="file-text"></i></div>
+        <h3>PDF exportieren</h3>
+        <p>Erstelle ein PDF deiner Setlist (Ort, Datum, Reihenfolge, BPM und Dauern), um es auszudrucken oder vor dem Konzert zu verschicken.</p>
+      </div>
+      <div class="key">
+        <div class="ic"><i data-lucide="repeat"></i></div>
+        <h3>Kompatibel mit GigFlow</h3>
+        <p>Dateien aus GigFlow Live und Editor lassen sich direkt importieren: am PC vorbereiten, auf dem Smartphone spielen, ohne etwas neu zu tippen. Deine .inb-Dateien lassen sich ihrerseits in den Editor importieren.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" id="telecharger">
+  <div class="wrap final-inner">
+    <p class="eyebrow">Android · Browser</p>
+    <h2>Bereit, das Tempo zu halten?</h2>
+    <p>Kostenlos, unbegrenzt, ohne Abo.</p>
+    <p style="font-size:15px;opacity:.85;margin-top:-4px">Voraussetzungen: ein Smartphone oder Tablet mit Android 7.0 oder höher.</p>
+    <div class="hero-actions dual" role="group" aria-label="Wähle, wie du InBeat nutzt">
+      <a class="gp-badge gp-badge-fr" href="https://play.google.com/store/apps/details?id=com.stagia.inbeat&referrer=utm_source%3Dstagia.app%26utm_medium%3Dsite%26utm_campaign%3Dbouton_play" target="_blank" rel="noopener noreferrer" aria-label="InBeat bei Google Play"><img src="/assets/google-play/de_badge_web_generic.png" alt="Jetzt bei Google Play" width="646" height="250"></a> <a class="web-badge" href="/inbeat-web/" target="_blank" rel="noopener noreferrer" aria-label="InBeat im Browser"><i data-lucide="globe" aria-hidden="true"></i><span class="wb-text"><small>InBeat im</small><b>Browser</b></span></a> </div>
+    <p class="cta-note">Auf der Bühne ist die Android-App die vollständige Version. Im Browser kannst du sie ausprobieren und üben, ohne etwas zu installieren. <span class="cta-limit">Die Synchronisierung zwischen Geräten (Master/Slave) gibt es nur für Android. Die Kompatibilität ist auf iPhones und älteren Browsern nicht garantiert. <a href="aide.html#inbeat-web">Grenzen ansehen</a></span></p>
+  </div>
+</section>
+
+<!-- ÉCOSYSTÈME STAGIA -->
+<section class="crosspromo">
+  <div class="wrap">
+    <div class="block-head">
+      <p class="eyebrow">Stagia-Ökosystem</p>
+      <h2 style="font-size:clamp(22px,2.4vw,28px);line-height:1.12;letter-spacing:-0.015em">Entwickelt, um zusammenzuarbeiten.</h2>
+    </div>
+    <div class="eco-photo"><img src="/assets/photos/ecosystem-band.jpg" alt="Eine Band bei der Probe, mit InBeat und GigFlow Live" loading="lazy"></div>
+    <div class="ecosystem">
+      <a class="eco" href="gigflow-live.html">
+        <span class="d" style="background:var(--brand-amber-300);flex:none;margin-top:5px"></span>
+        <div>
+          <b>GigFlow Live</b> <small>Setlist · Android</small> <small style="display:block;margin-top:6px;line-height:1.5">Zeigt Liedtexte und Akkorde auf der Bühne. Pedal-Navigation, Setlist in Echtzeit, 100 % offline.</small>
+        </div>
+      </a>
+      <a class="eco" href="gigflow-editor.html">
+        <span class="d" style="background:var(--brand-amber-300);flex:none;margin-top:5px"></span>
+        <div>
+          <b>GigFlow Editor</b> <small>Vorbereitung · Browser</small> <small style="display:block;margin-top:6px;line-height:1.5">Bereite Songs und Setlists am PC vor und exportiere eine einzige Datei, die InBeat und Live lesen.</small>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html">
+          <img src="/assets/stagia-logo-watermark.png" alt="" style="width:40px;height:40px">
+          <span class="name">Stagia</span>
+        </a>
+        <p>Digitale Werkzeuge, für Musiker von Musikern gemacht: vergiss das Papier, behalte die Musik. Gedacht für Bühne, Probe und Organisation.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Produkte</h4>
+        <a href="gigflow-live.html">GigFlow Live →</a>
+        <a href="InBeat.html">InBeat →</a>
+        <a href="gigflow-editor.html">GigFlow Editor →</a>
+      </div>
+      <div class="foot-col">
+        <h4>Ressourcen</h4>
+        <a href="videos.html">Videos →</a>
+        <a href="aide.html">Hilfe →</a>
+        <a href="contact.html">Kontakt →</a>
+        <a href="mentions-legales.html">Impressum →</a>
+        <a href="confidentialite.html">Datenschutz →</a>
+        <a href="#" data-cookie-settings>Cookies verwalten →</a>
+      </div>
+      <div class="foot-col">
+        <h4>Folgen</h4>
+        <a href="https://www.youtube.com/channel/UCV0tsMnSp8-WRGDS5DfXsGA" target="_blank" rel="noopener noreferrer">YouTube →</a>
+        <a href="mailto:contact@stagia.app">contact@stagia.app</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Stagia · Von Musikern, für Musiker.</span>
+      <span>contact@stagia.app</span>
+      <span>v0.1.39</span>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vergrößerter Screenshot">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Schließen"><i data-lucide="x"></i></button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script src="/assets/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+<script>
+/* Header : menu hamburger mobile reprenant les liens de la barre de nav */
+(function () {
+  var b = document.getElementById('navBurger');
+  var m = document.getElementById('navMobile');
+  if (!b || !m) return;
+  function close(returnFocus) {
+    b.setAttribute('aria-expanded', 'false');
+    m.classList.remove('open');
+    if (returnFocus) b.focus();
+  }
+  b.addEventListener('click', function () {
+    var open = b.getAttribute('aria-expanded') === 'true';
+    b.setAttribute('aria-expanded', String(!open));
+    m.classList.toggle('open', !open);
+    if (!open) { var first = m.querySelector('a, button'); if (first) first.focus(); }
+  });
+  m.addEventListener('click', function (e) { if (e.target.closest('a')) close(); });
+  m.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { close(true); return; }
+    if (e.key !== 'Tab') return;
+    var items = m.querySelectorAll('a, button');
+    if (!items.length) return;
+    var first = items[0], last = items[items.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+})();
+/* Screenshot lightbox: tap/click to enlarge */
+(function () {
+  var lb = document.getElementById('lightbox');
+  var img = document.getElementById('lightboxImg');
+  var closeBtn = document.getElementById('lightboxClose');
+  if (!lb || !img || !closeBtn) return;
+  var lastTrigger = null;
+  function open(trigger) {
+    lastTrigger = trigger;
+    img.src = trigger.src;
+    img.alt = trigger.alt || '';
+    lb.classList.add('open');
+    closeBtn.focus();
+  }
+  function close() {
+    lb.classList.remove('open');
+    img.src = '';
+    if (lastTrigger) lastTrigger.focus();
+  }
+  document.querySelectorAll('[data-lightbox]').forEach(function (el) {
+    el.style.cursor = 'zoom-in';
+    el.setAttribute('tabindex', '0');
+    el.setAttribute('role', 'button');
+    el.setAttribute('aria-label', 'Screenshot vergrößern');
+    el.addEventListener('click', function () { open(el); });
+    el.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(el); }
+    });
+  });
+  closeBtn.addEventListener('click', close);
+  lb.addEventListener('click', function (e) { if (e.target === lb || e.target === img) close(); });
+  lb.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+})();
+/* Mini live metronome — decorative, does not reflect real app data.
+   Subdivisions really count the eighth notes: when SUBS is on, each visual pulse
+   lasts one eighth note (not a full beat), making "1 and 2 and" (simple meters) or
+   "1 la li 2 la li" (compound meters) visible. */
+(function () {
+  var widget = document.getElementById('bwWidget');
+  if (!widget) return;
+  var padsEl = document.getElementById('bwPads');
+  var bpmNumEl = document.getElementById('bwBpmNum');
+  var sigSelect = document.getElementById('bwSigSelect');
+  var playBtn = document.getElementById('bwPlayBtn');
+  var subChk = document.getElementById('bwSubChk');
+  var bipChk = document.getElementById('bwBipChk');
+  var bpmDown = document.getElementById('bwBpmDown');
+  var bpmUp = document.getElementById('bwBpmUp');
+  var audioCtx = null;
+
+  function ensureAudio() {
+    if (audioCtx) { if (audioCtx.state === 'suspended') audioCtx.resume(); return; }
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (AC) audioCtx = new AC();
+  }
+
+  function bip(strong) {
+    if (!audioCtx) return;
+    var t = audioCtx.currentTime;
+    var osc = audioCtx.createOscillator();
+    var gain = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = strong ? 1400 : 1000;
+    gain.gain.setValueAtTime(0, t);
+    gain.gain.linearRampToValueAtTime(0.3, t + 0.002);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.05);
+    osc.connect(gain).connect(audioCtx.destination);
+    osc.start(t);
+    osc.stop(t + 0.06);
+  }
+
+  function bipSub() {
+    if (!audioCtx) return;
+    var t = audioCtx.currentTime;
+    var osc = audioCtx.createOscillator();
+    var gain = audioCtx.createGain();
+    osc.type = 'triangle';
+    osc.frequency.value = 1800;
+    gain.gain.setValueAtTime(0, t);
+    gain.gain.linearRampToValueAtTime(0.14, t + 0.002);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.03);
+    osc.connect(gain).connect(audioCtx.destination);
+    osc.start(t);
+    osc.stop(t + 0.04);
+  }
+
+  var SIG_CONF = {
+    '4/4':  { pads: 4, compound: false },
+    '3/4':  { pads: 3, compound: false },
+    '6/8':  { pads: 2, compound: true },
+    '12/8': { pads: 4, compound: true }
+  };
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ICON_PLAY = '<svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9-5.5-9-5.5z"/></svg>';
+  var ICON_PAUSE = '<svg viewBox="0 0 16 16" fill="currentColor"><rect x="3" y="2" width="3.4" height="12" rx="1"/><rect x="9.6" y="2" width="3.4" height="12" rx="1"/></svg>';
+
+  var state = { sig: '4/4', bpm: 60, subs: true, bip: false, playing: false, pulse: 0, timer: null };
+
+  function subsPerBeat(conf) {
+    if (!state.subs) return 1;
+    return conf.compound ? 3 : 2;
+  }
+
+  function buildPads() {
+    var conf = SIG_CONF[state.sig];
+    padsEl.innerHTML = '';
+    for (var i = 0; i < conf.pads; i++) {
+      var group = document.createElement('div');
+      group.className = 'bw-group';
+      var pad = document.createElement('div');
+      pad.className = 'bw-pad';
+      pad.textContent = String(i + 1);
+      group.appendChild(pad);
+      var dotCount = conf.compound ? 2 : 1;
+      for (var d = 0; d < dotCount; d++) {
+        var dot = document.createElement('span');
+        dot.className = 'bw-dot';
+        if (!state.subs) dot.style.visibility = 'hidden';
+        group.appendChild(dot);
+      }
+      padsEl.appendChild(group);
+    }
+    state.pulse = 0;
+    lightPulse();
+  }
+
+  function lightPulse() {
+    var conf = SIG_CONF[state.sig];
+    var spb = subsPerBeat(conf);
+    var groupIdx = Math.floor(state.pulse / spb);
+    var subIdx = state.pulse % spb;
+    var groups = padsEl.querySelectorAll('.bw-group');
+    groups.forEach(function (g, idx) {
+      var pad = g.querySelector('.bw-pad');
+      var isCurrent = idx === groupIdx;
+      pad.classList.toggle('on-1', isCurrent && subIdx === 0 && idx === 0);
+      pad.classList.toggle('on-x', isCurrent && subIdx === 0 && idx !== 0);
+      g.querySelectorAll('.bw-dot').forEach(function (dot, dIdx) {
+        dot.classList.toggle('on', isCurrent && subIdx === dIdx + 1);
+      });
+    });
+  }
+
+  function tick() {
+    var conf = SIG_CONF[state.sig];
+    var spb = subsPerBeat(conf);
+    var total = conf.pads * spb;
+    state.pulse = (state.pulse + 1) % total;
+    lightPulse();
+    if (state.bip) {
+      var subIdx = state.pulse % spb;
+      if (subIdx === 0) { bip(Math.floor(state.pulse / spb) === 0); } else { bipSub(); }
+    }
+  }
+
+  function stopTimer() { if (state.timer) { clearInterval(state.timer); state.timer = null; } }
+  function startTimer() {
+    stopTimer();
+    var conf = SIG_CONF[state.sig];
+    var spb = subsPerBeat(conf);
+    var beatMs = 60000 / state.bpm;
+    state.timer = setInterval(tick, beatMs / spb);
+  }
+
+  function setPlaying(on) {
+    state.playing = on;
+    playBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    playBtn.innerHTML = (on ? ICON_PAUSE : ICON_PLAY) + (on ? 'Pause' : 'Play');
+    if (on) { startTimer(); } else { stopTimer(); state.pulse = 0; lightPulse(); }
+  }
+
+  playBtn.addEventListener('click', function () { setPlaying(!state.playing); });
+
+  subChk.addEventListener('change', function () {
+    state.subs = subChk.checked;
+    buildPads();
+    if (state.playing) startTimer();
+  });
+
+  bipChk.addEventListener('change', function () {
+    state.bip = bipChk.checked;
+    if (state.bip) ensureAudio();
+  });
+
+  sigSelect.addEventListener('change', function () {
+    state.sig = sigSelect.value;
+    buildPads();
+    if (state.playing) startTimer();
+  });
+
+  function setBpm(v) {
+    state.bpm = Math.max(40, Math.min(220, v));
+    bpmNumEl.textContent = state.bpm;
+    if (state.playing) startTimer();
+  }
+  bpmDown.addEventListener('click', function () { setBpm(state.bpm - 5); });
+  bpmUp.addEventListener('click', function () { setBpm(state.bpm + 5); });
+
+  buildPads();
+  if (!reduceMotion) setPlaying(true);
+})();
+</script>
+
+<script>
+/* Vidéo YouTube : aucune connexion à YouTube avant le clic du visiteur. */
+document.querySelectorAll('.video-facade').forEach(function (box) {
+  box.querySelector('.video-play').addEventListener('click', function () {
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + box.getAttribute('data-yt') + '?autoplay=1';
+    f.title = box.getAttribute('data-yt-title');
+    f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
+    f.allowFullscreen = true;
+    box.innerHTML = '';
+    box.appendChild(f);
+  });
+});
+</script>
+
+<script>
+/* Mesure des clics sur les deux boutons : événement poussé dans le dataLayer, pris en compte par GTM seulement si l’utilisateur a accepté la mesure (Consent Mode). Aucun contenu, aucun identifiant. */
+document.querySelectorAll('.gp-badge,.web-badge').forEach(function (a) {
+  a.addEventListener('click', function () {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'cta_click', cta: a.classList.contains('web-badge') ? 'inbeat_web' : 'google_play' });
+  });
+});
+</script>
+<script src="/cookie-banner.js"></script>
+</body>
+</html>
