@@ -1,5 +1,5 @@
 // InBeat — © 2026 Stagia. Tous droits réservés. All rights reserved. https://stagia.app
-const CACHE = 'inbeat-web-0.5.76-5af32634';
+const CACHE = 'inbeat-web-0.5.77-a46cadf1';
 const FILES = ['./', 'index.html', 'manifest.json', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(FILES))); });
 self.addEventListener('activate', (e) => {
