@@ -54,6 +54,19 @@
   .page-body { padding: 56px 0 80px; }
   .page-content { max-width: 720px; }
 
+  /* Tutoriels : grille de cartes (une vignette cliquable, le titre, la durée) */
+  .tuto-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 32px 22px; margin-top: 28px; }
+  .tuto .video-embed { width: 100%; margin-top: 0; }
+  .tuto .video-embed img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .tuto .video-facade { align-items: flex-end; justify-content: flex-end; padding: 12px; }
+  .tuto .video-play { position: relative; }
+  .tuto-soon .video-embed { display: flex; align-items: center; justify-content: center; }
+  .tuto-title { margin: 12px 0 0; font-weight: 700; font-size: 15px; line-height: 1.35; color: var(--fg-1); }
+  .tuto-dur { display: block; margin-top: 2px; font-weight: 500; font-size: 12.5px; color: var(--fg-4); }
+  .tuto-desc { margin: 6px 0 0; font-size: 13.5px; line-height: 1.5; color: var(--fg-2); }
+  .tuto-soon .video-embed img { filter: grayscale(.6) brightness(.5); }
+  .tuto-soon-label { position: relative; padding: 6px 16px; border-radius: 999px; background: rgba(12,10,24,.85); border: 1px solid var(--border-subtle); color: var(--fg-1); font-size: 13px; font-weight: 700; }
+
   /* FAQ */
   .faq-section { margin-bottom: 48px; }
   .faq-section h2 {
@@ -211,10 +224,92 @@
       <p>Aprenda um gesto ou um recurso de cada vez, passo a passo.</p>
       <h3 style="font-size:20px;margin:32px 0 6px">InBeat</h3>
       <p style="margin:0">O metrônomo que conhece a sua setlist.</p>
-      <p style="margin-top:28px;font-weight:700">Como criar uma setlist no InBeat · em francês</p>
-      <div class="video-embed video-facade" style="background:url(/assets/videos/tuto-04-nouvelle-setlist-fr.jpg) center/cover;" data-yt="_EVufEn4hEs" data-yt-title="Comment créer une setlist dans InBeat"><button type="button" class="video-play" aria-label="Reproduzir o vídeo" style="padding:0;width:64px;height:64px;justify-content:center;font-size:23px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+      <div class="tuto-grid">
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="_EVufEn4hEs" data-yt-title="Criar uma setlist no InBeat"><img src="/assets/videos/tuto-04-nouvelle-setlist-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Reproduzir o vídeo : Criar uma setlist no InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Criar uma setlist no InBeat<span class="tuto-dur">24 s · em francês</span></p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="ecWWHH2e7U4" data-yt-title="Adicionar uma música no InBeat"><img src="/assets/videos/tuto-05-nouveau-morceau-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Reproduzir o vídeo : Adicionar uma música no InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Adicionar uma música no InBeat<span class="tuto-dur">25 s · em francês</span></p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="Nbv0dq5YMEQ" data-yt-title="Encontrar uma música no InBeat"><img src="/assets/videos/tuto-06-recherche-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Reproduzir o vídeo : Encontrar uma música no InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Encontrar uma música no InBeat<span class="tuto-dur">18 s · em francês</span></p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="Drjxz06f1Sg" data-yt-title="Mudar a ordem de uma setlist no InBeat"><img src="/assets/videos/tuto-07-ordre-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Reproduzir o vídeo : Mudar a ordem de uma setlist no InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Mudar a ordem de uma setlist no InBeat<span class="tuto-dur">19 s · em francês</span></p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="od5moGa9PCY" data-yt-title="Desfazer um erro no InBeat"><img src="/assets/videos/tuto-08-annuler-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Reproduzir o vídeo : Desfazer um erro no InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Desfazer um erro no InBeat<span class="tuto-dur">18 s · em francês</span></p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="dEkACpriwR4" data-yt-title="Remover várias músicas de uma setlist no InBeat"><img src="/assets/videos/tuto-09-selection-multiple-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Reproduzir o vídeo : Remover várias músicas de uma setlist no InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Remover várias músicas de uma setlist no InBeat<span class="tuto-dur">21 s · em francês</span></p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="oleH68u2Lrs" data-yt-title="Montar um set de 45 minutos no InBeat"><img src="/assets/videos/tuto-10-creneau-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Reproduzir o vídeo : Montar um set de 45 minutos no InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Montar um set de 45 minutos no InBeat<span class="tuto-dur">23 s · em francês</span></p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="u4ZUfJXGK-o" data-yt-title="Duplicar uma setlist no InBeat"><img src="/assets/videos/tuto-11-dupliquer-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Reproduzir o vídeo : Duplicar uma setlist no InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Duplicar uma setlist no InBeat<span class="tuto-dur">22 s · em francês</span></p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="jp02LjaHGO4" data-yt-title="Passar de uma música para a outra no InBeat"><img src="/assets/videos/tuto-12-enchainer-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Reproduzir o vídeo : Passar de uma música para a outra no InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Passar de uma música para a outra no InBeat<span class="tuto-dur">23 s · em francês</span></p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="RA-dlZe_u38" data-yt-title="Ajustar o compasso de cada música no InBeat"><img src="/assets/videos/tuto-14-signatures-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Reproduzir o vídeo : Ajustar o compasso de cada música no InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Ajustar o compasso de cada música no InBeat<span class="tuto-dur">24 s · em francês</span></p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="O9NAcE6_b8Q" data-yt-title="Ajustar o andamento com o TAP no InBeat"><img src="/assets/videos/tuto-15-tap-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Reproduzir o vídeo : Ajustar o andamento com o TAP no InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Ajustar o andamento com o TAP no InBeat<span class="tuto-dur">19 s · em francês</span></p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="F3AjJhasLUM" data-yt-title="Acompanhar o tempo de um set no InBeat"><img src="/assets/videos/tuto-16-reste-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Reproduzir o vídeo : Acompanhar o tempo de um set no InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Acompanhar o tempo de um set no InBeat<span class="tuto-dur">21 s · em francês</span></p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="L2A4Ld0N8Lk" data-yt-title="Ativar o beep no InBeat"><img src="/assets/videos/tuto-17-bip-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Reproduzir o vídeo : Ativar o beep no InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Ativar o beep no InBeat<span class="tuto-dur">18 s · em francês</span></p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="KRNzzQ_0GBI" data-yt-title="Mostrar as colcheias no InBeat"><img src="/assets/videos/tuto-18-croches-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Reproduzir o vídeo : Mostrar as colcheias no InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Mostrar as colcheias no InBeat<span class="tuto-dur">17 s · em francês</span></p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="Izb7flfAtM0" data-yt-title="Adicionar uma nota a uma música no InBeat"><img src="/assets/videos/tuto-19-notes-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Reproduzir o vídeo : Adicionar uma nota a uma música no InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Adicionar uma nota a uma música no InBeat<span class="tuto-dur">22 s · em francês</span></p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="8uhU4iOrGcY" data-yt-title="Alternar entre o tema escuro e o tema claro no InBeat"><img src="/assets/videos/tuto-20-theme-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Reproduzir o vídeo : Alternar entre o tema escuro e o tema claro no InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Alternar entre o tema escuro e o tema claro no InBeat<span class="tuto-dur">15 s · em francês</span></p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="szfhwE7f9qo" data-yt-title="Salvar e restaurar as setlists no InBeat"><img src="/assets/videos/tuto-21-sauvegarde-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Reproduzir o vídeo : Salvar e restaurar as setlists no InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Salvar e restaurar as setlists no InBeat<span class="tuto-dur">27 s · em francês</span></p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="ewT0p4bhjyg" data-yt-title="Exportar as setlists em HTML no InBeat"><img src="/assets/videos/tuto-22-export-html-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Reproduzir o vídeo : Exportar as setlists em HTML no InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Exportar as setlists em HTML no InBeat<span class="tuto-dur">21 s · em francês</span></p>
+        </div>
+        <div class="tuto tuto-soon">
+          <div class="video-embed"><img src="/assets/videos/tuto-23-import-gigflow-fr.jpg" alt="" loading="lazy"><span class="tuto-soon-label">Em breve</span></div>
+          <p class="tuto-title">Importar músicas do GigFlow no InBeat<span class="tuto-dur">24 s · em francês</span></p>
+        </div>
+        <div class="tuto tuto-soon">
+          <div class="video-embed"><img src="/assets/videos/tuto-24-langues-fr.jpg" alt="" loading="lazy"><span class="tuto-soon-label">Em breve</span></div>
+          <p class="tuto-title">Mudar o idioma do InBeat<span class="tuto-dur">24 s · em francês</span></p>
+        </div>
+      </div>
+      <p class="video-note" style="margin:20px 0 0">A voz destes tutoriais é gerada por IA.</p>
       <p class="video-note" style="margin:8px 0 0">Ao clicar, o vídeo é carregado do YouTube (Google). <a href="confidentialite.html">Saiba mais</a></p>
       <p style="margin-top:28px">Mais tutoriais do InBeat vão chegar. Enquanto isso, conheça o <a href="InBeat.html">InBeat</a> ou encontre respostas na <a href="aide.html">página de ajuda</a>.</p>
+      
       <h3 style="font-size:20px;margin:32px 0 6px">GigFlow Live</h3>
       <p style="margin:0">A tela de palco para tocar suas músicas e setlists.</p>
       <p style="margin-top:8px">Os primeiros tutoriais do GigFlow Live chegam em breve. Enquanto isso, conheça o <a href="gigflow-live.html">GigFlow Live</a> ou encontre respostas na <a href="aide.html">página de ajuda</a>.</p>
@@ -264,7 +359,7 @@
     <div class="foot-bottom">
       <span>© 2026 Stagia · Feito por músicos, para músicos.</span>
       <span>contact@stagia.app</span>
-      <span>v0.1.57</span>
+      <span>v0.1.58</span>
     </div>
   </div>
 </footer>

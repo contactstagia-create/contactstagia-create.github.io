@@ -54,6 +54,19 @@
   .page-body { padding: 56px 0 80px; }
   .page-content { max-width: 720px; }
 
+  /* Tutoriels : grille de cartes (une vignette cliquable, le titre, la durée) */
+  .tuto-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 32px 22px; margin-top: 28px; }
+  .tuto .video-embed { width: 100%; margin-top: 0; }
+  .tuto .video-embed img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .tuto .video-facade { align-items: flex-end; justify-content: flex-end; padding: 12px; }
+  .tuto .video-play { position: relative; }
+  .tuto-soon .video-embed { display: flex; align-items: center; justify-content: center; }
+  .tuto-title { margin: 12px 0 0; font-weight: 700; font-size: 15px; line-height: 1.35; color: var(--fg-1); }
+  .tuto-dur { display: block; margin-top: 2px; font-weight: 500; font-size: 12.5px; color: var(--fg-4); }
+  .tuto-desc { margin: 6px 0 0; font-size: 13.5px; line-height: 1.5; color: var(--fg-2); }
+  .tuto-soon .video-embed img { filter: grayscale(.6) brightness(.5); }
+  .tuto-soon-label { position: relative; padding: 6px 16px; border-radius: 999px; background: rgba(12,10,24,.85); border: 1px solid var(--border-subtle); color: var(--fg-1); font-size: 13px; font-weight: 700; }
+
   /* FAQ */
   .faq-section { margin-bottom: 48px; }
   .faq-section h2 {
@@ -148,13 +161,251 @@
 {
   "@context": "https://schema.org",
   "@type": "VideoObject",
-  "name": "Comment créer une setlist dans InBeat",
+  "name": "Créer une setlist dans InBeat",
   "description": "Dans InBeat, le métronome Android de Stagia : appuyez sur + Setlist, nommez-la, puis cochez vos morceaux dans le répertoire. Chaque morceau arrive avec son tempo, sa signature et sa durée. Un morceau n'est pas à sa place ? Glissez-le par sa poignée.",
   "thumbnailUrl": "https://stagia.app/assets/videos/tuto-04-nouvelle-setlist-fr.jpg",
   "uploadDate": "2026-10-29",
   "duration": "PT24S",
   "embedUrl": "https://www.youtube.com/embed/_EVufEn4hEs",
   "contentUrl": "https://www.youtube.com/watch?v=_EVufEn4hEs",
+  "inLanguage": "fr"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Ajouter un morceau dans InBeat",
+  "description": "Dans InBeat, le métronome Android de Stagia : on saisit un morceau une seule fois (titre, signature rythmique, BPM, durée, tonalité), on l'écoute avant d'enregistrer, puis il rejoint le répertoire pour toutes les setlists.",
+  "thumbnailUrl": "https://stagia.app/assets/videos/tuto-05-nouveau-morceau-fr.jpg",
+  "uploadDate": "2026-10-30",
+  "duration": "PT25S",
+  "embedUrl": "https://www.youtube.com/embed/ecWWHH2e7U4",
+  "contentUrl": "https://www.youtube.com/watch?v=ecWWHH2e7U4",
+  "inLanguage": "fr"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Retrouver un morceau dans InBeat",
+  "description": "Dans InBeat, le métronome Android de Stagia : on tape quelques lettres du titre ou de l'artiste pour retrouver un morceau, et un menu trie le répertoire par titre, artiste, tonalité, BPM ou durée.",
+  "thumbnailUrl": "https://stagia.app/assets/videos/tuto-06-recherche-fr.jpg",
+  "uploadDate": "2026-11-23",
+  "duration": "PT18S",
+  "embedUrl": "https://www.youtube.com/embed/Nbv0dq5YMEQ",
+  "contentUrl": "https://www.youtube.com/watch?v=Nbv0dq5YMEQ",
+  "inLanguage": "fr"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Changer l'ordre d'une setlist dans InBeat",
+  "description": "Dans InBeat, le métronome Android de Stagia : on appuie sur le numéro d'un morceau, on tape sa nouvelle position, et les durées cumulées suivent.",
+  "thumbnailUrl": "https://stagia.app/assets/videos/tuto-07-ordre-fr.jpg",
+  "uploadDate": "2026-11-23",
+  "duration": "PT19S",
+  "embedUrl": "https://www.youtube.com/embed/Drjxz06f1Sg",
+  "contentUrl": "https://www.youtube.com/watch?v=Drjxz06f1Sg",
+  "inLanguage": "fr"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Annuler une erreur dans InBeat",
+  "description": "Dans InBeat, le métronome Android de Stagia : quand un morceau est retiré d'une setlist par erreur, un appui sur Annuler le ramène.",
+  "thumbnailUrl": "https://stagia.app/assets/videos/tuto-08-annuler-fr.jpg",
+  "uploadDate": "2026-11-23",
+  "duration": "PT18S",
+  "embedUrl": "https://www.youtube.com/embed/od5moGa9PCY",
+  "contentUrl": "https://www.youtube.com/watch?v=od5moGa9PCY",
+  "inLanguage": "fr"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Retirer plusieurs morceaux d'une setlist dans InBeat",
+  "description": "Dans InBeat, le métronome Android de Stagia : on coche plusieurs morceaux et on les supprime d'un coup ; la durée totale de la setlist se met à jour.",
+  "thumbnailUrl": "https://stagia.app/assets/videos/tuto-09-selection-multiple-fr.jpg",
+  "uploadDate": "2026-11-23",
+  "duration": "PT21S",
+  "embedUrl": "https://www.youtube.com/embed/dEkACpriwR4",
+  "contentUrl": "https://www.youtube.com/watch?v=dEkACpriwR4",
+  "inLanguage": "fr"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Composer un set de 45 minutes dans InBeat",
+  "description": "Dans InBeat, le métronome Android de Stagia : pour remplir un créneau de 45 minutes, on repère la durée totale du set, on ajoute des morceaux du répertoire et on vérifie que la durée tient.",
+  "thumbnailUrl": "https://stagia.app/assets/videos/tuto-10-creneau-fr.jpg",
+  "uploadDate": "2026-11-23",
+  "duration": "PT23S",
+  "embedUrl": "https://www.youtube.com/embed/oleH68u2Lrs",
+  "contentUrl": "https://www.youtube.com/watch?v=oleH68u2Lrs",
+  "inLanguage": "fr"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Dupliquer une setlist dans InBeat",
+  "description": "Dans InBeat, le métronome Android de Stagia : on duplique une setlist depuis son menu « … », puis on change le nom, le lieu et la date pour une autre salle.",
+  "thumbnailUrl": "https://stagia.app/assets/videos/tuto-11-dupliquer-fr.jpg",
+  "uploadDate": "2026-11-24",
+  "duration": "PT22S",
+  "embedUrl": "https://www.youtube.com/embed/u4ZUfJXGK-o",
+  "contentUrl": "https://www.youtube.com/watch?v=u4ZUfJXGK-o",
+  "inLanguage": "fr"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Enchaîner les morceaux dans InBeat",
+  "description": "Dans InBeat, le métronome Android de Stagia : trois façons de passer au morceau suivant, avec le bouton Suiv., un swipe vers la gauche ou une pédale Bluetooth.",
+  "thumbnailUrl": "https://stagia.app/assets/videos/tuto-12-enchainer-fr.jpg",
+  "uploadDate": "2026-11-24",
+  "duration": "PT23S",
+  "embedUrl": "https://www.youtube.com/embed/jp02LjaHGO4",
+  "contentUrl": "https://www.youtube.com/watch?v=jp02LjaHGO4",
+  "inLanguage": "fr"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Régler la signature de chaque morceau dans InBeat",
+  "description": "Dans InBeat, le métronome Android de Stagia : chaque morceau a sa signature rythmique (4/4, 3/4, 6/8, 5/4, 7/4) et les temps affichés suivent.",
+  "thumbnailUrl": "https://stagia.app/assets/videos/tuto-14-signatures-fr.jpg",
+  "uploadDate": "2026-11-24",
+  "duration": "PT24S",
+  "embedUrl": "https://www.youtube.com/embed/RA-dlZe_u38",
+  "contentUrl": "https://www.youtube.com/watch?v=RA-dlZe_u38",
+  "inLanguage": "fr"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Régler le tempo au TAP dans InBeat",
+  "description": "Dans InBeat, le métronome Android de Stagia : on tape le tempo sur le bouton TAP, puis on sauvegarde la valeur pour le morceau.",
+  "thumbnailUrl": "https://stagia.app/assets/videos/tuto-15-tap-fr.jpg",
+  "uploadDate": "2026-11-24",
+  "duration": "PT19S",
+  "embedUrl": "https://www.youtube.com/embed/O9NAcE6_b8Q",
+  "contentUrl": "https://www.youtube.com/watch?v=O9NAcE6_b8Q",
+  "inLanguage": "fr"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Suivre le temps d'un set dans InBeat",
+  "description": "Dans InBeat, le métronome Android de Stagia : le temps total du set, le cumul morceau après morceau et le temps restant à jouer restent sous les yeux.",
+  "thumbnailUrl": "https://stagia.app/assets/videos/tuto-16-reste-fr.jpg",
+  "uploadDate": "2026-11-24",
+  "duration": "PT21S",
+  "embedUrl": "https://www.youtube.com/embed/F3AjJhasLUM",
+  "contentUrl": "https://www.youtube.com/watch?v=F3AjJhasLUM",
+  "inLanguage": "fr"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Activer le clic dans InBeat",
+  "description": "Dans InBeat, le métronome Android de Stagia : le clic est éteint par défaut ; on coche Bip pour un morceau, ou « tous » pour toute la setlist.",
+  "thumbnailUrl": "https://stagia.app/assets/videos/tuto-17-bip-fr.jpg",
+  "uploadDate": "2026-11-24",
+  "duration": "PT18S",
+  "embedUrl": "https://www.youtube.com/embed/L2A4Ld0N8Lk",
+  "contentUrl": "https://www.youtube.com/watch?v=L2A4Ld0N8Lk",
+  "inLanguage": "fr"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Afficher les croches dans InBeat",
+  "description": "Dans InBeat, le métronome Android de Stagia : la case SUBS 1/2 coupe chaque temps en deux ; mêmes tempos, deux fois plus de repères.",
+  "thumbnailUrl": "https://stagia.app/assets/videos/tuto-18-croches-fr.jpg",
+  "uploadDate": "2026-11-25",
+  "duration": "PT17S",
+  "embedUrl": "https://www.youtube.com/embed/KRNzzQ_0GBI",
+  "contentUrl": "https://www.youtube.com/watch?v=KRNzzQ_0GBI",
+  "inLanguage": "fr"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Ajouter une note à un morceau dans InBeat",
+  "description": "Dans InBeat, le métronome Android de Stagia : on écrit une note dans la fiche d'un morceau, elle s'affiche sous l'artiste pendant que le tempo tourne.",
+  "thumbnailUrl": "https://stagia.app/assets/videos/tuto-19-notes-fr.jpg",
+  "uploadDate": "2026-11-25",
+  "duration": "PT22S",
+  "embedUrl": "https://www.youtube.com/embed/Izb7flfAtM0",
+  "contentUrl": "https://www.youtube.com/watch?v=Izb7flfAtM0",
+  "inLanguage": "fr"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Passer du thème sombre au thème clair dans InBeat",
+  "description": "Dans InBeat, le métronome Android de Stagia : on passe du thème sombre au thème clair depuis le menu ☰, selon la lumière de la scène.",
+  "thumbnailUrl": "https://stagia.app/assets/videos/tuto-20-theme-fr.jpg",
+  "uploadDate": "2026-11-25",
+  "duration": "PT15S",
+  "embedUrl": "https://www.youtube.com/embed/8uhU4iOrGcY",
+  "contentUrl": "https://www.youtube.com/watch?v=8uhU4iOrGcY",
+  "inLanguage": "fr"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Sauvegarder et restaurer ses setlists dans InBeat",
+  "description": "Dans InBeat, le métronome Android de Stagia : le menu ☰ crée un fichier .inb avec les setlists et leurs morceaux ; sur un autre mobile, « Restaurer une sauvegarde » le relit et on choisit ce qu'on importe.",
+  "thumbnailUrl": "https://stagia.app/assets/videos/tuto-21-sauvegarde-fr.jpg",
+  "uploadDate": "2026-11-26",
+  "duration": "PT27S",
+  "embedUrl": "https://www.youtube.com/embed/szfhwE7f9qo",
+  "contentUrl": "https://www.youtube.com/watch?v=szfhwE7f9qo",
+  "inLanguage": "fr"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Exporter ses setlists en HTML dans InBeat",
+  "description": "Dans InBeat, le métronome Android de Stagia : le menu ☰ propose « Exporter en HTML » : on obtient un fichier autonome qui s'ouvre dans n'importe quel navigateur, sans installer InBeat, pour partager ou archiver ses setlists.",
+  "thumbnailUrl": "https://stagia.app/assets/videos/tuto-22-export-html-fr.jpg",
+  "uploadDate": "2026-11-26",
+  "duration": "PT21S",
+  "embedUrl": "https://www.youtube.com/embed/ewT0p4bhjyg",
+  "contentUrl": "https://www.youtube.com/watch?v=ewT0p4bhjyg",
   "inLanguage": "fr"
 }
 </script>
@@ -248,10 +499,112 @@
       <p>Apprenez un geste ou une fonction, pas à pas.</p>
       <h3 style="font-size:20px;margin:32px 0 6px">InBeat</h3>
       <p style="margin:0">Le métronome qui connaît votre setlist.</p>
-      <p style="margin-top:28px;font-weight:700">Comment créer une setlist dans InBeat</p>
-      <div class="video-embed video-facade" style="background:url(assets/videos/tuto-04-nouvelle-setlist-fr.jpg) center/cover;" data-yt="_EVufEn4hEs" data-yt-title="Comment créer une setlist dans InBeat"><button type="button" class="video-play" aria-label="Lire la vidéo" style="padding:0;width:64px;height:64px;justify-content:center;font-size:23px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+      <div class="tuto-grid">
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="_EVufEn4hEs" data-yt-title="Créer une setlist dans InBeat"><img src="assets/videos/tuto-04-nouvelle-setlist-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Lire la vidéo : Créer une setlist dans InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Créer une setlist dans InBeat<span class="tuto-dur">24 s</span></p>
+          <p class="tuto-desc">Appuyez sur + Setlist, nommez-la, puis cochez vos morceaux dans le répertoire. Chaque morceau arrive avec son tempo, sa signature et sa durée. Un morceau n'est pas à sa place ? Glissez-le par sa poignée.</p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="ecWWHH2e7U4" data-yt-title="Ajouter un morceau dans InBeat"><img src="assets/videos/tuto-05-nouveau-morceau-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Lire la vidéo : Ajouter un morceau dans InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Ajouter un morceau dans InBeat<span class="tuto-dur">25 s</span></p>
+          <p class="tuto-desc">On saisit un morceau une seule fois (titre, signature rythmique, BPM, durée, tonalité), on l'écoute avant d'enregistrer, puis il rejoint le répertoire pour toutes les setlists.</p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="Nbv0dq5YMEQ" data-yt-title="Retrouver un morceau dans InBeat"><img src="assets/videos/tuto-06-recherche-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Lire la vidéo : Retrouver un morceau dans InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Retrouver un morceau dans InBeat<span class="tuto-dur">18 s</span></p>
+          <p class="tuto-desc">On tape quelques lettres du titre ou de l'artiste pour retrouver un morceau, et un menu trie le répertoire par titre, artiste, tonalité, BPM ou durée.</p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="Drjxz06f1Sg" data-yt-title="Changer l'ordre d'une setlist dans InBeat"><img src="assets/videos/tuto-07-ordre-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Lire la vidéo : Changer l'ordre d'une setlist dans InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Changer l'ordre d'une setlist dans InBeat<span class="tuto-dur">19 s</span></p>
+          <p class="tuto-desc">On appuie sur le numéro d'un morceau, on tape sa nouvelle position, et les durées cumulées suivent.</p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="od5moGa9PCY" data-yt-title="Annuler une erreur dans InBeat"><img src="assets/videos/tuto-08-annuler-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Lire la vidéo : Annuler une erreur dans InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Annuler une erreur dans InBeat<span class="tuto-dur">18 s</span></p>
+          <p class="tuto-desc">Quand un morceau est retiré d'une setlist par erreur, un appui sur Annuler le ramène.</p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="dEkACpriwR4" data-yt-title="Retirer plusieurs morceaux d'une setlist dans InBeat"><img src="assets/videos/tuto-09-selection-multiple-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Lire la vidéo : Retirer plusieurs morceaux d'une setlist dans InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Retirer plusieurs morceaux d'une setlist dans InBeat<span class="tuto-dur">21 s</span></p>
+          <p class="tuto-desc">On coche plusieurs morceaux et on les supprime d'un coup ; la durée totale de la setlist se met à jour.</p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="oleH68u2Lrs" data-yt-title="Composer un set de 45 minutes dans InBeat"><img src="assets/videos/tuto-10-creneau-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Lire la vidéo : Composer un set de 45 minutes dans InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Composer un set de 45 minutes dans InBeat<span class="tuto-dur">23 s</span></p>
+          <p class="tuto-desc">Pour remplir un créneau de 45 minutes, on repère la durée totale du set, on ajoute des morceaux du répertoire et on vérifie que la durée tient.</p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="u4ZUfJXGK-o" data-yt-title="Dupliquer une setlist dans InBeat"><img src="assets/videos/tuto-11-dupliquer-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Lire la vidéo : Dupliquer une setlist dans InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Dupliquer une setlist dans InBeat<span class="tuto-dur">22 s</span></p>
+          <p class="tuto-desc">On duplique une setlist depuis son menu « … », puis on change le nom, le lieu et la date pour une autre salle.</p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="jp02LjaHGO4" data-yt-title="Enchaîner les morceaux dans InBeat"><img src="assets/videos/tuto-12-enchainer-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Lire la vidéo : Enchaîner les morceaux dans InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Enchaîner les morceaux dans InBeat<span class="tuto-dur">23 s</span></p>
+          <p class="tuto-desc">Trois façons de passer au morceau suivant, avec le bouton Suiv., un swipe vers la gauche ou une pédale Bluetooth.</p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="RA-dlZe_u38" data-yt-title="Régler la signature de chaque morceau dans InBeat"><img src="assets/videos/tuto-14-signatures-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Lire la vidéo : Régler la signature de chaque morceau dans InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Régler la signature de chaque morceau dans InBeat<span class="tuto-dur">24 s</span></p>
+          <p class="tuto-desc">Chaque morceau a sa signature rythmique (4/4, 3/4, 6/8, 5/4, 7/4) et les temps affichés suivent.</p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="O9NAcE6_b8Q" data-yt-title="Régler le tempo au TAP dans InBeat"><img src="assets/videos/tuto-15-tap-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Lire la vidéo : Régler le tempo au TAP dans InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Régler le tempo au TAP dans InBeat<span class="tuto-dur">19 s</span></p>
+          <p class="tuto-desc">On tape le tempo sur le bouton TAP, puis on sauvegarde la valeur pour le morceau.</p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="F3AjJhasLUM" data-yt-title="Suivre le temps d'un set dans InBeat"><img src="assets/videos/tuto-16-reste-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Lire la vidéo : Suivre le temps d'un set dans InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Suivre le temps d'un set dans InBeat<span class="tuto-dur">21 s</span></p>
+          <p class="tuto-desc">Le temps total du set, le cumul morceau après morceau et le temps restant à jouer restent sous les yeux.</p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="L2A4Ld0N8Lk" data-yt-title="Activer le clic dans InBeat"><img src="assets/videos/tuto-17-bip-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Lire la vidéo : Activer le clic dans InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Activer le clic dans InBeat<span class="tuto-dur">18 s</span></p>
+          <p class="tuto-desc">Le clic est éteint par défaut ; on coche Bip pour un morceau, ou « tous » pour toute la setlist.</p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="KRNzzQ_0GBI" data-yt-title="Afficher les croches dans InBeat"><img src="assets/videos/tuto-18-croches-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Lire la vidéo : Afficher les croches dans InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Afficher les croches dans InBeat<span class="tuto-dur">17 s</span></p>
+          <p class="tuto-desc">La case SUBS 1/2 coupe chaque temps en deux ; mêmes tempos, deux fois plus de repères.</p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="Izb7flfAtM0" data-yt-title="Ajouter une note à un morceau dans InBeat"><img src="assets/videos/tuto-19-notes-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Lire la vidéo : Ajouter une note à un morceau dans InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Ajouter une note à un morceau dans InBeat<span class="tuto-dur">22 s</span></p>
+          <p class="tuto-desc">On écrit une note dans la fiche d'un morceau, elle s'affiche sous l'artiste pendant que le tempo tourne.</p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="8uhU4iOrGcY" data-yt-title="Passer du thème sombre au thème clair dans InBeat"><img src="assets/videos/tuto-20-theme-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Lire la vidéo : Passer du thème sombre au thème clair dans InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Passer du thème sombre au thème clair dans InBeat<span class="tuto-dur">15 s</span></p>
+          <p class="tuto-desc">On passe du thème sombre au thème clair depuis le menu ☰, selon la lumière de la scène.</p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="szfhwE7f9qo" data-yt-title="Sauvegarder et restaurer ses setlists dans InBeat"><img src="assets/videos/tuto-21-sauvegarde-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Lire la vidéo : Sauvegarder et restaurer ses setlists dans InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Sauvegarder et restaurer ses setlists dans InBeat<span class="tuto-dur">27 s</span></p>
+          <p class="tuto-desc">Le menu ☰ crée un fichier .inb avec les setlists et leurs morceaux ; sur un autre mobile, « Restaurer une sauvegarde » le relit et on choisit ce qu'on importe.</p>
+        </div>
+        <div class="tuto">
+          <div class="video-embed video-facade" data-yt="ewT0p4bhjyg" data-yt-title="Exporter ses setlists en HTML dans InBeat"><img src="assets/videos/tuto-22-export-html-fr.jpg" alt="" loading="lazy"><button type="button" class="video-play" aria-label="Lire la vidéo : Exporter ses setlists en HTML dans InBeat" style="padding:0;width:44px;height:44px;justify-content:center;font-size:16px;box-shadow:0 2px 12px rgba(0,0,0,.5)"><span aria-hidden="true">▶</span></button></div>
+          <p class="tuto-title">Exporter ses setlists en HTML dans InBeat<span class="tuto-dur">21 s</span></p>
+          <p class="tuto-desc">Le menu ☰ propose « Exporter en HTML » : on obtient un fichier autonome qui s'ouvre dans n'importe quel navigateur, sans installer InBeat, pour partager ou archiver ses setlists.</p>
+        </div>
+        <div class="tuto tuto-soon">
+          <div class="video-embed"><img src="assets/videos/tuto-23-import-gigflow-fr.jpg" alt="" loading="lazy"><span class="tuto-soon-label">Bientôt</span></div>
+          <p class="tuto-title">Importer ses morceaux GigFlow dans InBeat<span class="tuto-dur">24 s</span></p>
+          <p class="tuto-desc">« Restaurer une sauvegarde » lit un export GigFlow : on voit les setlists et les morceaux du fichier (tonalité, signature, BPM, durée) et on importe ce qui est coché.</p>
+        </div>
+        <div class="tuto tuto-soon">
+          <div class="video-embed"><img src="assets/videos/tuto-24-langues-fr.jpg" alt="" loading="lazy"><span class="tuto-soon-label">Bientôt</span></div>
+          <p class="tuto-title">Changer la langue d'InBeat<span class="tuto-dur">24 s</span></p>
+          <p class="tuto-desc">Le menu ☰ → Langues change l'interface aussitôt : français, anglais (UK et US), allemand, néerlandais, italien, espagnol et portugais (Portugal et Brésil).</p>
+        </div>
+      </div>
+      <p class="video-note" style="margin:20px 0 0">La voix de ces tutoriels est générée par IA.</p>
       <p class="video-note" style="margin:8px 0 0">Au clic, la vidéo est chargée depuis YouTube (Google). <a href="confidentialite.html">En savoir plus</a></p>
       <p style="margin-top:28px">D'autres tutoriels InBeat arrivent bientôt. En attendant, découvrez <a href="InBeat.html">InBeat</a> ou retrouvez les réponses dans l'<a href="aide.html">aide</a>.</p>
+      
       <h3 style="font-size:20px;margin:32px 0 6px">GigFlow Live</h3>
       <p style="margin:0">L'écran de scène pour jouer vos morceaux et vos setlists.</p>
       <p style="margin-top:8px">Les premiers tutoriels GigFlow Live arrivent bientôt. En attendant, découvrez <a href="gigflow-live.html">GigFlow Live</a> ou retrouvez les réponses dans l'<a href="aide.html">aide</a>.</p>
@@ -301,7 +654,7 @@
     <div class="foot-bottom">
       <span>© 2026 Stagia · Par des musiciens, pour les musiciens.</span>
       <span>contact@stagia.app</span>
-      <span>v0.1.57</span>
+      <span>v0.1.58</span>
     </div>
   </div>
 </footer>
